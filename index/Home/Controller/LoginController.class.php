@@ -22,5 +22,6 @@ class LoginController extends Controller {
     	$password = $_POST['password'];
     	$phone = $_POST['phone'];
     	$email = $_POST['email'];
+    	$code = $_POST['code'];
     }
 }
