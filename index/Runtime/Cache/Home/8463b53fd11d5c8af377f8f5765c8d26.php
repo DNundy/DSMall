@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,14 +7,14 @@
     <title>管理员登录 - 趣二手</title>
 
     <!-- ThirdParty -->
-    <script src="__PUBLIC__/lib/vue.min.js"></script>
-    <script src="__PUBLIC__/lib/element.min.js"></script>
-    <link rel="stylesheet" href="__PUBLIC__/lib/normalize.css">
-    <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/lib/fonts/iconfont.css">
+    <script src="/platform/Public/lib/vue.min.js"></script>
+    <script src="/platform/Public/lib/element.min.js"></script>
+    <link rel="stylesheet" href="/platform/Public/lib/normalize.css">
+    <link rel="stylesheet" href="/platform/Public/lib/element.min.css">
+    <link rel="stylesheet" href="/platform/Public/lib/fonts/iconfont.css">
     
     <!-- Main CSS -->
-    <link rel="stylesheet" href="__PUBLIC__/css/login/login-admin.css">
+    <link rel="stylesheet" href="/platform/Public/css/login/login-admin.css">
 </head>
 <body>
     <!-- Layout -->

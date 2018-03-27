@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>用户登录 - 趣二手</title>
+    <title>找回密码 - 趣二手</title>
 
     <!-- ThirdParty -->
     <script src="/platform/Public/lib/vue.min.js"></script>
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/platform/Public/lib/fonts/iconfont.css">
     
     <!-- Main CSS -->
-    <link rel="stylesheet" href="/platform/Public/css/login/login.css">
+    <link rel="stylesheet" href="/platform/Public/css/login/forget.css">
 </head>
 <body>
     <!-- Layout -->
@@ -28,12 +28,12 @@
             <el-main>
                 <div class="wrap">
                     <div class="left">
-                        <img src="/platform/Public/img/login/bg-login.png" alt="登录趣二手！" title="登录趣二手！">
+                        <img src="/platform/Public/img/login/bg-forget.png" alt="重置您的密码！" title="重置您的密码！">
                     </div>
                     <div class="right">
-                        <div class="title">用户登录</div>
+                        <div class="title">重置密码</div>
                         <div class="items">
-                            <!-- 登录表单 -->
+                            <!-- 重置密码表单 -->
                             <form action="" method="POST">
                                 <div class="item">
                                     <label class="label" for="username"><i class="icon iconfont icon-people_fill"></i></label>
@@ -43,10 +43,10 @@
                                     <label class="label" for="password"><i class="icon iconfont icon-brush"></i></label>
                                     <input name="password" type="password" class="cont" placeholder="输入密码" autocomplete="off" maxlength="16">
                                 </div>
-                                <input class="submit-Btn" type="submit" value="立即登录">
+                                <input class="submit-Btn" type="submit" value="立即重置">
                                 <div class="tips">
-                                    <a class="link pass-forget" href="./forget.html">忘记密码</a>
-                                    <a class="link register" href="./register.html">免费注册</a>
+                                        <a href="./login.html">返回登录</a>
+                                        <a href="./register.html">免费注册</a>
                                 </div>
                             </form>
                         </div>

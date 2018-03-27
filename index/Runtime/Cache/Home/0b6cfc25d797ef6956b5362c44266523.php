@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,13 +7,13 @@
     <title>后台管理 - 趣二手</title>
 
     <!-- ThirdParty -->
-    <script src="./lib/vue.min.js"></script>
-    <script src="./lib/element.min.js"></script>
-    <link rel="stylesheet" href="./lib/normalize.css">
-    <link rel="stylesheet" href="./lib/element.min.css">
+    <script src="/platform/Public/lib/vue.min.js"></script>
+    <script src="/platform/Public/lib/element.min.js"></script>
+    <link rel="stylesheet" href="/platform/Public/lib/normalize.css">
+    <link rel="stylesheet" href="/platform/Public/lib/element.min.css">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="/platform/Public/css/login/admin.css">
 </head>
 <body>
     <!-- Layout -->
@@ -30,7 +30,7 @@
                 <!-- 侧边栏 -->
                 <el-aside>
                     <div class="userInfo">
-                        <div class="userInfo-pic"><img src="./img/test.jpg" alt="头像" title="头像"></div>
+                        <div class="userInfo-pic"><img src="/platform/Public/img/login/test.jpg" alt="头像" title="头像"></div>
                         <div class="userInfo-name">欢迎您！Admin</div>
                     </div>
                     <el-menu default-active="1">

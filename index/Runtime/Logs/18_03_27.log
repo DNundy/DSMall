@@ -142,3 +142,9 @@ ERR: 非法操作:lib
 [ 2018-03-27T19:46:11+08:00 ] 127.0.0.1 /platform/Home/Login/css/register.css
 ERR: 非法操作:css
 
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/
+ERR: 非法操作:index
+
+[ 2018-03-27T20:34:17+08:00 ] 127.0.0.1 /platform/Home/Login/admin
+ERR: 非法操作:admin
+
