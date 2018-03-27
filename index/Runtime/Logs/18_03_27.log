@@ -142,6 +142,7 @@ ERR: 非法操作:lib
 [ 2018-03-27T19:46:11+08:00 ] 127.0.0.1 /platform/Home/Login/css/register.css
 ERR: 非法操作:css
 
+<<<<<<< HEAD
 [ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/vue.min.js
 ERR: 非法操作:lib
 
@@ -270,4 +271,11 @@ ERR: 非法操作:lib
 
 [ 2018-03-27T20:32:52+08:00 ] 127.0.0.1 /platform/Home/Login/css/admin.css
 ERR: 非法操作:css
+=======
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/
+ERR: 非法操作:index
+
+[ 2018-03-27T20:34:17+08:00 ] 127.0.0.1 /platform/Home/Login/admin
+ERR: 非法操作:admin
+>>>>>>> daf98f63b3d569746172f50572d5e7b87fcf7312
 

@@ -7,6 +7,7 @@
     <title>后台管理 - 趣二手</title>
 
     <!-- ThirdParty -->
+<<<<<<< HEAD
     <script src="./lib/vue.min.js"></script>
     <script src="./lib/element.min.js"></script>
     <link rel="stylesheet" href="./lib/normalize.css">
@@ -14,6 +15,15 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="./css/admin.css">
+=======
+    <script src="/platform/Public/lib/vue.min.js"></script>
+    <script src="/platform/Public/lib/element.min.js"></script>
+    <link rel="stylesheet" href="/platform/Public/lib/normalize.css">
+    <link rel="stylesheet" href="/platform/Public/lib/element.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/platform/Public/css/login/admin.css">
+>>>>>>> daf98f63b3d569746172f50572d5e7b87fcf7312
 </head>
 <body>
     <!-- Layout -->
@@ -30,7 +40,11 @@
                 <!-- 侧边栏 -->
                 <el-aside>
                     <div class="userInfo">
+<<<<<<< HEAD
                         <div class="userInfo-pic"><img src="./img/test.jpg" alt="头像" title="头像"></div>
+=======
+                        <div class="userInfo-pic"><img src="/platform/Public/img/login/test.jpg" alt="头像" title="头像"></div>
+>>>>>>> daf98f63b3d569746172f50572d5e7b87fcf7312
                         <div class="userInfo-name">欢迎您！Admin</div>
                     </div>
                     <el-menu default-active="1">

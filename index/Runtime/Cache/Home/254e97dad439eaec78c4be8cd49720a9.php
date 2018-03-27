@@ -55,6 +55,10 @@
                                     <label class="label" for="email"><i class="icon iconfont icon-order"></i></label>
                                     <input name="email" type="text" class="cont" placeholder="电子邮箱" autocomplete="off">
                                 </div>
+                                <div class="item">
+                                    <img id="img" src="/platform/index.php/Home/Code/index" onclick='this.src=this.src+"?"+Math.random()'  style="width: 200px;height:45px;" />
+                                    <input name="code" type="text" class="cont" placeholder="验证码" autocomplete="off">
+                                </div>
                                 <input class="submit-Btn" type="submit" value="立即注册">
                                 <div class="tips">
                                     <a href="./login.html">已有帐号，去登录</a>
