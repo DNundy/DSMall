@@ -142,3 +142,132 @@ ERR: 非法操作:lib
 [ 2018-03-27T19:46:11+08:00 ] 127.0.0.1 /platform/Home/Login/css/register.css
 ERR: 非法操作:css
 
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/vue.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/fonts/iconfont.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/normalize.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/css/login.css
+ERR: 非法操作:css
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/fonts/iconfont.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/vue.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/css/login.css
+ERR: 非法操作:css
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/normalize.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/normalize.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/lib/fonts/iconfont.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:12+08:00 ] 127.0.0.1 /platform/Home/Login/css/login.css
+ERR: 非法操作:css
+
+[ 2018-03-27T20:32:41+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:41+08:00 ] 127.0.0.1 /platform/Home/Login/css/login.css
+ERR: 非法操作:css
+
+[ 2018-03-27T20:32:41+08:00 ] 127.0.0.1 /platform/Home/Login/lib/vue.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:41+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:41+08:00 ] 127.0.0.1 /platform/Home/Login/lib/fonts/iconfont.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:41+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:41+08:00 ] 127.0.0.1 /platform/Home/Login/lib/normalize.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:41+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:41+08:00 ] 127.0.0.1 /platform/Home/Login/css/login.css
+ERR: 非法操作:css
+
+[ 2018-03-27T20:32:41+08:00 ] 127.0.0.1 /platform/Home/Login/lib/fonts/iconfont.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:42+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:42+08:00 ] 127.0.0.1 /platform/Home/Login/lib/vue.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:42+08:00 ] 127.0.0.1 /platform/Home/Login/lib/fonts/iconfont.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:42+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:42+08:00 ] 127.0.0.1 /platform/Home/Login/lib/normalize.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:42+08:00 ] 127.0.0.1 /platform/Home/Login/css/login.css
+ERR: 非法操作:css
+
+[ 2018-03-27T20:32:42+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:42+08:00 ] 127.0.0.1 /platform/Home/Login/lib/normalize.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:42+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:42+08:00 ] 127.0.0.1 /platform/Home/Login/css/login.css
+ERR: 非法操作:css
+
+[ 2018-03-27T20:32:42+08:00 ] 127.0.0.1 /platform/Home/Login/lib/fonts/iconfont.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:52+08:00 ] 127.0.0.1 /platform/Home/Login/lib/vue.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:52+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.js
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:52+08:00 ] 127.0.0.1 /platform/Home/Login/lib/normalize.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:52+08:00 ] 127.0.0.1 /platform/Home/Login/lib/element.min.css
+ERR: 非法操作:lib
+
+[ 2018-03-27T20:32:52+08:00 ] 127.0.0.1 /platform/Home/Login/css/admin.css
+ERR: 非法操作:css
+
