@@ -18,17 +18,25 @@ class LoginController extends Controller {
     }
 
     public function accept_register(){
-    	$username = $_POST['username'];//获取表单的信息
-    	$password = $_POST['password'];
-    	$phone = $_POST['phone'];
-    	$email = $_POST['email'];
-    	$code = $_POST['code'];
-
+    	//获取表单中的信息
+    	$data = array(
+    		'u_id' => $_POST['num'], 
+    		'u_name' => $_POST['name'],
+    		'u_password' => $_POST['password'],
+    		'u_email' => $_POST['email'],
+    		'u_place' => $_POST['place'],
+    		'u_telphone' => $_POST['phone'],
+    	);
     	$verify = new \Think\Verify();   //判断验证的内置方法
     	if($verify->check($code, $id)){
     		$user = M('user');//连接数据库
-    		$is_user=$user->where("u_id=$username")->select();//查找该用户是否存在
-    		echo $is_user;
+    		$is_user=$user->where("u_id=$num")->select();//查找该用户是否存在
+    		if($is_user==NULL){
+    			$user->add($data);
+    		}
+    		else{
+    			$this->error('该用户已存在!');
+    		}
     	}
     }
 }
