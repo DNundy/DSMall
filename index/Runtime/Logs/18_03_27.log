@@ -279,3 +279,9 @@ ERR: 非法操作:index
 ERR: 非法操作:admin
 >>>>>>> daf98f63b3d569746172f50572d5e7b87fcf7312
 
+[ 2018-03-27T20:38:51+08:00 ] 127.0.0.1 /platform/Home/Login/admin
+ERR: 非法操作:admin
+
+[ 2018-03-27T20:38:55+08:00 ] 127.0.0.1 /platform/Home/admin/admin
+ERR: 无法加载控制器:Admin
+
