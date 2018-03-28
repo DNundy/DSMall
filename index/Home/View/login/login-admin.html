@@ -37,7 +37,7 @@
                                 <label class="label" for="num">
                                     <i class="icon iconfont icon-people_fill"></i>
                                 </label>
-                                <input name="num" type="text" class="cont" placeholder="输入账号 (11位手机号码)" maxlength="11" @blur="checkNum" v-model="formData.num">
+                                <input name="num" type="text" class="cont" placeholder="输入工号" maxlength="6" @blur="checkNum" v-model="formData.num">
                             </div>
                             
                             <!-- 登录密码 -->
@@ -103,11 +103,11 @@
                     codeShow: false
                 },
                 tipsShow: false,
-                phoneReg: /^[1][3,4,5,7,8][0-9]{9}$/
+                phoneReg: /^[0-9]{6}$/
             },
             methods: {
                 checkNum: function () {
-                    this.dataVerify.numShow = (this.formData.num && this.formData.num.length === 11 && this.phoneReg.test(this.formData.num)) ? false : true;
+                    this.dataVerify.numShow = (this.formData.num && this.formData.num.length === 6 && this.phoneReg.test(this.formData.num)) ? false : true;
                 },
                 checkPassword: function () {
                     this.dataVerify.passwordShow = this.formData.password.length >= 6 ? false : true;
