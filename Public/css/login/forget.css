@@ -94,6 +94,9 @@
     font-size: 19px;
     border: 1px solid #FF9900;
 }
+.right .showError{
+    border: 1px solid red;
+}
 .right .error .error-logo{
     display: block;
     float: left;

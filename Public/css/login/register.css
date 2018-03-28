@@ -97,9 +97,6 @@
 .right .showError{
     border: 1px solid red;
 }
-.hideError{
-    border: 1px solid #bdbdbd;
-}
 .right .error .error-logo{
     display: block;
     float: left;

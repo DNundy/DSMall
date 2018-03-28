@@ -52,7 +52,7 @@
                                     <label class="label" for="name">
                                         <i class="icon iconfont icon-people_fill"></i>
                                     </label>
-                                    <input name="name" type="text" class="cont" placeholder="输入昵称" maxlength="16" @blur="checkName" v-model="formData.name">
+                                    <input name="name" type="text" class="cont" placeholder="输入昵称" maxlength="10" @blur="checkName" v-model="formData.name">
                                 </div>
 
                                 <!-- 登录密码 -->
@@ -168,7 +168,6 @@
                     this.dataVerify.numShow = (this.formData.num && this.formData.num.length === 11 && this.phoneReg.test(this.formData.num)) ? false : true;
                 },
                 checkName: function () {
-                    this.dataVerify.nameShow = this.formData.name.length < 6 ? true : false;
                 },
                 checkPassword: function () {
                     this.dataVerify.passwordShow = this.formData.password.length >= 6 ? false : true;
@@ -198,7 +197,7 @@
                             data: this.formData,
                             dataType: 'JSON',
                             success: function (data) {
-                                alert("UploadFile Success");
+                                console.log(data);
                             }
                         });
                     }else{
