@@ -39,14 +39,14 @@ class LoginController extends Controller {
     				'code' => $status,
     				'msg' => $status?'注册成功!':'注册失败',
     			);
-    			return json_encode($res);
+    			return $this->ajaxReturn($res);
     		}
     		else{
     			$res = array(
     				'code' => '-1',
     				'msg' => '该用户已注册!',
     			);
-    			return json_encode($res);
+    			return $this->ajaxReturn($res);
     		}
     	//}
     	/*else{
@@ -54,7 +54,7 @@ class LoginController extends Controller {
     			'code' => '-1',
     			'msg' => '验证码错误!',
     		);
-    		return json_encode($res);
+    		return $this->ajaxReturn($res);
     	}*/
     }
     public function accept_login(){
