@@ -140,14 +140,14 @@
             el: '#app',
             data: {
                 formData: {
-                    num: '',
-                    name: '',
-                    password: '',
-                    repassword: '',
-                    phone: '',
-                    email: '',
-                    place: '',
-                    code: '',
+                    'num': '',
+                    'name': '',
+                    'password': '',
+                    'repassword': '',
+                    'phone': '',
+                    'email': '',
+                    'place': '',
+                    'code': '',
                 },
                 dataVerify: {
                     numShow: false,
@@ -191,14 +191,12 @@
                 submitForm: function() {
                     if(!this.dataVerify.numShow && !this.dataVerify.nameShow && !this.dataVerify.passwordShow && !this.dataVerify.repasswordShow && !this.dataVerify.phoneShow && !this.dataVerify.emailShow && !this.dataVerify.placeShow && !this.dataVerify.codeShow && this.formData.num && this.formData.name && this.formData.password && this.formData.repassword && this.formData.phone && this.formData.email && this.formData.place && this.formData.code){
                         this.tipsShow = false;
-                        console.log(this.formData);
+                        axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
                         let url = '__APP__/Home/Login/accept_register';
-                        axios.post(url, this.formData)
-                            .then(function (res) {
-                                //location.href='';
-                            })
-                            .catch(function (err) {
-                                alert(err);
+                        axios.post(url, this.formData).then(function (res) {
+                                    //location.href='';
+                        }).catch(function (err) {
+                                    alert(err);
                         });
                     }else{
                         this.tipsShow = true;
