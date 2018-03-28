@@ -135,7 +135,11 @@
                             data: this.formData,
                             dataType: 'JSON',
                             success: function (data) {
-                                
+                                if(res.code == '-1'){
+                                    alert(res.msg);
+                                }else{
+                                    location.href = '__APP__/Home/Index/index';
+                                }
                             }
                         });
                     } else {

@@ -19,13 +19,14 @@ class LoginController extends Controller {
     //接收并处理注册页面传来的数据
     public function accept_register(){
     	//获取表单中的信息
-    	$code = $_POST['code'];
-    	$num = $_POST['num'];
         if(empty($_POST['num'])||empty($_POST['name'])
             ||empty($_POST['password'])||empty($_POST['email'])
-            ||empty($_POST['place'])||empty($_POST['phone'])){
+            ||empty($_POST['place'])||empty($_POST['phone'])||empty($_POST['code'])){
             $this->error('参数传递出错!');
         }
+
+        $num = $_POST['num'];
+        $code = $_POST['code'];
     	$data = array(
     		'u_id' => $_POST['num'], //账户
     		'u_name' => $_POST['name'],//姓名
@@ -35,9 +36,9 @@ class LoginController extends Controller {
     		'u_telphone' => $_POST['phone'],//联系电话
     	);
     	$verify = new \Think\Verify();   //判断验证的内置方法
-    	//if($verify->check($code, $id)){
+    	if($verify->check($code, $id)){
     		$user = M('user');//连接数据库
-    		$is_user=$user->where("u_id=$num")->getField();//查找该用户是否存在
+    		$is_user=$user->where("u_id=$num")->getField('id');//查找该用户是否存在
     		if($is_user==NULL){
     			$status = $user->add($data);
     			$res = array(
@@ -53,30 +54,65 @@ class LoginController extends Controller {
     			);
     			return $this->ajaxReturn($res);
     		}
-    	//}
-    	/*else{
+    	}
+    	else{
     		$res = array(
     			'code' => '-1',
     			'msg' => '验证码错误!',
     		);
     		return $this->ajaxReturn($res);
-    	}*/
+    	}
     }
     public function accept_login(){
     	//获取登录页面表单中的信息
+        if(empty($_POST['num'])||empty($_POST['password'])||empty($_POST['code'])){
+            $this->error('参数传递出错!');
+        }
+
+        $num = $_POST['num'];
     	$code = $_POST['code'];
     	$data = array(
     		'u_id' => $_POST['num'], //账户
     		'u_password' => md5($_POST['password']),//用MD5对密码进行加密
     	);
-    	//if($verify->check($code, $id)){
+    	if($verify->check($code, $id)){
     		$user = M('user');//连接数据库
-    		$is_user=$user->where("u_id=$num")->getField();//查找该用户是否存在
-    		var_dump($is_user);exit;
+    		$userInfo=$user->where("u_id=$num")->getField();//查找该用户是否存在
+            if(!empty($userInfo))
+            {
+                $newInfo=$user->where($data)->select();//若用户与密码对应正确
+                if(!empty($newInfo))
+                {
+                    session('num',$num);
+                    session('type','user');
+                    $res = array(
+                        'code' => '0',
+                        'msg' => '登录成功!',
+                    );
+                    return $this->ajaxReturn($res);   
+                }
+                else{
+                    $res = array(
+                        'code' => '-1',
+                        'msg' => '密码错误登录失败!',
+                    );
+                    return $this->ajaxReturn($res);
+                }
+            }else{
+                $res = array(
+                    'code' => '-1',
+                    'msg' => '该用户未注册!',
+                );
+                return $this->ajaxReturn($res);
+            }
     		
-    	//}
-    	/*else{
-    		$this->error('验证码错误!');
-    	}*/
+    	}
+    	else{
+            $res = array(
+                'code' => '-1',
+                'msg' => '验证码错误!',
+            );
+            return $this->ajaxReturn($res);
+        }
     }
 }
