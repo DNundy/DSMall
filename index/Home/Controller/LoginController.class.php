@@ -21,6 +21,11 @@ class LoginController extends Controller {
     	//获取表单中的信息
     	$code = $_POST['code'];
     	$num = $_POST['num'];
+        if(empty($_POST['num'])||empty($_POST['name'])
+            ||empty($_POST['password'])||empty($_POST['email'])
+            ||empty($_POST['place'])||empty($_POST['phone'])){
+            $this->error('参数传递出错!');
+        }
     	$data = array(
     		'u_id' => $_POST['num'], //账户
     		'u_name' => $_POST['name'],//姓名
