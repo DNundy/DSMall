@@ -32,22 +32,29 @@ class LoginController extends Controller {
     	$verify = new \Think\Verify();   //判断验证的内置方法
     	if($verify->check($code, $id)){
     		$user = M('user');//连接数据库
-    		$is_user=$user->where("u_id=$num")->select();//查找该用户是否存在
+    		$is_user=$user->where("u_id=$num")->getField();//查找该用户是否存在
     		if($is_user==NULL){
-    			$status[0] = $user->add($data);//数据库操作成功返回1，失败返回false
-    			$status[0]?$status[1] = '注册成功!':$status[1] = '注册失败';
-    			var_dump($status);
-    			return json_encode($status);    		}
+    			$status = $user->add($data),
+    			$res = array(
+    				'code' => $status,
+    				'msg' => $status?'注册成功!':'注册失败',
+    			);
+    			return json_encode($res);
+    		}
     		else{
-    			$status[0] = -1;
-    			$status[1] = '该用户已注册！';
-    			return json_encode($status);
+    			$res = array(
+    				'code' => '-1',
+    				'msg' => '该用户已注册!',
+    			);
+    			return json_encode($res);
     		}
     	}
     	else{
-    		$status[0] = -1;
-    		$status[1] = '验证码错误！';
-    		return json_encode($status);
+    		$res = array(
+    			'code' => '-1',
+    			'msg' => '验证码错误!',
+    		);
+    		return json_encode($res);
     	}
     }
     public function accept_login(){
@@ -57,11 +64,14 @@ class LoginController extends Controller {
     		'u_id' => $_POST['num'], //账户
     		'u_password' => md5($_POST['password']),//用MD5对密码进行加密
     	);
-    	if($verify->check($code, $id)){
-
-    	}
-    	else{
+    	//if($verify->check($code, $id)){
+    		$user = M('user');//连接数据库
+    		$is_user=$user->where("u_id=$num")->getField();//查找该用户是否存在
+    		var_dump($is_user);exit;
+    		
+    	//}
+    	/*else{
     		$this->error('验证码错误!');
-    	}
+    	}*/
     }
 }
