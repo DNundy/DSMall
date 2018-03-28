@@ -20,6 +20,7 @@ class LoginController extends Controller {
     public function accept_register(){
     	//获取表单中的信息
     	$code = $_POST['code'];
+    	$num = $_POST['num'];
     	$data = array(
     		'u_id' => $_POST['num'], //账户
     		'u_name' => $_POST['name'],//姓名
@@ -28,16 +29,13 @@ class LoginController extends Controller {
     		'u_place' => $_POST['place'],//交易的地址
     		'u_telphone' => $_POST['phone'],//联系电话
     	);
-    	var_dump($_REQUEST);
-    	var_dump($code);
-    	var_dump($data);
     	$verify = new \Think\Verify();   //判断验证的内置方法
     	if($verify->check($code, $id)){
     		$user = M('user');//连接数据库
     		$is_user=$user->where("u_id=$num")->select();//查找该用户是否存在
     		if($is_user==NULL){
-    			$user->add($data);
-    		}
+    			$status = $user->add($data);//数据库操作成功返回1，失败返回false
+    			return $status;    		}
     		else{
     			$this->error('该用户已存在!');
     		}
