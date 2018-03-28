@@ -34,14 +34,20 @@ class LoginController extends Controller {
     		$user = M('user');//连接数据库
     		$is_user=$user->where("u_id=$num")->select();//查找该用户是否存在
     		if($is_user==NULL){
-    			$status = $user->add($data);//数据库操作成功返回1，失败返回false
-    			return $status;    		}
+    			$status[0] = $user->add($data);//数据库操作成功返回1，失败返回false
+    			$status[0]?$status[1] = '注册成功!':$status[1] = '注册失败';
+    			var_dump($status);
+    			return json_encode($status);    		}
     		else{
-    			$this->error('该用户已存在!');
+    			$status[0] = -1;
+    			$status[1] = '该用户已注册！';
+    			return json_encode($status);
     		}
     	}
     	else{
-    		$this->error('验证码错误!');
+    		$status[0] = -1;
+    		$status[1] = '验证码错误！';
+    		return json_encode($status);
     	}
     }
     public function accept_login(){

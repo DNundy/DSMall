@@ -18,4 +18,7 @@ return array(
     'MAIL_PASSWORD' =>'199723s',//邮箱密码
     'MAIL_CHARSET' =>'utf-8',//设置邮件编码
     'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
+    
+    'TMPL_CACHE_ON' => false,//禁止模板编译缓存 
+	'HTML_CACHE_ON' => false,//禁止静态缓存 
 );
