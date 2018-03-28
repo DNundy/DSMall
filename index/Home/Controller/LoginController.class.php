@@ -30,11 +30,11 @@ class LoginController extends Controller {
     		'u_telphone' => $_POST['phone'],//联系电话
     	);
     	$verify = new \Think\Verify();   //判断验证的内置方法
-    	if($verify->check($code, $id)){
+    	//if($verify->check($code, $id)){
     		$user = M('user');//连接数据库
     		$is_user=$user->where("u_id=$num")->getField();//查找该用户是否存在
     		if($is_user==NULL){
-    			$status = $user->add($data),
+    			$status = $user->add($data);
     			$res = array(
     				'code' => $status,
     				'msg' => $status?'注册成功!':'注册失败',
@@ -48,14 +48,14 @@ class LoginController extends Controller {
     			);
     			return json_encode($res);
     		}
-    	}
-    	else{
+    	//}
+    	/*else{
     		$res = array(
     			'code' => '-1',
     			'msg' => '验证码错误!',
     		);
     		return json_encode($res);
-    	}
+    	}*/
     }
     public function accept_login(){
     	//获取登录页面表单中的信息

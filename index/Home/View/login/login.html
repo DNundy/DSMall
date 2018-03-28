@@ -128,7 +128,7 @@
                 submitForm: function () {
                     if (!this.dataVerify.numShow && !this.dataVerify.passwordShow && !this.dataVerify.codeShow && this.formData.num && this.formData.password && this.formData.code) {
                         this.tipsShow = false;
-                        let url = '__APP__/Home/Login/accept_register';
+                        let url = '__APP__/Home/Login/accept_login';
                         $.ajax({
                             url: url,
                             type: 'POST',
