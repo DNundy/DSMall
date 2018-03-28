@@ -43,11 +43,9 @@
     background:url(../../img/login/bg-admin.jpg) no-repeat center 0px;
 }
 .wrap{
-    position: absolute;
-    top: 0;bottom: 0;left: 0;right: 0;
     width: 400px;
-    height: 400px;
-    margin: auto;
+    min-height: 390px;
+    margin: 100px auto 0 auto;
     overflow: hidden;
     background: #fff;
 }
