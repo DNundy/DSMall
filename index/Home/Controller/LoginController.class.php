@@ -63,18 +63,19 @@ class LoginController extends Controller {
     		return $this->ajaxReturn($res);
     	}
     }
+    //处理用户登录页面传递过来的参数
     public function accept_login(){
-    	//获取登录页面表单中的信息
         if(empty($_POST['num'])||empty($_POST['password'])||empty($_POST['code'])){
             $this->error('参数传递出错!');
         }
-
+        //获取登录页面表单中的信息
         $num = $_POST['num'];
     	$code = $_POST['code'];
     	$data = array(
     		'u_id' => $_POST['num'], //账户
     		'u_password' => md5($_POST['password']),//用MD5对密码进行加密
     	);
+        $verify = new \Think\Verify();   //判断验证的内置方法
     	if($verify->check($code, $id)){
     		$user = M('user');//连接数据库
     		$userInfo=$user->where("u_id=$num")->getField();//查找该用户是否存在
@@ -108,6 +109,58 @@ class LoginController extends Controller {
     		
     	}
     	else{
+            $res = array(
+                'code' => '-1',
+                'msg' => '验证码错误!',
+            );
+            return $this->ajaxReturn($res);
+        }
+    }
+    //处理管理员登录页面传递来的参数
+    public function accept_login_admin(){
+        if(empty($_POST['num'])||empty($_POST['password'])||empty($_POST['code'])){
+            $this->error('参数传递出错!ww');
+        }
+
+        $num = $_POST['num'];
+        $code = $_POST['code'];
+        $data = array(
+            'u_id' => $_POST['num'], //账户
+            'u_password' => $_POST['password'],//用MD5对密码进行加密
+        );
+        $verify = new \Think\Verify();   //判断验证的内置方法
+        if($verify->check($code, $id)){
+            $user = M('admin');//连接数据库
+            $adminInfo=$user->where("u_id=$num")->getField();//查找该用户是否存在
+            if(!empty($adminInfo))
+            {
+                $newAdminInfo=$user->where($data)->select();//若用户与密码对应正确
+                if(!empty($newAdminInfo))
+                {
+                    session('num',$num);
+                    session('type','admin');
+                    $res = array(
+                        'code' => '0',
+                        'msg' => '登录成功!',
+                    );
+                    return $this->ajaxReturn($res);   
+                }
+                else{
+                    $res = array(
+                        'code' => '-1',
+                        'msg' => '密码错误登录失败!',
+                    );
+                    return $this->ajaxReturn($res);
+                }
+            }else{
+                $res = array(
+                    'code' => '-1',
+                    'msg' => '对不起，该用户无管理员权限!',
+                );
+                return $this->ajaxReturn($res);
+            }   
+        }
+        else{
             $res = array(
                 'code' => '-1',
                 'msg' => '验证码错误!',
