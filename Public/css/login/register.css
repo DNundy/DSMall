@@ -52,9 +52,9 @@
     width: 400px;
 }
 .left img{
-    width: 46%;
+    width: 50%;
     height: auto;
-    margin: 0 auto;
+    margin: 30px auto;
 }
 
 /* 右侧注册表单 */
@@ -78,6 +78,38 @@
     position: relative;
     border: 1px solid #bdbdbd;
     margin-bottom: 20px;
+}
+.right .item img{
+    width: 358px;
+    height: 38px;
+}
+.right .error{
+    width: 358px;
+    height: 38px;
+    position: relative;
+    color: #FF9900;
+    text-align: center;
+    line-height: 38px;
+    margin-bottom: 20px;
+    font-size: 19px;
+    border: 1px solid #FF9900;
+}
+.right .showError{
+    border: 1px solid red;
+}
+.hideError{
+    border: 1px solid #bdbdbd;
+}
+.right .error .error-logo{
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+    margin: 4px 0 0 4px;
+    color: #fff;
+    background: #FF9900;
 }
 .right .label{
     position: absolute;

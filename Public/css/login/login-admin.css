@@ -80,6 +80,32 @@
     text-align: center;
     border-right: 1px solid #bdbdbd;
 }
+.wrap .item img{
+    width: 358px;
+    height: 38px;
+}
+.wrap .error{
+    width: 358px;
+    height: 38px;
+    position: relative;
+    color: #FF9900;
+    text-align: center;
+    line-height: 38px;
+    margin-bottom: 20px;
+    font-size: 19px;
+    border: 1px solid #FF9900;
+}
+.wrap .error .error-logo{
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+    margin: 4px 0 0 4px;
+    color: #fff;
+    background: #FF9900;
+}
 .wrap .cont{
     padding: 10px 0 10px 50px;
     width: 308px;

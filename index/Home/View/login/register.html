@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,54 +9,108 @@
 
     <!-- ThirdParty -->
     <script src="__PUBLIC__/lib/vue.min.js"></script>
+    <script src="__PUBLIC__/lib/axios.min.js"></script>
     <script src="__PUBLIC__/lib/element.min.js"></script>
     <link rel="stylesheet" href="__PUBLIC__/lib/normalize.css">
     <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
     <link rel="stylesheet" href="__PUBLIC__/lib/fonts/iconfont.css">
-    
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="__PUBLIC__/css/login/register.css">
 </head>
+
 <body>
     <!-- Layout -->
     <div id="app">
         <el-container>
 
             <!-- Header 区域 -->
-            <el-header><span class="logo">趣二手</span></el-header>
+            <el-header>
+                <span class="logo">趣二手</span>
+            </el-header>
 
             <!-- 内容区域 -->
             <el-main>
                 <div class="wrap">
                     <div class="left">
-                            <img src="__PUBLIC__/img/login/bg-register.png" alt="注册趣二手账号！" title="注册趣二手账号！">
+                        <img src="__PUBLIC__/img/login/bg-register.png" alt="注册趣二手账号！" title="注册趣二手账号！">
                     </div>
                     <div class="right">
                         <div class="title">新用户注册</div>
                         <div class="items">
                             <!-- 注册表单 -->
-                            <form action="" method="POST">
-                                <div class="item">
-                                    <label class="label" for="username"><i class="icon iconfont icon-people_fill"></i></label>
-                                    <input name="username" type="text" class="cont" placeholder="输入账号" autocomplete="off">
+                            <form action="" method="POST" name="register">
+                                <!-- 手机号码 -->
+                                <div class="item" :class="{showError:dataVerify.numShow}">
+                                    <label class="label" for="num"><i class="icon iconfont icon-people_fill"></i></label>
+                                    <input name="num" type="text" class="cont" placeholder="输入账号 (11位手机号码)" maxlength="11" @blur="checkNum"
+                                        v-model="formData.num">
                                 </div>
-                                <div class="item">
+
+                                <!-- 用户昵称 -->
+                                <div class="item" :class="{showError:dataVerify.nameShow}">
+                                    <label class="label" for="name">
+                                        <i class="icon iconfont icon-people_fill"></i>
+                                    </label>
+                                    <input name="name" type="text" class="cont" placeholder="输入昵称" maxlength="16" @blur="checkName" v-model="formData.name">
+                                </div>
+
+                                <!-- 登录密码 -->
+                                <div class="item" :class="{showError:dataVerify.passwordShow}">
                                     <label class="label" for="password"><i class="icon iconfont icon-brush"></i></label>
-                                    <input name="password" type="password" class="cont" placeholder="输入密码">
+                                    <input name="password" type="password" class="cont" placeholder="输入密码 (6~16位字符、数字或符号组合)" maxlength="16" @blur="checkPassword"
+                                        v-model="formData.password">
                                 </div>
-                                <div class="item">
-                                    <label class="label" for="password-confirm"><i class="icon iconfont icon-brush_fill"></i></label>
-                                    <input name="repassword" type="password" class="cont" placeholder="重复密码">
+
+                                <!-- 重复密码 -->
+                                <div class="item" :class="{showError:dataVerify.repasswordShow}">
+                                    <label class="label" for="repassword">
+                                        <i class="icon iconfont icon-brush_fill"></i>
+                                    </label>
+                                    <input name="repassword" id="repassword" type="password" class="cont" placeholder="重复密码 (6~16位字符、数字或符号组合)" maxlength="16" @blur="checkRepassword"
+                                        v-model="formData.repassword">
                                 </div>
-                                <div class="item">
-                                    <label class="label" for="phone"><i class="icon iconfont icon-mobilephone_fill"></i></label>
-                                    <input name="phone" type="text" class="cont" placeholder="联系方式" autocomplete="off">
+
+                                <!-- 联系方式 -->
+                                <div class="item" :class="{showError:dataVerify.phoneShow}">
+                                    <label class="label" for="phone">
+                                        <i class="icon iconfont icon-mobilephone_fill"></i>
+                                    </label>
+                                    <input name="phone" type="text" class="cont" placeholder="联系方式" @blur="checkPhone" v-model="formData.phone">
                                 </div>
-                                <div class="item">
-                                    <label class="label" for="email"><i class="icon iconfont icon-order"></i></label>
-                                    <input name="email" type="text" class="cont" placeholder="电子邮箱" autocomplete="off">
+
+                                <!-- 电子邮箱 -->
+                                <div class="item" :class="{showError:dataVerify.emailShow}">
+                                    <label class="label" for="email">
+                                        <i class="icon iconfont icon-order"></i>
+                                    </label>
+                                    <input name="email" type="text" class="cont" placeholder="电子邮箱" @blur="checkEmail" v-model="formData.email">
                                 </div>
-                                <input class="submit-Btn" type="submit" value="立即注册">
+
+                                <!-- 常用地址 -->
+                                <div class="item" :class="{showError:dataVerify.placeShow}">
+                                    <label class="label" for="place">
+                                        <i class="icon iconfont icon-order"></i>
+                                    </label>
+                                    <input name="place" type="text" class="cont" placeholder="常用地址" @blur="checkPlace" v-model="formData.place">
+                                </div>
+
+                                <!-- 验证码图片 -->
+                                <div class="item"><img src="__APP__/Home/Code/index" onclick='this.src=this.src+"?"+Math.random()'/></div>
+
+                                <!-- 输入验证码 -->
+                                <div class="item" :class="{showError:dataVerify.codeShow}">
+                                    <label class="label" for="code">
+                                        <i class="icon iconfont icon-order"></i>
+                                    </label>
+                                    <input name="code" type="text" class="cont" placeholder="验证码" maxlength="5" @blur="checkCode" v-model="formData.code">
+                                </div>
+
+                                <!-- 错误提示框 -->
+                                <div class="error" v-show="tipsShow"><span class="error-logo"> ！</span>请输入完整且正确的表单信息</div>
+
+                                <!-- 注册按钮 -->
+                                <input class="submit-Btn" type="button" value="立即注册" @click="submitForm">
                                 <div class="tips">
                                     <a href="./login.html">已有帐号，去登录</a>
                                 </div>
@@ -67,10 +122,10 @@
 
             <!-- Footer区域 -->
             <el-footer>
-                <div class="links"> 
-                    <a target="_blank" class="link" href="http://www.xiyou.edu.cn/">西邮官网</a> | 
-                    <a target="_blank" class="link" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> | 
-                    <a target="_blank" class="link" href="http://gr.xupt.edu.cn/">研究生院</a> | 
+                <div class="links">
+                    <a target="_blank" class="link" href="http://www.xiyou.edu.cn/">西邮官网</a> |
+                    <a target="_blank" class="link" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> |
+                    <a target="_blank" class="link" href="http://gr.xupt.edu.cn/">研究生院</a> |
                     <a class="link" href="./login-admin.html">管理员登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
@@ -84,10 +139,74 @@
         var app = new Vue({
             el: '#app',
             data: {
+                formData: {
+                    num: '',
+                    name: '',
+                    password: '',
+                    repassword: '',
+                    phone: '',
+                    email: '',
+                    place: '',
+                    code: '',
+                },
+                dataVerify: {
+                    numShow: false,
+                    nameShow: false,
+                    passwordShow: false,
+                    repasswordShow: false,
+                    phoneShow: false,
+                    emailShow: false,
+                    placeShow: false,
+                    codeShow: false,
+                },
+                tipsShow: false,
+                phoneReg: /^[1][3,4,5,7,8][0-9]{9}$/,
+                emailReg: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
             },
             methods: {
+                checkNum: function () {
+                    this.dataVerify.numShow = (this.formData.num && this.formData.num.length === 11 && this.phoneReg.test(this.formData.num)) ? false : true;
+                },
+                checkName: function () {
+                    this.dataVerify.nameShow = this.formData.name.length < 6 ? true : false;
+                },
+                checkPassword: function () {
+                    this.dataVerify.passwordShow = this.formData.password.length >= 6 ? false : true;
+                },
+                checkRepassword: function () {
+                    this.dataVerify.repasswordShow = this.formData.password !== this.formData.repassword ? true : false;
+                },
+                checkPhone: function () {
+                    this.dataVerify.phoneShow = (this.formData.phone && this.formData.phone.length === 11 && this.phoneReg.test(this.formData.phone)) ? false : true;
+                },
+                checkEmail: function () {
+                    this.dataVerify.emailShow = this.emailReg.test(this.formData.email) ? false : true;
+                },
+                checkCode: function() {
+                    this.dataVerify.codeShow = (this.formData.code && this.formData.code.length === 5) ? false : true;
+                },
+                checkPlace: function () {
+                    console.log(([][[]] + [])[+!![]] + ([] + {})[!+[] + !![]]);
+                },
+                submitForm: function() {
+                    if(!this.dataVerify.numShow && !this.dataVerify.nameShow && !this.dataVerify.passwordShow && !this.dataVerify.repasswordShow && !this.dataVerify.phoneShow && !this.dataVerify.emailShow && !this.dataVerify.placeShow && !this.dataVerify.codeShow && this.formData.num && this.formData.name && this.formData.password && this.formData.repassword && this.formData.phone && this.formData.email && this.formData.place && this.formData.code){
+                        this.tipsShow = false;
+                        console.log(this.formData);
+                        let url = '__APP__/Home/Login/accept_register';
+                        axios.post(url, this.formData)
+                            .then(function (res) {
+                                //location.href='';
+                            })
+                            .catch(function (err) {
+                                alert(err);
+                        });
+                    }else{
+                        this.tipsShow = true;
+                    }
+                }
             }
         })
     </script>
 </body>
+
 </html>
