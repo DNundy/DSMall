@@ -195,8 +195,15 @@
                             type: 'POST',
                             data: this.formData,
                             dataType: 'JSON',
-                            success: function (data) {
-                                console.log(data);
+                            success: function (res) {
+                                if(res.code == '-1'){
+                                    alert(res.msg);
+                                }else{
+                                    //location.href = '__APP__/Home/index/index';
+                                }
+                            },
+                            error: function(err) {
+                                alert('网络错误，请稍后重试！');
                             }
                         });
                     }else{
