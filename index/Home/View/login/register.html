@@ -9,7 +9,7 @@
 
     <!-- ThirdParty -->
     <script src="__PUBLIC__/lib/vue.min.js"></script>
-    <script src="__PUBLIC__/lib/axios.min.js"></script>
+    <script src="__PUBLIC__/lib/jquery.min.js"></script>
     <script src="__PUBLIC__/lib/element.min.js"></script>
     <link rel="stylesheet" href="__PUBLIC__/lib/normalize.css">
     <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
@@ -191,13 +191,16 @@
                 submitForm: function() {
                     if(!this.dataVerify.numShow && !this.dataVerify.nameShow && !this.dataVerify.passwordShow && !this.dataVerify.repasswordShow && !this.dataVerify.phoneShow && !this.dataVerify.emailShow && !this.dataVerify.placeShow && !this.dataVerify.codeShow && this.formData.num && this.formData.name && this.formData.password && this.formData.repassword && this.formData.phone && this.formData.email && this.formData.place && this.formData.code){
                         this.tipsShow = false;
-                        axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
                         let url = '__APP__/Home/Login/accept_register';
-                        axios.post(url, this.formData).then(function (res) {
-                                    //location.href='';
-                        }).catch(function (err) {
-                                    alert(err);
-                        });
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            data: this.formData,
+                            dataType: 'JSON',
+                            success: function (data) {
+                                alert("UploadFile Success");
+                            }
+                        }); 
                     }else{
                         this.tipsShow = true;
                     }
