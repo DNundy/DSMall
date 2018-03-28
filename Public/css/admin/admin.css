@@ -59,3 +59,17 @@
 .userInfo-name{
     text-align: center;
 }
+
+/* Main区域 */
+.crumbs{
+    float: left;
+    width: 30%;
+    color: #606266 !important;
+    font-size: 18px;
+    font-family: '楷体';
+    font-weight: 600;
+}
+.serach{
+    float: right;
+    width: 30%;
+}
