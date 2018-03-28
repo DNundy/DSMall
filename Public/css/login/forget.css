@@ -50,11 +50,12 @@
 .left{
     float: left;
     width: 400px;
+    overflow: hidden;
 }
 .left img{
-    width: 66%;
+    width: 70%;
     height: auto;
-    margin: 0 auto;
+    margin: 70px auto 0 auto;
 }
 
 /* 右侧登录表单 */
