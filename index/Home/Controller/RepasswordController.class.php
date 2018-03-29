@@ -16,7 +16,7 @@ class RepasswordController extends Controller {
     		'u_email' => $_POST['email'],//用MD5对密码进行加密
     	);
 	    $verify = new \Think\Verify();   //判断验证的内置方法
-	    //if($verify->check($code, $id)){
+	    if($verify->check($code, $id)){
 			$user=M('User');//连接数据库
 			$userInfo=$user->where("u_id=$num")->getField();//查找该用户是否存在
 			if(!empty($userInfo)){
@@ -38,13 +38,13 @@ class RepasswordController extends Controller {
                 );
                 return $this->ajaxReturn($res);
 			}
-		/*}else{
+		}else{
             $res = array(
                 'code' => '-1',
                 'msg' => '验证码错误!',
             );
             return $this->ajaxReturn($res);
-        }*/
+        }
 								
 	}
 	public function sendMail($num, $password){
