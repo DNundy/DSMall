@@ -9,7 +9,7 @@ class AdminController extends Controller {
     public function findNotice(){//显示系统发布的所有通知
     	$notice = M('Notice');
     	$adminNotice = $notice->where()->select();
-    	return $this->ajaxReturn($adminNotice);
+    	return $this->ajaxReturn($adminNotice,'JSON');
     }
     public function addNotice(){
 
@@ -50,5 +50,10 @@ class AdminController extends Controller {
     		'msg' => $status?'删除消息成功!':'删除消息失败',
     	);
     	return $this->ajaxReturn($res);
+    }
+    public function countNotice(){
+    	$notice = M('Notice');
+    	$count = $notice->where()->count('n_id');
+    	return $this->ajaxReturn($count);
     }
 }
