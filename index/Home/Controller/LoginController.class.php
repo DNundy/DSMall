@@ -125,13 +125,13 @@ class LoginController extends Controller {
         $num = $_POST['num'];
         $code = $_POST['code'];
         $data = array(
-            'u_id' => $_POST['num'], //账户
-            'u_password' => $_POST['password'],//用MD5对密码进行加密
+            'a_id' => $_POST['num'], //账户
+            'a_password' => $_POST['password'],//用MD5对密码进行加密
         );
         $verify = new \Think\Verify();   //判断验证的内置方法
         if($verify->check($code, $id)){
             $user = M('admin');//连接数据库
-            $adminInfo=$user->where("u_id=$num")->getField();//查找该用户是否存在
+            $adminInfo=$user->where("a_id=$num")->getField();//查找该用户是否存在
             if(!empty($adminInfo))
             {
                 $newAdminInfo=$user->where($data)->select();//若用户与密码对应正确
