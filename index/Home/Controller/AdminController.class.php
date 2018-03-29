@@ -9,7 +9,8 @@ class AdminController extends Controller {
     public function findNotice(){//显示系统发布的所有通知
     	$notice = M('Notice');
     	$adminNotice = $notice->where()->select();
-    	return $this->ajaxReturn($adminNotice,'JSON');
+    	$res['msg'] = $adminNotice;
+    	return $this->ajaxReturn($res);
     }
     public function addNotice(){
 
