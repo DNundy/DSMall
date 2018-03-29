@@ -77,3 +77,13 @@
     float: right;
     width: 40%;
 }
+/* 消息列表 */
+.infoItem{
+    width: 92%;
+    height: 120px;
+    border-bottom: 1px #ddd dashed;
+    clear: both;
+}
+.infoItem:nth-child(2){
+    margin-top: 80px;
+}
