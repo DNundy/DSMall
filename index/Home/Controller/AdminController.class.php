@@ -55,6 +55,7 @@ class AdminController extends Controller {
     public function countNotice(){
     	$notice = M('Notice');
     	$count = $notice->where()->count('n_id');
-    	return $this->ajaxReturn($count);
+    	$res['msg'] =$count;
+    	return $this->ajaxReturn($res);
     }
 }
