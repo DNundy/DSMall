@@ -116,8 +116,13 @@
                     </el-breadcrumb>
 
                     <!-- 消息列表 -->
-                    <div class="infoItem" v-for="item in bbb">
-
+                    <div class="infoItem" v-for="item in infoData">
+                        <div class="infoTitle">
+                            <i>{{item.n_title}}</i>
+                            <el-button type="danger" plain @click="deleteInfo">删除</el-button>
+                        </div>
+                        <div class="infoCont">{{item.n_content}}</div>
+                        <div class="infoTime">{{item.n_time}}</div>
                     </div>
                 </el-main>
 
@@ -144,9 +149,7 @@
             data: {
                 crumbsTitle: '查看通知',
                 serachCont: '',
-                infoData: [],
-                aaa: [1,2,3],
-                bbb: [{aa:1},{bb:2}]
+                infoData: {},
             },
             methods: {
                 toAdmin: function () {
@@ -169,16 +172,35 @@
                 },
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
+                },
+                deleteInfo: function() {
+                    if(confirm('您确定要删除该通知？')){
+                        let url = '__APP__/Home/admin/deleteNotice';
+                        let _that = this;
+                        $.ajax({
+                            url: url,
+                            type: 'GET',
+                            data: '',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                
+                            },
+                            error: function () {
+                                alert('网络 或者 服务器出错,请稍后重试！');
+                            }
+                        });
+                    }
                 }
             },
             mounted: function () {
                 let url = '__APP__/Home/admin/findNotice';
+                let _that = this;
                 $.ajax({
                     url: url,
                     type: 'GET',
                     dataType: 'JSON',
                     success: function (data) {
-                        this.infoData = data;
+                        _that.infoData = data.msg;
                     },
                     error: function() {
                         alert('网络 或者 服务器出错,请稍后重试！');
