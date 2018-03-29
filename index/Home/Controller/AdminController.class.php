@@ -39,7 +39,7 @@ class AdminController extends Controller {
     	if(empty($_GET['id'])){
     		$res = array(
     			'code' => $status,
-    			'msg' => $status?'注册成功!':'注册失败',
+    			'msg' => $status?'删除成功!':'删除失败',
     		);
     		return $this->ajaxReturn($res);
     	}
