@@ -9,6 +9,7 @@
 
     <!-- ThirdParty -->
     <script src="__PUBLIC__/lib/vue.min.js"></script>
+    <script src="__PUBLIC__/lib/jquery.min.js"></script>
     <script src="__PUBLIC__/lib/element.min.js"></script>
     <link rel="stylesheet" href="__PUBLIC__/lib/normalize.css">
     <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
@@ -113,6 +114,11 @@
                         <el-breadcrumb-item><span @click="toInfo">系统通知</span></el-breadcrumb-item>
                         <el-breadcrumb-item>{{crumbsTitle}}</el-breadcrumb-item>
                     </el-breadcrumb>
+
+                    <!-- 消息列表 -->
+                    <div class="infoItem" v-for="item in bbb">
+
+                    </div>
                 </el-main>
 
             </el-container>
@@ -138,29 +144,46 @@
             data: {
                 crumbsTitle: '查看通知',
                 serachCont: '',
+                infoData: [],
+                aaa: [1,2,3],
+                bbb: [{aa:1},{bb:2}]
             },
             methods: {
-                toAdmin: function (params) {
+                toAdmin: function () {
                     location.href = '__APP__/Home/admin/admin';
                 },
                 toGoods: function () {
                     location.href = '__APP__/Home/admin/admin-goods';
                 },
-                toUser: function (params) {
+                toUser: function () {
                     location.href = '__APP__/Home/admin/admin-user';
                 },
-                toType: function (params) {
+                toType: function () {
                     location.href = '__APP__/Home/admin/admin-type';
                 },
-                toInfo: function (params) {
+                toInfo: function () {
                     location.href = '__APP__/Home/admin/admin-info';
                 },
-                toSet: function (params) {
+                toSet: function () {
                     location.href = '__APP__/Home/admin/admin-set';
                 },
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
                 }
+            },
+            mounted: function () {
+                let url = '__APP__/Home/admin/findNotice';
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    dataType: 'JSON',
+                    success: function (data) {
+                        this.infoData = data;
+                    },
+                    error: function() {
+                        alert('网络 或者 服务器出错,请稍后重试！');
+                    }
+                });
             }
         })
     </script>
