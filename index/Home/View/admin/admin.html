@@ -159,24 +159,27 @@
                 serachCont  : '',
             },
             methods: {
-                toAdmin :function () {
-                    location.href = './admin';
+                toAdmin: function (params) {
+                    location.href = '__APP__/Home/admin/admin';
                 },
-                toUser  :function (params) {
-                    location.href = './admin-user';
+                toGoods: function () {
+                    location.href = '__APP__/Home/admin/admin-goods';
                 },
-                toGoods :function (params) {
-                    location.href = './admin-goods';
+                toUser: function (params) {
+                    location.href = '__APP__/Home/admin/admin-user';
                 },
-                toType  :function (params) {
-                    location.href = './admin-type';
+                toType: function (params) {
+                    location.href = '__APP__/Home/admin/admin-type';
                 },
-                toInfo  :function (params) {
-                    location.href = './admin-info';
+                toInfo: function (params) {
+                    location.href = '__APP__/Home/admin/admin-info';
                 },
-                toSet   :function (params) {
-                    location.href = './admin-set';
+                toSet: function (params) {
+                    location.href = '__APP__/Home/admin/admin-set';
                 },
+                crumbsSet: function (crumbs) {
+                    this.crumbsTitle = crumbs;
+                }
             }
         })
     </script>
