@@ -87,9 +87,9 @@
                                     <span slot="title">系统通知</span>
                                 </div>
                             </template>
-                            <el-menu-item index="5-1" @click="crumbsSet('查看通知')">查看通知</el-menu-item>
+                            <el-menu-item index="5-1" @click="crumbsSet('查看通知'),showDel(false)">查看通知</el-menu-item>
                             <el-menu-item index="5-2" @click="crumbsSet('发布通知')">发布通知</el-menu-item>
-                            <el-menu-item index="5-3" @click="crumbsSet('删除通知')">删除通知</el-menu-item>
+                            <el-menu-item index="5-3" @click="crumbsSet('删除通知'),showDel(true)">删除通知</el-menu-item>
                         </el-submenu>
 
                         <el-submenu index="6">
@@ -119,7 +119,7 @@
                     <div class="infoItem" v-for="item in infoData">
                         <div class="infoTitle">
                             <i>{{item.n_title}}</i>
-                            <el-button type="danger" plain @click="deleteInfo">删除</el-button>
+                            <el-button type="danger" :data-id="'__APP__/Home/admin/deleteNotice?id='+item.n_id" plain @click="deleteInfo($event)" v-show="showDelBtn">删除</el-button>
                         </div>
                         <div class="infoCont">{{item.n_content}}</div>
                         <div class="infoTime">{{item.n_time}}</div>
@@ -138,7 +138,6 @@
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
-
         </el-container>
     </div>
 
@@ -150,6 +149,8 @@
                 crumbsTitle: '查看通知',
                 serachCont: '',
                 infoData: {},
+                showDelBtn: false,
+                showRelease: false
             },
             methods: {
                 toAdmin: function () {
@@ -170,42 +171,69 @@
                 toSet: function () {
                     location.href = '__APP__/Home/admin/admin-set';
                 },
+                showDel: function (bool) {
+                    this.showDelBtn = bool;
+                },
+                showReleaseDiv: function () {
+                },
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
                 },
-                deleteInfo: function() {
-                    if(confirm('您确定要删除该通知？')){
-                        let url = '__APP__/Home/admin/deleteNotice';
+                getInfo: function() {
+                    let url = '__APP__/Home/admin/findNotice';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.infoData = data.msg;
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+                deleteInfo: function(e) {
+                    this.$confirm('您确定要删除该条 系统通知 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let delId = e.target.getAttribute('data-id');
                         let _that = this;
+                        console.log(delId);
                         $.ajax({
-                            url: url,
+                            url: delId,
                             type: 'GET',
-                            data: '',
                             dataType: 'JSON',
                             success: function (data) {
-                                
+                                data.code == 1
+                                ? _that.$message({
+                                    message: data.msg,
+                                    type: 'success'
+                                })
+                                : _that.$message({
+                                    message: data.msg,
+                                    type: 'error'
+                                });
+                                _that.getInfo();
                             },
                             error: function () {
-                                alert('网络 或者 服务器出错,请稍后重试！');
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
                             }
                         });
-                    }
+                    });
                 }
             },
             mounted: function () {
-                let url = '__APP__/Home/admin/findNotice';
-                let _that = this;
-                $.ajax({
-                    url: url,
-                    type: 'GET',
-                    dataType: 'JSON',
-                    success: function (data) {
-                        _that.infoData = data.msg;
-                    },
-                    error: function() {
-                        alert('网络 或者 服务器出错,请稍后重试！');
-                    }
-                });
+                this.getInfo();
             }
         })
     </script>
