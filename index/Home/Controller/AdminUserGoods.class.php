@@ -3,3 +3,6 @@
 namespace Home\Controller;
 use Think\Controller;
 class AdminUserGoodsController extends Controller {
+	public function index(){
+		
+	}
