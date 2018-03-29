@@ -28,6 +28,36 @@ class AdminUserGoodsController extends Controller {
 	}
 
 	public function deleteType(){
+		if(empty($_GET['type'])){
+			$res = array(
+    			'code' => '-1',
+    			'msg' => '参数传递失败',
+    		);
+    		return $this->ajaxReturn($res);
+		}
+		$goodsType = $_GET['type'];
+		M()->startTrans();//开启事务
+		$type = M('Type');
+		$statusOne = $type->where("t_type=$goodsType")->delete();
+		$goods = M('Goods');
+		$statusTwo =  $goods->where("g_type=$goodsType")->delete();
+		var_dump($statusTwo);
+		if($statusOne&&$statusTwo){
+			M()->commit();
+			$res = array(
+    			'code' => '0',
+    			'msg' => '删除成功',
+    		);
+    		return $this->ajaxReturn($res);
+		} else {
+			M()->rollback();
+			$res = array(
+    			'code' => '-1',
+    			'msg' => '删除失败',
+    		);
+    		return $this->ajaxReturn($res);
+		}
+
 
 	}
 	public function findGoods(){
