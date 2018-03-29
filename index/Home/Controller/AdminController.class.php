@@ -51,4 +51,9 @@ class AdminController extends Controller {
     	);
     	return $this->ajaxReturn($res);
     }
+    public function countNotice(){
+    	$notice = M('Notice');
+    	$count = $notice->where()->count('n_id');
+    	return $this->ajaxReturn($count);
+    }
 }
