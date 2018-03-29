@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="__PUBLIC__/lib/fonts/iconfont.css">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="__PUBLIC__/css/admin/admin-set.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/admin/admin-goods.css">
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="userInfo-name">欢迎您！Admin</div>
                     </div>
-                    <el-menu default-active="6-1" unique-opened="true"  collapse-transition="false">
+                    <el-menu default-active="3-1" unique-opened="true"  collapse-transition="false">
                         <el-menu-item index="1">
                             <div @click="toAdmin">
                                 <i class="el-icon-location"></i>
@@ -58,13 +58,13 @@
 
                         <el-submenu index="3">
                             <template slot="title">
-                                <div @click="toGoods">
+                                <div>
                                     <i class="el-icon-menu"></i>
                                     <span slot="title">商品管理</span>
                                 </div>
                             </template>
-                            <el-menu-item index="3-1">查看商品</el-menu-item>
-                            <el-menu-item index="3-2">删除商品</el-menu-item>
+                            <el-menu-item index="3-1" @click="crumbsSet('查看商品')">查看商品</el-menu-item>
+                            <el-menu-item index="3-2" @click="crumbsSet('删除商品')">删除商品</el-menu-item>
                         </el-submenu>
 
                         <el-submenu index="4">
@@ -93,14 +93,14 @@
 
                         <el-submenu index="6">
                             <template slot="title">
-                                <div>
+                                <div @click="toSet">
                                     <i class="el-icon-setting"></i>
                                     <span slot="title">其它设置</span>
                                 </div>
                             </template>
-                            <el-menu-item index="6-1" @click="crumbsSet('其它设置')">其它设置</el-menu-item>
-                            <el-menu-item index="6-2" @click="crumbsSet('其它设置')">其它设置</el-menu-item>
-                            <el-menu-item index="6-3" @click="crumbsSet('其它设置')">其它设置</el-menu-item>
+                            <el-menu-item index="6-1">其它设置</el-menu-item>
+                            <el-menu-item index="6-2">其它设置</el-menu-item>
+                            <el-menu-item index="6-3">其它设置</el-menu-item>
                         </el-submenu>
                     </el-menu>
                 </el-aside>
@@ -110,9 +110,14 @@
                     <!-- 面包屑导航 -->
                     <el-breadcrumb separator-class="el-icon-arrow-right" class="crumbs">
                         <el-breadcrumb-item><span @click="toAdmin">趣二手</span></el-breadcrumb-item>
-                        <el-breadcrumb-item><span @click="toSet">其它设置</span></el-breadcrumb-item>
+                        <el-breadcrumb-item><span @click="toGoods">商品管理</span></el-breadcrumb-item>
                         <el-breadcrumb-item>{{crumbsTitle}}</el-breadcrumb-item>
                     </el-breadcrumb>
+
+                    <!-- 搜索区域 -->
+                    <el-input placeholder="输入想要搜索的 商品名 !" class="serach" v-model="serachCont">
+                        <i slot="suffix" class="el-input__icon el-icon-search"></i>
+                    </el-input>
                 </el-main>
 
             </el-container>
@@ -136,7 +141,7 @@
         var app = new Vue({
             el: '#app',
             data: {
-                crumbsTitle: '其他设置',
+                crumbsTitle: '查看商品',
                 serachCont: '',
             },
             methods: {

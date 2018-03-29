@@ -31,60 +31,70 @@
                 <!-- 侧边栏 -->
                 <el-aside>
                     <div class="userInfo">
-                        <div class="userInfo-pic"><img src="__PUBLIC__/img/admin/test.jpg" alt="头像" title="头像"></div>
+                        <div class="userInfo-pic">
+                            <img src="__PUBLIC__/img/admin/test.jpg" alt="头像" title="头像" @click="toAdmin">
+                        </div>
                         <div class="userInfo-name">欢迎您！Admin</div>
                     </div>
-                    <el-menu default-active="1" unique-opened="true">
+                    <el-menu default-active="1" unique-opened="true" collapse-transition="false">
                         <el-menu-item index="1">
-                            <i class="el-icon-location"></i>
-                            <span slot="title">系统概要</span>
+                            <div>
+                                <i class="el-icon-location"></i>
+                                <span slot="title">系统概要</span>
+                            </div>
                         </el-menu-item>
                         <el-submenu index="2">
                             <template slot="title">
-                                <i class="el-icon-service"></i>
-                                <span slot="title">用户管理</span>
+                                <div @click="toUser">
+                                    <i class="el-icon-service"></i>
+                                    <span slot="title">用户管理</span>
+                                </div>
                             </template>
                             <el-menu-item index="2-1">查看用户</el-menu-item>
-                            <el-menu-item index="2-2">添加用户</el-menu-item>
-                            <el-menu-item index="2-3">禁用用户</el-menu-item>
+                            <el-menu-item index="2-2">禁用用户</el-menu-item>
                         </el-submenu>
 
                         <el-submenu index="3">
                             <template slot="title">
-                                <i class="el-icon-menu"></i>
-                                <span slot="title">商品管理</span>
+                                <div  @click="toGoods">
+                                    <i class="el-icon-menu"></i>
+                                    <span slot="title">商品管理</span>
+                                </div>
                             </template>
                             <el-menu-item index="3-1">查看商品</el-menu-item>
-                            <el-menu-item index="3-2">添加商品</el-menu-item>
-                            <el-menu-item index="3-3">删除商品</el-menu-item>
+                            <el-menu-item index="3-2">删除商品</el-menu-item>
                         </el-submenu>
 
                         <el-submenu index="4">
                             <template slot="title">
-                                <i class="el-icon-document"></i>
-                                <span slot="title">分类管理</span>
+                                <div @click="toType">
+                                    <i class="el-icon-document"></i>
+                                    <span slot="title">分类管理</span>
+                                </div>
                             </template>
                             <el-menu-item index="4-1">查看分类</el-menu-item>
                             <el-menu-item index="4-2">添加分类</el-menu-item>
-                            <el-menu-item index="4-3">修改分类</el-menu-item>
-                            <el-menu-item index="4-4">删除分类</el-menu-item>
+                            <el-menu-item index="4-3">删除分类</el-menu-item>
                         </el-submenu>
 
                         <el-submenu index="5">
                             <template slot="title">
-                                <i class="el-icon-info"></i>
-                                <span slot="title">系统通知</span>
+                                <div @click="toInfo">
+                                    <i class="el-icon-info"></i>
+                                    <span slot="title">系统通知</span>
+                                </div>
                             </template>
                             <el-menu-item index="5-1">查看通知</el-menu-item>
                             <el-menu-item index="5-2">发布通知</el-menu-item>
-                            <el-menu-item index="5-3">修改通知</el-menu-item>
-                            <el-menu-item index="5-4">删除通知</el-menu-item>
+                            <el-menu-item index="5-3">删除通知</el-menu-item>
                         </el-submenu>
 
                         <el-submenu index="6">
                             <template slot="title">
-                                <i class="el-icon-setting"></i>
-                                <span slot="title">其它设置</span>
+                                <div @click="toSet">
+                                    <i class="el-icon-setting"></i>
+                                    <span slot="title">其它设置</span>
+                                </div>
                             </template>
                             <el-menu-item index="6-1">其它设置</el-menu-item>
                             <el-menu-item index="6-2">其它设置</el-menu-item>
@@ -98,26 +108,26 @@
                     <!-- 面包屑导航 -->
                     <el-breadcrumb separator-class="el-icon-arrow-right" class="crumbs">
                         <el-breadcrumb-item>趣二手</el-breadcrumb-item>
-                        <el-breadcrumb-item>系统概要</el-breadcrumb-item>
+                        <el-breadcrumb-item>{{crumbsTitle}}</el-breadcrumb-item>
                     </el-breadcrumb>
 
                     <el-container class="summary">
-                        <div class="summary-item">
+                        <div class="summary-item" @click="toUser">
                             <i class="el-icon-service"></i>
                             <div class="summary-num">2200人</div>
                             <div class="summary-name">普通用户</div>
                         </div>
-                        <div class="summary-item">
+                        <div class="summary-item" @click="toType">
                             <i class="el-icon-document"></i>
                             <div class="summary-num">23类</div>
                             <div class="summary-name">商品类别</div>
                         </div>
-                        <div class="summary-item">
+                        <div class="summary-item" @click="toGoods">
                             <i class="el-icon-menu"></i>
                             <div class="summary-num">1100个</div>
                             <div class="summary-name">所有物品</div>
                         </div>
-                        <div class="summary-item">
+                        <div class="summary-item" @click="toInfo">
                             <i class="el-icon-info"></i>
                             <div class="summary-num">24条</div>
                             <div class="summary-name">系统通知</div>
@@ -145,9 +155,28 @@
         var app = new Vue({
             el: '#app',
             data: {
-                serachCont: ''
+                crumbsTitle : '系统概要',
+                serachCont  : '',
             },
             methods: {
+                toAdmin :function () {
+                    location.href = './admin';
+                },
+                toUser  :function (params) {
+                    location.href = './admin-user';
+                },
+                toGoods :function (params) {
+                    location.href = './admin-goods';
+                },
+                toType  :function (params) {
+                    location.href = './admin-type';
+                },
+                toInfo  :function (params) {
+                    location.href = './admin-info';
+                },
+                toSet   :function (params) {
+                    location.href = './admin-set';
+                },
             }
         })
     </script>
