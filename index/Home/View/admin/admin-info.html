@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台管理 - 趣二手</title>
+
+    <!-- ThirdParty -->
+    <script src="__PUBLIC__/lib/vue.min.js"></script>
+    <script src="__PUBLIC__/lib/element.min.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/lib/normalize.css">
+    <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/lib/fonts/iconfont.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/css/admin/admin-info.css">
+</head>
+
+<body>
+    <!-- Layout -->
+    <div id="app">
+        <el-container>
+            <!-- Header 区域 -->
+            <el-header>
+                <div class="logo">趣二手 后台管理系统</div>
+                <el-button type="warning" plain>退出登录</el-button>
+            </el-header>
+
+            <el-container>
+
+                <!-- 侧边栏 -->
+                <el-aside>
+                    <div class="userInfo">
+                        <div class="userInfo-pic">
+                            <img src="__PUBLIC__/img/admin/test.jpg" alt="头像" title="头像" @click="toAdmin">
+                        </div>
+                        <div class="userInfo-name">欢迎您！Admin</div>
+                    </div>
+                    <el-menu default-active="5-1" unique-opened="true"  collapse-transition="false">
+                        <el-menu-item index="1">
+                            <div @click="toAdmin">
+                                <i class="el-icon-location"></i>
+                                <span slot="title">系统概要</span>
+                            </div>
+                        </el-menu-item>
+                        <el-submenu index="2">
+                            <template slot="title">
+                                <div @click="toUser">
+                                    <i class="el-icon-service"></i>
+                                    <span slot="title">用户管理</span>
+                                </div>
+                            </template>
+                            <el-menu-item index="2-1">查看用户</el-menu-item>
+                            <el-menu-item index="2-2">禁用用户</el-menu-item>
+                        </el-submenu>
+
+                        <el-submenu index="3">
+                            <template slot="title">
+                                <div @click="toGoods">
+                                    <i class="el-icon-menu"></i>
+                                    <span slot="title">商品管理</span>
+                                </div>
+                            </template>
+                            <el-menu-item index="3-1">查看商品</el-menu-item>
+                            <el-menu-item index="3-2">删除商品</el-menu-item>
+                        </el-submenu>
+
+                        <el-submenu index="4">
+                            <template slot="title">
+                                <div @click="toType">
+                                    <i class="el-icon-document"></i>
+                                    <span slot="title">分类管理</span>
+                                </div>
+                            </template>
+                            <el-menu-item index="4-1">查看分类</el-menu-item>
+                            <el-menu-item index="4-2">添加分类</el-menu-item>
+                            <el-menu-item index="4-3">删除分类</el-menu-item>
+                        </el-submenu>
+
+                        <el-submenu index="5">
+                            <template slot="title">
+                                <div>
+                                    <i class="el-icon-info"></i>
+                                    <span slot="title">系统通知</span>
+                                </div>
+                            </template>
+                            <el-menu-item index="5-1" @click="crumbsSet('查看通知')">查看通知</el-menu-item>
+                            <el-menu-item index="5-2" @click="crumbsSet('发布通知')">发布通知</el-menu-item>
+                            <el-menu-item index="5-3" @click="crumbsSet('删除通知')">删除通知</el-menu-item>
+                        </el-submenu>
+
+                        <el-submenu index="6">
+                            <template slot="title">
+                                <div @click="toSet">
+                                    <i class="el-icon-setting"></i>
+                                    <span slot="title">其它设置</span>
+                                </div>
+                            </template>
+                            <el-menu-item index="6-1">其它设置</el-menu-item>
+                            <el-menu-item index="6-2">其它设置</el-menu-item>
+                            <el-menu-item index="6-3">其它设置</el-menu-item>
+                        </el-submenu>
+                    </el-menu>
+                </el-aside>
+
+                <!-- 内容区域 -->
+                <el-main>
+                    <!-- 面包屑导航 -->
+                    <el-breadcrumb separator-class="el-icon-arrow-right" class="crumbs">
+                        <el-breadcrumb-item><span @click="toAdmin">趣二手</span></el-breadcrumb-item>
+                        <el-breadcrumb-item><span @click="toInfo">系统通知</span></el-breadcrumb-item>
+                        <el-breadcrumb-item>{{crumbsTitle}}</el-breadcrumb-item>
+                    </el-breadcrumb>
+                </el-main>
+
+            </el-container>
+
+            <!-- Footer 区域 -->
+            <el-footer>
+                <div class="links">
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span class="footer-mid">您是第&nbsp;&nbsp;
+                        <span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span>
+                    <a href="../login/login">用户登录</a>
+                </div>
+                <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
+            </el-footer>
+
+        </el-container>
+    </div>
+
+    <!-- VUE -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                crumbsTitle: '查看通知',
+                serachCont: '',
+            },
+            methods: {
+                toAdmin: function (params) {
+                    location.href = './admin';
+                },
+                toGoods: function () {
+                    location.href = './admin-goods';
+                },
+                toUser: function (params) {
+                    location.href = './admin-user';
+                },
+                toType: function (params) {
+                    location.href = './admin-type';
+                },
+                toInfo: function (params) {
+                    location.href = './admin-info';
+                },
+                toSet: function (params) {
+                    location.href = './admin-set';
+                },
+                crumbsSet: function (crumbs) {
+                    this.crumbsTitle = crumbs;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
