@@ -116,8 +116,8 @@
                     </el-breadcrumb>
 
                     <!-- 消息列表 -->
-                    <div class="infoItem" v-for="item in bbb">
-
+                    <div class="infoItem" v-for="item in infoData">
+                        {{item.n_id}}
                     </div>
                 </el-main>
 
@@ -145,8 +145,6 @@
                 crumbsTitle: '查看通知',
                 serachCont: '',
                 infoData: [],
-                aaa: [1,2,3],
-                bbb: [{aa:1},{bb:2}]
             },
             methods: {
                 toAdmin: function () {
@@ -178,7 +176,12 @@
                     type: 'GET',
                     dataType: 'JSON',
                     success: function (data) {
-                        this.infoData = data;
+                        for (let index = 0; index < data.length; index++) {
+                            console.log(data[index]);
+                            
+                            //let element = JSON.parse(data[index]);
+                            //this.infoData.push(element);
+                        }
                     },
                     error: function() {
                         alert('网络 或者 服务器出错,请稍后重试！');
