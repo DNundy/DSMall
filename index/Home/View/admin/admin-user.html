@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="__PUBLIC__/css/admin/admin.css">
 </head>
+
 <body>
     <!-- Layout -->
     <div id="app">
@@ -31,10 +33,12 @@
                 <!-- 侧边栏 -->
                 <el-aside>
                     <div class="userInfo">
-                        <div class="userInfo-pic"><img src="__PUBLIC__/img/admin/test.jpg" alt="头像" title="头像"></div>
+                        <div class="userInfo-pic">
+                            <img src="__PUBLIC__/img/admin/test.jpg" alt="头像" title="头像">
+                        </div>
                         <div class="userInfo-name">欢迎您！Admin</div>
                     </div>
-                    <el-menu default-active="1" unique-opened="true">
+                    <el-menu default-active="1">
                         <el-menu-item index="1">
                             <i class="el-icon-location"></i>
                             <span slot="title">系统概要</span>
@@ -98,31 +102,16 @@
                     <!-- 面包屑导航 -->
                     <el-breadcrumb separator-class="el-icon-arrow-right" class="crumbs">
                         <el-breadcrumb-item>趣二手</el-breadcrumb-item>
-                        <el-breadcrumb-item>系统概要</el-breadcrumb-item>
+                        <el-breadcrumb-item>用户管理</el-breadcrumb-item>
+                        <el-breadcrumb-item>查看用户</el-breadcrumb-item>
                     </el-breadcrumb>
 
-                    <el-container class="summary">
-                        <div class="summary-item">
-                            <i class="el-icon-service"></i>
-                            <div class="summary-num">2200人</div>
-                            <div class="summary-name">普通用户</div>
-                        </div>
-                        <div class="summary-item">
-                            <i class="el-icon-document"></i>
-                            <div class="summary-num">23类</div>
-                            <div class="summary-name">商品类别</div>
-                        </div>
-                        <div class="summary-item">
-                            <i class="el-icon-menu"></i>
-                            <div class="summary-num">1100个</div>
-                            <div class="summary-name">所有物品</div>
-                        </div>
-                        <div class="summary-item">
-                            <i class="el-icon-info"></i>
-                            <div class="summary-num">24条</div>
-                            <div class="summary-name">系统通知</div>
-                        </div>
-                    </el-container>
+                    <!-- 搜索区域 -->
+                    <el-input placeholder="输入想要搜索的 用户名 或者 账号 !" class="serach" v-model="serachCont">
+                        <i slot="suffix" class="el-input__icon el-icon-search"></i>
+                    </el-input>
+
+
                 </el-main>
 
             </el-container>
@@ -131,7 +120,8 @@
             <el-footer>
                 <div class="links">
                     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                    <span class="footer-mid">您是第&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span>
+                    <span class="footer-mid">您是第&nbsp;&nbsp;
+                        <span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span>
                     <a href="../login/login">用户登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
@@ -152,4 +142,5 @@
         })
     </script>
 </body>
+
 </html>

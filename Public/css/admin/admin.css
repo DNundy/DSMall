@@ -62,7 +62,6 @@
 
 /* Main区域 */
 .crumbs{
-    float: left;
     width: 30%;
     margin-top: 10px;
     color: #606266 !important;
@@ -73,4 +72,42 @@
 .serach{
     float: right;
     width: 30%;
+}
+.summary{
+    width: 85%;
+    padding: 60px 20px;
+    display: flex;
+    display: -webkit-flex;/* safari */
+    justify-content: space-between;
+}
+.summary-item{
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 130px;
+    padding-left: 40px;
+    border-radius: 6px;
+    background:rgba(240, 240, 240, .6);
+}
+.summary-item i{
+    color: #409EFF;
+    font-size: 40px;
+    line-height: 130px;
+}
+.summary-item div{
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+.summary-item .summary-num{
+    font-size: 14px;
+    color: #666;
+    position: absolute;
+    top: 30px;right: 40px;
+}
+.summary-item .summary-name{
+    font-size: 16px;
+    position: absolute;
+    bottom: 30px;right: 40px;
 }
