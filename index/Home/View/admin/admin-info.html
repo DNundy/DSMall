@@ -87,9 +87,9 @@
                                     <span slot="title">系统通知</span>
                                 </div>
                             </template>
-                            <el-menu-item index="5-1" @click="crumbsSet('查看通知'),showDel(false)">查看通知</el-menu-item>
+                            <el-menu-item index="5-1" @click="crumbsSet('查看通知')">查看通知</el-menu-item>
                             <el-menu-item index="5-2" @click="crumbsSet('发布通知')">发布通知</el-menu-item>
-                            <el-menu-item index="5-3" @click="crumbsSet('删除通知'),showDel(true)">删除通知</el-menu-item>
+                            <el-menu-item index="5-3" @click="crumbsSet('删除通知')">删除通知</el-menu-item>
                         </el-submenu>
 
                         <el-submenu index="6">
@@ -116,10 +116,23 @@
                     </el-breadcrumb>
 
                     <!-- 消息列表 -->
-                    <div class="infoItem" v-for="item in infoData">
+                    <div class="infoItem" v-for="item in infoData" v-show="showStatus">
                         <div class="infoTitle">
                             <i>{{item.n_title}}</i>
-                            <el-button type="danger" :data-id="'__APP__/Home/admin/deleteNotice?id='+item.n_id" plain @click="deleteInfo($event)" v-show="showDelBtn">删除</el-button>
+                        </div>
+                        <div class="infoCont">{{item.n_content}}</div>
+                        <div class="infoTime">{{item.n_time}}</div>
+                    </div>
+
+                    <!-- 发布通知 -->
+                    <div class="infoItem" v-for="item in infoData" v-show="releaseStatus">
+                    </div>
+
+                    <!-- 删除通知 -->
+                    <div class="infoItem" v-for="item in infoData" v-show="delStatus">
+                        <div class="infoTitle">
+                            <i>{{item.n_title}}</i>
+                            <el-button type="danger" :data-id="'__APP__/Home/admin/deleteNotice?id='+item.n_id" plain @click="deleteInfo($event)">删除</el-button>
                         </div>
                         <div class="infoCont">{{item.n_content}}</div>
                         <div class="infoTime">{{item.n_time}}</div>
@@ -149,8 +162,11 @@
                 crumbsTitle: '查看通知',
                 serachCont: '',
                 infoData: {},
-                showDelBtn: false,
-                showRelease: false
+
+                /* 列表状态 */
+                showStatus: true,
+                releaseStatus: false,
+                delStatus: false,
             },
             methods: {
                 toAdmin: function () {
@@ -178,6 +194,19 @@
                 },
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
+                    switch (crumbs) {
+                        case '查看通知':
+                            this.showStatus = true; this.releaseStatus = this.delStatus = false;
+                            break;
+                        case '发布通知':
+                            this.releaseStatus = true; this.showStatus = this.delStatus = false;
+                            break;
+                        case '删除通知':
+                            this.delStatus = true; this.showStatus = this.releaseStatus = false;
+                            break;
+                        default:
+                            break;
+                    }
                 },
                 getInfo: function() {
                     let url = '__APP__/Home/admin/findNotice';
@@ -230,6 +259,9 @@
                             }
                         });
                     });
+                },
+                releaseInfo: function() {
+                    
                 }
             },
             mounted: function () {
