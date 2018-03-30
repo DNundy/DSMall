@@ -168,4 +168,11 @@ class LoginController extends Controller {
             return $this->ajaxReturn($res);
         }
     }
+
+    public function out_login(){
+        if(isset($_SESSION['num']) && $_SESSION['num'] != ''){
+            session_unset();
+            session_destroy();
+        }
+    }
 }
