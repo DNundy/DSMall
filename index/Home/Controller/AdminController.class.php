@@ -14,7 +14,7 @@ class AdminController extends AdminCommonController {
     }
     public function addNotice(){
 
-    	if(empty($_POST['title'])||empty($_POST['cotent'])){
+    	if(empty($_POST['title'])||empty($_POST['content'])){
     		$res = array(
     			'code' => '-1',
     			'msg' => '请输入完整通知内容！',
@@ -23,7 +23,7 @@ class AdminController extends AdminCommonController {
     	}
     	$data = array(
     		'n_title' => $_POST['title'],
-    		'n_content' => $_POST['cotent'],
+    		'n_content' => $_POST['content'],
     		'n_time' => date("Y-m-d H:i:s"),
     	);
     	$notice = M('Notice');

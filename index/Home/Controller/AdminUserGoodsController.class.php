@@ -71,7 +71,7 @@ class AdminUserGoodsController extends AdminCommonController {
 		} else {
    			$res = array(
     			'code' => '-1',
-    			'msg' => '查询失败',
+    			'msg' => '暂时还没有商品哦QAQ!',
     		);
     		return $this->ajaxReturn($res);	
 		}
