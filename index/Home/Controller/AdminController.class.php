@@ -14,10 +14,10 @@ class AdminController extends AdminCommonController {
     }
     public function addNotice(){
 
-    	if(empty($_POST['title'])||$_POST['cotent']){
+    	if(empty($_POST['title'])||empty($_POST['cotent'])){
     		$res = array(
     			'code' => '-1',
-    			'msg' => '参数传递出错',
+    			'msg' => '请输入完整通知内容！',
     		);
     		return $this->ajaxReturn($res);
     	}
