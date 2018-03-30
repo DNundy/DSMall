@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,14 +124,23 @@
                     </div>
 
                     <!-- 发布通知 -->
-                    <div class="infoItem" v-for="item in infoData" v-show="releaseStatus">
+                    <div class="releaseWrap" v-show="releaseStatus">
+                        <el-input v-model="releaseData.title"  class="releaseTitle">
+                            <template slot="prepend">通知标题</template>
+                        </el-input>
+                        <el-input v-model="releaseData.cotent" placeholder="快来说点什么吧~" class="releaseCont" type="textarea" :rows="4">
+                            <template slot="prepend">通知内容</template>
+                        </el-input>
+                        <el-button type="primary" plain @click="releaseForm"  class="releaseBtn">立即发布</el-button>
                     </div>
 
                     <!-- 删除通知 -->
                     <div class="infoItem" v-for="item in infoData" v-show="delStatus">
                         <div class="infoTitle">
                             <i>{{item.n_title}}</i>
-                            <el-button type="danger" :data-id="'__APP__/Home/admin/deleteNotice?id='+item.n_id" plain @click="deleteInfo($event)">删除</el-button>
+                            <el-button type="danger" :data-id="'__APP__/Home/admin/deleteNotice?id='+item.n_id" plain @click="deleteInfo($event)">
+                                <span :data-id="'__APP__/Home/admin/deleteNotice?id='+item.n_id">删除</span>
+                            </el-button>
                         </div>
                         <div class="infoCont">{{item.n_content}}</div>
                         <div class="infoTime">{{item.n_time}}</div>
@@ -161,14 +169,23 @@
             data: {
                 crumbsTitle: '查看通知',
                 serachCont: '',
-                infoData: {},
-
-                /* 列表状态 */
+                
+                /* 通知功能 状态 */
                 showStatus: true,
                 releaseStatus: false,
                 delStatus: false,
+                
+                /* 发布通知 数据 */
+                releaseData: {
+                    title: '',
+                    cotent: ''
+                },
+                
+                /* 查看删除 数据 */
+                infoData: {},
             },
             methods: {
+                // 路由方法（脑残了，可以传参写一个方法的！！！其实还可以合并下面的导航的~汗）
                 toAdmin: function () {
                     location.href = '__APP__/Home/admin/admin';
                 },
@@ -187,11 +204,8 @@
                 toSet: function () {
                     location.href = '__APP__/Home/admin/admin-set';
                 },
-                showDel: function (bool) {
-                    this.showDelBtn = bool;
-                },
-                showReleaseDiv: function () {
-                },
+
+                // 导航方法
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
                     switch (crumbs) {
@@ -208,6 +222,8 @@
                             break;
                     }
                 },
+
+                // 获取通知
                 getInfo: function() {
                     let url = '__APP__/Home/admin/findNotice';
                     let _that = this;
@@ -226,6 +242,47 @@
                         }
                     });
                 },
+
+                // 发布通知
+                releaseForm: function () {
+                    this.$confirm('您确定要发布该条 系统通知 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let url = '__APP__/Home/admin/addNotice';
+                        let _that = this;
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            dataType: 'JSON',
+                            data: _that.releaseData,
+                            success: function (data) {
+                                if(data.code=='-1'){
+                                    _that.$message({
+                                            message: data.msg,
+                                            type: 'error'
+                                    });
+                                }else{
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getInfo();
+                                    _that.crumbsSet('查看通知');
+                                }
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    });
+                },
+
+                // 删除通知
                 deleteInfo: function(e) {
                     this.$confirm('您确定要删除该条 系统通知 ？', '提示', {
                         confirmButtonText: '确定',
@@ -240,16 +297,18 @@
                             type: 'GET',
                             dataType: 'JSON',
                             success: function (data) {
-                                data.code == 1
-                                ? _that.$message({
-                                    message: data.msg,
-                                    type: 'success'
-                                })
-                                : _that.$message({
-                                    message: data.msg,
-                                    type: 'error'
-                                });
-                                _that.getInfo();
+                                if( data.code == 1 ){
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getInfo();
+                                }else{
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'error'
+                                    });
+                                }
                             },
                             error: function () {
                                 _that.$message({
@@ -259,12 +318,10 @@
                             }
                         });
                     });
-                },
-                releaseInfo: function() {
-                    
                 }
             },
             mounted: function () {
+                // 挂载实例、初始化列表
                 this.getInfo();
             }
         })
