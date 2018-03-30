@@ -24,6 +24,13 @@ class AdminUserInfoController extends AdminCommonController {
 		}
 	}
 	public function exitUser(){
-
+		if(empty($_GET['id'])){
+			$res = array(
+    			'code' => '-1',
+    			'msg' => '找不见该用户哟！系统宝宝很委屈！',
+    		);
+    		return $this->ajaxReturn($res);
+		}
+		$user = M('User');
 	}
 }
