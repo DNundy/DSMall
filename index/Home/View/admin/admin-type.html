@@ -9,6 +9,7 @@
 
     <!-- ThirdParty -->
     <script src="__PUBLIC__/lib/vue.min.js"></script>
+    <script src="__PUBLIC__/lib/jquery.min.js"></script>
     <script src="__PUBLIC__/lib/element.min.js"></script>
     <link rel="stylesheet" href="__PUBLIC__/lib/normalize.css">
     <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
@@ -25,7 +26,7 @@
             <!-- Header 区域 -->
             <el-header>
                 <div class="logo">趣二手 后台管理系统</div>
-                <el-button type="warning" plain>退出登录</el-button>
+                <el-button type="warning" plain @click="loginOut">退出登录</el-button>
             </el-header>
 
             <el-container>
@@ -113,6 +114,30 @@
                         <el-breadcrumb-item><span @click="toType">分类管理</span></el-breadcrumb-item>
                         <el-breadcrumb-item>{{crumbsTitle}}</el-breadcrumb-item>
                     </el-breadcrumb>
+
+                    <!-- 查看分类 -->
+                    <div v-show="showStatus" class="typeWrap">
+                        <!-- v-for="item in typeData" -->
+                        <span @click="getType"><el-button plain>1</el-button></span>
+                    </div>
+
+                    <!-- 添加分类 -->
+                    <div v-show="addStatus" class="typeWrap">
+                        <el-input v-model="addTypeData" class="addName">
+                            <template slot="prepend">商品类别</template>
+                        </el-input>
+                        <el-button type="primary" plain @click="addType" class="addBtn">立即添加</el-button>
+                    </div>
+
+                    <!-- 删除分类 -->
+                    <div v-show="delStatus" class="typeWrap">
+                        <span>
+                            <i class="el-icon-remove-outline" :data-id="'__APP__/Home/AdminUserGoods/deleteType?id='" @click="deleteType($event)"></i>
+                            <el-button plain @click="deleteType($event)"  :data-id="'__APP__/Home/AdminUserGoods/deleteType?id='">
+                                <span  @click="deleteType($event)" :data-id="'__APP__/Home/AdminUserGoods/deleteType?id='"></span>
+                            </el-button>
+                        </span>
+                    </div>
                 </el-main>
 
             </el-container>
@@ -137,7 +162,14 @@
             el: '#app',
             data: {
                 crumbsTitle: '查看分类',
-                serachCont: '',
+                typeData: {},
+
+                addTypeData: '',
+
+                // 列表展示状态
+                showStatus: true,
+                addStatus: false,
+                delStatus: false,
             },
             methods: {
                 toAdmin: function (params) {
@@ -160,7 +192,148 @@
                 },
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
+                    switch (crumbs) {
+                        case '查看分类':
+                            this.showStatus = true; this.addStatus = this.delStatus = false;
+                            break;
+                        case '添加分类':
+                            this.addStatus = true; this.showStatus = this.delStatus = false;
+                            break;
+                        case '删除分类':
+                            this.delStatus = true; this.showStatus = this.addStatus = false;
+                            break;
+                        default:
+                            break;
+                    }
+                },
+
+                //退出登录
+                loginOut: function () {
+                    this.$confirm('您确定要 退出登录 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let url = '__APP__/Home/Login/out_login';
+                        let _that = this;
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                location.href = '__APP__/Home/login/admin-login';
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }).catch(() => {
+                        return;
+                    });
+                },
+
+                // 获取分类
+                getType: function () {
+                    let url = '__APP__/Home/AdminUserGoods/findType';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.typeData = data.msg;
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                // 添加类型
+                addType: function () {
+                    this.$confirm('您确定要添加该 类型 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let url = '__APP__/Home/AdminUserGoods/addType';
+                        let _that = this;
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            dataType: 'JSON',
+                            data: _that.addTypeData,
+                            success: function (data) {
+                                if (data.code == '-1') {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'error'
+                                    });
+                                } else {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getInfo();
+                                    _that.addTypeData = '';
+                                }
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    });
+                },
+
+                // 删除分类
+                deleteType: function (e) {
+                    this.$confirm('您确定要删除该 分类 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let delId = e.target.getAttribute('data-id');
+                        let _that = this;
+                        $.ajax({
+                            url: delId,
+                            type: 'GET',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                if (data.code == 1) {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getInfo();
+                                } else {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'error'
+                                    });
+                                }
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    });
                 }
+            },
+            mounted: function () {
+                // 挂载实例、初始化列表
+                this.getType();
             }
         })
     </script>
