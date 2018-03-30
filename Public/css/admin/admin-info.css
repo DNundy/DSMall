@@ -108,3 +108,20 @@
     margin-top: 15px;
     margin-right: 50px;
 }
+/* 发布样式 */
+.releaseWrap{
+    margin-top: 30px;
+    width: 80%;
+    padding: 20px;
+    border: none;
+}
+.releaseTitle{
+    margin: 10px;
+}
+.releaseCont{
+    margin: 10px;
+    text-indent: 2em;
+}
+.releaseBtn{
+    margin: 10px 0;
+}
