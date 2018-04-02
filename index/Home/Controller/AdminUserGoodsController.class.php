@@ -7,8 +7,8 @@ class AdminUserGoodsController extends AdminCommonController {
 		$type = M('type');
 		$typeGoods = $type->where()->select();
 		$res = array(
-			'code' = > '0',
-			'msg' = > $typeGoods
+			'code' => '0',
+			'msg' => $typeGoods,
 		);
 		return $this->ajaxReturn($res);
 	}
