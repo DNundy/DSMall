@@ -8,6 +8,7 @@
 
     <!-- ThirdParty -->
     <script src="__PUBLIC__/lib/vue.min.js"></script>
+    <script src="__PUBLIC__/lib/jquery.min.js"></script>
     <script src="__PUBLIC__/lib/element.min.js"></script>
     <link rel="stylesheet" href="__PUBLIC__/lib/normalize.css">
     <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
@@ -23,7 +24,7 @@
             <!-- Header 区域 -->
             <el-header>
                 <div class="logo">趣二手 后台管理系统</div>
-                <el-button type="warning" plain>退出登录</el-button>
+                <el-button type="warning" plain @click="loginOut">退出登录</el-button>
             </el-header>
 
             <el-container>
@@ -179,6 +180,34 @@
                 },
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
+                },
+
+                //退出登录
+                loginOut: function () {
+                    this.$confirm('您确定要 退出登录 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let url = '__APP__/Home/Login/out_login';
+                        let _that = this;
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                location.href = '__APP__/Home/login/admin-login';
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }).catch(() => {
+                        return;
+                    });
                 }
             }
         })

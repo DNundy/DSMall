@@ -77,3 +77,60 @@
     float: right;
     width: 40%;
 }
+
+/* 消息列表 */
+.goodsItem{
+    width: 92%;
+    min-height: 120px;
+    border-bottom: 1px #ddd dashed;
+    padding: 10px 20px;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+}
+.goodsItem:nth-child(2){
+    margin-top: 60px;
+}
+.goodsTitle{
+    height: 60px;
+}
+.goodsTitle i{
+    line-height: 60px;
+    font-size: 20px;
+    font-family: '楷体';
+}
+.goodsCont{
+    text-indent: 2em;
+    line-height: 25px;
+    overflow: hidden;
+    position: relative;
+}
+.goodsImg{
+    width: 130px;
+    height: 130px;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.detailBtn{
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+}
+.delBtn{
+    margin-right: 30px;
+}
+.goodsDetail{
+    position: absolute;
+    width: 70%;
+    height: 40px;
+    left: 160px;
+    bottom: 0px;
+    text-align: left;
+    text-indent: 0em;
+}
+.goodsDetail i{
+    color: #409EFF;
+}
+.DetailName{
+    margin-right: 30px;
+}

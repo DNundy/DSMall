@@ -9,6 +9,7 @@
 
     <!-- ThirdParty -->
     <script src="__PUBLIC__/lib/vue.min.js"></script>
+    <script src="__PUBLIC__/lib/jquery.min.js"></script>
     <script src="__PUBLIC__/lib/element.min.js"></script>
     <link rel="stylesheet" href="__PUBLIC__/lib/normalize.css">
     <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
@@ -25,7 +26,7 @@
             <!-- Header 区域 -->
             <el-header>
                 <div class="logo">趣二手 后台管理系统</div>
-                <el-button type="warning" plain>退出登录</el-button>
+                <el-button type="warning" plain @click="loginOut">退出登录</el-button>
             </el-header>
 
             <el-container>
@@ -118,6 +119,33 @@
                     <el-input placeholder="输入想要搜索的 商品名 !" class="serach" v-model="serachCont">
                         <i slot="suffix" class="el-input__icon el-icon-search"></i>
                     </el-input>
+
+                    <div v-for="item in listData" class="goodsItem">
+                        <div class="goodsTitle">
+                            <i>{{item.g_name}}</i>
+                            <el-button class="delBtn" type="danger" size="mini" :data-id="'__APP__/Home/AdminUserGoods/deleteGoods?id='+item.g_id" plain
+                                @click="delGoods($event)" v-show="listStatus">
+                                <span @click="delGoods($event)" :data-id="'__APP__/Home/AdminUserGoods/deleteGoods?id='+item.g_id">删除</span>
+                            </el-button>
+                        </div>
+                        <div class="goodsCont">
+                            <img src="__PUBLIC__/img/admin/test.jpg" :alt="item.g_name" :title="item.g_name" class="goodsImg">
+                            {{item.g_construct}}
+                            <div class="goodsDetail">
+                                    <i class="el-icon-tickets"></i>
+                                    <span class="DetailName">类型：{{item.g_price}}</span>
+                                    <i class="el-icon-goods"></i>
+                                    <span class="DetailName">价格：{{item.g_price}}</span>
+                                    <i class="el-icon-service"></i>
+                                    <span class="DetailName">发布人：{{item.g_price}}</span>
+                                    <i class="el-icon-time"></i>
+                                    <span class="DetailName">发布时间：{{item.g_price}}</span>
+                            </div>
+                            <el-button class="detailBtn" type="primary" size="mini" :data-id="'__APP__/Home//?id='+item.g_id" plain @click="toGoods($event)">
+                                <span :data-id="'__APP__/Home//?id='+item.g_id">详细信息</span>
+                            </el-button>
+                        </div>
+                    </div>
                 </el-main>
 
             </el-container>
@@ -143,8 +171,14 @@
             data: {
                 crumbsTitle: '查看商品',
                 serachCont: '',
+                
+                // 列表状态（展示、删除）
+                listStatus: false,
+                // 列表数据
+                listData: {},
             },
             methods: {
+                //路由方法
                 toAdmin: function (params) {
                     location.href = '__APP__/Home/admin/admin';
                 },
@@ -163,9 +197,118 @@
                 toSet: function (params) {
                     location.href = '__APP__/Home/admin/admin-set';
                 },
+
+                // 导航方法
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
-                }
+                    switch (crumbs) {
+                        case '删除商品':
+                            this.listStatus = true;
+                            break;
+                        default:
+                            this.listStatus = false;
+                            break;
+                    }
+                },
+
+                //退出登录
+                loginOut: function () {
+                    this.$confirm('您确定要 退出登录 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let url = '__APP__/Home/Login/out_login';
+                        let _that = this;
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                location.href = '__APP__/Home/login/admin-login';
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }).catch(() => {
+                        return;
+                    });
+                },
+
+                // 获取商品
+                getInfo: function () {
+                    let url = '__APP__/Home/AdminUserGoods/findGoods';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if( data.code == '0' ){
+                                _that.listData = data.msg;
+                            } else if( data.code == '-1' ){
+                                _that.$message({
+                                    message: data.msg,
+                                        type: 'warning'
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+                toGoods: function() {
+                    
+                },
+                // 删除商品
+                delGoods: function (e) {
+                    this.$confirm('您确定要删除该 物品 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let delId = e.target.getAttribute('data-id');
+                        let _that = this;
+                        $.ajax({
+                            url: delId,
+                            type: 'GET',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                if (data.code == 1) {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getInfo();
+                                } else {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'error'
+                                    });
+                                }
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }).catch(()=>{
+                        return;
+                    });
+                },
+            },
+            mounted: function () {
+                // 挂载实例、初始化列表
+                this.getInfo();
             }
         })
     </script>
