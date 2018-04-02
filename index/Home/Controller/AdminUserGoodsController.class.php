@@ -59,9 +59,11 @@ class AdminUserGoodsController extends AdminCommonController {
 
 
 	}
-	public function findGoods(){
-		$goods = M('Goods');
-		$goodsInfo = $goods->where()->select();
+	public function findGoods(){//显示所有商品
+		//$goods = M('Goods');
+		//$goodsInfo = $goods->where()->order('n_id desc')->select();
+		$goodsInfo = table('goods a,user b')->where('a.u_id = b.u_id')->select();
+		var_dump($goodsInfo);exit;
 		if(!empty($goodsInfo)){
     		$res = array(
     			'code' => '0',
@@ -76,7 +78,7 @@ class AdminUserGoodsController extends AdminCommonController {
     		return $this->ajaxReturn($res);	
 		}
 	}
-	public function deleteGoods(){
+	public function deleteGoods(){//管理员删除商品
 		if(empty($_GET['id'])){
 			$res = array(
     			'code' => '-1',

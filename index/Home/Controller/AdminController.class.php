@@ -52,10 +52,21 @@ class AdminController extends AdminCommonController {
     	);
     	return $this->ajaxReturn($res);
     }
-    public function countNotice(){
+    public function count(){
     	$notice = M('Notice');
-    	$count = $notice->where()->count('n_id');
-    	$res['msg'] =$count;
+    	$countNotice = $notice->where()->count('n_id');
+    	$user = M('User');
+        $countUser = $user->where()->count('u_id');
+        $goods = M('Goods');
+        $countGoods = $goods->where()->count('g_id');
+        $type = M('type');
+        $countType = $type->where()->count('t_id');
+        $res = array(
+            'countNotice' => $countNotice,
+            'countUser' => $countUser,
+            'countGoods' => $countGoods,
+            'countType' => $countType,
+        );
     	return $this->ajaxReturn($res);
     }
 }

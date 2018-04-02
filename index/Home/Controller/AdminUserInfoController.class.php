@@ -32,5 +32,22 @@ class AdminUserInfoController extends AdminCommonController {
     		return $this->ajaxReturn($res);
 		}
 		$user = M('User');
+		$result = $user->where("u_id=$num")->setField('u_status','-1');
+		if($result!=false)
+		{
+			$res = array(
+                'code' => '0',
+                'msg' => '冻结该用户成功!',
+            );
+            return $this->ajaxReturn($res);
+
+		}
+		else{
+			$res = array(
+                'code' => '-1',
+                'msg' => '冻结该用户失败!',
+            );
+            return $this->ajaxReturn($res);
+		}	
 	}
 }
