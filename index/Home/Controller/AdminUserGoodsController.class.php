@@ -6,7 +6,11 @@ class AdminUserGoodsController extends AdminCommonController {
 	public function findType(){
 		$type = M('type');
 		$typeGoods = $type->where()->select();
-		return $this->ajaxReturn($typeGoods);
+		$res = array(
+			'code' = > '0',
+			'msg' = > $typeGoods
+		);
+		return $this->ajaxReturn($res);
 	}
 
 	public function addType(){
