@@ -115,22 +115,22 @@
                     <el-container class="summary">
                         <div class="summary-item" @click="toUser">
                             <i class="el-icon-service"></i>
-                            <div class="summary-num">2200人</div>
+                            <div class="summary-num">{{countData.countUser}} 人</div>
                             <div class="summary-name">普通用户</div>
                         </div>
                         <div class="summary-item" @click="toType">
                             <i class="el-icon-document"></i>
-                            <div class="summary-num">23类</div>
+                            <div class="summary-num">{{countData.countType}} 类</div>
                             <div class="summary-name">商品类别</div>
                         </div>
                         <div class="summary-item" @click="toGoods">
                             <i class="el-icon-menu"></i>
-                            <div class="summary-num">1100个</div>
+                            <div class="summary-num">{{countData.countGoods}} 个</div>
                             <div class="summary-name">所有物品</div>
                         </div>
                         <div class="summary-item" @click="toInfo">
                             <i class="el-icon-info"></i>
-                            <div class="summary-num">24条</div>
+                            <div class="summary-num">{{countData.countInfo}} 条</div>
                             <div class="summary-name">系统通知</div>
                         </div>
                     </el-container>
@@ -158,6 +158,12 @@
             data: {
                 crumbsTitle : '系统概要',
                 serachCont  : '',
+                countData   : {
+                    countUser : '',
+                    countGoods : '',
+                    countType : '',
+                    countInfo : '',
+                },
             },
             methods: {
                 toAdmin: function (params) {
@@ -208,7 +214,33 @@
                     }).catch(() => {
                         return;
                     });
+                },
+
+                getCount: function() {
+                    let url = '__APP__/Home/Admin/count';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.countData.countUser= data.countUser;
+                            _that.countData.countGoods= data.countGoods;
+                            _that.countData.countType= data.countType;
+                            _that.countData.countInfo= data.countNotice;
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
                 }
+            },
+            mounted: function () {
+                // 挂载实例、初始化列表
+                this.getCount();
             }
         })
     </script>
