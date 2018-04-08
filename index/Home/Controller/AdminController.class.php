@@ -60,7 +60,7 @@ class AdminController extends AdminCommonController {
         $goods = M('Goods');
         $countGoods = $goods->where()->count('g_id');
         $type = M('type');
-        $countType = $type->where()->count('t_id');
+        $countType = $type->where()->count('t_type');
         $res = array(
             'countNotice' => $countNotice,
             'countUser' => $countUser,
