@@ -40,10 +40,10 @@ class AdminUserGoodsController extends AdminCommonController {
     		);
     		return $this->ajaxReturn($res);
 		}
-		$goodsType = $_GET['type'];
+		$data['t_type'] = $_GET['type'];
 		M()->startTrans();//开启事务
 		$type = M('Type');
-		$statusOne = $type->where("t_type=$goodsType")->delete();
+		$statusOne = $type->where($data)->delete();
 		$goods = M('Goods');
 		$is_type = $goods->where("g_type=$goodsType")->getField();
 		if(!empty($is_type)){
