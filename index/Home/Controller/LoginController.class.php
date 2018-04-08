@@ -126,7 +126,7 @@ class LoginController extends Controller {
         $code = $_POST['code'];
         $data = array(
             'a_id' => $_POST['num'], //账户
-            'a_password' => $_POST['password'],//用MD5对密码进行加密
+            'a_password' => md5($_POST['password']),//用MD5对密码进行加密
         );
         $verify = new \Think\Verify();   //判断验证的内置方法
         if($verify->check($code, $id)){
