@@ -68,7 +68,6 @@ class AdminUserGoodsController extends AdminCommonController {
 		$Model = new Model();
  		$sql ="select * from trading_goods left join trading_user on trading_goods.u_id=trading_user.u_id order by g_id desc";
  		$goodsInfo = $Model->query($sql);
- 		echo json_encode($goodsInfo);exit;
 		if(!empty($goodsInfo)){
     		$res = array(
     			'code' => '0',
