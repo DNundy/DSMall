@@ -23,11 +23,11 @@ class AdminUserGoodsController extends AdminCommonController {
     		return $this->ajaxReturn($res);
 		}
 		$type = M('type');
-		$data['t_id'] = $_POST['type'];
+		$data['t_type'] = $_POST['type'];
 		$status = $type->add($data);
     	$res = array(
     		'code' => $status,
-    		'msg' => $status?'添加成功!':'添加失败',
+    		'msg' => $status?'添加成功!':'不能重复添加',
     	);
     	return $this->ajaxReturn($res);		
 	}
