@@ -2,6 +2,7 @@
 // 本类由系统自动生成，仅供测试用途
 namespace Home\Controller;
 use Think\Controller;
+use Think\Model;
 class AdminUserGoodsController extends AdminCommonController {
 	public function findType(){
 		$type = M('type');
@@ -64,10 +65,9 @@ class AdminUserGoodsController extends AdminCommonController {
 
 	}
 	public function findGoods(){//显示所有商品
-		//$goods = M('Goods');
-		//$goodsInfo = $goods->where()->order('n_id desc')->select();
-		$goodsInfo = table('goods a,user b')->where('a.u_id = b.u_id')->select();
-		var_dump($goodsInfo);exit;
+		$Model = new Model();
+ 		$sql ="select * from trading_goods,trading_user where trading_goods.u_id=trading_user.u_id";
+ 		$goodsInfo = $Model->query($sql);
 		if(!empty($goodsInfo)){
     		$res = array(
     			'code' => '0',
