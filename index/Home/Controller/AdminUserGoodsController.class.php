@@ -45,7 +45,12 @@ class AdminUserGoodsController extends AdminCommonController {
 		$type = M('Type');
 		$statusOne = $type->where("t_type=$goodsType")->delete();
 		$goods = M('Goods');
-		$statusTwo =  $goods->where("g_type=$goodsType")->delete();
+		$is_type = $goods->where("g_type=$goodsType")->getField();
+		if(!empty($is_type)){
+			$statusTwo =  $goods->where("g_type=$goodsType")->delete();
+		}else {
+			$statusTwo = true;
+		}
 		if($statusOne&&$statusTwo){
 			M()->commit();
 			$res = array(
