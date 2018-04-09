@@ -9,7 +9,13 @@ class AdminController extends AdminCommonController {
     public function findNotice(){//显示系统发布的所有通知
     	$notice = M('Notice');
     	$adminNotice = $notice->where()->order('n_id desc')->select();
-    	$res['msg'] = $adminNotice;
+        $num = $_SESSION['num'];
+        $admin = M('Admin');
+        $name = $admin->where("a_id=$num")->getField('a_name');
+    	$res = array(
+            'msg' => $adminNotice,
+            'adminName' => $name,
+        );
     	return $this->ajaxReturn($res);
     }
     public function addNotice(){
@@ -63,12 +69,17 @@ class AdminController extends AdminCommonController {
         $countType = $type->where()->count('t_type');
         $noticeHot = M('Notice');
         $adminNoticeHot = $noticeHot->where()->order('n_id desc')->limit(2)->select();
+
+        $num = $_SESSION['num'];
+        $admin = M('Admin');
+        $name = $admin->where("a_id=$num")->getField('a_name');
         $res = array(
             'countNotice' => $countNotice,
             'countUser' => $countUser,
             'countGoods' => $countGoods,
             'countType' => $countType,
             'hotNotice' => $adminNoticeHot,
+            'adminName' => $name,
         );
     	return $this->ajaxReturn($res);
     }

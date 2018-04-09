@@ -9,16 +9,23 @@ class AdminUserInfoController extends AdminCommonController {
 	public function selectUser(){
 		$user = M('User');
 		$userInfo = $user->where()->select();
+
+		$num = $_SESSION['num'];
+        $admin = M('Admin');
+        $name = $admin->where("a_id=$num")->getField('a_name');
+
 		if(!empty($userInfo)){
 			$res = array(
     			'code' => '0',
     			'msg' => $userInfo,
+    			'adminName' => $name,
     		);
     		return $this->ajaxReturn($res);
 		} else {
 			$res = array(
     			'code' => '0',
     			'msg' => '查找信息失败',
+    			'adminName' => $name,
     		);
     		return $this->ajaxReturn($res);
 		}

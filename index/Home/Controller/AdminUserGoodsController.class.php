@@ -7,9 +7,15 @@ class AdminUserGoodsController extends AdminCommonController {
 	public function findType(){
 		$type = M('type');
 		$typeGoods = $type->where()->select();
+
+		$num = $_SESSION['num'];
+        $admin = M('Admin');
+        $name = $admin->where("a_id=$num")->getField('a_name');
 		$res = array(
 			'code' => '0',
 			'msg' => $typeGoods,
+			'adminName' => $name,
+
 		);
 		return $this->ajaxReturn($res);
 	}
@@ -73,16 +79,23 @@ class AdminUserGoodsController extends AdminCommonController {
 		$Model = new Model();
  		$sql ="select * from trading_goods left join trading_user on trading_goods.u_id=trading_user.u_id order by g_id desc";
  		$goodsInfo = $Model->query($sql);
+
+ 		$num = $_SESSION['num'];
+        $admin = M('Admin');
+        $name = $admin->where("a_id=$num")->getField('a_name');
+
 		if(!empty($goodsInfo)){
     		$res = array(
     			'code' => '0',
     			'msg' => $goodsInfo,
+    			'adminName' => $name,
     		);
     		return $this->ajaxReturn($res);				
 		} else {
    			$res = array(
     			'code' => '-1',
     			'msg' => '暂时还没有商品哦QAQ!',
+    			'adminName' => $name,
     		);
     		return $this->ajaxReturn($res);	
 		}
