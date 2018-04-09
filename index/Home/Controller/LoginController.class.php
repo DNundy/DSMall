@@ -181,7 +181,7 @@ class LoginController extends Controller {
     }
     	
 	public function isLogin(){
-		if(isset($_SESSION['num']) && $_SESSION['type'] = 'admin'){
+		if(isset($_SESSION['num']) && $_SESSION['num'] != '' && $_SESSION['type'] = 'admin'){
 			$res = array(
 				'code' => 0,
 				'msg' => '已经登录！',

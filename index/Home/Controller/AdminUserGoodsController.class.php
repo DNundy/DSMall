@@ -100,6 +100,32 @@ class AdminUserGoodsController extends AdminCommonController {
     		return $this->ajaxReturn($res);	
 		}
 	}
+	public function searchGoods(){//搜索框搜索商品
+		if(empty($_POST['search'])){
+			$res = array(
+    			'code' => '-1',
+    			'msg' => '参数传递出错！',
+    		);
+    		return $this->ajaxReturn($res);
+		}
+		$search = $_POST['search'];
+		$Model = new Model();
+ 		$sql ="select * from trading_goods where g_name REGEXP '[$search]'";
+ 		$goodsInfo = $Model->query($sql);
+		if(!empty($goodsInfo)){
+    		$res = array(
+    			'code' => '0',
+    			'msg' => $goodsInfo,
+    		);
+    		return $this->ajaxReturn($res);				
+		} else {
+   			$res = array(
+    			'code' => '-1',
+    			'msg' => '暂时还没有对应商品哦QAQ!',
+    		);
+    		return $this->ajaxReturn($res);	
+		}
+	}
 	public function deleteGoods(){//管理员删除商品
 		if(empty($_GET['id'])){
 			$res = array(
@@ -117,4 +143,5 @@ class AdminUserGoodsController extends AdminCommonController {
     	);
     	return $this->ajaxReturn($res);		
 	}
+
 }
