@@ -143,7 +143,19 @@
                     } else {
                         this.tipsShow = true;
                     }
-                }
+                },
+            },
+            mounted: function() {
+                $.ajax({
+                    url: '__APP__/Home/Login/isLogin',
+                    type: 'POST',
+                    dataType: 'JSON',
+                    success: function (data) {
+                        if (data.code == '0') {
+                            location.href = '__APP__/Home/admin/admin';
+                        }
+                    }
+                });
             }
         })
     </script>

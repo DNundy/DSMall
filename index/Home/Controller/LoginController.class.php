@@ -179,4 +179,19 @@ class LoginController extends Controller {
             return $this->ajaxReturn($res);
         }
     }
+    	
+	public function isLogin(){
+		if(isset($_SESSION['num']) && $_SESSION['type'] = 'admin'){
+			$res = array(
+				'code' => 0,
+				'msg' => '已经登录！',
+			);
+		}else{
+			$res = array(
+				'code' => -1,
+				'msg' => '未登录！',
+			);
+        }
+        return $this->ajaxReturn($res);
+	}
 }

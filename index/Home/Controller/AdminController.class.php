@@ -82,5 +82,5 @@ class AdminController extends AdminCommonController {
             'adminName' => $name,
         );
     	return $this->ajaxReturn($res);
-    }
+	}
 }
