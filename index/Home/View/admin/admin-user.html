@@ -37,7 +37,7 @@
                         <div class="userInfo-pic">
                             <img src="__PUBLIC__/img/admin/test.jpg" alt="头像" title="头像" @click="toAdmin">
                         </div>
-                        <div class="userInfo-name">欢迎您！{{}}</div>
+                        <div class="userInfo-name">欢迎您！{{userData.adminName}}</div>
                     </div>
                     <el-menu default-active="2-1" unique-opened="true" collapse-transition="false">
                         <el-menu-item index="1">
@@ -54,7 +54,7 @@
                                 </div>
                             </template>
                             <el-menu-item index="2-1" @click="crumbsSet('查看用户')">查看用户</el-menu-item>
-                            <el-menu-item index="2-2" @click="crumbsSet('禁用用户')">禁用用户</el-menu-item>
+                            <el-menu-item index="2-2" @click="crumbsSet('删除用户')">更改状态</el-menu-item>
                         </el-submenu>
                 
                         <el-submenu index="3">
@@ -120,6 +120,45 @@
                         <i slot="suffix" class="el-input__icon el-icon-search"></i>
                     </el-input>
 
+                    <!-- 用户列表 -->
+                    <div class="userTitle">
+                        <div>注册账号</div>
+                        <div>用户姓名</div>
+                        <div>联系电话</div>
+                        <div>电子邮箱</div>
+                        <div>注册时间</div>
+                        <div>操作账号</div>
+                    </div>
+                    <div class="userItem" v-for="item in userData.msg">
+                        <div>{{item.u_id}}</div>
+                        <div>{{item.u_name}}</div>
+                        <div>{{item.u_telphone}}</div>
+                        <div>{{item.u_email}}</div>
+                        <div>{{item.u_time}}</div>
+                        <!-- 更改状态栏 -->
+                        <div v-if="listStatus">
+                            <el-button v-if="item.u_status=='1'" type="primary" size="mini" :data-id="'__APP__/Home/AdminUserInfo/exitUser?id='+item.u_id"
+                                plain @click="offUser($event)">
+                                <span @click="offUser($event)" :data-id="'__APP__/Home/AdminUserInfo/exitUser?id='+item.u_id">禁用用户</span>
+                            </el-button>
+                            
+                            <el-button v-else type="danger" size="mini" plain  @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id">
+                                <span @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id">解冻账号</span>
+                            </el-button>
+                        </div>
+                        <!-- 查看信息栏 -->
+                        <div v-else>
+                            <el-button v-if="item.u_status=='1'" type="danger" size="mini" :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id"
+                                plain @click="onUser($event)">
+                                <span @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id">解冻账号</span>
+                            </el-button>
+
+                            <el-button v-else type="primary" size="mini"  :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id" plain @click="toUserInfo($event)">
+                                <span @click="toUserInfo($event)"  :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id">详细信息</span>
+                            </el-button>
+                        </div>
+                    </div>
+
                 </el-main>
 
             </el-container>
@@ -144,7 +183,9 @@
             el: '#app',
             data: {
                 crumbsTitle: '查看用户',
-                serachCont: ''
+                serachCont: '',
+                userData: {},
+                listStatus: false,
             },
             methods: {
                 toAdmin: function (params) {
@@ -167,7 +208,16 @@
                 },
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
+                    switch (crumbs) {
+                        case '查看用户':
+                            this.listStatus = false;
+                            break;
+                        default:
+                            this.listStatus = true;
+                            break;
+                    }
                 },
+
                 //退出登录
                 loginOut: function () {
                     this.$confirm('您确定要 退出登录 吗 ？', '提示', {
@@ -195,6 +245,108 @@
                         return;
                     });
                 },
+
+                getUser: function () {
+                    let url = '__APP__/Home/AdminUserInfo/selectUser';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.userData = data;
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                offUser: function (e) {
+                    this.$confirm('您确定要删除该 用户 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let _that = this;
+                        let delId = e.target.getAttribute('data-id');
+                        $.ajax({
+                            url: delId,
+                            type: 'GET',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                if( data.code='0' ){
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getUser();
+                                }else{
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'error'
+                                    });
+                                }
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }).catch(() => {
+                        return;
+                    });
+                },
+
+                onUser: function (e) {
+                    this.$confirm('您确定要解冻该 用户 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let _that = this;
+                        let delId = e.target.getAttribute('data-id');
+                        $.ajax({
+                            url: delId,
+                            type: 'GET',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                if (data.code = '0') {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getUser();
+                                } else {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'error'
+                                    });
+                                }
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }).catch(() => {
+                        return;
+                    });
+                },
+
+                toUserInfo: function () {
+                    
+                }
+            },
+            mounted: function (params) {
+                this.getUser();
             }
         })
     </script>
