@@ -6,6 +6,32 @@ use Think\Controller;
      * 管理员对用户的管理
      */
 class AdminUserInfoController extends AdminCommonController {
+    //搜索框搜索用户账号及详细信息
+    public function searchUser(){
+        if(empty($_POST['num'])){
+            $res = array(
+                'code' => '-1',
+                'msg' => '参数传递失败',
+            );
+            return $this->ajaxReturn($res);
+        }
+        $num = $_POST['num'];
+        $user = M('User');
+        $userInfo = $user->where("u_id=$num")->select();
+        if(!empty($userInfo)){
+            $res = array(
+                'code' => '0',
+                'msg' => $userInfo,
+            );
+            return $this->ajaxReturn($res);
+        } else {
+            $res = array(
+                'code' => '-1',
+                'msg' => '查找改用户信息失败',
+            );
+            return $this->ajaxReturn($res);
+        }
+    }
 	public function selectUser(){
 		$user = M('User');
 		$userInfo = $user->where()->select();
@@ -23,7 +49,7 @@ class AdminUserInfoController extends AdminCommonController {
     		return $this->ajaxReturn($res);
 		} else {
 			$res = array(
-    			'code' => '0',
+    			'code' => '-1',
     			'msg' => '查找信息失败',
     			'adminName' => $name,
     		);
