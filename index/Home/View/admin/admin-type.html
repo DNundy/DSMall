@@ -37,7 +37,7 @@
                         <div class="userInfo-pic">
                             <img src="__PUBLIC__/img/admin/test.jpg" alt="头像" title="头像" @click="toAdmin">
                         </div>
-                        <div class="userInfo-name">欢迎您！Admin</div>
+                        <div class="userInfo-name">欢迎您！{{typeData.adminName}}</div>
                     </div>
                     <el-menu default-active="4-1" unique-opened="true"  collapse-transition="false">
                         <el-menu-item index="1">
@@ -117,13 +117,12 @@
 
                     <!-- 查看分类 -->
                     <div v-show="showStatus" class="typeWrap">
-                        <!-- v-for="item in typeData" -->
-                        <span @click="getType"><el-button plain>1</el-button></span>
+                        <span v-for="item in typeData.msg"><el-button plain>{{item.t_type}}</el-button></span>
                     </div>
 
                     <!-- 添加分类 -->
                     <div v-show="addStatus" class="typeWrap">
-                        <el-input v-model="addTypeData" class="addName">
+                        <el-input v-model="addTypeData.type" class="addName">
                             <template slot="prepend">商品类别</template>
                         </el-input>
                         <el-button type="primary" plain @click="addType" class="addBtn">立即添加</el-button>
@@ -131,10 +130,10 @@
 
                     <!-- 删除分类 -->
                     <div v-show="delStatus" class="typeWrap">
-                        <span>
-                            <i class="el-icon-remove-outline" :data-id="'__APP__/Home/AdminUserGoods/deleteType?id='" @click="deleteType($event)"></i>
-                            <el-button plain @click="deleteType($event)"  :data-id="'__APP__/Home/AdminUserGoods/deleteType?id='">
-                                <span  @click="deleteType($event)" :data-id="'__APP__/Home/AdminUserGoods/deleteType?id='"></span>
+                        <span v-for="item in typeData.msg">
+                            <i class="el-icon-remove-outline" :data-id="'__APP__/Home/AdminUserGoods/deleteType?type='+item.t_type" @click="deleteType($event)"></i>
+                            <el-button plain @click="deleteType($event)"  :data-id="'__APP__/Home/AdminUserGoods/deleteType?type='+item.t_type">
+                                <span  @click="deleteType($event)" :data-id="'__APP__/Home/AdminUserGoods/deleteType?type='+item.t_type">{{item.t_type}}</span>
                             </el-button>
                         </span>
                     </div>
@@ -164,7 +163,9 @@
                 crumbsTitle: '查看分类',
                 typeData: {},
 
-                addTypeData: '',
+                addTypeData: {
+                    type: "",
+                },
 
                 // 列表展示状态
                 showStatus: true,
@@ -221,7 +222,7 @@
                             type: 'POST',
                             dataType: 'JSON',
                             success: function (data) {
-                                location.href = '__APP__/Home/login/admin-login';
+                                location.href = '__APP__/Home/login/login_admin';
                             },
                             error: function () {
                                 _that.$message({
@@ -244,7 +245,7 @@
                         type: 'POST',
                         dataType: 'JSON',
                         success: function (data) {
-                            _that.typeData = data.msg;
+                            _that.typeData = data;
                         },
                         error: function () {
                             _that.$message({
@@ -270,18 +271,18 @@
                             dataType: 'JSON',
                             data: _that.addTypeData,
                             success: function (data) {
-                                if (data.code == '-1') {
+                                if (!data.code) {
                                     _that.$message({
                                         message: data.msg,
                                         type: 'error'
                                     });
-                                } else {
+                                } else if( data.code ) {
                                     _that.$message({
                                         message: data.msg,
                                         type: 'success'
                                     });
-                                    _that.getInfo();
-                                    _that.addTypeData = '';
+                                    _that.addTypeData.type = "";
+                                    _that.getType();
                                 }
                             },
                             error: function () {
@@ -308,12 +309,12 @@
                             type: 'GET',
                             dataType: 'JSON',
                             success: function (data) {
-                                if (data.code == 1) {
+                                if (data.code == 0) {
                                     _that.$message({
                                         message: data.msg,
                                         type: 'success'
                                     });
-                                    _that.getInfo();
+                                    _that.getType();
                                 } else {
                                     _that.$message({
                                         message: data.msg,

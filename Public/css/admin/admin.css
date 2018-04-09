@@ -116,3 +116,32 @@
     position: absolute;
     bottom: 30px;right: 40px;
 }
+/* 消息列表 */
+.infoItem{
+    width: 92%;
+    min-height: 120px;
+    border-bottom: 1px #ddd dashed;
+    padding: 10px 20px;
+    clear: both;
+    margin-top: 40px;
+}
+.infoTitle{
+    height: 60px;
+}
+.infoTitle i{
+    line-height: 60px;
+    font-size: 20px;
+    font-family: '楷体';
+}
+.infoTitle .el-button{
+    margin-right: 50px;
+}
+.infoCont{
+    text-indent: 2em;
+    line-height: 25px;
+}
+.infoTime{
+    text-align: right;
+    margin-top: 15px;
+    margin-right: 50px;
+}

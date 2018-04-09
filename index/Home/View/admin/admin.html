@@ -35,7 +35,7 @@
                         <div class="userInfo-pic">
                             <img src="__PUBLIC__/img/admin/test.jpg" alt="头像" title="头像" @click="toAdmin">
                         </div>
-                        <div class="userInfo-name">欢迎您！Admin</div>
+                        <div class="userInfo-name">欢迎您！{{countData.adminName}}</div>
                     </div>
                     <el-menu default-active="1" unique-opened="true" collapse-transition="false">
                         <el-menu-item index="1">
@@ -112,6 +112,7 @@
                         <el-breadcrumb-item>{{crumbsTitle}}</el-breadcrumb-item>
                     </el-breadcrumb>
 
+                    <!-- 统计信息 -->
                     <el-container class="summary">
                         <div class="summary-item" @click="toUser">
                             <i class="el-icon-service"></i>
@@ -130,10 +131,24 @@
                         </div>
                         <div class="summary-item" @click="toInfo">
                             <i class="el-icon-info"></i>
-                            <div class="summary-num">{{countData.countInfo}} 条</div>
+                            <div class="summary-num">{{countData.countNotice}} 条</div>
                             <div class="summary-name">系统通知</div>
                         </div>
                     </el-container>
+
+                    <!-- 系统通知 -->
+                    <el-breadcrumb separator-class="el-icon-arrow-right" class="crumbs">
+                        <el-breadcrumb-item>趣二手</el-breadcrumb-item>
+                        <el-breadcrumb-item>最新通知</el-breadcrumb-item>
+                    </el-breadcrumb>
+                    
+                    <div class="infoItem" v-for="item in countData.hotNotice">
+                        <div class="infoTitle">
+                            <i>{{item.n_title}}</i>
+                        </div>
+                        <div class="infoCont">{{item.n_content}}</div>
+                        <div class="infoTime">{{item.n_time}}</div>
+                    </div>
                 </el-main>
 
             </el-container>
@@ -158,12 +173,7 @@
             data: {
                 crumbsTitle : '系统概要',
                 serachCont  : '',
-                countData   : {
-                    countUser : '',
-                    countGoods : '',
-                    countType : '',
-                    countInfo : '',
-                },
+                countData   : {},
             },
             methods: {
                 toAdmin: function (params) {
@@ -202,7 +212,7 @@
                             type: 'POST',
                             dataType: 'JSON',
                             success: function (data) {
-                                location.href = '__APP__/Home/login/admin-login';
+                                location.href = '__APP__/Home/login/login_admin';
                             },
                             error: function () {
                                 _that.$message({
@@ -224,10 +234,7 @@
                         type: 'POST',
                         dataType: 'JSON',
                         success: function (data) {
-                            _that.countData.countUser= data.countUser;
-                            _that.countData.countGoods= data.countGoods;
-                            _that.countData.countType= data.countType;
-                            _that.countData.countInfo= data.countNotice;
+                            _that.countData= data;
                         },
                         error: function () {
                             _that.$message({

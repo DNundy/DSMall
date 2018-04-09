@@ -37,7 +37,7 @@
                         <div class="userInfo-pic">
                             <img src="__PUBLIC__/img/admin/test.jpg" alt="头像" title="头像" @click="toAdmin">
                         </div>
-                        <div class="userInfo-name">欢迎您！Admin</div>
+                        <div class="userInfo-name">欢迎您！{{}}</div>
                     </div>
                     <el-menu default-active="2-1" unique-opened="true" collapse-transition="false">
                         <el-menu-item index="1">
@@ -182,7 +182,7 @@
                             type: 'POST',
                             dataType: 'JSON',
                             success: function (data) {
-                                location.href = '__APP__/Home/login/admin-login';
+                                location.href = '__APP__/Home/login/login_admin';
                             },
                             error: function () {
                                 _that.$message({
