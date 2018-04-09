@@ -34,6 +34,7 @@ class LoginController extends Controller {
     		'u_email' => $_POST['email'],//邮箱
     		'u_place' => $_POST['place'],//交易的地址
     		'u_telphone' => $_POST['phone'],//联系电话
+            'u_time' => date("Y-m-d H:i:s"),
     	);
     	$verify = new \Think\Verify();   //判断验证的内置方法
     	if($verify->check($code, $id)){
