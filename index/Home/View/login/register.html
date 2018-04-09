@@ -197,7 +197,10 @@
                             dataType: 'JSON',
                             success: function (res) {
                                 if(res.code == '-1'){
-                                    alert(res.msg);
+                                    _that.$message({
+                                        message: res.msg,
+                                        type: 'error'
+                                    });
                                 }else{
                                     location.href = '__APP__/Home/Login/login';
                                 }

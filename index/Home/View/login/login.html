@@ -129,14 +129,18 @@
                     if (!this.dataVerify.numShow && !this.dataVerify.passwordShow && !this.dataVerify.codeShow && this.formData.num && this.formData.password && this.formData.code) {
                         this.tipsShow = false;
                         let url = '__APP__/Home/Login/accept_login';
+                        let _that = this;
                         $.ajax({
                             url: url,
                             type: 'POST',
                             data: this.formData,
                             dataType: 'JSON',
                             success: function (data) {
-                                if(res.code == '-1'){
-                                    alert(res.msg);
+                                if(data.code == '-1'){
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'error'
+                                    });
                                 }else{
                                     location.href = '__APP__/Home/Index/index';
                                 }
