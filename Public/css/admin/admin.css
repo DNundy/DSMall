@@ -117,21 +117,13 @@
     bottom: 30px;right: 40px;
 }
 /* 消息列表 */
-.newInfoTitle{
-    font-family: '楷体';
-    font-size: 18px;
-    font-weight: 700;
-    color: #303133;
-}
 .infoItem{
     width: 92%;
     min-height: 120px;
     border-bottom: 1px #ddd dashed;
     padding: 10px 20px;
     clear: both;
-}
-.infoItem:nth-child(2){
-    margin-top: 60px;
+    margin-top: 40px;
 }
 .infoTitle{
     height: 60px;

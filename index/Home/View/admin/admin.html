@@ -137,7 +137,11 @@
                     </el-container>
 
                     <!-- 系统通知 -->
-                    <p class="newInfoTitle">最新通知</p>
+                    <el-breadcrumb separator-class="el-icon-arrow-right" class="crumbs">
+                        <el-breadcrumb-item>趣二手</el-breadcrumb-item>
+                        <el-breadcrumb-item>最新通知</el-breadcrumb-item>
+                    </el-breadcrumb>
+                    
                     <div class="infoItem" v-for="item in countData.hotNotice">
                         <div class="infoTitle">
                             <i>{{item.n_title}}</i>
@@ -208,7 +212,7 @@
                             type: 'POST',
                             dataType: 'JSON',
                             success: function (data) {
-                                location.href = '__APP__/Home/login/admin-login';
+                                location.href = '__APP__/Home/login/login_admin';
                             },
                             error: function () {
                                 _that.$message({
