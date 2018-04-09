@@ -83,4 +83,34 @@ class AdminUserInfoController extends AdminCommonController {
             return $this->ajaxReturn($res);
 		}	
 	}
+    public function outUser(){
+        if(empty($_GET['id'])){
+            $res = array(
+                'code' => '-1',
+                'msg' => '找不见该用户哟！系统宝宝很委屈！',
+            );
+            return $this->ajaxReturn($res);
+        }
+        $data = array(
+            'u_id' => $num
+        );
+        $user = M('User');
+        $result = $user->where("u_id=$num")->setField('u_status','1');
+        if($result!=false)
+        {
+            $res = array(
+                'code' => '0',
+                'msg' => '冻结该用户成功!',
+            );
+            return $this->ajaxReturn($res);
+
+        }
+        else{
+            $res = array(
+                'code' => '-1',
+                'msg' => '冻结该用户失败!',
+            );
+            return $this->ajaxReturn($res);
+        }   
+    }
 }
