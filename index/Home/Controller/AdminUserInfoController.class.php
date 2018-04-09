@@ -92,16 +92,19 @@ class AdminUserInfoController extends AdminCommonController {
             );
             return $this->ajaxReturn($res);
         }
+        $num = $_GET['id'];
         $data = array(
-            'u_id' => $num
+            'u_id' => $num,
+            'u_status' => -1,
         );
+
         $user = M('User');
-        $result = $user->where("u_id=$num")->setField('u_status','1');
+        $result = $user->where($data)->setField('u_status','1');
         if($result!=false)
         {
             $res = array(
                 'code' => '0',
-                'msg' => '冻结该用户成功!',
+                'msg' => '账户解冻成功!',
             );
             return $this->ajaxReturn($res);
 
@@ -109,7 +112,7 @@ class AdminUserInfoController extends AdminCommonController {
         else{
             $res = array(
                 'code' => '-1',
-                'msg' => '冻结该用户失败!',
+                'msg' => '账户解冻失败!',
             );
             return $this->ajaxReturn($res);
         }   
