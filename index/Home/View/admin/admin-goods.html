@@ -37,7 +37,7 @@
                         <div class="userInfo-pic">
                             <img src="__PUBLIC__/img/admin/test.jpg" alt="头像" title="头像" @click="toAdmin">
                         </div>
-                        <div class="userInfo-name">欢迎您！Admin</div>
+                        <div class="userInfo-name">欢迎您！{{listData.adminName}}</div>
                     </div>
                     <el-menu default-active="3-1" unique-opened="true"  collapse-transition="false">
                         <el-menu-item index="1">
@@ -120,7 +120,7 @@
                         <i slot="suffix" class="el-input__icon el-icon-search"></i>
                     </el-input>
 
-                    <div v-for="item in listData" class="goodsItem">
+                    <div v-for="item in listData.msg" class="goodsItem">
                         <div class="goodsTitle">
                             <i>{{item.g_name}}</i>
                             <el-button class="delBtn" type="danger" size="mini" :data-id="'__APP__/Home/AdminUserGoods/deleteGoods?id='+item.g_id" plain
@@ -248,7 +248,7 @@
                         dataType: 'JSON',
                         success: function (data) {
                             if( data.code == '0' ){
-                                _that.listData = data.msg;
+                                _that.listData = data;
                             } else if( data.code == '-1' ){
                                 _that.$message({
                                     message: data.msg,

@@ -36,7 +36,7 @@
                         <div class="userInfo-pic">
                             <img src="__PUBLIC__/img/admin/test.jpg" alt="头像" title="头像" @click="toAdmin">
                         </div>
-                        <div class="userInfo-name">欢迎您！Admin</div>
+                        <div class="userInfo-name">欢迎您！{{infoData.adminName}}</div>
                     </div>
                     <el-menu default-active="5-1" unique-opened="true"  collapse-transition="false">
                         <el-menu-item index="1">
@@ -115,7 +115,7 @@
                     </el-breadcrumb>
 
                     <!-- 消息列表 -->
-                    <div class="infoItem" v-for="item in infoData" v-show="showStatus">
+                    <div class="infoItem" v-for="item in infoData.msg" v-show="showStatus">
                         <div class="infoTitle">
                             <i>{{item.n_title}}</i>
                         </div>
@@ -128,14 +128,12 @@
                         <el-input v-model="releaseData.title"  class="releaseTitle">
                             <template slot="prepend">通知标题</template>
                         </el-input>
-                        <el-input v-model="releaseData.content" placeholder="快来说点什么吧~" class="releaseCont" type="textarea" :rows="4">
-                            <template slot="prepend">通知内容</template>
-                        </el-input>
+                        <el-input v-model="releaseData.content" placeholder="快来说点什么吧~" class="releaseCont" type="textarea" :rows="4"></el-input>
                         <el-button type="primary" plain @click="releaseForm"  class="releaseBtn">立即发布</el-button>
                     </div>
 
                     <!-- 删除通知 -->
-                    <div class="infoItem" v-for="item in infoData" v-show="delStatus">
+                    <div class="infoItem" v-for="item in infoData.msg" v-show="delStatus">
                         <div class="infoTitle">
                             <i>{{item.n_title}}</i>
                             <el-button type="danger" :data-id="'__APP__/Home/admin/deleteNotice?id='+item.n_id" plain @click="deleteInfo($event)">
@@ -259,7 +257,7 @@
                         type: 'GET',
                         dataType: 'JSON',
                         success: function (data) {
-                            _that.infoData = data.msg;
+                            _that.infoData = data;
                         },
                         error: function () {
                             _that.$message({
