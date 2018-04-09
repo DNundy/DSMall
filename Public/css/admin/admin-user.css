@@ -77,3 +77,49 @@
     float: right;
     width: 40%;
 }
+/* 用户列表 */
+.userTitle{
+    width: 92%;
+    min-height: 50px;
+    border-bottom: 1px #ddd dashed;
+    padding: 10px 20px;
+    clear: both;
+    overflow: hidden;
+    margin-top: 80px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    text-align: center;
+}
+.userItem{
+    width: 92%;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px #ddd dashed;
+    padding: 10px 20px;
+    clear: both;
+    overflow: hidden;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-align: center;
+}
+.userItem div{
+    width: 220px;
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.userItem button{
+    float: none;
+    margin: 0 auto;
+}
+.userTitle div{
+    width: 220px;
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

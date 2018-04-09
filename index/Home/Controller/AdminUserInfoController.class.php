@@ -38,6 +38,7 @@ class AdminUserInfoController extends AdminCommonController {
     		);
     		return $this->ajaxReturn($res);
 		}
+		$num = $_GET['id'];
 		$user = M('User');
 		$result = $user->where("u_id=$num")->setField('u_status','-1');
 		if($result!=false)
