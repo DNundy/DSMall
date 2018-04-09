@@ -68,6 +68,7 @@ class AdminController extends AdminCommonController {
             'countUser' => $countUser,
             'countGoods' => $countGoods,
             'countType' => $countType,
+            'hotNotice' => $adminNoticeHot,
         );
     	return $this->ajaxReturn($res);
     }
