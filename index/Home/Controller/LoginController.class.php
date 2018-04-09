@@ -173,6 +173,8 @@ class LoginController extends Controller {
         if(isset($_SESSION['num']) && $_SESSION['num'] != ''){
             session_unset();
             session_destroy();
+            $res = '退出成功！';
+            return $this->ajaxReturn($res);
         }
     }
 }
