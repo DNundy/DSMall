@@ -99,9 +99,8 @@
                                     <span slot="title">其它设置</span>
                                 </div>
                             </template>
-                            <el-menu-item index="6-1">其它设置</el-menu-item>
-                            <el-menu-item index="6-2">其它设置</el-menu-item>
-                            <el-menu-item index="6-3">其它设置</el-menu-item>
+                            <el-menu-item index="6-1">添加管理</el-menu-item>
+                            <el-menu-item index="6-2">修改密码</el-menu-item>
                         </el-submenu>
                     </el-menu>
                 </el-aside>
@@ -142,19 +141,18 @@
                                 <span @click="offUser($event)" :data-id="'__APP__/Home/AdminUserInfo/exitUser?id='+item.u_id">禁用用户</span>
                             </el-button>
                             
-                            <el-button v-else type="danger" size="mini" plain  @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id">
-                                <span @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id">解冻账号</span>
+                            <el-button v-else type="danger" size="mini" plain  @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/outUser?id='+item.u_id">
+                                <span @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/outUser?id='+item.u_id">解冻账号</span>
                             </el-button>
                         </div>
                         <!-- 查看信息栏 -->
                         <div v-else>
-                            <el-button v-if="item.u_status=='1'" type="danger" size="mini" :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id"
-                                plain @click="onUser($event)">
-                                <span @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id">解冻账号</span>
+                            <el-button v-if="item.u_status=='1'" type="primary" size="mini"  :data-id="'?id='+item.u_id" plain @click="toUserInfo($event)">
+                                <span @click="toUserInfo($event)"  :data-id="'?id='+item.u_id">用户主页</span>
                             </el-button>
 
-                            <el-button v-else type="primary" size="mini"  :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id" plain @click="toUserInfo($event)">
-                                <span @click="toUserInfo($event)"  :data-id="'__APP__/Home/AdminUserInfo/?id='+item.u_id">详细信息</span>
+                            <el-button v-else type="danger" size="mini" :data-id="'__APP__/Home/AdminUserInfo/outUser?id='+item.u_id" plain @click="onUser($event)">
+                                <span @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/outUser?id='+item.u_id">解冻账号</span>
                             </el-button>
                         </div>
                     </div>
