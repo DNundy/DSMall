@@ -5,16 +5,16 @@ use Think\Controller;
 //登录
 class LoginController extends Controller {
     public function login(){//显示用户登录页面
-	$this->display('login');
+	   $this->display('login');
     }
     public function register(){//显示用户注册页面
-	$this->display('register');
+	   $this->display('register');
     }
     public function forget(){//显示忘记密码页面
-	$this->display('forget');
+	   $this->display('forget');
     }
     public function login_admin(){//显示管理员登录页面
-	$this->display('login-admin');
+	   $this->display('login-admin');
     }
     //接收并处理注册页面传来的数据
     public function accept_register(){
@@ -75,6 +75,7 @@ class LoginController extends Controller {
     	$data = array(
     		'u_id' => $_POST['num'], //账户
     		'u_password' => md5($_POST['password']),//用MD5对密码进行加密
+            'u_status' => 1
     	);
         $verify = new \Think\Verify();   //判断验证的内置方法
     	if($verify->check($code, $id)){
@@ -82,7 +83,7 @@ class LoginController extends Controller {
     		$userInfo=$user->where("u_id=$num")->getField();//查找该用户是否存在
             if(!empty($userInfo))
             {
-                $newInfo=$user->where($data)->select();//若用户与密码对应正确
+                $newInfo=$user->where($data)->select();//若用户与密码对应正确且未被冻结
                 if(!empty($newInfo))
                 {
                     session('num',$num);
@@ -96,7 +97,7 @@ class LoginController extends Controller {
                 else{
                     $res = array(
                         'code' => '-1',
-                        'msg' => '密码错误登录失败!',
+                        'msg' => '密码错误登录失败或该用户已被冻结!',
                     );
                     return $this->ajaxReturn($res);
                 }
