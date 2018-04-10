@@ -5,7 +5,7 @@ use Think\Controller;
 //用户个人信息相关类
 class PersonalController extends UserCommonController {
 	public function index(){
-		$this->display('personal');
+		$this->display('index/personal');
 	}
 	//显示用户相关信息
 	public function userInfo(){
@@ -62,6 +62,26 @@ class PersonalController extends UserCommonController {
             return $this->ajaxReturn($res);
 		}
 	}
+	//展示该用户收藏的商品
+	public function userCollectGoods(){
+		$num = $_SESSION['num'];
+		$Model = new Model();
+ 		$sql ="select * from trading_collect left join trading_goods on trading_collect.g_id=trading_goods.g_id where trading_collect.u_id=$num order by trading_goods.g_id desc";
+ 		$goodsInfo = $Model->query($sql);
+ 		if(!empty($goodsInfo)){
+    		$res = array(
+    			'code' => '0',
+    			'msg' => $goodsInfo,
+    		);
+    		return $this->ajaxReturn($res);				
+		} else {
+   			$res = array(
+    			'code' => '-1',
+    			'msg' => '暂时还没有收藏任何商品哦QAQ!',
+    		);
+    		return $this->ajaxReturn($res);	
+		}
+	}
 	//该用户发布的所有商品
 	public function oldPublishGoods(){
 		$num = $_SESSION['num'];
@@ -114,10 +134,10 @@ class PersonalController extends UserCommonController {
 			'g_type' => $_POST['type'],
 			'g_price' => $_POST['price'],
 			'g_time' => date("Y-m-d H:i:s"),
-			'g_picture' => ,
+			//'g_picture' => ,
 		);
 	}
-	public function publishGoodsPicture(){
+	public function publishGoodsPicture(){//上传商品图片路径
 
 	}
 

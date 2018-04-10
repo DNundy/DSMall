@@ -4,7 +4,7 @@ namespace Home\Controller;
 use Think\Controller;
 class AdminController extends AdminCommonController {
 	public function index(){//显示用户登录页面
-	$this->display('admin');
+	   $this->display('admin');
     }
     public function findNotice(){//显示系统发布的所有通知
     	$notice = M('Notice');
