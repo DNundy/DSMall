@@ -5,6 +5,6 @@ use Think\Controller;
 //登录
 class IndexController extends Controller {
     public function index(){
-	$this->display();
+		$this->display();
     }
 }
