@@ -190,20 +190,27 @@
                     if(!this.dataVerify.numShow && !this.dataVerify.nameShow && !this.dataVerify.passwordShow && !this.dataVerify.repasswordShow && !this.dataVerify.phoneShow && !this.dataVerify.emailShow && !this.dataVerify.placeShow && !this.dataVerify.codeShow && this.formData.num && this.formData.name && this.formData.password && this.formData.repassword && this.formData.phone && this.formData.email && this.formData.place && this.formData.code){
                         this.tipsShow = false;
                         let url = '__APP__/Home/Login/accept_register';
+                        let _that = this;
                         $.ajax({
                             url: url,
                             type: 'POST',
                             data: this.formData,
                             dataType: 'JSON',
                             success: function (res) {
-                                if(res.code == '-1'){
-                                    alert(res.msg);
-                                }else{
+                                if(res.code == 1){
                                     location.href = '__APP__/Home/Login/login';
+                                }else{
+                                    _that.$message({
+                                        message: res.msg,
+                                        type: 'error'
+                                    });
                                 }
                             },
                             error: function(err) {
-                                alert('网络错误，请稍后重试！');
+                                _that.$message({
+                                    message: '网络错误，请稍后重试!',
+                                    type: 'error'
+                                });
                             }
                         });
                     }else{

@@ -163,13 +163,19 @@
                             dataType: 'JSON',
                             success: function (res) {
                                 if (res.code == '-1') {
-                                    alert(res.msg);
+                                    _that.$message({
+                                        message: res.msg,
+                                        type: 'error'
+                                    });
                                 } else {
                                     location.href = '__APP__/Home/Login/login';
                                 }
                             },
                             error: function (err) {
-                                alert('网络错误，请稍后重试！');
+                                _that.$message({
+                                    message: '网络错误，请稍后重试！',
+                                    type: 'error'
+                                });
                             }
                         });
                     } else {
