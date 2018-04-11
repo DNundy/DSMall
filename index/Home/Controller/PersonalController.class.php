@@ -2,6 +2,7 @@
 // 本类由系统自动生成，仅供测试用途
 namespace Home\Controller;
 use Think\Controller;
+use Think\Model;
 //用户个人信息相关类
 class PersonalController extends UserCommonController {
 	public function index(){
@@ -82,6 +83,11 @@ class PersonalController extends UserCommonController {
     		return $this->ajaxReturn($res);	
 		}
 	}
+	//取消用户对该商品的收藏
+	public function exitUserCollectGoods(){
+		
+
+	}
 	//该用户发布的所有商品
 	public function oldPublishGoods(){
 		$num = $_SESSION['num'];
@@ -98,6 +104,31 @@ class PersonalController extends UserCommonController {
             'msg' => $goodsInfo,
         );
         return $this->ajaxReturn($res);
+	}
+	//展示其他用户对该商品的评论
+	public function discussGoods(){
+		$id = $_GET['id'];
+		if(empty($id)){
+			$res = array(
+            'code' => '-1',
+            'msg' => "参数传递出错！",
+        	);
+        	return $this->ajaxReturn($res);
+		}
+		$disscussInfo = M('Discuss')->where("g_id=$id")->select();
+		if(!empty($disscussInfo)){
+			$res = array(
+            'code' => '0',
+            'msg' => $disscussInfo,
+        	);
+        	return $this->ajaxReturn($res);
+		} else {
+			$res = array(
+            'code' => '-1',
+            'msg' => "还没有用户对该商品进行评论！",
+        	);
+        	return $this->ajaxReturn($res);
+		}
 	}
 	//下架商品
 	public function exitGoods(){
