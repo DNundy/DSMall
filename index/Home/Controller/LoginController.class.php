@@ -189,7 +189,7 @@ class LoginController extends Controller {
 		}else{
 			$res = array(
 				'code' => -1,
-				'msg' => '未登录！',
+				'msg' => '抱歉，您尚未登录！',
 			);
         }
         return $this->ajaxReturn($res);

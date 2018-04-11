@@ -1,16 +1,20 @@
 /* Header */
+body{
+    background: #F5F5F7;
+}
 .el-header{
     width: 1200px;
     margin: 0 auto;
-    position: relative;
     overflow: hidden;
 }
 .el-header .logo{
+    float: left;
     font-size: 26px;
     font-weight: 700;
     color: #c60023;
     text-decoration: none;
     line-height: 60px;
+    margin-left: 60px;
 }
 
 /* Footer */
@@ -34,4 +38,146 @@
 }
 .el-footer .copyright {
     margin: 10px 0;
+}
+/* Nav 登录 */
+.navLogin{
+    float: right;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    overflow: hidden;
+}
+.navLogin a{
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 60px;
+    /* color: #097653; */
+    color: #c60023;
+}
+.navLogin i{
+    font-size: 18px;
+}
+/* Nav 菜单 */
+.navList{
+    width: 600px;
+    height: 60px;
+    margin: 0 auto;
+}
+.navList a{
+    display: block;
+    float: left;
+    position: relative;
+    
+    width: 70px;
+    height: 55px;
+    line-height: 60px;
+    text-align: center;
+    margin: 0 20px;
+    
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+}
+.navList a:after{
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #F2C345;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transition: all .3s;
+}
+.navList a:hover:after{
+    left: 0%;
+    width: 100%;
+}
+/* Main 区域 */
+.el-main{
+    width: 1200px;
+    margin: 40px auto;
+    background: #fff;
+    box-shadow: 0px 1px 15px #333333;
+}
+/* 左侧内容 */
+.left-list
+{
+    float: left;
+
+    width: 200px;
+    padding: 15px 0;
+
+    overflow: hidden;
+}
+.list-img
+{
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+
+    cursor: pointer;
+    text-align: center;
+
+    border-radius: 50px;
+}
+.list-img img
+{
+    width: 100%;
+}
+.list-name
+{
+    font-family: '楷体';
+    font-size: 18px;
+    line-height: 40px;
+
+    width: 100%;
+
+    text-align: center;
+}
+.list-options a
+{
+    color: #000;
+    text-decoration: none;
+}
+.list-options ul{
+    padding: 0;
+}
+.list-options li
+{
+    width: 160px;
+    padding: 10px 0;
+
+    cursor: pointer;
+    text-align: center;
+    list-style: none;
+    margin: 10px auto;
+}
+.list-options li:hover
+{
+    color: white;
+    background: #F2C345;
+}
+.active
+{
+    color: white;
+    background: #F2C345;
+}
+/* 右侧内容 */
+.right-cont
+{
+    overflow: hidden;
+
+    padding: 20px;
+    
+    border-left: 1px dashed #ccc;
+}
+.rightTitle{
+    width: 110px;
+    font-size: 22px;
+    font-family: '楷体';
+    text-align: center;
+    padding: 5px;
+}
+.rightItem{
+    min-height: 410px;
 }

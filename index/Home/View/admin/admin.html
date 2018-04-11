@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>后台管理 - 趣二手</title>
+    <title>系统概况 - 趣二手</title>
 
     <!-- ThirdParty -->
     <script src="__PUBLIC__/lib/vue.min.js"></script>
@@ -45,7 +45,7 @@
                         </el-menu-item>
                         <el-submenu index="2">
                             <template slot="title">
-                                <div @click="toUser">
+                                <div @click="adminRouter('User')">
                                     <i class="el-icon-service"></i>
                                     <span slot="title">用户管理</span>
                                 </div>
@@ -56,7 +56,7 @@
 
                         <el-submenu index="3">
                             <template slot="title">
-                                <div  @click="toGoods">
+                                <div  @click="adminRouter('Goods')">
                                     <i class="el-icon-menu"></i>
                                     <span slot="title">商品管理</span>
                                 </div>
@@ -67,7 +67,7 @@
 
                         <el-submenu index="4">
                             <template slot="title">
-                                <div @click="toType">
+                                <div @click="adminRouter('Type')">
                                     <i class="el-icon-document"></i>
                                     <span slot="title">分类管理</span>
                                 </div>
@@ -79,7 +79,7 @@
 
                         <el-submenu index="5">
                             <template slot="title">
-                                <div @click="toInfo">
+                                <div @click="adminRouter('Info')">
                                     <i class="el-icon-info"></i>
                                     <span slot="title">系统通知</span>
                                 </div>
@@ -91,7 +91,7 @@
 
                         <el-submenu index="6">
                             <template slot="title">
-                                <div @click="toSet">
+                                <div @click="adminRouter('Set')">
                                     <i class="el-icon-setting"></i>
                                     <span slot="title">其它设置</span>
                                 </div>
@@ -104,42 +104,43 @@
 
                 <!-- 内容区域 -->
                 <el-main>
-                    <!-- 面包屑导航 -->
+                    <!-- 面包屑-系统概况 -->
                     <el-breadcrumb separator-class="el-icon-arrow-right" class="crumbs">
                         <el-breadcrumb-item>趣二手</el-breadcrumb-item>
                         <el-breadcrumb-item>{{crumbsTitle}}</el-breadcrumb-item>
                     </el-breadcrumb>
 
-                    <!-- 统计信息 -->
+                    <!-- 系统概况 -->
                     <el-container class="summary">
-                        <div class="summary-item" @click="toUser">
+                        <div class="summary-item" @click="adminRouter('User')">
                             <i class="el-icon-service"></i>
                             <div class="summary-num">{{countData.countUser}} 人</div>
                             <div class="summary-name">普通用户</div>
                         </div>
-                        <div class="summary-item" @click="toType">
+                        <div class="summary-item" @click="adminRouter('Type')">
                             <i class="el-icon-document"></i>
                             <div class="summary-num">{{countData.countType}} 类</div>
                             <div class="summary-name">商品类别</div>
                         </div>
-                        <div class="summary-item" @click="toGoods">
+                        <div class="summary-item" @click="adminRouter('Goods')">
                             <i class="el-icon-menu"></i>
                             <div class="summary-num">{{countData.countGoods}} 个</div>
                             <div class="summary-name">所有物品</div>
                         </div>
-                        <div class="summary-item" @click="toInfo">
+                        <div class="summary-item" @click="adminRouter('Info')">
                             <i class="el-icon-info"></i>
                             <div class="summary-num">{{countData.countNotice}} 条</div>
                             <div class="summary-name">系统通知</div>
                         </div>
                     </el-container>
 
-                    <!-- 系统通知 -->
+                    <!-- 面包屑-系统通知 -->
                     <el-breadcrumb separator-class="el-icon-arrow-right" class="crumbs">
                         <el-breadcrumb-item>趣二手</el-breadcrumb-item>
                         <el-breadcrumb-item>最新通知</el-breadcrumb-item>
                     </el-breadcrumb>
                     
+                    <!-- 系统通知 -->
                     <div class="infoItem" v-for="item in countData.hotNotice">
                         <div class="infoTitle">
                             <i>{{item.n_title}}</i>
@@ -172,6 +173,31 @@
                 countData   : {},
             },
             methods: {
+                adminRouter: function (params) {
+                    switch (params) {
+                        case 'Admin':
+                            location.href = '__APP__/Home/admin/admin';
+                            break;
+                        case 'Goods':
+                            location.href = '__APP__/Home/admin/admin-goods';
+                            break;
+                        case 'User':
+                            location.href = '__APP__/Home/admin/admin-user';
+                            break;
+                        case 'Type':
+                            location.href = '__APP__/Home/admin/admin-type';
+                            break;
+                        case 'Info':
+                            location.href = '__APP__/Home/admin/admin-info';
+                            break;
+                        case 'Set':
+                            location.href = '__APP__/Home/admin/admin-set';
+                            break;
+                        default:
+                            location.href = '__APP__/Home/admin/error';
+                            break;
+                    }
+                },
                 toAdmin: function (params) {
                     location.href = '__APP__/Home/admin/admin';
                 },
