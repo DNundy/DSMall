@@ -173,11 +173,29 @@ body{
 }
 .rightTitle{
     width: 110px;
-    font-size: 22px;
+    font-size: 25px;
     font-family: '楷体';
     text-align: center;
     padding: 5px;
 }
 .rightItem{
     min-height: 410px;
+    overflow: hidden;
+}
+/* 个人信息 */
+.infoList{
+    padding: 5px 10px;
+    margin: 20px;
+    line-height: 40px;
+}
+.infoList:nth-child(1){
+    margin-top: 40px;
+}
+.listSpan{
+    height: 40px;
+    font-size: 18px;
+    float: left;
+}
+.infoList .el-input{
+    width: 30%;
 }

@@ -64,7 +64,7 @@ class PersonalController extends UserCommonController {
 		}
 	}
 	public function fixPassword(){
-		if(empty($_POST['oldpwd'])||empty($_POST['newpwd'])){
+		if(empty($_POST['oldPwd'])||empty($_POST['newPwd'])){
 			$res = array(
     			'code' => '-1',
     			'msg' => '参数传递出错！',
@@ -72,10 +72,10 @@ class PersonalController extends UserCommonController {
     		return $this->ajaxReturn($res);	
 		}
 		$num = $_SESSION['num'];
-		$newPwd = md5($_POST['newpwd']);
+		$newPwd = md5($_POST['newPwd']);
 		$data = array(
 			'u_id' => $num,
-			'u_password' => md5($_POST['oldpwd']),
+			'u_password' => md5($_POST['oldPwd']),
 		);
 		$info = M('User')->where($data)->select();//若用户与密码对应正确且未被冻结
         if(!empty($info))
