@@ -86,7 +86,10 @@
                         </ul>
                     </div>
                 </div>
+
+                <!-- 右侧内容区域 -->
                 <div class="right-cont">
+                    <!-- 导航信息 -->
                     <div class="rightTitle">{{navigation}}</div>
 
                     <!-- 个人信息 -->
@@ -184,18 +187,27 @@
 
                 // 个人信息
                 personalInfo: '',
-                // 个人信息列表状态
+                // 个人信息列表的编辑状态
                 infoStatus: true,
 
-                // 修改密码信息
+                // 修改密码的表单信息
                 lockInfo    : {
                     num         : '',
                     oldPwd      : '',
                     renewPwd    : '',
                     newPwd      : '',
                 },
+                
+                // 收藏内容
+                collectInfo : {},
+                
+                // 评论内容
+                discussInfo : {},
 
+                // 导航信息
                 navigation  : '个人信息',
+
+                // 列表状态
                 listStatus: {
                     info    : 'active',
                     lock    : '',
@@ -224,12 +236,14 @@
                             break;
                         case '我的收藏':
                             this.listStatus.like = 'active';
+                            this.getCollect();
                             break;
                         case '发布历史':
                             this.listStatus.manage = 'active';
                             break;
                         case '评论记录':
                             this.listStatus.discuss = 'active';
+                            this.getDiscuss();
                             break;
                         case '系统通知':
                             this.listStatus.message = 'active';
@@ -382,17 +396,67 @@
                         });
                     }
                 },
-                // 展示我的收藏
+                // 获取我的收藏
+                getCollect: function (params) {
+                    let url = '__APP__/Home/Personal/userCollectGoods';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.collectInfo = data.msg;
+                            } else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'error'
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
                 // 取消收藏商品
 
                 // 下架我的发布
                 // 展示发布历史
-
+                
                 // 展示评论记录
+                getDiscuss: function (params) {
+                    let url = '__APP__/Home/Personal/discussGoods';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.discussInfo = data.msg;
+                            } else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'error'
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
                 // 展示系统通知
             },
             mounted: function () {
+                // 判断是否登录
                 this.loadingLogin();
+                // 加载首屏的个人信息
                 this.loadingPersonal();
             }
         })
