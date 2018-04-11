@@ -181,7 +181,7 @@ class LoginController extends Controller {
     }
     	
 	public function isLogin(){
-		if(isset($_SESSION['num']) && $_SESSION['num'] != '' && $_SESSION['type'] = 'admin'){
+		if(isset($_SESSION['num']) && $_SESSION['num'] != '' && $_SESSION['type'] == 'admin'){
 			$res = array(
 				'code' => 0,
 				'msg' => '已经登录！',
@@ -195,10 +195,12 @@ class LoginController extends Controller {
         return $this->ajaxReturn($res);
 	}
     public function isLoginUser(){
-        if(isset($_SESSION['num']) && $_SESSION['num'] != '' && $_SESSION['type'] = 'user'){
+        if(isset($_SESSION['num']) && $_SESSION['num'] != '' && $_SESSION['type'] == 'user'){
+            $num = $_SESSION['num'];
+            $name = M('User')->where("u_id=$num")->getField('u_name');
             $res = array(
                 'code' => 0,
-                'msg' => '已经登录！',
+                'msg' => $name,
             );
         }else{
             $res = array(
