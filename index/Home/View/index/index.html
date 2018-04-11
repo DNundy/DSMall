@@ -24,24 +24,35 @@
     <div id="app">
         <el-container>
             <!-- Header 区域 -->
-            <el-header>
-                <span class="logo">趣二手</span>
-                <div class="navLogin">
-                    <a href="../login/login">
-                        <i class="icon iconfont icon-questions"></i> 立即登录
-                    </a>
-                </div>
-                <div class="navList">
-                    <a href="">首页</a>
-                    <a href="">寻购二货</a>
-                    <a href="">出售二货</a>
-                    <a href="">二货问答</a>
-                    <a href="">联系我们</a>
-                </div>
+            <el-header :style="headerBg">
+                <!-- <div class="headerWrap">
+                    <span class="logo">趣二手</span>
+                    <div class="navLogin">
+                        <a href="../login/login">
+                            <i class="icon iconfont icon-questions"></i> 立即登录
+                        </a>
+                    </div>
+                    <div class="navList">
+                        <a href="">首页</a>
+                        <a href="">寻购二货</a>
+                        <a href="">出售二货</a>
+                        <a href="">二货问答</a>
+                        <a href="">联系我们</a>
+                    </div>
+                </div> -->
             </el-header>
 
             <!-- 内容区域 -->
             <el-main>
+                <div class="mainTitle">
+                    <p class="titleOne">趣二手</p>
+                    <p class="titleTwo">没有中间商赚差价</p>
+                </div>
+                <div class="mainOverview">
+                    <div class="overBuy"></div>
+                    <div class="overLogin"></div>
+                    <div class="overSale"></div>
+                </div>
             </el-main>
 
             <!-- Footer区域 -->
@@ -62,8 +73,26 @@
         var app = new Vue({
             el: '#app',
             data: {
+                headerBg: '',
+                headerBgIndex: '0',
+                headerBgPic:[
+                    'background:url(__PUBLIC__/img/index/index-bg-1.jpg) no-repeat center',
+                    'background:url(__PUBLIC__/img/index/1.jpg) no-repeat center',
+                    'background:url(__PUBLIC__/img/index/user-icon.png) no-repeat center',
+                ]
             },
             methods: {
+            },
+            mounted: function (params) {
+                // 更换Banner
+                let _that = this;
+                this.headerBg = _that.headerBgPic[this.headerBgIndex++];
+                setInterval(() => {
+                    if( _that.headerBgIndex == _that.headerBgPic.length ){
+                        _that.headerBgIndex=0;
+                    }
+                    _that.headerBg = _that.headerBgPic[_that.headerBgIndex++];
+                }, 3000);
             }
         })
     </script>

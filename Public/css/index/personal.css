@@ -11,7 +11,7 @@ body{
     float: left;
     font-size: 26px;
     font-weight: 700;
-    color: #c60023;
+    color: #08B35F;
     text-decoration: none;
     line-height: 60px;
     margin-left: 60px;
@@ -52,7 +52,7 @@ body{
     text-decoration: none;
     line-height: 60px;
     /* color: #097653; */
-    color: #c60023;
+    color: #08B35F;
 }
 .navLogin i{
     font-size: 18px;
@@ -82,7 +82,7 @@ body{
     content: "";
     width: 0;
     height: 1px;
-    background: #F2C345;
+    background: #08B35F;
     position: absolute;
     top: 100%;
     left: 50%;
