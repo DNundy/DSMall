@@ -72,7 +72,7 @@ class PersonalController extends UserCommonController {
     		return $this->ajaxReturn($res);	
 		}
 		$num = $_SESSION['num'];
-		$newPwd = $_POST['newpwd']
+		$newPwd = md5($_POST['newpwd']);
 		$data = array(
 			'u_id' => $num,
 			'u_password' => md5($_POST['oldpwd']),
