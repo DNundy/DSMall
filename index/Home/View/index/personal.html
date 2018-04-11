@@ -347,13 +347,14 @@
                                             message: data.msg,
                                             type: 'success'
                                         });
-                                        // 清空表单
+                                        // 重置表单信息
                                         _that.lockInfo = {
                                             num: '',
                                             oldPwd: '',
                                             renewPwd: '',
                                             newPwd: '',
                                         };
+                                        _that.lockInfo.num = _that.personalInfo.u_id;
                                     } else if (data.code == '-1') {
                                         _that.$message({
                                             message: data.msg,
