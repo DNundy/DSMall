@@ -107,7 +107,7 @@ class PersonalController extends UserCommonController {
 	public function userCollectGoods(){
 		$num = $_SESSION['num'];
 		$Model = new Model();
- 		$sql ="select * from trading_collect left join trading_goods on trading_collect.g_id=trading_goods.g_id where trading_collect.u_id=$num order by trading_goods.g_id desc";
+ 		$sql ="select * from trading_collect left join trading_goods on trading_collect.g_id=trading_goods.g_id where trading_collect.u_id=$num order by trading_collect.c_id desc";
  		$goodsInfo = $Model->query($sql);
  		if(!empty($goodsInfo)){
     		$res = array(
@@ -125,8 +125,28 @@ class PersonalController extends UserCommonController {
 	}
 	//取消用户对该商品的收藏
 	public function exitUserCollectGoods(){
-		
-
+		if(empty($_GET['id'])){
+			$res = array(
+    			'code' => '-1',
+    			'msg' => '参数传递出错！',
+    		);
+    		return $this->ajaxReturn($res);	
+		}
+		$id = $_GET['id'];
+		$result = M('Collect')->where("c_id=$id")->delete();
+		if($result != false){
+			$res = array(
+    			'code' => '0',
+    			'msg' => '取消收藏成功！',
+    		);
+    		return $this->ajaxReturn($res);	
+		} else {
+			$res = array(
+    			'code' => '-1',
+    			'msg' => '取消收藏失败!',
+    		);
+    		return $this->ajaxReturn($res);	
+		}
 	}
 	//该用户发布的所有商品
 	public function oldPublishGoods(){
