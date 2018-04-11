@@ -26,13 +26,17 @@
             <el-header>
                 <span class="logo">趣二手</span>
                 <div class="navLogin">
-                    <a href="../login/login">
+                    <a href="__APP__/Home/index/personal" v-if="isLogin">
+                        <i class="icon iconfont icon-questions"></i>
+                        <span> {{loginInfo}} </span>
+                    </a>
+                    <a href="../login/login" v-else>
                         <i class="icon iconfont icon-questions"></i>
                         <span> 立即登录 </span>
                     </a>
                 </div>
                 <div class="navList">
-                    <a href="./index">首页</a>
+                    <a href="../index/index">首页</a>
                     <a href="">寻购二货</a>
                     <a href="">出售二货</a>
                     <a href="">二货问答</a>
@@ -41,7 +45,7 @@
             </el-header>
 
             <!-- 内容区域 -->
-            <el-main v-if="isLogin">
+            <el-main v-loading="!isLogin&&!loginInfo">
                 <!-- 左侧列表 -->
                 <div class="left-list">
                     <!-- 左侧头像 -->
@@ -50,7 +54,7 @@
                     </div>
                     <!-- 左侧姓名 -->
                     <div class="list-name">
-                        <span>詹永东</span>
+                        <span> {{loginInfo}} </span>
                     </div>
                     <!-- 左侧选项 -->
                     <div class="list-options">
@@ -84,14 +88,58 @@
                 </div>
                 <div class="right-cont">
                     <div class="rightTitle">{{navigation}}</div>
+
                     <!-- 个人信息 -->
                     <div class="rightItem" v-if="listStatus.info">
-
+                        <div class="infoList">
+                            <span class="listSpan">注册账号：</span>
+                            <el-input v-model="personalInfo.u_id" disabled="true"></el-input>
+                        </div>
+                        <div class="infoList">
+                            <span class="listSpan">用户昵称：</span>
+                            <el-input v-model="personalInfo.u_name" :disabled="infoStatus"></el-input>
+                        </div>
+                        <div class="infoList">
+                            <span class="listSpan">常用地址：</span>
+                            <el-input v-model="personalInfo.u_place" :disabled="infoStatus"></el-input>
+                        </div>
+                        <div class="infoList">
+                            <span class="listSpan">联系方式：</span>
+                            <el-input v-model="personalInfo.u_telphone" :disabled="infoStatus"></el-input>
+                        </div>
+                        <div class="infoList">
+                            <span class="listSpan">电子邮箱：</span>
+                            <el-input v-model="personalInfo.u_email" :disabled="infoStatus"></el-input>
+                        </div>
+                        <div class="infoList">
+                            <el-button type="primary" icon="el-icon-edit" circle v-if="infoStatus" @click="infoStatus=!infoStatus">点击编辑</el-button>
+                            <el-button type="success" icon="el-icon-check" circle v-else  @click="modifyInfo">立即保存</el-button>
+                        </div>
                     </div>
+
                     <!-- 账户安全 -->
                     <div class="rightItem" v-if="listStatus.lock">
-
+                        <div class="infoList">
+                            <span class="listSpan">注册账号&nbsp;&nbsp;&nbsp;：</span>
+                            <el-input v-model="lockInfo.num" disabled="true"></el-input>
+                        </div>
+                        <div class="infoList">
+                            <span class="listSpan">输入旧密码：</span>
+                            <el-input v-model="lockInfo.oldPwd"  type="password"></el-input>
+                        </div>
+                        <div class="infoList">
+                            <span class="listSpan">输入新密码：</span>
+                            <el-input v-model="lockInfo.renewPwd"  type="password"></el-input>
+                        </div>
+                        <div class="infoList">
+                            <span class="listSpan">重复新密码：</span>
+                            <el-input v-model="lockInfo.newPwd" type="password"></el-input>
+                        </div>
+                        <div class="infoList">
+                            <el-button type="success" icon="el-icon-check" circle @click="modifyPwd">立即保存</el-button>
+                        </div>
                     </div>
+
                     <!-- 我的收藏 -->
                     <div class="rightItem" v-if="listStatus.like">
 
@@ -129,7 +177,24 @@
         var app = new Vue({
             el: '#app',
             data: {
+                // 登录状态
                 isLogin     : false,
+                // 登录的信息
+                loginInfo   : '',
+
+                // 个人信息
+                personalInfo: '',
+                // 个人信息列表状态
+                infoStatus: true,
+
+                // 修改密码信息
+                lockInfo    : {
+                    num         : '',
+                    oldPwd      : '',
+                    renewPwd    : '',
+                    newPwd      : '',
+                },
+
                 navigation  : '个人信息',
                 listStatus: {
                     info    : 'active',
@@ -141,6 +206,7 @@
                 }
             },
             methods: {
+                
                 // 个人空间路由方法
                 personalRouter: function (params) {
                     for (const key in this.listStatus) {
@@ -172,13 +238,148 @@
                             break;
                     }
                 },
+                
+                // 加载登录状态
+                loadingLogin: function (params) {
+                    let url = '__APP__/Home/Login/isLoginUser';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.isLogin = true;
+                                _that.loginInfo = data.msg;
+                            } else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'error'
+                                });
+                                setTimeout(() => {
+                                    location = '../login/login';
+                                }, 2000);
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                // 加载个人信息
+                loadingPersonal: function (params) {
+                    let url = '__APP__/Home/Personal/userInfo';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.personalInfo = data.msg[0];
+                                // 用于修改密码，自动填充账号信息
+                                _that.lockInfo.num = _that.personalInfo.u_id;
+                            } else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'error'
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+                
                 // 修改个人信息
                 modifyInfo: function (params) {
-                    
+                    let url = '__APP__/Home/Personal/fixUserInfo';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: _that.personalInfo,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'success'
+                                });
+                                _that.infoStatus = !_that.infoStatus;
+                                _that.loadingLogin();
+                            } else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'error'
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
                 },
+                
                 // 修改账户密码
                 modifyPwd: function (params) {
-
+                    if( (this.lockInfo.renewPwd == this.lockInfo.newPwd) && this.lockInfo.oldPwd && this.lockInfo.newPwd ){
+                        if( (this.lockInfo.newPwd.length >= 6) && (this.lockInfo.newPwd.length <= 16)){
+                            let url = '__APP__/Home/Personal/fixPassword';
+                            let _that = this;
+                            $.ajax({
+                                url: url,
+                                type: 'POST',
+                                data: _that.lockInfo,
+                                dataType: 'JSON',
+                                success: function (data) {
+                                    if (data.code == '0') {
+                                        _that.$message({
+                                            message: data.msg,
+                                            type: 'success'
+                                        });
+                                        // 清空表单
+                                        _that.lockInfo = {
+                                            num: '',
+                                            oldPwd: '',
+                                            renewPwd: '',
+                                            newPwd: '',
+                                        };
+                                    } else if (data.code == '-1') {
+                                        _that.$message({
+                                            message: data.msg,
+                                            type: 'error'
+                                        });
+                                    }
+                                },
+                                error: function () {
+                                    _that.$message({
+                                        message: '网络 或者 服务器出错,请稍后重试！',
+                                        type: 'error'
+                                    });
+                                }
+                            });
+                        }else{
+                            this.$message({
+                                message: '新密码为 6~16位字符 组合！',
+                                type: 'error'
+                            });
+                        }
+                    }else{
+                        this.$message({
+                            message: '新密码 不能为空 或 两次密码不一致 ！',
+                            type: 'error'
+                        });
+                    }
                 },
                 // 展示我的收藏
                 // 取消收藏商品
@@ -190,31 +391,8 @@
                 // 展示系统通知
             },
             mounted: function () {
-                let url     = '__APP__/Home/Login/isLoginUser';
-                let _that   = this;
-                $.ajax({
-                    url: url,
-                    dataType: 'JSON',
-                    success: function (data) {
-                        if (data.code == '0') {
-                            _that.isLogin = true;
-                        } else if (data.code == '-1') {
-                            _that.$message({
-                                message: data.msg,
-                                type: 'error'
-                            });
-                            setTimeout(() => {
-                                location = '../login/login';
-                            }, 2000);
-                        }
-                    },
-                    error: function () {
-                        _that.$message({
-                            message: '网络 或者 服务器出错,请稍后重试！',
-                            type: 'error'
-                        });
-                    }
-                });
+                this.loadingLogin();
+                this.loadingPersonal();
             }
         })
     </script>

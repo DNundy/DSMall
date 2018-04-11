@@ -31,10 +31,10 @@ class PersonalController extends UserCommonController {
 	//接受修改用户信息 
 	public function fixUserInfo(){
 		$num = $_SESSION['num'];
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$place = $_POST['place'];
-		$telphone = $_POST['telphone'];
+		$name = $_POST['u_name'];
+		$email = $_POST['u_email'];
+		$place = $_POST['u_place'];
+		$telphone = $_POST['u_telphone'];
 		if(empty($name)||empty($email)||empty($place)||empty($telphone)){
 			$res = array(
                 'code' => '-1',
@@ -58,7 +58,7 @@ class PersonalController extends UserCommonController {
 		} else {
 			$res = array(
                 'code' => '-1',
-                'msg' => '修改用户失败!',
+                'msg' => '修改用户信息失败!',
             );
             return $this->ajaxReturn($res);
 		}
