@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>用户登录 - 趣二手</title>
+    <title>个人空间 - 趣二手</title>
 
     <!-- ThirdParty -->
     <script src="__PUBLIC__/lib/vue.min.js"></script>
@@ -26,13 +25,90 @@
             <!-- Header 区域 -->
             <el-header>
                 <span class="logo">趣二手</span>
+                <div class="navLogin">
+                    <a href="../login/login">
+                        <i class="icon iconfont icon-questions"></i>
+                        <span> 立即登录 </span>
+                    </a>
+                </div>
                 <div class="navList">
-                    <a href=""></a>
+                    <a href="./index">首页</a>
+                    <a href="">寻购二货</a>
+                    <a href="">出售二货</a>
+                    <a href="">二货问答</a>
+                    <a href="">联系我们</a>
                 </div>
             </el-header>
 
             <!-- 内容区域 -->
-            <el-main>
+            <el-main v-if="isLogin">
+                <!-- 左侧列表 -->
+                <div class="left-list">
+                    <!-- 左侧头像 -->
+                    <div class="list-img"  @click="personalRouter('个人信息')">
+                        <img src="__PUBLIC__/img/index/user-icon.png" alt="用户头像" title="用户头像">
+                    </div>
+                    <!-- 左侧姓名 -->
+                    <div class="list-name">
+                        <span>詹永东</span>
+                    </div>
+                    <!-- 左侧选项 -->
+                    <div class="list-options">
+                        <ul>
+                            <li @click="personalRouter('个人信息')" :class="listStatus.info">
+                                <span class="icon iconfont icon-people">&nbsp;</span>
+                                个人信息
+                            </li>
+                            <li @click="personalRouter('账户安全')" :class="listStatus.lock">
+                                <span class="icon iconfont icon-lock">&nbsp;</span>
+                                账户安全
+                            </li>
+                            <li @click="personalRouter('我的收藏')" :class="listStatus.like">
+                                <span class="icon iconfont icon-like">&nbsp;</span>
+                                我的收藏
+                            </li>
+                            <li @click="personalRouter('发布历史')" :class="listStatus.manage">
+                                <span class="icon iconfont icon-manage">&nbsp;</span>
+                                发布历史
+                            </li>
+                            <li @click="personalRouter('评论记录')" :class="listStatus.discuss">
+                                <span class="icon iconfont icon-order">&nbsp;</span>
+                                评论记录
+                            </li>
+                            <li @click="personalRouter('系统通知')" :class="listStatus.message">
+                                <span class="icon iconfont icon-systemprompt">&nbsp;</span>
+                                系统通知
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-cont">
+                    <div class="rightTitle">{{navigation}}</div>
+                    <!-- 个人信息 -->
+                    <div class="rightItem" v-if="listStatus.info">
+
+                    </div>
+                    <!-- 账户安全 -->
+                    <div class="rightItem" v-if="listStatus.lock">
+
+                    </div>
+                    <!-- 我的收藏 -->
+                    <div class="rightItem" v-if="listStatus.like">
+
+                    </div>
+                    <!-- 发布历史 -->
+                    <div class="rightItem" v-if="listStatus.manage">
+
+                    </div>
+                    <!-- 评论记录 -->
+                    <div class="rightItem" v-if="listStatus.discuss">
+
+                    </div>
+                    <!-- 系统通知 -->
+                    <div class="rightItem" v-if="listStatus.message">
+
+                    </div>
+                </div>
             </el-main>
 
             <!-- Footer区域 -->
@@ -41,7 +117,7 @@
                     <a target="_blank" href="http://www.xiyou.edu.cn/">西邮官网</a> |
                     <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> |
                     <a target="_blank" href="http://gr.xupt.edu.cn/">研究生院</a> |
-                    <a href="./login-admin.html">管理员登录</a>
+                    <a href="../login/login-admin.html">管理员登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -53,8 +129,92 @@
         var app = new Vue({
             el: '#app',
             data: {
+                isLogin     : false,
+                navigation  : '个人信息',
+                listStatus: {
+                    info    : 'active',
+                    lock    : '',
+                    like    : '',
+                    manage  : '',
+                    discuss : '',
+                    message : '',
+                }
             },
             methods: {
+                // 个人空间路由方法
+                personalRouter: function (params) {
+                    for (const key in this.listStatus) {
+                        if (this.listStatus.hasOwnProperty(key)) {
+                            this.listStatus[key] = '';
+                        }
+                    }
+                    this.navigation = params;
+                    switch (params) {
+                        case '个人信息':
+                            this.listStatus.info = 'active';
+                            break;
+                        case '账户安全':
+                            this.listStatus.lock = 'active';
+                            break;
+                        case '我的收藏':
+                            this.listStatus.like = 'active';
+                            break;
+                        case '发布历史':
+                            this.listStatus.manage = 'active';
+                            break;
+                        case '评论记录':
+                            this.listStatus.discuss = 'active';
+                            break;
+                        case '系统通知':
+                            this.listStatus.message = 'active';
+                            break;
+                        default:
+                            break;
+                    }
+                },
+                // 修改个人信息
+                modifyInfo: function (params) {
+                    
+                },
+                // 修改账户密码
+                modifyPwd: function (params) {
+
+                },
+                // 展示我的收藏
+                // 取消收藏商品
+
+                // 下架我的发布
+                // 展示发布历史
+
+                // 展示评论记录
+                // 展示系统通知
+            },
+            mounted: function () {
+                let url     = '__APP__/Home/Login/isLogin';
+                let _that   = this;
+                $.ajax({
+                    url: url,
+                    dataType: 'JSON',
+                    success: function (data) {
+                        if (data.code == '0') {
+                            _that.isLogin = true;
+                        } else if (data.code == '-1') {
+                            _that.$message({
+                                message: data.msg,
+                                type: 'error'
+                            });
+                            setTimeout(() => {
+                                location = '../login/login';
+                            }, 2000);
+                        }
+                    },
+                    error: function () {
+                        _that.$message({
+                            message: '网络 或者 服务器出错,请稍后重试！',
+                            type: 'error'
+                        });
+                    }
+                });
             }
         })
     </script>
