@@ -31,10 +31,10 @@ class PersonalController extends UserCommonController {
 	//接受修改用户信息 
 	public function fixUserInfo(){
 		$num = $_SESSION['num'];
-		$name = $_POST['u_name'];
-		$email = $_POST['u_email'];
-		$place = $_POST['u_place'];
-		$telphone = $_POST['u_telphone'];
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$place = $_POST['place'];
+		$telphone = $_POST['telphone'];
 		if(empty($name)||empty($email)||empty($place)||empty($telphone)){
 			$res = array(
                 'code' => '-1',
@@ -58,13 +58,13 @@ class PersonalController extends UserCommonController {
 		} else {
 			$res = array(
                 'code' => '-1',
-                'msg' => '修改用户信息失败!',
+                'msg' => '您并未进行修改!',
             );
             return $this->ajaxReturn($res);
 		}
 	}
 	public function fixPassword(){
-		if(empty($_POST['oldpwd'])||empty($_POST['newpwd'])){
+		if(empty($_POST['oldPwd'])||empty($_POST['newPwd'])){
 			$res = array(
     			'code' => '-1',
     			'msg' => '参数传递出错！',
@@ -72,10 +72,10 @@ class PersonalController extends UserCommonController {
     		return $this->ajaxReturn($res);	
 		}
 		$num = $_SESSION['num'];
-		$newPwd = md5($_POST['newpwd']);
+		$newPwd = md5($_POST['newPwd']);
 		$data = array(
 			'u_id' => $num,
-			'u_password' => md5($_POST['oldpwd']),
+			'u_password' => md5($_POST['oldPwd']),
 		);
 		$info = M('User')->where($data)->select();//若用户与密码对应正确且未被冻结
         if(!empty($info))
@@ -83,10 +83,16 @@ class PersonalController extends UserCommonController {
         	$result = M('User')->where($data)->setField('u_password',"$newPwd");
         	if($result != false){
         		$res = array(
-    			'code' => '0',
-    			'msg' => '修改密码成功！',
-    		);
-    		return $this->ajaxReturn($res);	
+    				'code' => '0',
+    				'msg' => '修改密码成功！',
+    			);
+    			return $this->ajaxReturn($res);	
+        	} else {
+        		$res = array(
+    				'code' => '-1',
+    				'msg' => '该密码与原始密码相同！',
+    			);
+    			return $this->ajaxReturn($res);	
         	}
         } else {
         	$res = array(
