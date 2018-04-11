@@ -58,7 +58,7 @@ class PersonalController extends UserCommonController {
 		} else {
 			$res = array(
                 'code' => '-1',
-                'msg' => '修改用户失败!',
+                'msg' => '您并未进行修改!',
             );
             return $this->ajaxReturn($res);
 		}
@@ -83,10 +83,16 @@ class PersonalController extends UserCommonController {
         	$result = M('User')->where($data)->setField('u_password',"$newPwd");
         	if($result != false){
         		$res = array(
-    			'code' => '0',
-    			'msg' => '修改密码成功！',
-    		);
-    		return $this->ajaxReturn($res);	
+    				'code' => '0',
+    				'msg' => '修改密码成功！',
+    			);
+    			return $this->ajaxReturn($res);	
+        	} else {
+        		$res = array(
+    				'code' => '-1',
+    				'msg' => '该密码与原始密码相同！',
+    			);
+    			return $this->ajaxReturn($res);	
         	}
         } else {
         	$res = array(
