@@ -263,6 +263,8 @@
                         success: function (data) {
                             if (data.code == '0') {
                                 _that.isLogin = true;
+                                // 加载首屏的个人信息
+                                _that.loadingPersonal();
                                 _that.loginInfo = data.msg;
                             } else if (data.code == '-1') {
                                 _that.$message({
@@ -456,8 +458,6 @@
             mounted: function () {
                 // 判断是否登录
                 this.loadingLogin();
-                // 加载首屏的个人信息
-                this.loadingPersonal();
             }
         })
     </script>
