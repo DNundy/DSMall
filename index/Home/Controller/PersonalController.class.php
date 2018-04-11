@@ -63,6 +63,40 @@ class PersonalController extends UserCommonController {
             return $this->ajaxReturn($res);
 		}
 	}
+	public function fixPassword(){
+		if(empty($_POST['oldpwd'])||empty($_POST['newpwd'])){
+			$res = array(
+    			'code' => '-1',
+    			'msg' => '参数传递出错！',
+    		);
+    		return $this->ajaxReturn($res);	
+		}
+		$num = $_SESSION['num'];
+		$newPwd = md5($_POST['newpwd']);
+		$data = array(
+			'u_id' => $num,
+			'u_password' => md5($_POST['oldpwd']),
+		);
+		$info = M('User')->where($data)->select();//若用户与密码对应正确且未被冻结
+        if(!empty($info))
+        {
+        	$result = M('User')->where($data)->setField('u_password',"$newPwd");
+        	if($result != false){
+        		$res = array(
+    			'code' => '0',
+    			'msg' => '修改密码成功！',
+    		);
+    		return $this->ajaxReturn($res);	
+        	}
+        } else {
+        	$res = array(
+    			'code' => '-1',
+    			'msg' => '原始密码输入有误！',
+    		);
+    		return $this->ajaxReturn($res);	
+        }
+
+	}
 	//展示该用户收藏的商品
 	public function userCollectGoods(){
 		$num = $_SESSION['num'];
