@@ -254,3 +254,6 @@ body{
 .goodsList .listRight .listCont{
     text-indent: 2em;
 }
+.gray{
+    color: #ccc;
+}

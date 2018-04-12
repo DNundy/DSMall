@@ -180,10 +180,10 @@
                                 <img src="__PUBLIC__/img/index/index-bg-1.jpg" alt="">
                             </div>
                             <div class="listRight">
-                                <div class="listCont">
+                                <div class="listCont"  :class="{ gray:item.g_status==='-1' }">
                                     {{item.g_construct}}
                                 </div>
-                                <div class="listFooter">
+                                <div class="listFooter"  :class="{ gray:item.g_status==='-1' }">
                                     <span class="footerType">类型：{{item.g_type}}&nbsp;&nbsp;&nbsp;</span>
                                     <span class="footerType">价格：{{item.g_price}}&nbsp;&nbsp;&nbsp;</span>
                                     <span class="footerType">发布时间：{{item.g_time}}&nbsp;&nbsp;&nbsp;</span>
@@ -582,7 +582,7 @@
                 },
                 // 重新发布
                 againGoods: function (params) {
-                    this.$confirm('您确定要 下架该商品 吗 ？', '提示', {
+                    this.$confirm('您确定要 重新上架该商品 吗 ？', '提示', {
                         confirmButtonText: '确定',
                         cancelButtonText: '取消',
                         type: 'warning'
