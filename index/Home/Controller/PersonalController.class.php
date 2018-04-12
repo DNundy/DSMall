@@ -31,10 +31,10 @@ class PersonalController extends UserCommonController {
 	//接受修改用户信息 
 	public function fixUserInfo(){
 		$num = $_SESSION['num'];
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$place = $_POST['place'];
-		$telphone = $_POST['telphone'];
+		$name = $_POST['u_name'];
+		$email = $_POST['u_email'];
+		$place = $_POST['u_place'];
+		$telphone = $_POST['u_telphone'];
 		if(empty($name)||empty($email)||empty($place)||empty($telphone)){
 			$res = array(
                 'code' => '-1',
@@ -165,17 +165,10 @@ class PersonalController extends UserCommonController {
         );
         return $this->ajaxReturn($res);
 	}
-	//展示其他用户对该商品的评论
+	//用户发布的所有评论
 	public function discussGoods(){
-		$id = $_GET['id'];
-		if(empty($id)){
-			$res = array(
-            'code' => '-1',
-            'msg' => "参数传递出错！",
-        	);
-        	return $this->ajaxReturn($res);
-		}
-		$disscussInfo = M('Discuss')->where("g_id=$id")->select();
+		$num = $_SESSION['num'];
+		$disscussInfo = M('Discuss')->where("d_user=$num")->select();
 		if(!empty($disscussInfo)){
 			$res = array(
             'code' => '0',
@@ -185,7 +178,7 @@ class PersonalController extends UserCommonController {
 		} else {
 			$res = array(
             'code' => '-1',
-            'msg' => "还没有用户对该商品进行评论！",
+            'msg' => "该用户未发表任何评论！",
         	);
         	return $this->ajaxReturn($res);
 		}
