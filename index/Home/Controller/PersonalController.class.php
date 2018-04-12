@@ -253,7 +253,6 @@ class PersonalController extends UserCommonController {
 		$res = array(
 			'code' => '0',
 			'msg' => $typeGoods,
-
 		);
 		return $this->ajaxReturn($res);
 	}
