@@ -168,7 +168,9 @@ class PersonalController extends UserCommonController {
 	//用户发布的所有评论
 	public function discussGoods(){
 		$num = $_SESSION['num'];
-		$disscussInfo = M('Discuss')->where("d_user=$num")->select();
+		$Model = new Model();
+ 		$sql ="select * from trading_discuss left join trading_goods on trading_discuss.g_id=trading_goods.g_id where trading_discuss.d_user=$num order by trading_discuss.d_id desc";
+ 		$disscussInfo = $Model->query($sql);
 		if(!empty($disscussInfo)){
 			$res = array(
             'code' => '0',
