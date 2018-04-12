@@ -74,8 +74,9 @@
                                 <!-- 登录按钮 -->
                                 <input class="submit-Btn" type="button" value="立即登录" @click="submitForm">
                                 <div class="tips">
-                                    <a class="link pass-forget" href="./forget.html">忘记密码</a>
-                                    <a class="link register" href="./register.html">免费注册</a>
+                                    <a class="already" href="../index/personal" v-if="isLogin">已登录账号：{{loginInfo}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                    <a href="./forget.html">忘记密码&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                    <a href="./register.html">免费注册</a>
                                 </div>
                             </form>
                         </div>
@@ -102,10 +103,12 @@
         var app = new Vue({
             el: '#app',
             data: {
+                isLogin: false,
+                loginInfo: '',
                 formData: {
                     'num': '',
                     'password': '',
-                    'code': ''
+                    'code': '',
                 },
                 dataVerify: {
                     numShow: false,
@@ -150,6 +153,26 @@
                         this.tipsShow = true;
                     }
                 }
+            },
+            mounted: function (params) {
+                let url = '__APP__/Home/Login/isLoginUser';
+                let _that = this;
+                $.ajax({
+                    url: url,
+                    dataType: 'JSON',
+                    success: function (data) {
+                        if (data.code == '0') {
+                            _that.isLogin = true;
+                            _that.loginInfo = data.msg;
+                        }
+                    },
+                    error: function () {
+                        _that.$message({
+                            message: '网络 或者 服务器出错,请稍后重试！',
+                            type: 'error'
+                        });
+                    }
+                });
             }
         })
     </script>

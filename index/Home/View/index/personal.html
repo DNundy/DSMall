@@ -29,6 +29,7 @@
                     <a href="__APP__/Home/index/personal" v-if="isLogin">
                         <i class="icon iconfont icon-questions"></i>
                         <span> {{loginInfo}} </span>
+                        <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
                     </a>
                     <a href="../login/login" v-else>
                         <i class="icon iconfont icon-questions"></i>
@@ -695,6 +696,30 @@
                 toGoods: function (params) {
                     
                 },
+
+                // 退出登录
+                loginOut: function (params) {
+                    let url = '__APP__/Home/Login/out_login';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.$message({
+                                message: data.msg,
+                                type: 'success'
+                            });
+                            _that.isLogin = false;
+                            location = '../login/login'
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                }
             },
             mounted: function () {
                 // 判断是否登录
