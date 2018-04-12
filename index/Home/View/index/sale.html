@@ -75,7 +75,7 @@
                 </div>
                 <p>上传图片</p>
                 <div class="infoList">
-                    <el-upload :file-list="fileList" list-type="picture" name="g_pricture" limit="5" drag="true">
+                    <el-upload :file-list="fileList" list-type="picture" name="g_pricture" limit="5" drag="true" auto-upload=false>
                         <el-button type="primary" class="submitPicBtn">点击上传</el-button>
                         <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
                     </el-upload>
@@ -111,9 +111,11 @@
                 isLogin: false,
                 // 登录的信息
                 loginInfo: '',
-
+                
+                // 文件列表
                 fileList:[],
-
+                
+                // 是否同意协议
                 agreeStatus: false,
 
                 // 发布物品的数据
@@ -124,6 +126,7 @@
                     g_construct: '',
                 },
 
+                // 商品类型数据
                 typeInfo: {},
             },
             methods: {
@@ -157,6 +160,7 @@
                     });
                 },
                 
+                // 获取商品类型
                 getType: function (params) {
                     let url = '__APP__/Home/Personal/findType';
                     let _that = this;
@@ -176,14 +180,15 @@
                         }
                     });
                 },
+                
                 // 重新发布
                 againGoods: function (params) {
-                    this.$confirm('您确定要 重新上架该商品 吗 ？', '提示', {
+                    this.$confirm('您确定要 发布该商品 吗 ？', '提示', {
                         confirmButtonText: '确定',
                         cancelButtonText: '取消',
                         type: 'warning'
                     }).then(() => {
-                        let url = params.target.getAttribute('data-id');
+                        let url = '__APP__/Home/Personal/publishGoods';
                         let _that = this;
                         $.ajax({
                             url: url,
@@ -195,7 +200,7 @@
                                         message: data.msg,
                                         type: 'success'
                                     });
-                                    _that.getGoods();
+                                    location='./personal';
                                 } else if (data.code == '-1') {
                                     _that.$message({
                                         message: data.msg,
