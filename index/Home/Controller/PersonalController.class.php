@@ -242,12 +242,8 @@ class PersonalController extends UserCommonController {
 	public function findNotice(){//显示系统发布的所有通知
     	$notice = M('Notice');
     	$adminNotice = $notice->where()->order('n_id desc')->select();
-        $num = $_SESSION['num'];
-        $admin = M('Admin');
-        $name = $admin->where("a_id=$num")->getField('a_name');
     	$res = array(
             'msg' => $adminNotice,
-            'adminName' => $name,
         );
     	return $this->ajaxReturn($res);
     }
