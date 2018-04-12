@@ -13,20 +13,6 @@ body{
     -webkit-transition: background 2s;
     -o-transition: background 2s;
 }
-/* .headerWrap{
-    width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-.el-header .logo{
-    float: left;
-    font-size: 26px;
-    font-weight: 700;
-    color: #F2C345;
-    text-decoration: none;
-    line-height: 60px;
-    margin-left: 60px;
-} */
 
 /* Footer */
 .el-footer {
@@ -50,59 +36,7 @@ body{
 .el-footer .copyright {
     margin: 10px 0;
 }
-/* Nav 登录 */
-/* .navLogin{
-    float: right;
-    width: 200px;
-    height: 60px;
-    text-align: center;
-    overflow: hidden;
-}
-.navLogin a{
-    font-size: 16px;
-    text-decoration: none;
-    line-height: 60px;
-    color: #F2C345;
-}
-.navLogin i{
-    font-size: 18px;
-} */
-/* Nav 菜单 */
-/* .navList{
-    width: 600px;
-    height: 60px;
-    margin: 0 auto;
-}
-.navList a{
-    display: block;
-    float: left;
-    position: relative;
-    
-    width: 70px;
-    height: 55px;
-    line-height: 60px;
-    text-align: center;
-    margin: 0 20px;
-    
-    color: #fff;
-    font-size: 14px;
-    text-decoration: none;
-}
-.navList a:after{
-    content: "";
-    width: 0;
-    height: 1px;
-    background: #F2C345;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transition: all .3s;
-}
-.navList a:hover:after{
-    left: 0%;
-    width: 100%;
-} */
-
+/*Main 导航*/
 .el-main{
     width: 1200px;
     height: 900px;
@@ -159,6 +93,27 @@ body{
     -webkit-transition:background .8s;
     -o-transition:background .8s;
 }
+.square a{
+    text-decoration: none;
+}
+.square p{
+    color: #666;
+    font-size: 25px;
+    font-family: '楷体';
+    text-align: center;
+}
+.square p i{
+    color: #F2C345;
+    font-size: 50px;
+}
+.square h5{
+    color: #666;
+    text-align: center;
+}
+.square .el-button{
+    display: block;
+    margin: 50px auto;
+}
 .overBuy:hover,.overLogin:hover,.overSale:hover{
     color: #fff;
     background: rgba(10, 11, 12, 0.6);
@@ -166,10 +121,6 @@ body{
 .overBuy:hover > p > i ,.overLogin:hover > p > i ,.overSale:hover > p > i {
     color: #fff;
 }
-.square p{
-    text-align: center;
-}
-.square i{
-    color: #F2C345;
-    font-size: 70px;
+.overBuy:hover > h5,.overLogin:hover > h5,.overSale:hover > h5{
+    color: #fff;
 }
