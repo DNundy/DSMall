@@ -257,3 +257,27 @@ body{
 .gray{
     color: #ccc;
 }
+/* 评论列表 */
+.textList{
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+    border-bottom: #666 1px dashed;
+}
+/* 标题 */
+.textList .textTitle {
+    height: 40px;
+    line-height: 40px;
+}
+.textList .textTitle .el-button{
+    float: right;
+    margin-right: 20px;
+}
+.textList .textCont{
+    text-indent: 2em;
+    padding: 10px;
+}
+.textList .textTime{
+    text-align: right;
+    padding: 10px 25px 10px 0;
+}

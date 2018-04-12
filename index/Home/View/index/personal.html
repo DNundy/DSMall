@@ -197,16 +197,35 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- 评论记录 -->
                     <div class="rightItem" v-if="listStatus.discuss">
-                        <div v-for="(item,index) in discussInfo">
-                            
+                        <div class="textList" v-for="(item,index) in discussInfo">
+                            <div class="textTitle">
+                                <span>{{index+1}}、商品：{{item.g_name}}</span>
+                                <el-button type="primary" icon="el-icon-arrow-document" circle :data-id="item.g_id" @click="toGoods()">查看商品</el-button>
+                            </div>
+                            <div class="textCont">
+                                {{item.d_content}}
+                            </div>
+                            <div class="textTime">
+                                {{item.d_time}}
+                            </div>
                         </div>
                     </div>
+
                     <!-- 系统通知 -->
                     <div class="rightItem" v-if="listStatus.message">
-                        <div v-for="(item,index) in messageInfo">
-
+                        <div class="textList" v-for="(item,index) in messageInfo">
+                            <div class="textTitle">
+                                <span>{{index+1}}、{{item.n_title}}</span>
+                            </div>
+                            <div class="textCont">
+                                {{item.n_content}}
+                            </div>
+                            <div class="textTime">
+                                {{item.n_time}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -304,6 +323,7 @@
                             break;
                         case '系统通知':
                             this.listStatus.message = 'active';
+                            this.getMessage();
                             break;
                         default:
                             break;
@@ -651,9 +671,25 @@
                         }
                     });
                 },
-
-
                 // 展示系统通知
+                getMessage: function (params) {
+                    let url = '__APP__/Home/Personal/findNotice';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.messageInfo = data.msg;
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
 
                 // 跳转至商品详情
                 toGoods: function (params) {
