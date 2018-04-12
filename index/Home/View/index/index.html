@@ -44,7 +44,8 @@
                     <div class="overLogin-bg">
                         <div class="square overLogin">
                             <p><i class="icon iconfont icon-customerservice_fill"></i></p>
-                            <a href="../login/login"><el-button type="danger">立即登录</el-button></a>
+                            <a v-if="!isLogin" href="../login/login"><el-button type="danger">立即登录</el-button></a>
+                            <a v-else href="../index/personal"><el-button type="danger" >欢迎，{{ loginInfo }}</el-button></a>
                             <h5>众里寻她千百度</h5>
                             <h5>那人却在，灯火阑珊处</h5>
                         </div>
@@ -78,6 +79,9 @@
         var app = new Vue({
             el: '#app',
             data: {
+                isLogin: false,
+                loginInfo: '',
+
                 headerBg: '',
                 headerBgIndex: '0',
                 headerBgPic:[
@@ -91,8 +95,10 @@
             methods: {
             },
             mounted: function (params) {
-                // 更换Banner
+                // 更换Banner 加载登录状态
                 let _that = this;
+                let url = '__APP__/Home/Login/isLoginUser';
+
                 this.headerBg = _that.headerBgPic[this.headerBgIndex++];
                 setInterval(() => {
                     if( _that.headerBgIndex == _that.headerBgPic.length ){
@@ -100,6 +106,23 @@
                     }
                     _that.headerBg = _that.headerBgPic[_that.headerBgIndex++];
                 }, 5000);
+
+                $.ajax({
+                    url: url,
+                    dataType: 'JSON',
+                    success: function (data) {
+                        if (data.code == 0) {
+                            _that.isLogin = true;
+                            _that.loginInfo = data.msg;
+                        }
+                    },
+                    error: function () {
+                        _that.$message({
+                            message: '网络 或者 服务器出错,请稍后重试！',
+                            type: 'error'
+                        });
+                    }
+                });
             }
         })
     </script>
