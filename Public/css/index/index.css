@@ -8,6 +8,10 @@ body{
     height: 600px !important;
     margin: 0 auto;
     overflow: hidden;
+    transition: background 2s;
+    -moz-transition: background 2s;
+    -webkit-transition: background 2s;
+    -o-transition: background 2s;
 }
 /* .headerWrap{
     width: 1200px;
@@ -101,23 +105,71 @@ body{
 
 .el-main{
     width: 1200px;
-    height: 600px;
-    margin: -350px auto 0 auto;
-    background: red;
+    height: 900px;
+    overflow: hidden;
+    margin: -520px auto 0 auto;
 }
 .mainTitle{
     color: #666;
     width: 300px;
-    height: 150px;
+    height: 200px;
     margin: 0 auto;
     text-align: center;
-    background: yellow;
 }
 .titleOne{
     font-family: '楷体';
-    font-size: 50px;
+    font-size: 70px;
     font-weight: bolder;
 }
 .titleTwo{
-    font-size: 22px;
+    margin-top: -30px;
+    font-size: 30px;
+}
+.mainOverview{
+    width: 1049px;
+    height: 320px;
+    overflow: hidden;
+    margin: 50px auto 20px auto;
+    border-radius: 5px;
+    box-shadow: 0px 1px 15px #333333;
+}
+.mainOverview div{
+    width: 349px;
+    height: 320px;
+    float: left;
+}
+.overBuy-bg{
+    background: url('../../img/index/main-bg-1.jpg') center no-repeat;
+    background-size: 100%;
+    border-right: 1px solid #ddd;
+}
+.overLogin-bg{
+    background: url('../../img/index/main-bg-2.jpg') center no-repeat;
+    background-size: 100%;
+    border-right: 1px solid #ddd;
+}
+.overSale-bg{
+    background: url('../../img/index/main-bg-3.jpg') center no-repeat;
+    background-size: 100%;
+}
+.overBuy,.overLogin,.overSale{
+    background: #fff;
+    transition:background .8s;
+    -moz-transition:background .8s;
+    -webkit-transition:background .8s;
+    -o-transition:background .8s;
+}
+.overBuy:hover,.overLogin:hover,.overSale:hover{
+    color: #fff;
+    background: rgba(10, 11, 12, 0.6);
+}
+.overBuy:hover > p > i ,.overLogin:hover > p > i ,.overSale:hover > p > i {
+    color: #fff;
+}
+.square p{
+    text-align: center;
+}
+.square i{
+    color: #F2C345;
+    font-size: 70px;
 }

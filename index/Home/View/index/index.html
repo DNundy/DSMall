@@ -49,9 +49,24 @@
                     <p class="titleTwo">没有中间商赚差价</p>
                 </div>
                 <div class="mainOverview">
-                    <div class="overBuy"></div>
-                    <div class="overLogin"></div>
-                    <div class="overSale"></div>
+                    <div class="overBuy-bg">
+                        <div class="square overBuy">
+                            <p><i class="icon iconfont icon-int"></i></p>
+                            <p>寻购二货</p>
+                        </div>
+                    </div>
+                    <div class="overLogin-bg">
+                        <div class="square overLogin">
+                            <p><i class="icon iconfont icon-customerservice_fill"></i></p>
+                            <p>立即登录</p>
+                        </div>
+                    </div>
+                    <div class="overSale-bg">
+                        <div class="square overSale">
+                            <p><i class="icon iconfont icon-coupons_fill"></i></p>
+                            <p>出售二货</p>
+                        </div>
+                    </div>
                 </div>
             </el-main>
 
@@ -77,8 +92,10 @@
                 headerBgIndex: '0',
                 headerBgPic:[
                     'background:url(__PUBLIC__/img/index/index-bg-1.jpg) no-repeat center',
-                    'background:url(__PUBLIC__/img/index/1.jpg) no-repeat center',
-                    'background:url(__PUBLIC__/img/index/user-icon.png) no-repeat center',
+                    'background:url(__PUBLIC__/img/index/index-bg-2.jpg) no-repeat center',
+                    'background:url(__PUBLIC__/img/index/index-bg-3.jpg) no-repeat center',
+                    'background:url(__PUBLIC__/img/index/index-bg-4.jpg) no-repeat center',
+                    'background:url(__PUBLIC__/img/index/index-bg-5.jpg) no-repeat center',
                 ]
             },
             methods: {
@@ -92,7 +109,7 @@
                         _that.headerBgIndex=0;
                     }
                     _that.headerBg = _that.headerBgPic[_that.headerBgIndex++];
-                }, 3000);
+                }, 6000);
             }
         })
     </script>
