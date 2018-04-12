@@ -199,11 +199,15 @@
                     </div>
                     <!-- 评论记录 -->
                     <div class="rightItem" v-if="listStatus.discuss">
-
+                        <div v-for="(item,index) in discussInfo">
+                            
+                        </div>
                     </div>
                     <!-- 系统通知 -->
                     <div class="rightItem" v-if="listStatus.message">
+                        <div v-for="(item,index) in messageInfo">
 
+                        </div>
                     </div>
                 </div>
             </el-main>
@@ -252,6 +256,9 @@
                 
                 // 评论内容
                 discussInfo : {},
+
+                // 通知内容
+                messageInfo: {},
 
                 // 导航信息
                 navigation  : '个人信息',
@@ -618,6 +625,7 @@
                         return;
                     });
                 },
+                
                 // 展示评论记录
                 getDiscuss: function (params) {
                     let url = '__APP__/Home/Personal/discussGoods';
