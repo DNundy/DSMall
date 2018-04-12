@@ -32,15 +32,15 @@
                         <span> {{loginInfo}} </span>
                         <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
                     </a>
-                    <a href="../login/login" v-else>
+                    <a href="__APP__/Home/login/login" v-else>
                         <i class="icon iconfont icon-questions"></i>
                         <span> 立即登录 </span>
                     </a>
                 </div>
                 <div class="navList">
-                    <a href="../index/index">首页</a>
+                    <a href="__APP__/Home/index/index">首页</a>
                     <a href="">寻购二货</a>
-                    <a href="../index/sale">出售二货</a>
+                    <a href="__APP__/Home/index/sale">出售二货</a>
                     <a href="">二货问答</a>
                     <a href="">联系我们</a>
                 </div>
@@ -95,7 +95,7 @@
                     <a target="_blank" href="http://www.xiyou.edu.cn/">西邮官网</a> |
                     <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> |
                     <a target="_blank" href="http://gr.xupt.edu.cn/">研究生院</a> |
-                    <a href="../login/login-admin.html">管理员登录</a>
+                    <a href="__APP__/Home/login/login-admin.html">管理员登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -147,7 +147,7 @@
                                     type: 'error'
                                 });
                                 setTimeout(() => {
-                                    location = '../login/login';
+                                    location = '__APP__/Home/login/login';
                                 }, 2000);
                             }
                         },
@@ -200,7 +200,7 @@
                                         message: data.msg,
                                         type: 'success'
                                     });
-                                    location='./personal';
+                                    location='__APP__/Home/personal';
                                 } else if (data.code == '-1') {
                                     _that.$message({
                                         message: data.msg,
@@ -233,7 +233,7 @@
                                 type: 'success'
                             });
                             _that.isLogin = false;
-                            location = '../login/login'
+                            location = '__APP__/Home/login/login'
                         },
                         error: function () {
                             _that.$message({

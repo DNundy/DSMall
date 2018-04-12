@@ -74,9 +74,9 @@
                                 <!-- 登录按钮 -->
                                 <input class="submit-Btn" type="button" value="立即登录" @click="submitForm">
                                 <div class="tips">
-                                    <a class="already" href="../index/personal" v-if="isLogin">已登录账号：{{loginInfo}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                                    <a href="./forget.html">忘记密码&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                                    <a href="./register.html">免费注册</a>
+                                    <a class="already" href="__APP__/Home/index/personal" v-if="isLogin">已登录账号：{{loginInfo}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                    <a href="__APP__/Home/login/forget.html">忘记密码&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                    <a href="__APP__/Home/login/register.html">免费注册</a>
                                 </div>
                             </form>
                         </div>
@@ -90,7 +90,7 @@
                     <a target="_blank" href="http://www.xiyou.edu.cn/">西邮官网</a> | 
                     <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> | 
                     <a target="_blank" href="http://gr.xupt.edu.cn/">研究生院</a> | 
-                    <a href="./login-admin.html">管理员登录</a>
+                    <a href="__APP__/Home/login/login-admin.html">管理员登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
