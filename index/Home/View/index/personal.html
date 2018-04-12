@@ -145,11 +145,57 @@
 
                     <!-- 我的收藏 -->
                     <div class="rightItem" v-if="listStatus.like">
-
+                        <div class="goodsList" v-for="(item,index) in collectInfo">
+                            <div class="listTitle">
+                                <span>{{index+1}}、{{item.g_name}}</span>
+                                <el-button type="primary" icon="el-icon-arrow-document" circle :data-id="item.g_id" @click="toGoods()">查看详情</el-button>
+                            </div>
+                            <div class="listImg">
+                                <img src="__PUBLIC__/img/index/index-bg-1.jpg" alt="">
+                            </div>
+                            <div class="listRight">
+                                <div class="listCont">
+                                    {{item.g_construct}}
+                                </div>
+                                <div class="listFooter">
+                                    <span class="footerType">类型：{{item.g_type}}&nbsp;&nbsp;&nbsp;</span>
+                                    <span class="footerType">价格：{{item.g_price}}&nbsp;&nbsp;&nbsp;</span>
+                                    <span class="footerType">收藏时间：{{item.c_time}}&nbsp;&nbsp;&nbsp;</span>
+                                    <el-button type="warning" :data-id="'__APP__/Home/Personal/exitUserCollectGoods?id='+item.g_id" @click="delCollect($event)">
+                                        <span :data-id="'__APP__/Home/Personal/exitUserCollectGoods?id='+item.g_id">取消收藏</span>
+                                    </el-button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <!-- 发布历史 -->
                     <div class="rightItem" v-if="listStatus.manage">
-
+                        <div class="goodsList" v-for="(item,index) in publishInfo">
+                            <div class="listTitle">
+                                <span>{{index+1}}、{{item.g_name}}</span>
+                                <el-button type="primary" icon="el-icon-arrow-document" circle :data-id="item.g_id" @click="toGoods()">查看详情</el-button>
+                            </div>
+                            <div class="listImg">
+                                <img src="__PUBLIC__/img/index/index-bg-1.jpg" alt="">
+                            </div>
+                            <div class="listRight">
+                                <div class="listCont">
+                                    {{item.g_construct}}
+                                </div>
+                                <div class="listFooter">
+                                    <span class="footerType">类型：{{item.g_type}}&nbsp;&nbsp;&nbsp;</span>
+                                    <span class="footerType">价格：{{item.g_price}}&nbsp;&nbsp;&nbsp;</span>
+                                    <span class="footerType">发布时间：{{item.g_time}}&nbsp;&nbsp;&nbsp;</span>
+                                    <el-button type="warning" :data-id="'__APP__/Home/Personal/exitGoods?id='+item.g_id" @click="delGoods($event)" v-if="item.g_status==='1'">
+                                        <span :data-id="'__APP__/Home/Personal/exitGoods?id='+item.g_id">下架商品</span>
+                                    </el-button>
+                                    <el-button type="warning" :data-id="'__APP__/Home/Personal/againGoods?id='+item.g_id" @click="againGoods($event)" v-else>
+                                        <span :data-id="'__APP__/Home/Personal/againGoods?id='+item.g_id">重新发布</span>
+                                    </el-button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- 评论记录 -->
                     <div class="rightItem" v-if="listStatus.discuss">
@@ -200,6 +246,9 @@
                 
                 // 收藏内容
                 collectInfo : {},
+
+                // 发布历史
+                publishInfo : {},
                 
                 // 评论内容
                 discussInfo : {},
@@ -240,6 +289,7 @@
                             break;
                         case '发布历史':
                             this.listStatus.manage = 'active';
+                            this.getGoods();
                             break;
                         case '评论记录':
                             this.listStatus.discuss = 'active';
@@ -253,6 +303,7 @@
                     }
                 },
                 
+
                 // 加载登录状态
                 loadingLogin: function (params) {
                     let url = '__APP__/Home/Login/isLoginUser';
@@ -284,7 +335,6 @@
                         }
                     });
                 },
-
                 // 加载个人信息
                 loadingPersonal: function (params) {
                     let url = '__APP__/Home/Personal/userInfo';
@@ -313,6 +363,7 @@
                     });
                 },
                 
+
                 // 修改个人信息
                 modifyInfo: function (params) {
                     let url = '__APP__/Home/Personal/fixUserInfo';
@@ -345,7 +396,6 @@
                         }
                     });
                 },
-                
                 // 修改账户密码
                 modifyPwd: function (params) {
                     if( (this.lockInfo.renewPwd == this.lockInfo.newPwd) && this.lockInfo.oldPwd && this.lockInfo.newPwd ){
@@ -398,6 +448,8 @@
                         });
                     }
                 },
+
+
                 // 获取我的收藏
                 getCollect: function (params) {
                     let url = '__APP__/Home/Personal/userCollectGoods';
@@ -413,6 +465,7 @@
                                     message: data.msg,
                                     type: 'error'
                                 });
+                                _that.collectInfo = {};
                             }
                         },
                         error: function () {
@@ -424,10 +477,147 @@
                     });
                 },
                 // 取消收藏商品
+                delCollect: function (params) {
+                    this.$confirm('您确定要 取消收藏 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let url= params.target.getAttribute('data-id');
+                        let _that = this;
+                        $.ajax({
+                            url: url,
+                            type: 'GET',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                if (data.code == '0') {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getCollect();
+                                } else if (data.code == '-1') {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'error'
+                                    });
+                                }
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }).catch(() => {
+                            return;
+                    });
+                },
 
-                // 下架我的发布
+
                 // 展示发布历史
-                
+                getGoods: function (params) {
+                    let url = '__APP__/Home/Personal/oldPublishGoods';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.publishInfo = data.msg;
+                            } else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'error'
+                                });
+                                _that.publishInfo = {};
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+                // 下架我的发布
+                delGoods: function (params) {
+                    this.$confirm('您确定要 下架该商品 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let url = params.target.getAttribute('data-id');
+                        let _that = this;
+                        $.ajax({
+                            url: url,
+                            type: 'GET',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                if (data.code == '0') {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getGoods();
+                                } else if (data.code == '-1') {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'error'
+                                    });
+                                }
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }).catch(() => {
+                        return;
+                    });
+                },
+                // 重新发布
+                againGoods: function (params) {
+                    this.$confirm('您确定要 下架该商品 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let url = params.target.getAttribute('data-id');
+                        let _that = this;
+                        $.ajax({
+                            url: url,
+                            type: 'GET',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                if (data.code == '0') {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getGoods();
+                                } else if (data.code == '-1') {
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'error'
+                                    });
+                                }
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }).catch(() => {
+                        return;
+                    });
+                },
                 // 展示评论记录
                 getDiscuss: function (params) {
                     let url = '__APP__/Home/Personal/discussGoods';
@@ -453,7 +643,14 @@
                         }
                     });
                 },
+
+
                 // 展示系统通知
+
+                // 跳转至商品详情
+                toGoods: function (params) {
+                    
+                },
             },
             mounted: function () {
                 // 判断是否登录

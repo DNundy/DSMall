@@ -212,7 +212,34 @@ class PersonalController extends UserCommonController {
 		} else {
 			$res = array(
                 'code' => '-1',
-                'msg' => '下架商品失败!',
+                'msg' => '该商品已经下架!',
+            );
+            return $this->ajaxReturn($res);
+		}
+	}
+	//重新发布
+	public function againGoods(){
+		$id = $_GET['id'];//商品id
+		if(empty($id)){
+			$res = array(
+                'code' => '-1',
+                'msg' => '参数传递出错！',
+            );
+            return $this->ajaxReturn($res);
+		}
+		$result = M('Goods')->where("g_id=$id")->setField('g_status','1');
+		if($result!=false)
+		{
+			$res = array(
+                'code' => '0',
+                'msg' => '上架商品成功!',
+            );
+            return $this->ajaxReturn($res);
+
+		} else {
+			$res = array(
+                'code' => '-1',
+                'msg' => '该商品已经上架!',
             );
             return $this->ajaxReturn($res);
 		}
