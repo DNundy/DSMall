@@ -247,6 +247,16 @@ class PersonalController extends UserCommonController {
         );
     	return $this->ajaxReturn($res);
     }
+    public function findType(){
+		$type = M('type');
+		$typeGoods = $type->where()->select();
+		$res = array(
+			'code' => '0',
+			'msg' => $typeGoods,
+
+		);
+		return $this->ajaxReturn($res);
+	}
 	public function publishGoods(){//发布商品
 		$data = array(
 			'u_id' => $_SESSION['num'],
@@ -259,7 +269,8 @@ class PersonalController extends UserCommonController {
 		);
 	}
 	public function publishGoodsPicture(){//上传商品图片路径
-
+		$upload_path = $_SERVER['DOCUMENT_ROOT'];
+		
 	}
 
 }
