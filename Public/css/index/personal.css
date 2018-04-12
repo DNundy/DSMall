@@ -57,6 +57,9 @@ body{
 .navLogin i{
     font-size: 18px;
 }
+.outLogin{
+    color: crimson;
+}
 /* Nav 菜单 */
 .navList{
     width: 600px;
