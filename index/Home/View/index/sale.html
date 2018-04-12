@@ -58,7 +58,10 @@
                 <div class="infoList">
                     <i class="icon iconfont icon-order"></i>
                     <span class="listSpan">&nbsp;&nbsp;类型：</span>
-                    <el-radio v-for="item in typeInfo" v-model="releaseInfo.g_type">{{}}</el-radio>
+                    <div class="typeList">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <el-radio v-model="releaseInfo.g_type" label="其它">其它</el-radio>
+                        <el-radio v-for="item in typeInfo" v-model="releaseInfo.g_type" :label="item.t_type">{{item.t_type}}</el-radio>
+                    </div>
                 </div>
                 <div class="infoList">
                     <i class="icon iconfont icon-coupons"></i>
@@ -68,17 +71,21 @@
                 <div class="infoList">
                     <i class="icon iconfont icon-message"></i>
                     <span class="listSpan">&nbsp;&nbsp;描述：</span>
-                    <el-input v-model="releaseInfo.g_construct"></el-input>
+                    <el-input type="textarea" v-model="releaseInfo.g_construct"></el-input>
                 </div>
                 <p>上传图片</p>
                 <div class="infoList">
-                    <i class="icon iconfont icon-browse"></i>
-                    <span class="listSpan">&nbsp;&nbsp;图片：</span>
-                    <el-input v-model="releaseInfo.u_email"></el-input>
+                    <el-upload :file-list="fileList" list-type="picture" name="g_pricture" limit="5" drag="true">
+                        <el-button type="primary" class="submitPicBtn">点击上传</el-button>
+                        <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                    </el-upload>
                 </div>
                 <p>关于发布</p>
                 <div class="infoList">
-                    <el-button type="success" icon="el-icon-check" circle @click="">立即发布</el-button>
+                    <el-checkbox v-model="agreeStatus" @click="agreeStatus=!agreeStatus">我同意《趣二手商品发布规则》</el-checkbox>
+                </div>
+                <div class="infoList">
+                    <el-button size="mini" type="success" @click="" :disabled="!agreeStatus">立即发布</el-button>
                 </div>
             </el-main>
 
@@ -104,6 +111,10 @@
                 isLogin: false,
                 // 登录的信息
                 loginInfo: '',
+
+                fileList:[],
+
+                agreeStatus: false,
 
                 // 发布物品的数据
                 releaseInfo: {
@@ -165,7 +176,6 @@
                         }
                     });
                 },
-
                 // 重新发布
                 againGoods: function (params) {
                     this.$confirm('您确定要 重新上架该商品 吗 ？', '提示', {

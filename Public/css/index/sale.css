@@ -137,5 +137,22 @@ body{
     float: left;
 }
 .el-main .infoList .el-input{
-    width: 50%;
+    width: 60%;
+}
+.el-main .infoList .el-textarea{
+    width: 60%;
+}
+.el-upload,.el-upload__tip{
+    margin-left: 82px;
+}
+.typeList{
+    width: 80%;
+    margin-left: 80px;
+}
+.submitPicBtn{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 0;bottom: 0;left: 0;right: 0;
+    margin: auto;
 }
