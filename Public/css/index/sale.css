@@ -159,3 +159,35 @@ body{
     top: 0;bottom: 0;left: 0;right: 0;
     margin: auto;
 }
+/* 图片上传按钮 */
+.picBtn {
+    font-size: 14px;
+    padding: 5px;
+    position: relative;
+    display: inline-block;
+    background: #409EFF;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 30px;
+}
+.picBtn input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.picBtn:hover {
+    background: #66b1ff;
+}
+.picList{
+    padding: 5px 10px;
+}
+.picList button{
+    float: right;
+    font-size: 16px;
+}
