@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购买商品 - 趣二手</title>
+
+    <!-- ThirdParty -->
+    <script src="__PUBLIC__/lib/vue.min.js"></script>
+    <script src="__PUBLIC__/lib/jquery.min.js"></script>
+    <script src="__PUBLIC__/lib/element.min.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/lib/normalize.css">
+    <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/lib/fonts/iconfont.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/css/index/buy.css">
+</head>
+
+<body>
+    <!-- Layout -->
+    <div id="app">
+        <el-container>
+            <!-- Header 区域 -->
+            <el-header>
+                <a href="__APP__/Home/index/index">
+                    <span class="logo">趣二手</span>
+                </a>
+                <div class="navLogin">
+                    <a href="__APP__/Home/index/personal" v-if="isLogin">
+                        <i class="icon iconfont icon-questions"></i>
+                        <span> {{loginInfo}} </span>
+                        <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
+                    </a>
+                    <a href="__APP__/Home/login/login" v-else>
+                        <i class="icon iconfont icon-questions"></i>
+                        <span> 立即登录 </span>
+                    </a>
+                </div>
+                <div class="navList">
+                    <a href="__APP__/Home/index/index">首页</a>
+                    <a href="__APP__/Home/index/buy">寻购二货</a>
+                    <a href="__APP__/Home/index/sale">出售二货</a>
+                    <a href="__APP__/Home/index/qa">二货问答</a>
+                    <a href="__APP__/Home/index/contact">联系我们</a>
+                </div>
+            </el-header>
+
+            <!-- 内容区域 -->
+            <el-main v-loading="!isLogin">
+
+            </el-main>
+
+            <!-- Footer区域 -->
+            <el-footer>
+                <div class="links">
+                    <a target="_blank" href="http://www.xiyou.edu.cn/">西邮官网</a> |
+                    <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> |
+                    <a target="_blank" href="http://gr.xupt.edu.cn/">研究生院</a> |
+                    <a href="__APP__/Home/login/login-admin.html">管理员登录</a>
+                </div>
+                <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
+            </el-footer>
+        </el-container>
+    </div>
+
+    <!-- VUE -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                // 登录状态
+                isLogin: false,
+                // 登录的信息
+                loginInfo: '',
+            },
+            methods: {
+                // 加载登录状态
+                loadingLogin: function (params) {
+                    let url = '__APP__/Home/Login/isLoginUser';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.isLogin = true;
+                                _that.loginInfo = data.msg;
+                            } else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'error'
+                                });
+                                setTimeout(() => {
+                                    location = '__APP__/Home/login/login';
+                                }, 2000);
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                // 退出登录
+                loginOut: function (params) {
+                    let url = '__APP__/Home/Login/out_login';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.$message({
+                                message: data.msg,
+                                type: 'success'
+                            });
+                            _that.isLogin = false;
+                            location = '__APP__/Home/login/login'
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                }
+            },
+            mounted: function () {
+                // 判断是否登录
+                this.loadingLogin();
+            }
+        })
+    </script>
+</body>
+
+</html>
