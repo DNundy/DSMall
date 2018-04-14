@@ -73,17 +73,17 @@ body{
     float: left;
 }
 .overBuy-bg{
-    background: url('../../img/index/main-bg-1.jpg') center no-repeat;
+    background: url('http://p75wjroq9.bkt.clouddn.com/main-bg-1.jpg') center no-repeat;
     background-size: 100%;
     border-right: 1px solid #ddd;
 }
 .overLogin-bg{
-    background: url('../../img/index/main-bg-2.jpg') center no-repeat;
+    background: url('http://p75wjroq9.bkt.clouddn.com/main-bg-2.jpg') center no-repeat;
     background-size: 100%;
     border-right: 1px solid #ddd;
 }
 .overSale-bg{
-    background: url('../../img/index/main-bg-3.jpg') center no-repeat;
+    background: url('http://p75wjroq9.bkt.clouddn.com/main-bg-3.jpg') center no-repeat;
     background-size: 100%;
 }
 .overBuy,.overLogin,.overSale{

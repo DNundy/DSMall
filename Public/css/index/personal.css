@@ -7,6 +7,9 @@ body{
     margin: 0 auto;
     overflow: hidden;
 }
+.el-header a{
+    text-decoration: none;
+}
 .el-header .logo{
     float: left;
     font-size: 26px;

@@ -2,6 +2,9 @@
 body{
     background: #F5F5F7;
 }
+.el-header a{
+    text-decoration: none;
+}
 .el-header{
     width: 1200px;
     margin: 0 auto;

@@ -24,7 +24,7 @@
         <el-container>
             <!-- Header 区域 -->
             <el-header>
-                <span class="logo">趣二手</span>
+                <a href="__APP__/Home/index/index"><span class="logo">趣二手</span></a>
                 <div class="navLogin">
                     <a href="__APP__/Home/index/personal" v-if="isLogin">
                         <i class="icon iconfont icon-questions"></i>
@@ -51,7 +51,7 @@
                 <div class="left-list">
                     <!-- 左侧头像 -->
                     <div class="list-img"  @click="personalRouter('个人信息')">
-                        <img src="__PUBLIC__/img/index/user-icon.png" alt="用户头像" title="用户头像">
+                        <img src="http://p75wjroq9.bkt.clouddn.com/user-icon.png" alt="用户头像" title="用户头像">
                     </div>
                     <!-- 左侧姓名 -->
                     <div class="list-name">
@@ -152,7 +152,7 @@
                                 <el-button type="primary" icon="el-icon-arrow-document" circle :data-id="item.g_id" @click="toGoods()">查看详情</el-button>
                             </div>
                             <div class="listImg">
-                                <img src="__PUBLIC__/img/index/index-bg-1.jpg" alt="">
+                                <img src="" alt="">
                             </div>
                             <div class="listRight">
                                 <div class="listCont">
@@ -178,7 +178,7 @@
                                 <el-button type="primary" icon="el-icon-arrow-document" circle :data-id="item.g_id" @click="toGoods()">查看详情</el-button>
                             </div>
                             <div class="listImg">
-                                <img src="__PUBLIC__/img/index/index-bg-1.jpg" alt="">
+                                <img src="" alt="">
                             </div>
                             <div class="listRight">
                                 <div class="listCont"  :class="{ gray:item.g_status==='-1' }">
