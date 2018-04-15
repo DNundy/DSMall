@@ -6,6 +6,9 @@ body{
     text-decoration: none;
 }
 .el-header{
+    box-shadow: 1px 0 4px #e6e6e6;
+}
+.headerWrap{
     width: 1200px;
     margin: 0 auto;
     overflow: hidden;

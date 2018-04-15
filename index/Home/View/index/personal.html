@@ -24,24 +24,26 @@
         <el-container>
             <!-- Header 区域 -->
             <el-header>
-                <a href="__APP__/Home/index/index"><span class="logo">趣二手</span></a>
-                <div class="navLogin">
-                    <a href="__APP__/Home/index/personal" v-if="isLogin">
-                        <i class="icon iconfont icon-questions"></i>
-                        <span> {{loginInfo}} </span>
-                        <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
-                    </a>
-                    <a href="__APP__/Home/login/login" v-else>
-                        <i class="icon iconfont icon-questions"></i>
-                        <span> 立即登录 </span>
-                    </a>
-                </div>
-                <div class="navList">
-                    <a href="__APP__/Home/index/index">首页</a>
-                    <a href="__APP__/Home/index/buy">寻购二货</a>
-                    <a href="__APP__/Home/index/sale">出售二货</a>
-                    <a href="__APP__/Home/index/qa">二货问答</a>
-                    <a href="__APP__/Home/index/contact">联系我们</a>
+                <div class="headerWrap">
+                    <a href="__APP__/Home/index/index"><span class="logo">趣二手</span></a>
+                    <div class="navLogin">
+                        <a href="__APP__/Home/index/personal" v-if="isLogin">
+                            <i class="icon iconfont icon-questions"></i>
+                            <span> {{loginInfo}} </span>
+                            <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
+                        </a>
+                        <a href="__APP__/Home/login/login" v-else>
+                            <i class="icon iconfont icon-questions"></i>
+                            <span> 立即登录 </span>
+                        </a>
+                    </div>
+                    <div class="navList">
+                        <a href="__APP__/Home/index/index">首页</a>
+                        <a href="__APP__/Home/index/buy">寻购二货</a>
+                        <a href="__APP__/Home/index/sale">出售二货</a>
+                        <a href="__APP__/Home/index/qa">二货问答</a>
+                        <a href="__APP__/Home/index/contact">联系我们</a>
+                    </div>
                 </div>
             </el-header>
 
