@@ -8,18 +8,25 @@ class IndexController extends Controller {
 		$this->display();
 	}
 	public function indexGoods(){
-		//$type = $_POST['type'];
-		//$info = $_GET['info'];
-		var_dump($_POST);
+		if(empty($_POST['type'])||$_POST['price']||$_POST['time']||$_POST['orderBy']){
+			$res = array(
+                'code' => '-1',
+                'msg' => '参数传递出错！',
+            );
+            return $this->ajaxReturn($res);
+		}
+		$type = $_POST['type'];
+		$price = $_POST['price'];
+		$time = $_POST['time'];
+		$orderBy = $_POST['orderBy'];
 		switch ($type) {
-			case 'type':
-				//$goodInfo = M('Goods')->where("g_type=$")
+			case '1':
 				break;
 			
-			case 'price':
+			case '2':
 
 				break;
-			case 'time':
+			case '3':
 
 				break; 
 			case 'search':
