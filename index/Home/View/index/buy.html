@@ -79,17 +79,19 @@
                             <div class="optItem" :class="serachData.time=='2' ? 'active': '' " @click="serach('time','2')">一个月内</div>
                             <div class="optItem" :class="serachData.time=='3' ? 'active': '' " @click="serach('time','3')">三个月内</div>
                             <div class="optItem" :class="serachData.time=='4' ? 'active': '' " @click="serach('time','4')">一年之内</div>
-                            <div class="optItem" :class="serachData.time=='5' ? 'active': '' " @click="serach('time','5')">更多</div>
+                            <div class="optItem" :class="serachData.time=='5' ? 'active': '' " @click="serach('time','5')">其它</div>
                         </div>
                     </div>
                 </div>
                 <div class="optOrder">
                     排序方式
-                    <el-radio label="asc" v-model="serachData.orderBy" @change="getGoods()">升序</el-radio>
-                    <el-radio label="desc" v-model="serachData.orderBy" @change="getGoods()">降序</el-radio>
-                    <span class="optCount">共为您找到 {{goodsInfo.count}} 件商品！</span>
+                    <el-radio label="default" v-model="serachData.orderBy" @change="getGoods()">默认</el-radio>
+                    <el-radio label="asc" v-model="serachData.orderBy" @change="getGoods()">价格 ↑</el-radio>
+                    <el-radio label="desc" v-model="serachData.orderBy" @change="getGoods()">价格 ↓</el-radio>
+                    <el-radio label="time" v-model="serachData.orderBy" @change="getGoods()">日期 ↑</el-radio>
+                    <span class="optCount">共为您找到<span class="orange"> {{goodsInfo.count}} </span>件商品！</span>
                 </div>
-                <div class="goodsList"  v-loading="serachStatus">
+                <div class="goodsList"  v-if="goodsInfo.msg" v-loading="serachStatus">
                     <div class="goodsItem" v-for="(item,index) in goodsInfo.msg">
                         <a :href="'__APP__/Home/index/detail?id='+item.g_id">
                             <img :src="'__PUBLIC__/img/goods/'+imgList[index]" alt="">
@@ -98,6 +100,9 @@
                             <p class="itemName">{{item.g_name}}</p>
                         </a>
                     </div>
+                </div>
+                <div class="goodsList" v-else v-loading="serachStatus">
+                    <div class="goodsListTips">暂时没有为您搜索到相应商品！</div>
                 </div>
             </el-main>
 
@@ -136,7 +141,7 @@
                     type: 'all',
                     price: '0',
                     time: '0',
-                    orderBy: 'asc',
+                    orderBy: 'default',
                 },
             },
             methods: {
@@ -256,8 +261,10 @@
                 getImgList: function (params) {
                     this.imgList = [];
                     let temp = '';
-                    for (let index = 0; index < this.goodsInfo.msg.length; index++) {
-                        this.imgList.push(this.goodsInfo.msg[index].g_picture.split('|')[0]);
+                    if( this.goodsInfo.msg ){
+                        for (let index = 0; index < this.goodsInfo.msg.length; index++) {
+                            this.imgList.push(this.goodsInfo.msg[index].g_picture.split('|')[0]);
+                        }
                     }
                     // 关闭加载图标
                     this.serachStatus = false;

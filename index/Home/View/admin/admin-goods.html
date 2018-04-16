@@ -118,7 +118,7 @@
                         <i slot="suffix" class="el-input__icon el-icon-search"></i>
                     </el-input>
 
-                    <div v-for="item in listData.msg" class="goodsItem">
+                    <div v-for="(item,index) in listData.msg" class="goodsItem">
                         <div class="goodsTitle">
                             <i>{{item.g_name}}</i>
                             <el-button class="delBtn" type="danger" size="mini" :data-id="'__APP__/Home/AdminUserGoods/deleteGoods?id='+item.g_id" plain
@@ -127,7 +127,7 @@
                             </el-button>
                         </div>
                         <div class="goodsCont">
-                            <img src="http://p75wjroq9.bkt.clouddn.com/user-icon.png" :alt="item.g_name" :title="item.g_name" class="goodsImg">
+                            <img :src="'__PUBLIC__/img/goods/'+imgList[index]" :alt="item.g_name" :title="item.g_name" class="goodsImg">
                             {{item.g_construct}}
                             <div class="goodsDetail">
                                     <i class="el-icon-tickets"></i>
@@ -139,9 +139,9 @@
                                     <i class="el-icon-time"></i>
                                     <span class="DetailName">发布时间：{{item.g_price}}</span>
                             </div>
-                            <el-button class="detailBtn" type="primary" size="mini" :data-id="'__APP__/Home//?id='+item.g_id" plain @click="toGoods($event)">
+                            <a :href="'__APP__/Home/index/detail?id='+item.g_id"><el-button class="detailBtn" type="primary" size="mini" :data-id="'__APP__/Home//?id='+item.g_id" plain @click="toGoods($event)">
                                 <span :data-id="'__APP__/Home//?id='+item.g_id">详细信息</span>
-                            </el-button>
+                            </el-button></a>
                         </div>
                     </div>
                 </el-main>
@@ -172,6 +172,7 @@
                 listStatus: false,
                 // 列表数据
                 listData: {},
+                imgList: [],
             },
             methods: {
                 //路由方法
@@ -245,6 +246,7 @@
                         success: function (data) {
                             if( data.code == '0' ){
                                 _that.listData = data;
+                                _that.getImgList('imgList','listData');
                             } else if( data.code == '-1' ){
                                 _that.$message({
                                     message: data.msg,
@@ -260,8 +262,17 @@
                         }
                     });
                 },
-                toGoods: function() {
-                    
+                getImgList: function (params, data) {
+                    this[params] = [];
+                    let temp = '';
+
+                    if (this[data].code == '0') {
+                        for (let index = 0; index < this[data].msg.length; index++) {
+                            this[params].push(this[data].msg[index].g_picture.split('|')[0]);
+                        }
+                    }
+
+                    return;
                 },
                 // 删除商品
                 delGoods: function (e) {

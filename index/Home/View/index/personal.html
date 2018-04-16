@@ -148,13 +148,13 @@
 
                     <!-- 我的收藏 -->
                     <div class="rightItem" v-if="listStatus.like">
-                        <div class="goodsList" v-for="(item,index) in collectInfo">
+                        <div class="goodsList" v-for="(item,index) in collectInfo.msg">
                             <div class="listTitle">
                                 <span>{{index+1}}、{{item.g_name}}</span>
-                                <el-button type="primary" icon="el-icon-arrow-document" circle :data-id="item.g_id" @click="toGoods()">查看详情</el-button>
+                                <el-button type="primary" icon="el-icon-arrow-document" circle :data-id="item.g_id" @click="toGoods(item.g_id)">查看详情</el-button>
                             </div>
                             <div class="listImg">
-                                <img src="" alt="">
+                                <img :src="'__PUBLIC__/img/goods/'+collectImg[index]" alt="">
                             </div>
                             <div class="listRight">
                                 <div class="listCont">
@@ -174,13 +174,13 @@
 
                     <!-- 发布历史 -->
                     <div class="rightItem" v-if="listStatus.manage">
-                        <div class="goodsList" v-for="(item,index) in publishInfo">
+                        <div class="goodsList" v-for="(item,index) in publishInfo.msg">
                             <div class="listTitle">
                                 <span>{{index+1}}、{{item.g_name}}</span>
-                                <el-button type="primary" icon="el-icon-arrow-document" circle :data-id="item.g_id" @click="toGoods()">查看详情</el-button>
+                                <el-button type="primary" icon="el-icon-arrow-document" circle :data-id="item.g_id" @click="toGoods(item.g_id)">查看详情</el-button>
                             </div>
                             <div class="listImg">
-                                <img src="" alt="">
+                                <img :src="'__PUBLIC__/img/goods/'+publishImg[index]" alt="">
                             </div>
                             <div class="listRight">
                                 <div class="listCont"  :class="{ gray:item.g_status==='-1' }">
@@ -272,9 +272,11 @@
                 
                 // 收藏内容
                 collectInfo : {},
+                collectImg: [],
 
                 // 发布历史
                 publishInfo : {},
+                publishImg: [],
                 
                 // 评论内容
                 discussInfo : {},
@@ -489,7 +491,8 @@
                         dataType: 'JSON',
                         success: function (data) {
                             if (data.code == '0') {
-                                _that.collectInfo = data.msg;
+                                _that.collectInfo = data;
+                                _that.getImgList('collectImg','collectInfo');
                             } else if (data.code == '-1') {
                                 _that.$message({
                                     message: data.msg,
@@ -555,7 +558,8 @@
                         dataType: 'JSON',
                         success: function (data) {
                             if (data.code == '0') {
-                                _that.publishInfo = data.msg;
+                                _that.publishInfo = data;
+                                _that.getImgList('publishImg','publishInfo');
                             } else if (data.code == '-1') {
                                 _that.$message({
                                     message: data.msg,
@@ -693,10 +697,22 @@
                     });
                 },
 
+                getImgList: function (params,data) {
+                    this[params] = [];
+                    let temp = '';
+                    
+                    if ( this[data].code == '0' ) {
+                        for (let index = 0; index < this[data].msg.length; index++) {
+                            this[params].push(this[data].msg[index].g_picture.split('|')[0]);
+                        }
+                    }
+                    
+                    return;
+                },
 
                 // 跳转至商品详情
                 toGoods: function (params) {
-                    
+                    location = '__APP__/Home/index/detail?id=' + params;
                 },
 
                 // 退出登录

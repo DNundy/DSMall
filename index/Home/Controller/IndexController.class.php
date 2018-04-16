@@ -74,8 +74,12 @@ class IndexController extends Controller {
 		// 排序
 		if( $_POST['orderBy'] == 'desc' ){
 			$goods = M('Goods')->where($data)->order("g_price desc")->select();
-		}else{
+		}else if( $_POST['orderBy'] == 'asc'  ){
 			$goods = M('Goods')->where($data)->order("g_price")->select();
+		}else if( $_POST['orderBy'] == 'time' ){
+			$goods = M('Goods')->where($data)->order("g_time")->select();
+		}else{
+			$goods = M('Goods')->where($data)->order("g_id desc")->select();
 		}
 		$res = array(
 			'code' => '0',

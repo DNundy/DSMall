@@ -146,9 +146,9 @@
                         </div>
                         <!-- 查看信息栏 -->
                         <div v-else>
-                            <el-button v-if="item.u_status=='1'" type="primary" size="mini"  :data-id="'?id='+item.u_id" plain @click="toUserInfo($event)">
-                                <span @click="toUserInfo($event)"  :data-id="'?id='+item.u_id">用户主页</span>
-                            </el-button>
+                            <a :href="'__APP__/Home/index/personal?'+item.u_id"><el-button v-if="item.u_status=='1'" type="primary" size="mini"  :data-id="'?id='+item.u_id" plain @click="toUserInfo($event)">
+                                <span>用户主页</span>
+                            </el-button></a>
 
                             <el-button v-else type="danger" size="mini" :data-id="'__APP__/Home/AdminUserInfo/outUser?id='+item.u_id" plain @click="onUser($event)">
                                 <span @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/outUser?id='+item.u_id">解冻账号</span>
@@ -334,10 +334,6 @@
                         return;
                     });
                 },
-
-                toUserInfo: function () {
-                    
-                }
             },
             mounted: function (params) {
                 this.getUser();
