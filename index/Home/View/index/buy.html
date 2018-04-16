@@ -90,9 +90,10 @@
                 </div>
                 <div class="goodsList">
                     <div class="goodsItem">
-                        <div>类型</div><div>价格</div>
-                        <div>名称</div>
-                        <div></div>
+                        <img src="__PUBLIC__/img/login/bg-admin.jpg" alt="">
+                        <span class="itemType">类型</span>
+                        <span class="itemPrice">￥456</span>
+                        <p class="itemName">名称</p>
                     </div>
                 </div>
             </el-main>
@@ -219,7 +220,7 @@
 
                 // 获取商品列表
                 getGoods: function () {
-                    let url = '__APP__/Home//';
+                    let url = '__APP__/Home/index/indexGoods';
                     let _that = this;
                     let timer = null;
                     // 开启加载图标

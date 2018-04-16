@@ -190,3 +190,19 @@ body{
     margin: 17px;
     cursor: pointer;
 }
+.goodsItem img{
+    width: 100%;
+    height: 220px;
+    margin-bottom: 5px;
+}
+.goodsItem .itemType{
+    margin-left: 10px;
+}
+.goodsItem .itemPrice{
+    color: crimson;
+    float: right;
+    margin-right: 10px;
+}
+.goodsItem .itemName{
+    margin-left: 10px;
+}
