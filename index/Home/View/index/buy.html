@@ -76,9 +76,10 @@
                         <div class="optRight">
                             <div class="optItem" :class="serachData.time=='0' ? 'active': '' " @click="serach('time','0')">不限</div>
                             <div class="optItem" :class="serachData.time=='1' ? 'active': '' " @click="serach('time','1')">最近七天</div>
-                            <div class="optItem" :class="serachData.time=='2' ? 'active': '' " @click="serach('time','2')">一个月前</div>
-                            <div class="optItem" :class="serachData.time=='3' ? 'active': '' " @click="serach('time','3')">三个月前</div>
-                            <div class="optItem" :class="serachData.time=='4' ? 'active': '' " @click="serach('time','4')">一年之前</div>
+                            <div class="optItem" :class="serachData.time=='2' ? 'active': '' " @click="serach('time','2')">一个月内</div>
+                            <div class="optItem" :class="serachData.time=='3' ? 'active': '' " @click="serach('time','3')">三个月内</div>
+                            <div class="optItem" :class="serachData.time=='4' ? 'active': '' " @click="serach('time','4')">一年之内</div>
+                            <div class="optItem" :class="serachData.time=='5' ? 'active': '' " @click="serach('time','5')">更多</div>
                         </div>
                     </div>
                 </div>
