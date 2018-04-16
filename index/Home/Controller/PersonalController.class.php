@@ -268,26 +268,29 @@ class PersonalController extends UserCommonController {
 		$data['g_picture'] = ''; 
 		$upload_path = $_SERVER['DOCUMENT_ROOT'];
 		$count = count($_FILES['g_picture']['name']);
-		for($i = 0; $i++; $i<$count)
-		{
-			if($_FILES['myfile']['error'][0]<=0){
+		for($i = 0; $i < $count; $i++){
+
+			if($_FILES['g_picture']['error'][$i]==0){
 				//保存图片的具体路径
-				$uplode_path=$_SERVER['DOCUMENT_ROOT']."/platform/Public";
+				$uplode_path=$_SERVER['DOCUMENT_ROOT']."/platform/Public/img/goods/";
+				$pictureArr=explode('.', $_FILES['g_picture']['name'][$i]);
+				$type=$pictureArr[count($pictureArr)-1];
 				//设置时间戳和随机数重命名图片
 				$randname=time().rand(99,200).".".$type;
 
-				if(is_uploaded_file($_FILES['myfile']['tmp_name'][$i]))//防止非法上传图片
+				if(is_uploaded_file($_FILES['g_picture']['tmp_name'][$i]))//防止非法上传图片
 				{
-					if(move_uploaded_file($_FILES['myfile']['tmp_name'][$i], $uplode_path.$randname))
-				{
-					//保存到$pic数组中  后面需将数组中的所有值赋给变量$picture
-					 $pic[$j++]=$randname;
+					if(move_uploaded_file($_FILES['g_picture']['tmp_name'][$i], $uplode_path.$randname)){
+					 	$data['g_picture']=$data['g_picture'].'|'.$randname;
+					}
 				}
 				else
 				{
-					//文件上传失败
-					header("location:error.html");
-				}
+					$res = array(
+    					'code' => '-1',
+    					'msg' => '非法上传图片！',
+    				);
+    				return $this->ajaxReturn($res);
 				}
 			} else {
 				$res = array(
@@ -296,6 +299,20 @@ class PersonalController extends UserCommonController {
     			);
     			return $this->ajaxReturn($res);	
 			}
+		}
+		$result = M('Goods')->data($data)->add();
+		if(!empty($result)){
+			$res = array(
+    				'code' => '0',
+    				'msg' => '发布成功！',
+    			);
+    			return $this->ajaxReturn($res);	
+		} else {
+			$res = array(
+    				'code' => '-1',
+    				'msg' => '图片上传失败！',
+    			);
+    			return $this->ajaxReturn($res);	
 		}
 	}
 }
