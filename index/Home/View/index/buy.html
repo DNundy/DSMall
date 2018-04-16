@@ -56,8 +56,8 @@
                     <div class="optType">
                         <div class="optLeft">类型</div>
                         <div class="optRight">
-                            <div class="optItem" :class="serachData.type=='0' ? 'active': '' " @click="serach('type','0')">不限</div>
-                            <div class="optItem" :class="serachData.type=='1' ? 'active': '' " @click="serach('type','1')">循环</div>
+                            <div class="optItem" :class="serachData.type=='all' ? 'active': '' " @click="serach('type','all')">不限</div>
+                            <div class="optItem" :class="serachData.type==item.t_type ? 'active': '' " @click="serach('type',item.t_type)" v-for="item in typeInfo">{{item.t_type}}</div>
                         </div>
                     </div>
                     <div class="optPrice">
@@ -84,12 +84,16 @@
                 </div>
                 <div class="optOrder">
                     排序方式
-                    <el-radio label="asc" v-model="serachData.orderBy">升序</el-radio>
-                    <el-radio label="desc" v-model="serachData.orderBy">降序</el-radio>
+                    <el-radio label="asc" v-model="serachData.orderBy" @change="getGoods()">升序</el-radio>
+                    <el-radio label="desc" v-model="serachData.orderBy" @change="getGoods()">降序</el-radio>
                     <span class="optCount">共为您找到  件商品！</span>
                 </div>
-                <div class="goodsList" v-loading="serachStatus">
-
+                <div class="goodsList">
+                    <div class="goodsItem">
+                        <div>类型</div><div>价格</div>
+                        <div>名称</div>
+                        <div></div>
+                    </div>
                 </div>
             </el-main>
 
@@ -124,7 +128,7 @@
                 // 筛选数据
                 serachStatus: false,
                 serachData: {
-                    type: '0',
+                    type: 'all',
                     price: '0',
                     time: '0',
                     orderBy: 'asc',
@@ -179,7 +183,7 @@
 
                 // 获取所有类型数据
                 getType: function (params) {
-                    let url = '__APP__/Home//';
+                    let url = '__APP__/Home/Personal/findType';
                     let _that = this;
                     $.ajax({
                         url: url,
@@ -202,26 +206,19 @@
                         }
                     });
                 },
-
-                serach: function (params,data) {
-                    // 切换导航
-                    switch (params) {
-                        case 'type':
-                            this.serachData.type = data;
-                            break;
-                        case 'price':
-                            this.serachData.price = data;
-                            break;
-                        case 'time':
-                            this.serachData.time = data;
-                            break;
-                        default:
-                            break;
+                
+                serach: function(params, data){
+                    // 判断列表是否重复
+                    if (this.serachData[params] == data) {
+                        return;
                     }
+                    // 切换筛选状态
+                    this.serachData[params] = data;
                     this.getGoods();
                 },
 
-                getGoods: function (params) {
+                // 获取商品列表
+                getGoods: function () {
                     let url = '__APP__/Home//';
                     let _that = this;
                     let timer = null;
@@ -229,6 +226,7 @@
                     this.serachStatus = true;
                     $.ajax({
                         url: url,
+                        type: 'POST',
                         data: _that.serachData,
                         dataType: 'JSON',
                         success: function (data) {
@@ -245,7 +243,7 @@
                         },
                         error: function () {
                             _that.$message({
-                                message: '网络 或者 服务器出错,请稍后重试！',
+                                message: '网络 或者 服务器出错,请稍后刷新页面重试！',
                                 type: 'error'
                             });
                         }
