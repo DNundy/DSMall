@@ -267,14 +267,28 @@ class PersonalController extends UserCommonController {
 		);
 		$data['g_picture'] = ''; 
 		$upload_path = $_SERVER['DOCUMENT_ROOT'];
-		var_dump($_FILES['g_pricture']);
-		foreach ($_FILES['g_picture']['name'] as $value)
+		$count = count($_FILES['g_picture']['name']);
+		for($i = 0; $i++; $i<$count)
 		{
 			if($_FILES['myfile']['error'][0]<=0){
 				//保存图片的具体路径
 				$uplode_path=$_SERVER['DOCUMENT_ROOT']."/platform/Public";
 				//设置时间戳和随机数重命名图片
 				$randname=time().rand(99,200).".".$type;
+
+				if(is_uploaded_file($_FILES['myfile']['tmp_name'][$i]))//防止非法上传图片
+				{
+					if(move_uploaded_file($_FILES['myfile']['tmp_name'][$i], $uplode_path.$randname))
+				{
+					//保存到$pic数组中  后面需将数组中的所有值赋给变量$picture
+					 $pic[$j++]=$randname;
+				}
+				else
+				{
+					//文件上传失败
+					header("location:error.html");
+				}
+				}
 			} else {
 				$res = array(
     				'code' => '-1',
