@@ -259,17 +259,68 @@ class PersonalController extends UserCommonController {
 	public function publishGoods(){//发布商品
 		$data = array(
 			'u_id' => $_SESSION['num'],
-			'g_name' => $_POST['name'],
-			'g_construct' => $_POST['construct'],
-			'g_type' => $_POST['type'],
-			'g_price' => $_POST['price'],
+			'g_name' => $_POST['g_name'],
+			'g_construct' => $_POST['g_construct'],
+			'g_type' => $_POST['g_type'],
+			'g_price' => $_POST['g_price'],
 			'g_time' => date("Y-m-d H:i:s"),
-			//'g_picture' => ,
 		);
-	}
-	public function publishGoodsPicture(){//上传商品图片路径
+		$data['g_picture'] = ''; 
 		$upload_path = $_SERVER['DOCUMENT_ROOT'];
-		
-	}
+		var_dump($_FILES['g_picture[]']);
+		/*foreach ($_FILES['myfile']['name'] as $value)
+		{
+			if($_FILES['myfile']['error'][$i]<=0)
+			{
+					$allowtype=array('png','gif','jpg','jpeg');			
+					//遍历出所有的文件
+					$arr=explode('.', $value);
+					$type=$arr[count($arr)-1];
+					//判断图片类型是否符合
+					if(!in_array($type, $allowtype))
+					{
+						//图片类型不符合
+						header("location:error.html");
+					}
+					else
+					{
+						$j=0;
+						//保存图片的具体路径
+						$uplode_path=$_SERVER['DOCUMENT_ROOT']."/z/order_image/";
+						//设置时间戳和随机数重命名图片
+						$randname=time().rand(99,200).".".$type;
+						//将临时位置的文件移动到指定的目录上
+						if(is_uploaded_file($_FILES['myfile']['tmp_name'][$i]))
+						{
+							if(move_uploaded_file($_FILES['myfile']['tmp_name'][$i], $uplode_path.$randname))
+							{
+								//保存到$pic数组中  后面需将数组中的所有值赋给变量$picture
+								 $pic[$j++]=$randname;
+							}
+							else
+							{
+								//文件上传失败
+								header("location:error.html");
+							}
+						}
+						else
+						{
+							//不是一个上传文件
+							header("location:error.html");
+						}
+					}
+				}
+				else{
+					header("location:error.html");
+				}
+						//将$pic数组中的所有元素放进$picture
+				foreach ($pic as $value) 
+				{
+					$picture=$picture.$value."|";
+				}
+				$i++;
 
+			}
+		}*/
+	}
 }
