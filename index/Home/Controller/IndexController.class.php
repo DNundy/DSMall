@@ -80,6 +80,7 @@ class IndexController extends Controller {
 		$res = array(
 			'code' => '0',
 			'msg' => $goods,
+			'count' => count($goods),
 		);
 		return $this->ajaxReturn($res);
 	}
