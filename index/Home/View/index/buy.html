@@ -87,14 +87,14 @@
                     排序方式
                     <el-radio label="asc" v-model="serachData.orderBy" @change="getGoods()">升序</el-radio>
                     <el-radio label="desc" v-model="serachData.orderBy" @change="getGoods()">降序</el-radio>
-                    <span class="optCount">共为您找到  件商品！</span>
+                    <span class="optCount">共为您找到 {{goodsInfo.count}} 件商品！</span>
                 </div>
                 <div class="goodsList">
-                    <div class="goodsItem">
+                    <div class="goodsItem" v-for="item in goodsInfo.msg">
                         <img src="__PUBLIC__/img/login/bg-admin.jpg" alt="">
-                        <span class="itemType">类型</span>
-                        <span class="itemPrice">￥456</span>
-                        <p class="itemName">名称</p>
+                        <span class="itemType">{{item.g_type}}</span>
+                        <span class="itemPrice">￥{{item.g_price}}</span>
+                        <p class="itemName">{{item.g_name}}</p>
                     </div>
                 </div>
             </el-main>
@@ -185,7 +185,7 @@
 
                 // 获取所有类型数据
                 getType: function (params) {
-                    let url = '__APP__/Home/Personal/findType';
+                    let url = '__APP__/Home/index/findType';
                     let _that = this;
                     $.ajax({
                         url: url,
@@ -233,7 +233,7 @@
                         dataType: 'JSON',
                         success: function (data) {
                             if (data.code == '0') {
-                                _that.goodsInfo = data.msg;
+                                _that.goodsInfo = data;
                                 clearInterval(timer);
                             } else if (data.code == '-1') {
                                 _that.$message({
