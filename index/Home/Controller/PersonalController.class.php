@@ -267,7 +267,7 @@ class PersonalController extends UserCommonController {
 		);
 		$data['g_picture'] = ''; 
 		$upload_path = $_SERVER['DOCUMENT_ROOT'];
-		var_dump($_FILES['g_picture[]']);
+		
 		/*foreach ($_FILES['myfile']['name'] as $value)
 		{
 			if($_FILES['myfile']['error'][$i]<=0)
