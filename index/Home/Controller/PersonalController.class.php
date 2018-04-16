@@ -281,7 +281,11 @@ class PersonalController extends UserCommonController {
 				if(is_uploaded_file($_FILES['g_picture']['tmp_name'][$i]))//防止非法上传图片
 				{
 					if(move_uploaded_file($_FILES['g_picture']['tmp_name'][$i], $uplode_path.$randname)){
-					 	$data['g_picture']=$data['g_picture'].'|'.$randname;
+					 	if($data['picture'] != ''){
+					 		$data['g_picture']=$data['g_picture'].'|'.$randname;
+					 	} else {
+					 		$data['g_picture'] = $randname;
+					 	}
 					}
 				}
 				else
