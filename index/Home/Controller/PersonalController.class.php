@@ -267,14 +267,31 @@ class PersonalController extends UserCommonController {
 		);
 		$data['g_picture'] = ''; 
 		$upload_path = $_SERVER['DOCUMENT_ROOT'];
-		var_dump($_FILES['g_pricture']);
-		foreach ($_FILES['g_picture']['name'] as $value)
-		{
-			if($_FILES['myfile']['error'][0]<=0){
+		$count = count($_FILES['g_picture']['name']);
+		for($i = 0; $i < $count; $i++){
+
+			if($_FILES['g_picture']['error'][$i]==0){
 				//保存图片的具体路径
-				$uplode_path=$_SERVER['DOCUMENT_ROOT']."/platform/Public";
+				$uplode_path=$_SERVER['DOCUMENT_ROOT']."/platform/Public/img/goods/";
+				$pictureArr=explode('.', $_FILES['g_picture']['name'][$i]);
+				$type=$pictureArr[count($pictureArr)-1];
 				//设置时间戳和随机数重命名图片
 				$randname=time().rand(99,200).".".$type;
+
+				if(is_uploaded_file($_FILES['g_picture']['tmp_name'][$i]))//防止非法上传图片
+				{
+					if(move_uploaded_file($_FILES['g_picture']['tmp_name'][$i], $uplode_path.$randname)){
+					 	$data['g_picture']=$data['g_picture'].'|'.$randname;
+					}
+				}
+				else
+				{
+					$res = array(
+    					'code' => '-1',
+    					'msg' => '非法上传图片！',
+    				);
+    				return $this->ajaxReturn($res);
+				}
 			} else {
 				$res = array(
     				'code' => '-1',
@@ -282,6 +299,20 @@ class PersonalController extends UserCommonController {
     			);
     			return $this->ajaxReturn($res);	
 			}
+		}
+		$result = M('Goods')->data($data)->add();
+		if(!empty($result)){
+			$res = array(
+    				'code' => '0',
+    				'msg' => '发布成功！',
+    			);
+    			return $this->ajaxReturn($res);	
+		} else {
+			$res = array(
+    				'code' => '-1',
+    				'msg' => '图片上传失败！',
+    			);
+    			return $this->ajaxReturn($res);	
 		}
 	}
 }
