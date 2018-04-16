@@ -114,6 +114,7 @@ body{
     background: #fff;
     border: 1px solid #e6e6e6;
     border-bottom: none;
+    overflow: hidden;
 }
 .options .optType,.options .optTime,.options .optPrice{
     border-bottom: 1px solid #e6e6e6;
@@ -165,4 +166,27 @@ body{
 .active{
     color: #fff;
     background: #F2C345;
+}
+
+/* 商品列表 */
+.goodsList{
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 1198px;
+    min-height: 700px;
+    border-top: 1px solid #e6e6e6;
+    background: #F5F5F7;
+}
+.goodsItem{
+    width: 250px;
+    height: 280px;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #e6e6e6;
+    margin: 17px;
+    cursor: pointer;
 }
