@@ -7,8 +7,17 @@ class IndexController extends Controller {
 	public function index(){
 		$this->display();
 	}
+	public function findType(){
+		$type = M('type');
+		$typeGoods = $type->where()->select();
+		$res = array(
+			'code' => '0',
+			'msg' => $typeGoods,
+		);
+		return $this->ajaxReturn($res);
+	}
 	public function indexGoods(){
-		if(empty($_POST['type'])||$_POST['price']||$_POST['time']||$_POST['orderBy']){
+		if(empty($_POST['type'])||empty($_POST['price'])||empty($_POST['time'])||empty($_POST['orderBy'])){
 			$res = array(
                 'code' => '-1',
                 'msg' => '参数传递出错！',
