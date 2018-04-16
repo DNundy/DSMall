@@ -90,9 +90,9 @@
                     <span class="optCount">共为您找到 {{goodsInfo.count}} 件商品！</span>
                 </div>
                 <div class="goodsList"  v-loading="serachStatus">
-                    <div class="goodsItem" v-for="item in goodsInfo.msg">
+                    <div class="goodsItem" v-for="(item,index) in goodsInfo.msg">
                         <a :href="'__APP__/Home/index/detail?id='+item.g_id">
-                            <img :src="'__PUBLIC__/img/goods/'+imgItem" alt="" v-for="imgItem in imgList">
+                            <img :src="'__PUBLIC__/img/goods/'+imgList[index]" alt="">
                             <span class="itemType">{{item.g_type}}</span>
                             <span class="itemPrice">￥{{item.g_price}}</span>
                             <p class="itemName">{{item.g_name}}</p>
