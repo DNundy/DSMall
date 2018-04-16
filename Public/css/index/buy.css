@@ -103,94 +103,66 @@ body{
 }
 /* Main 区域 */
 .el-main{
-    width: 900px;
-    margin: 40px auto;
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+/* 筛选栏 */
+.options{
+    width: 1198px;
+    margin: 0 auto;
     background: #fff;
-    overflow: hidden;
-    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    border-bottom: none;
 }
-.el-main .title{
-    color: crimson;
-    width: 340px;
-    margin: 20px auto;
-    text-align: center;
-    font-size: 22px;
-}
-.el-main p{
-    width: 80%;
-    margin-left: 10%;
-    font-family: '楷体';
-    font-size: 20px;
-    padding: 20px 0;
-    border-bottom: 1px solid #08B35F;
-}
-.el-main .infoList{
-    width: 70%;
-    padding: 5px 10px;
-    margin: 20px auto;
-    line-height: 40px;
-}
-.el-main .infoList i{
-    float: left;
-    font-size: 18px;
-}
-.el-main .infoList:nth-child(1){
-    margin-top: 40px;
-}
-.el-main .infoList .listSpan{
-    height: 40px;
-    font-size: 18px;
-    float: left;
-}
-.el-main .infoList .el-input{
-    width: 60%;
-}
-.el-main .infoList .el-textarea{
-    width: 60%;
-}
-.el-upload,.el-upload__tip{
-    margin-left: 82px;
-}
-.typeList{
-    width: 80%;
-    margin-left: 80px;
-}
-.submitPicBtn{
-    width: 100px;
-    height: 40px;
-    position: absolute;
-    top: 0;bottom: 0;left: 0;right: 0;
-    margin: auto;
-}
-/* 图片上传按钮 */
-.picBtn {
-    font-size: 14px;
-    padding: 5px;
+.options .optType,.options .optTime,.options .optPrice{
+    border-bottom: 1px solid #e6e6e6;
+    min-height: 50px;
     position: relative;
-    display: inline-block;
-    background: #409EFF;
-    border-radius: 4px;
-    padding: 4px 12px;
-    overflow: hidden;
-    color: #fff;
-    text-decoration: none;
-    text-indent: 0;
+}
+.optOrder{
+    color: #606266;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 15px;
+    font-size: 14px;
+}
+.optOrder .el-radio{
+    margin-left: 30px;
+}
+.optOrder .optCount{
+    margin-left: 50px;
+}
+.options .optLeft{
+    float: left;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    font-family: '楷体';
+    background: #FAFAFA;
+}
+.options .optRight{
+    width: 1118px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+.options .optRight .optItem{
+    min-width: 70px;
+    max-width: 200px;
+    height: 30px;
+    text-align: center;
     line-height: 30px;
+    padding: 0 5px;
+    margin: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
 }
-.picBtn input {
-    position: absolute;
-    font-size: 100px;
-    right: 0;
-    top: 0;
-    opacity: 0;
-}
-.picBtn:hover {
-    background: #66b1ff;
-}
-.picList{
-    padding: 5px 10px;
-}
-.picList button{
-    float: right;
-    font-size: 16px;
+.active{
+    color: #fff;
+    background: #F2C345;
 }

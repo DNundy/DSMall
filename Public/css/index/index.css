@@ -8,21 +8,11 @@ body{
     height: 600px !important;
     margin: 0 auto;
     overflow: hidden;
+    transition: background 2s;
+    -moz-transition: background 2s;
+    -webkit-transition: background 2s;
+    -o-transition: background 2s;
 }
-/* .headerWrap{
-    width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-.el-header .logo{
-    float: left;
-    font-size: 26px;
-    font-weight: 700;
-    color: #F2C345;
-    text-decoration: none;
-    line-height: 60px;
-    margin-left: 60px;
-} */
 
 /* Footer */
 .el-footer {
@@ -46,78 +36,91 @@ body{
 .el-footer .copyright {
     margin: 10px 0;
 }
-/* Nav 登录 */
-/* .navLogin{
-    float: right;
-    width: 200px;
-    height: 60px;
-    text-align: center;
-    overflow: hidden;
-}
-.navLogin a{
-    font-size: 16px;
-    text-decoration: none;
-    line-height: 60px;
-    color: #F2C345;
-}
-.navLogin i{
-    font-size: 18px;
-} */
-/* Nav 菜单 */
-/* .navList{
-    width: 600px;
-    height: 60px;
-    margin: 0 auto;
-}
-.navList a{
-    display: block;
-    float: left;
-    position: relative;
-    
-    width: 70px;
-    height: 55px;
-    line-height: 60px;
-    text-align: center;
-    margin: 0 20px;
-    
-    color: #fff;
-    font-size: 14px;
-    text-decoration: none;
-}
-.navList a:after{
-    content: "";
-    width: 0;
-    height: 1px;
-    background: #F2C345;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transition: all .3s;
-}
-.navList a:hover:after{
-    left: 0%;
-    width: 100%;
-} */
-
+/*Main 导航*/
 .el-main{
     width: 1200px;
-    height: 600px;
-    margin: -350px auto 0 auto;
-    background: red;
+    height: 900px;
+    overflow: hidden;
+    margin: -520px auto 0 auto;
 }
 .mainTitle{
-    color: #666;
+    color: #F2C345;
     width: 300px;
-    height: 150px;
+    height: 200px;
     margin: 0 auto;
     text-align: center;
-    background: yellow;
 }
 .titleOne{
     font-family: '楷体';
-    font-size: 50px;
+    font-size: 70px;
     font-weight: bolder;
 }
 .titleTwo{
-    font-size: 22px;
+    margin-top: -30px;
+    font-size: 30px;
+}
+.mainOverview{
+    width: 1049px;
+    height: 320px;
+    overflow: hidden;
+    margin: 50px auto 20px auto;
+    border-radius: 5px;
+    box-shadow: 0px 1px 15px #333333;
+}
+.mainOverview div{
+    width: 349px;
+    height: 320px;
+    float: left;
+}
+.overBuy-bg{
+    background: url('http://p75wjroq9.bkt.clouddn.com/main-bg-1.jpg') center no-repeat;
+    background-size: 100%;
+    border-right: 1px solid #ddd;
+}
+.overLogin-bg{
+    background: url('http://p75wjroq9.bkt.clouddn.com/main-bg-2.jpg') center no-repeat;
+    background-size: 100%;
+    border-right: 1px solid #ddd;
+}
+.overSale-bg{
+    background: url('http://p75wjroq9.bkt.clouddn.com/main-bg-3.jpg') center no-repeat;
+    background-size: 100%;
+}
+.overBuy,.overLogin,.overSale{
+    background: #fff;
+    transition:background .8s;
+    -moz-transition:background .8s;
+    -webkit-transition:background .8s;
+    -o-transition:background .8s;
+}
+.square a{
+    text-decoration: none;
+}
+.square p{
+    color: #666;
+    font-size: 25px;
+    font-family: '楷体';
+    text-align: center;
+}
+.square p i{
+    color: #F2C345;
+    font-size: 50px;
+}
+.square h5{
+    color: #666;
+    text-align: center;
+}
+.square .el-button{
+    display: block;
+    margin: 50px auto;
+}
+.overBuy:hover,.overLogin:hover,.overSale:hover{
+    color: #fff;
+    background: rgba(10, 11, 12, 0.6);
+}
+.overBuy:hover > p > i ,.overLogin:hover > p > i ,.overSale:hover > p > i {
+    color: #fff;
+}
+.overBuy:hover > h5,.overLogin:hover > h5,.overSale:hover > h5{
+    color: #fff;
 }

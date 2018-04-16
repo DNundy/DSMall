@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>个人空间 - 趣二手</title>
+    <title>出售商品 - 趣二手</title>
 
     <!-- ThirdParty -->
     <script src="__PUBLIC__/lib/vue.min.js"></script>
@@ -25,68 +25,72 @@
         <el-container>
             <!-- Header 区域 -->
             <el-header>
-                <span class="logo">趣二手</span>
-                <div class="navLogin">
-                    <a href="__APP__/Home/index/personal" v-if="isLogin">
-                        <i class="icon iconfont icon-questions"></i>
-                        <span> {{loginInfo}} </span>
-                        <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
-                    </a>
-                    <a href="../login/login" v-else>
-                        <i class="icon iconfont icon-questions"></i>
-                        <span> 立即登录 </span>
-                    </a>
-                </div>
-                <div class="navList">
-                    <a href="../index/index">首页</a>
-                    <a href="">寻购二货</a>
-                    <a href="../index/sale">出售二货</a>
-                    <a href="">二货问答</a>
-                    <a href="">联系我们</a>
+                <div class="headerWrap">
+                    <a href="__APP__/Home/index/index"><span class="logo">趣二手</span></a>
+                    <div class="navLogin">
+                        <a href="__APP__/Home/index/personal" v-if="isLogin">
+                            <i class="icon iconfont icon-questions"></i>
+                            <span> {{loginInfo}} </span>
+                            <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
+                        </a>
+                        <a href="__APP__/Home/login/login" v-else>
+                            <i class="icon iconfont icon-questions"></i>
+                            <span> 立即登录 </span>
+                        </a>
+                    </div>
+                    <div class="navList">
+                        <a href="__APP__/Home/index/index">首页</a>
+                        <a href="__APP__/Home/index/buy">寻购二货</a>
+                        <a href="__APP__/Home/index/sale">出售二货</a>
+                        <a href="__APP__/Home/index/qa">二货问答</a>
+                        <a href="__APP__/Home/index/contact">联系我们</a>
+                    </div>
                 </div>
             </el-header>
 
             <!-- 内容区域 -->
-            <el-main v-loading="!isLogin">
+            <el-main v-loading="!isLogin&&typeInfo">
                 <div class="title">趣二手 · 专属于你的二手商店</div>
                 <P>商品信息</P>
-                <div class="infoList">
-                    <i class="icon iconfont icon-task"></i>
-                    <span class="listSpan">&nbsp;&nbsp;名称：</span>
-                    <el-input v-model="releaseInfo.g_name"></el-input>
-                </div>
-                <div class="infoList">
-                    <i class="icon iconfont icon-order"></i>
-                    <span class="listSpan">&nbsp;&nbsp;类型：</span>
-                    <div class="typeList">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <el-radio v-model="releaseInfo.g_type" label="其它">其它</el-radio>
-                        <el-radio v-for="item in typeInfo" v-model="releaseInfo.g_type" :label="item.t_type">{{item.t_type}}</el-radio>
+                <form enctype="multipart/form-data" id="pubForm">
+                    <div class="infoList">
+                        <i class="icon iconfont icon-task"></i>
+                        <span class="listSpan">&nbsp;&nbsp;名称：</span>
+                        <el-input name="g_name" v-model="releaseInfo.g_name"></el-input>
                     </div>
-                </div>
-                <div class="infoList">
-                    <i class="icon iconfont icon-coupons"></i>
-                    <span class="listSpan">&nbsp;&nbsp;价格：</span>
-                    <el-input v-model="releaseInfo.g_price"></el-input>
-                </div>
-                <div class="infoList">
-                    <i class="icon iconfont icon-message"></i>
-                    <span class="listSpan">&nbsp;&nbsp;描述：</span>
-                    <el-input type="textarea" v-model="releaseInfo.g_construct"></el-input>
-                </div>
-                <p>上传图片</p>
-                <div class="infoList">
-                    <el-upload :file-list="fileList" list-type="picture" name="g_pricture" limit="5" drag="true" auto-upload=false>
-                        <el-button type="primary" class="submitPicBtn">点击上传</el-button>
-                        <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-                    </el-upload>
-                </div>
-                <p>关于发布</p>
-                <div class="infoList">
-                    <el-checkbox v-model="agreeStatus" @click="agreeStatus=!agreeStatus">我同意《趣二手商品发布规则》</el-checkbox>
-                </div>
-                <div class="infoList">
-                    <el-button size="mini" type="success" @click="" :disabled="!agreeStatus">立即发布</el-button>
-                </div>
+                    <div class="infoList">
+                        <i class="icon iconfont icon-order"></i>
+                        <span class="listSpan">&nbsp;&nbsp;类型：</span>
+                        <div class="typeList">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <el-radio name="g_type" label="其它"  v-model="releaseInfo.g_type">其它</el-radio>
+                            <el-radio name="g_type" :label="item.t_type" v-for="item in typeInfo"  v-model="releaseInfo.g_type">{{item.t_type}}</el-radio>
+                        </div>
+                    </div>
+                    <div class="infoList">
+                        <i class="icon iconfont icon-coupons"></i>
+                        <span class="listSpan">&nbsp;&nbsp;价格：</span>
+                        <el-input name="g_price" v-model="releaseInfo.g_price"></el-input>
+                    </div>
+                    <div class="infoList">
+                        <i class="icon iconfont icon-message"></i>
+                        <span class="listSpan">&nbsp;&nbsp;描述：</span>
+                        <el-input type="textarea" name="g_construct"  v-model="releaseInfo.g_construct"></el-input>
+                    </div>
+                    <p>上传图片</p>
+                    <div class="infoList">
+                        <a href="javascript:;" class="picBtn">
+                            <input type="file" accept="image/png,image/gif,image/jpg,image/jpeg" @change="picShow" name="g_pricture[]" multiple="multiple">点击上传</input>
+                        </a>
+                        <div class="picList" v-for="item in releaseInfo.g_pricture">{{item}}</div>
+                    </div>
+                    <p>关于发布</p>
+                    <div class="infoList">
+                        <el-checkbox v-model="agreeStatus" @click="agreeStatus=!agreeStatus">我同意《趣二手商品发布规则》</el-checkbox>
+                    </div>
+                    <div class="infoList">
+                        <el-button size="mini" type="success" @click="pubGoods" :disabled="!agreeStatus">立即发布</el-button>
+                    </div>
+                </form>
             </el-main>
 
             <!-- Footer区域 -->
@@ -95,7 +99,7 @@
                     <a target="_blank" href="http://www.xiyou.edu.cn/">西邮官网</a> |
                     <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> |
                     <a target="_blank" href="http://gr.xupt.edu.cn/">研究生院</a> |
-                    <a href="../login/login-admin.html">管理员登录</a>
+                    <a href="__APP__/Home/login/login-admin.html">管理员登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -111,12 +115,9 @@
                 isLogin: false,
                 // 登录的信息
                 loginInfo: '',
-                
-                // 文件列表
-                fileList:[],
-                
-                // 是否同意协议
-                agreeStatus: false,
+
+                // 商品类型数据
+                typeInfo: {},         
 
                 // 发布物品的数据
                 releaseInfo: {
@@ -124,10 +125,12 @@
                     g_type: '',
                     g_price: '',
                     g_construct: '',
+                    g_pricture: [],
                 },
 
-                // 商品类型数据
-                typeInfo: {},
+                // 是否同意协议
+                agreeStatus: false,
+
             },
             methods: {
                 // 加载登录状态
@@ -141,13 +144,14 @@
                             if (data.code == '0') {
                                 _that.isLogin = true;
                                 _that.loginInfo = data.msg;
+                                _that.getType();
                             } else if (data.code == '-1') {
                                 _that.$message({
                                     message: data.msg,
                                     type: 'error'
                                 });
                                 setTimeout(() => {
-                                    location = '../login/login';
+                                    location = '__APP__/Home/login/login';
                                 }, 2000);
                             }
                         },
@@ -181,44 +185,104 @@
                     });
                 },
                 
-                // 重新发布
-                againGoods: function (params) {
-                    this.$confirm('您确定要 发布该商品 吗 ？', '提示', {
-                        confirmButtonText: '确定',
-                        cancelButtonText: '取消',
-                        type: 'warning'
-                    }).then(() => {
-                        let url = '__APP__/Home/Personal/publishGoods';
-                        let _that = this;
-                        $.ajax({
-                            url: url,
-                            type: 'GET',
-                            dataType: 'JSON',
-                            success: function (data) {
-                                if (data.code == '0') {
+                // 发布商品
+                pubGoods: function (params) {
+                    if( this.formCheck() ){
+                        this.$confirm('您确定要 发布该商品 吗 ？', '提示', {
+                            confirmButtonText: '确定',
+                            cancelButtonText: '取消',
+                            type: 'warning'
+                        }).then(() => {
+                            let _that = this;
+                            let url = '__APP__/Home/Personal/publishGoods';
+                            let data = new FormData($('#pubForm')[0]);
+                            $.ajax({
+                                url: url,
+                                type: 'POST',
+                                data: data,
+                                cache: false,
+                                processData: false,
+                                contentType: false,
+                                success: function (data) {
+                                    if (data.code == '0') {
+                                        _that.$message({
+                                            message: data.msg,
+                                            type: 'success'
+                                        });
+                                        location.href = '__APP__/Home/index/buy';
+                                    } else if (data.code == '-1') {
+                                        _that.$message({
+                                            message: data.msg,
+                                            type: 'error'
+                                        });
+                                    }
+                                },
+                                error: function () {
                                     _that.$message({
-                                        message: data.msg,
-                                        type: 'success'
-                                    });
-                                    location='./personal';
-                                } else if (data.code == '-1') {
-                                    _that.$message({
-                                        message: data.msg,
+                                        message: '网络 或者 服务器出错,请稍后重试！',
                                         type: 'error'
                                     });
                                 }
-                            },
-                            error: function () {
-                                _that.$message({
-                                    message: '网络 或者 服务器出错,请稍后重试！',
-                                    type: 'error'
-                                });
-                            }
+                            });
+                        }).catch(() => {
+                            return;
                         });
-                    }).catch(() => {
-                        return;
+                    }
+                },
+
+                // 表单验证
+                formCheck: function (params) {
+                    let obj = this.releaseInfo;
+                    let errorTips = '';
+                    for (const key in obj) {
+                        if(!obj[key].length){
+                            this.errorTips('请填写完整商品信息！');
+                            return false;
+                        }
+                    }
+                    if( obj.g_name.length>8 || obj.g_name.length<3 ){
+                        this.errorTips('商品名称 长度应该介于 3~8字 之间！');
+                        return false;
+                    }
+                    if( obj.g_construct.length<10 || obj.g_construct.length>100 ){
+                        this.errorTips('商品描述 请控制在 10~100字 之间！');
+                        return false;
+                    }
+                    if (obj.g_pricture.length < 1 || obj.g_pricture.length > 5) {
+                        this.errorTips('商品图片 请控制在 1~5张 之间！');
+                        return false;
+                    }
+                    return true;
+                },
+
+                errorTips: function (params) {
+                    this.$message({
+                        message: params,
+                        type: 'error'
                     });
                 },
+
+                // 图片名称展示
+                picShow: function (params) {
+                    this.releaseInfo.g_pricture = [];
+                    for (let index = 0; index < params.target.files.length; index++) {
+                        this.releaseInfo.g_pricture.push(params.target.files[index].name);
+                    }
+                },
+
+                // input file 无法清空或删除某一元素，导致不能直接通过原始表单上传数据
+                // 采用模拟数据时，file 类型无法 append
+                // 所以去掉删除某一图片的功能，直接用原始表单上传
+
+                // picRemove: function (params) {
+                //     let el = params.target.getAttribute('data-id');
+                //     var index = this.releaseInfo.g_pricture.indexOf(el);
+                    
+                //     if (index > -1) {
+                //         this.releaseInfo.g_pricture.splice(index, 1);
+                //         this.fileValue = '';
+                //     }
+                // },
 
                 // 退出登录
                 loginOut: function (params) {
@@ -233,7 +297,7 @@
                                 type: 'success'
                             });
                             _that.isLogin = false;
-                            location = '../login/login'
+                            location = '__APP__/Home/login/login'
                         },
                         error: function () {
                             _that.$message({
@@ -247,8 +311,6 @@
             mounted: function () {
                 // 判断是否登录
                 this.loadingLogin();
-                // 加载物品分类
-                this.getType();
             }
         })
     </script>

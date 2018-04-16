@@ -2,10 +2,19 @@
 body{
     background: #F5F5F7;
 }
+.el-header a{
+    text-decoration: none;
+}
 .el-header{
+    box-shadow: 1px 0 4px #e6e6e6;
+}
+.headerWrap{
     width: 1200px;
     margin: 0 auto;
     overflow: hidden;
+}
+.el-header a{
+    text-decoration: none;
 }
 .el-header .logo{
     float: left;

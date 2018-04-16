@@ -24,23 +24,7 @@
     <div id="app">
         <el-container>
             <!-- Header 区域 -->
-            <el-header :style="headerBg">
-                <!-- <div class="headerWrap">
-                    <span class="logo">趣二手</span>
-                    <div class="navLogin">
-                        <a href="../login/login">
-                            <i class="icon iconfont icon-questions"></i> 立即登录
-                        </a>
-                    </div>
-                    <div class="navList">
-                        <a href="">首页</a>
-                        <a href="">寻购二货</a>
-                        <a href="">出售二货</a>
-                        <a href="">二货问答</a>
-                        <a href="">联系我们</a>
-                    </div>
-                </div> -->
-            </el-header>
+            <el-header :style="headerBg"></el-header>
 
             <!-- 内容区域 -->
             <el-main>
@@ -49,9 +33,31 @@
                     <p class="titleTwo">没有中间商赚差价</p>
                 </div>
                 <div class="mainOverview">
-                    <div class="overBuy"></div>
-                    <div class="overLogin"></div>
-                    <div class="overSale"></div>
+                    <div class="overBuy-bg">
+                        <div class="square overBuy">
+                            <p><i class="icon iconfont icon-int"></i></p>
+                            <a href="__APP__/Home/Index/buy"><el-button type="success">寻购二货</el-button></a>
+                            <h5>玲珑骰子安红豆</h5>
+                            <h5>入骨相思知不知</h5>
+                        </div>
+                    </div>
+                    <div class="overLogin-bg">
+                        <div class="square overLogin">
+                            <p><i class="icon iconfont icon-customerservice_fill"></i></p>
+                            <a v-if="!isLogin" href="__APP__/Home/login/login"><el-button type="danger">立即登录</el-button></a>
+                            <a v-else href="__APP__/Home/index/personal"><el-button type="danger" >欢迎，{{ loginInfo }}</el-button></a>
+                            <h5>众里寻她千百度</h5>
+                            <h5>那人却在，灯火阑珊处</h5>
+                        </div>
+                    </div>
+                    <div class="overSale-bg">
+                        <div class="square overSale">
+                            <p><i class="icon iconfont icon-coupons_fill"></i></p>
+                            <a href="__APP__/Home/Index/sale"><el-button type="primary">出售二货</el-button></a>
+                            <h5>水纹珍簟思悠悠</h5>
+                            <h5>千里佳期一夕休</h5>
+                        </div>
+                    </div>
                 </div>
             </el-main>
 
@@ -61,7 +67,7 @@
                     <a target="_blank" href="http://www.xiyou.edu.cn/">西邮官网</a> |
                     <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> |
                     <a target="_blank" href="http://gr.xupt.edu.cn/">研究生院</a> |
-                    <a href="../login/login-admin.html">管理员登录</a>
+                    <a href="__APP__/Home/login/login-admin.html">管理员登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -73,26 +79,50 @@
         var app = new Vue({
             el: '#app',
             data: {
+                isLogin: false,
+                loginInfo: '',
+
                 headerBg: '',
                 headerBgIndex: '0',
                 headerBgPic:[
-                    'background:url(__PUBLIC__/img/index/index-bg-1.jpg) no-repeat center',
-                    'background:url(__PUBLIC__/img/index/1.jpg) no-repeat center',
-                    'background:url(__PUBLIC__/img/index/user-icon.png) no-repeat center',
+                    'background:url(http://p75wjroq9.bkt.clouddn.com/banner1.jpg) no-repeat center',
+                    'background:url(http://p75wjroq9.bkt.clouddn.com/banner2.jpg) no-repeat center',
+                    'background:url(http://p75wjroq9.bkt.clouddn.com/banner3.jpg) no-repeat center',
+                    'background:url(http://p75wjroq9.bkt.clouddn.com/banner4.jpg) no-repeat center',
+                    'background:url(http://p75wjroq9.bkt.clouddn.com/banner5.jpg) no-repeat center',
                 ]
             },
             methods: {
             },
             mounted: function (params) {
-                // 更换Banner
+                // 更换Banner 加载登录状态
                 let _that = this;
+                let url = '__APP__/Home/Login/isLoginUser';
+
                 this.headerBg = _that.headerBgPic[this.headerBgIndex++];
                 setInterval(() => {
                     if( _that.headerBgIndex == _that.headerBgPic.length ){
                         _that.headerBgIndex=0;
                     }
                     _that.headerBg = _that.headerBgPic[_that.headerBgIndex++];
-                }, 3000);
+                }, 5000);
+
+                $.ajax({
+                    url: url,
+                    dataType: 'JSON',
+                    success: function (data) {
+                        if (data.code == 0) {
+                            _that.isLogin = true;
+                            _that.loginInfo = data.msg;
+                        }
+                    },
+                    error: function () {
+                        _that.$message({
+                            message: '网络 或者 服务器出错,请稍后重试！',
+                            type: 'error'
+                        });
+                    }
+                });
             }
         })
     </script>
