@@ -17,30 +17,70 @@ class IndexController extends Controller {
 		return $this->ajaxReturn($res);
 	}
 	public function indexGoods(){
-		if(empty($_POST['type'])||empty($_POST['price'])||empty($_POST['time'])||empty($_POST['orderBy'])){
-			$res = array(
-                'code' => '-1',
-                'msg' => '参数传递出错！',
-            );
-            return $this->ajaxReturn($res);
+		// 类型
+		if($_POST['type'] != 'all'){
+			$data['g_type'] = $_POST['type'];
 		}
-		$type = $_POST['type'];
-		$price = $_POST['price'];
-		$time = $_POST['time'];
-		$orderBy = $_POST['orderBy'];
-		switch ($type) {
-			case '1':
-				break;
-			
-			case '2':
 
+		// 价格
+		switch ($_POST['price']) {
+			case '1':
+				$data['g_price'] = array('lt',50);
+				break;
+			case '2':
+				$data['g_price'] = array('between',array(50,100));
 				break;
 			case '3':
-
+				$data['g_price'] = array('between',array(100,1000));
 				break; 
-			case 'search':
-
+			case '4':
+				$data['g_price'] = array('between',array(1001,10000));
+				break;
+			case '5':
+				$data['g_price'] = array('gt',10000);
+				break;
+			default:
+				$data['g_price'] = array('egt',0);
 				break;
 		}
+
+		// 时间
+		switch ($_POST['time']) {
+			case '1':
+				$time = time()-7*24*3600;
+				$data['g_time'] = array('egt',$time);
+				break;
+			case '2':
+				$time = time()-30*24*3600;
+				$data['g_time'] = array('egt',$time);
+				break;
+			case '3':
+				$time = time()-90*24*3600;
+				$data['g_time'] = array('egt',$time);
+				break; 
+			case '4':
+				$time = time()-365*24*3600;
+				$data['g_time'] = array('egt',$time);
+				break;
+			case '5':
+				$time = time()-365*24*3600;
+				$data['g_time'] = array('lt',$time);
+				break;
+			default:
+				$data['g_time'] = array('egt',0);
+				break;
+		}
+
+		// 排序
+		if( $_POST['orderBy'] == 'desc' ){
+			$goods = M('Goods')->where($data)->order("g_price desc")->select();
+		}else{
+			$goods = M('Goods')->where($data)->order("g_price")->select();
+		}
+		$res = array(
+			'code' => '0',
+			'msg' => $goods,
+		);
+		return $this->ajaxReturn($res);
 	}
 }
