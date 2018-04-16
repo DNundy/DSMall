@@ -181,6 +181,10 @@ body{
     border-top: 1px solid #e6e6e6;
     background: #F5F5F7;
 }
+.goodsList a{
+    color: #000;
+    text-decoration: none;
+}
 .goodsItem{
     width: 250px;
     height: 280px;

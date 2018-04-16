@@ -89,12 +89,14 @@
                     <el-radio label="desc" v-model="serachData.orderBy" @change="getGoods()">降序</el-radio>
                     <span class="optCount">共为您找到 {{goodsInfo.count}} 件商品！</span>
                 </div>
-                <div class="goodsList">
+                <div class="goodsList"  v-loading="serachStatus">
                     <div class="goodsItem" v-for="item in goodsInfo.msg">
-                        <img src="__PUBLIC__/img/login/bg-admin.jpg" alt="">
-                        <span class="itemType">{{item.g_type}}</span>
-                        <span class="itemPrice">￥{{item.g_price}}</span>
-                        <p class="itemName">{{item.g_name}}</p>
+                        <a :href="'__APP__/Home/index/detail?id='+item.g_id">
+                            <img :src="'__PUBLIC__/img/goods/'+imgItem" alt="" v-for="imgItem in imgList">
+                            <span class="itemType">{{item.g_type}}</span>
+                            <span class="itemPrice">￥{{item.g_price}}</span>
+                            <p class="itemName">{{item.g_name}}</p>
+                        </a>
                     </div>
                 </div>
             </el-main>
@@ -126,6 +128,7 @@
                 typeInfo: {},
                 // 商品数据
                 goodsInfo: {},
+                imgList: [],
 
                 // 筛选数据
                 serachStatus: false,
@@ -223,7 +226,6 @@
                 getGoods: function () {
                     let url = '__APP__/Home/index/indexGoods';
                     let _that = this;
-                    let timer = null;
                     // 开启加载图标
                     this.serachStatus = true;
                     $.ajax({
@@ -234,14 +236,13 @@
                         success: function (data) {
                             if (data.code == '0') {
                                 _that.goodsInfo = data;
-                                clearInterval(timer);
                             } else if (data.code == '-1') {
                                 _that.$message({
                                     message: data.msg,
                                     type: 'error'
                                 });
                             }
-                            _that.serachStatus = false;
+                            _that.getImgList();
                         },
                         error: function () {
                             _that.$message({
@@ -250,6 +251,15 @@
                             });
                         }
                     });
+                },
+
+                getImgList: function (params) {
+                    this.imgList = [];
+                    for (let index = 0; index < this.goodsInfo.msg.length; index++) {
+                        this.imgList.push(this.goodsInfo.msg[index].g_picture.split('|'));
+                    }
+                    // 关闭加载图标
+                    this.serachStatus = false;
                 }
             },
             mounted: function () {
