@@ -7,13 +7,12 @@
     <title>用户登录 - 趣二手</title>
 
     <!-- ThirdParty -->
-    <script src="__PUBLIC__/lib/vue.min.js"></script>
-    <script src="__PUBLIC__/lib/jquery.min.js"></script>
-    <script src="__PUBLIC__/lib/element.min.js"></script>
-    <link rel="stylesheet" href="__PUBLIC__/lib/normalize.css">
-    <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/lib/fonts/iconfont.css">
-    
+    <script src="http://p75wjroq9.bkt.clouddn.com/vue.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/jquery.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/element.min.js"></script>
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/normalize.css">
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/element.min.css">
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/iconfont.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="__PUBLIC__/css/login/login.css">
 </head>
@@ -31,7 +30,7 @@
                     <div class="left">
                         <img src="__PUBLIC__/img/login/bg-login.png" alt="登录趣二手！" title="登录趣二手！">
                     </div>
-                    <div class="right">
+                    <div class="right"  v-loading="loginLoading">
                         <div class="title">用户登录</div>
                         <div class="items">
                             <!-- 登录表单 -->
@@ -105,6 +104,9 @@
             data: {
                 isLogin: false,
                 loginInfo: '',
+
+                loginLoading: false,
+
                 formData: {
                     'num': '',
                     'password': '',
@@ -133,12 +135,14 @@
                         this.tipsShow = false;
                         let url = '__APP__/Home/Login/accept_login';
                         let _that = this;
+                        _that.loginLoading = true;
                         $.ajax({
                             url: url,
                             type: 'POST',
                             data: this.formData,
                             dataType: 'JSON',
                             success: function (data) {
+                                _that.loginLoading = false;
                                 if(data.code == '-1'){
                                     _that.$message({
                                         message: data.msg,

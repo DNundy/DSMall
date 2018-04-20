@@ -52,7 +52,7 @@
 
             <!-- 内容区域 -->
             <el-main>
-                <div class="options">
+                <div class="options" v-loading="crumbsLoading">
                     <div class="optType">
                         <div class="optLeft">类型</div>
                         <div class="optRight">
@@ -134,7 +134,8 @@
                 // 商品数据
                 goodsInfo: {},
                 imgList: [],
-
+                
+                crumbsLoading: 'true',
                 // 筛选数据
                 serachStatus: false,
                 serachData: {
@@ -179,7 +180,6 @@
                                 message: data.msg,
                                 type: 'success'
                             });
-                            _that.isLogin = false;
                             location = '__APP__/Home/login/login'
                         },
                         error: function () {
@@ -199,6 +199,7 @@
                         url: url,
                         dataType: 'JSON',
                         success: function (data) {
+                            _that.crumbsLoading = false;
                             if (data.code == '0') {
                                 _that.typeInfo = data.msg;
                             }else if (data.code == '-1') {
