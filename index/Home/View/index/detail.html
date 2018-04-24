@@ -52,14 +52,14 @@
             </el-header>
 
             <!-- 内容区域 -->
-            <el-main>
+            <el-main  v-loading="goodsLoading">
                 <!-- 淘宝图片展示效果-内容 -->
                 <div class="art-left-photo">
                     <div class="tb-booth">
-                        <img class="jqzoom" src="http://ozgbjelmj.bkt.clouddn.com/%E5%AD%94%E9%9B%80%E4%B8%9C%E5%8D%97%E9%A3%9E.jpg" rel="http://ozgbjelmj.bkt.clouddn.com/%E5%AD%94%E9%9B%80%E4%B8%9C%E5%8D%97%E9%A3%9E.jpg"/>
+                        <img class="jqzoom" :src="'__PUBLIC__/img/goods/'+goodsPic[0]" :rel="'__PUBLIC__/img/goods/'+goodsPic[0]"/>
                     </div>
                     <div class="tb-thumb">
-                        <div><img src="http://ozgbjelmj.bkt.clouddn.com/%E5%AD%94%E9%9B%80%E4%B8%9C%E5%8D%97%E9%A3%9E.jpg"></div>
+                        <div v-for="item in goodsPic"><img :src="'__PUBLIC__/img/goods/'+item"></div>
                     </div>
                 </div>
                 <!-- 淘宝图片展示效果-JS -->
@@ -76,26 +76,26 @@
                 </script>
                 
                 <!-- 关于物品详细信息展示区域 -->
-                <div class="art-right-info" v-loading="goodsLoading">
+                <div class="art-right-info">
                     <div class="info-title">
                         <span class="infoType">{{goodsInfo.g_type}}</span>
                         <span>{{goodsInfo.g_name}}</span>
                     </div>
                     <div class="info-cont">
                         <div class="info-list">
-                            <span class="listName">商品价格</span><span class="listCont">{{goodsInfo.g_price}}</span>
+                            <span class="listName">商品价格：</span><span class="listCont infoPrice">￥{{goodsInfo.g_price}}</span>
                         </div>
                         <div class="info-list">
-                            <span class="listName">主人姓名</span><span class="listCont">{{goodsInfo.u_name}}</span>
+                            <span class="listName">主人姓名：</span><span class="listCont">{{goodsInfo.u_name}}</span>
                         </div>
                         <div class="info-list">
-                            <span class="listName">联系电话</span><span class="listCont">{{goodsInfo.u_telphone}}</span>
+                            <span class="listName">联系电话：</span><span class="listCont">{{goodsInfo.u_telphone}}</span>
                         </div>
                         <div class="info-list">
-                            <span class="listName">交易地点</span><span class="listCont">{{goodsInfo.u_place}}</span>
+                            <span class="listName">交易地点：</span><span class="listCont">{{goodsInfo.u_place}}</span>
                         </div>
                         <div class="info-list">
-                            <span class="listName">发布日期</span><span class="listCont">{{goodsInfo.g_time}}</span>
+                            <span class="listName">发布日期：</span><span class="listCont">{{goodsInfo.g_time}}</span>
                         </div>
                     </div>
                 </div>
@@ -134,6 +134,7 @@
                 loginInfo: '',
 
                 goodsLoading: true,
+                goodsPic: [],
                 goodsInfo: '',
             },
             methods: {
@@ -168,8 +169,8 @@
                         dataType: 'JSON',
                         success: function (data) {
                             if (data.code == '0') {
-                                _that.goodsLoading = false;
                                 _that.goodsInfo = data.msg[0];
+                                _that.getImgList();
                             }else{
                                 _that.$message({
                                     message: '加载商品信息失败！',
@@ -195,6 +196,18 @@
                             arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++
                     }
                     return paramValue == "" && (paramValue = null), paramValue;
+                },
+
+                // 获取图片列表
+                getImgList: function (params) {
+                    this.goodsPic = [];
+                    if (this.goodsInfo) {
+                        this.goodsPic.push(this.goodsInfo.g_picture.split('|'));
+                    }
+                    console.log(this.goodsPic);
+                    
+                    // 关闭加载图标
+                    this.goodsLoading = false;
                 },
 
                 // 退出登录

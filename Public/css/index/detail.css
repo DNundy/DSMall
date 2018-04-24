@@ -105,7 +105,7 @@ body{
 .el-main{
     width: 900px;
     margin: 0 auto;
-    padding-top: 50px;
+    margin-top: 50px;
     overflow: hidden;
 }
 /* 放大镜-Box */
@@ -196,6 +196,9 @@ div.zoomMask{
     padding: 3px 10px;
     background: #F2C345;
     border-radius: 5px;
+}
+.infoPrice{
+    color: crimson;
 }
 .info-list{
     height: 50px;
