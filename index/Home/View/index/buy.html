@@ -51,8 +51,8 @@
             </el-header>
 
             <!-- 内容区域 -->
-            <el-main>
-                <div class="options" v-loading="crumbsLoading">
+            <el-main v-loading="crumbsLoading">
+                <div class="options">
                     <div class="optType">
                         <div class="optLeft">类型</div>
                         <div class="optRight">
@@ -272,11 +272,11 @@
                 }
             },
             mounted: function () {
-                // 判断是否登录
-                this.loadingLogin();
                 // 获取类型列表
                 this.getType();
                 this.getGoods();
+                // 判断是否登录
+                this.loadingLogin();
             }
         })
     </script>
