@@ -5,6 +5,7 @@ use Think\Controller;
 use Think\Model;
 
 class GoodsInfoController extends Controller {
+	//商品详情页面
 	public function index(){
 		if(empty($_GET['id'])){
 			$res = array(
@@ -39,5 +40,44 @@ class GoodsInfoController extends Controller {
                 'msg' => $goodsInfo,
         );
         return $this->ajaxReturn($res);
+	}
+	//商品用户评论内容
+	public function discuss(){
+		if(empty($_POST['id'])){
+			$res = array(
+                'code' => '-1',
+                'msg' => '参数传递失败',
+            );
+            return $this->ajaxReturn($res);
+		}
+		$id = $_POST['id'];
+		$discussInfo = M('Discuss')->where("g_id=$id")->order('d_id desc')->select();
+		$res = array(
+                'code' => '0',
+                'msg' => $discussInfo,
+        );
+        return $this->ajaxReturn($res);
+	}
+	//用户发布评论
+	public function publishDiscuss(){
+        if(!isset($_SESSION['num']) || $_SESSION['num'] == '' || $_SESSION['type'] != 'user'){
+            $res = array(
+                'code' => '-1',
+                'msg' => '请登录后进行评论！',
+        	);
+        	return $this->ajaxReturn($res);
+        }
+        $data = array(
+        	'd_user' => $_SESSION['num'],
+        	'g_id' => $_POST['id'],
+        	'd_content' => $_POST['content'],
+        	'd_time' => date('Y-m-d H:i:s'),
+        );
+        $status = M('Discuss')->add($data);
+    	$res = array(
+    		'code' => '0',
+    		'msg' => $status?'评论发布成功!':'重复发布！',
+    	);
+    	return $this->ajaxReturn($res);		
 	}
 }
