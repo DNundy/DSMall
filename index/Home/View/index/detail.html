@@ -56,10 +56,10 @@
                 <!-- 淘宝图片展示效果-内容 -->
                 <div class="art-left-photo">
                     <div class="tb-booth">
-                        <img class="jqzoom" src="__PUBLIC__/images/01.jpg" rel="__PUBLIC__/images/01.jpg"/>
+                        <img class="jqzoom" src="http://ozgbjelmj.bkt.clouddn.com/%E5%AD%94%E9%9B%80%E4%B8%9C%E5%8D%97%E9%A3%9E.jpg" rel="http://ozgbjelmj.bkt.clouddn.com/%E5%AD%94%E9%9B%80%E4%B8%9C%E5%8D%97%E9%A3%9E.jpg"/>
                     </div>
                     <div class="tb-thumb">
-                        <div><img src="__PUBLIC__/images/01.jpg"></div>
+                        <div><img src="http://ozgbjelmj.bkt.clouddn.com/%E5%AD%94%E9%9B%80%E4%B8%9C%E5%8D%97%E9%A3%9E.jpg"></div>
                     </div>
                 </div>
                 <!-- 淘宝图片展示效果-JS -->
@@ -76,20 +76,26 @@
                 </script>
                 
                 <!-- 关于物品详细信息展示区域 -->
-                <div class="art-right-info">
+                <div class="art-right-info" v-loading="goodsLoading">
                     <div class="info-title">
-                        <span class="infoType">厨具</span>
-                        <span>哈哈哈哈或或</span>
+                        <span class="infoType">{{goodsInfo.g_type}}</span>
+                        <span>{{goodsInfo.g_name}}</span>
                     </div>
                     <div class="info-cont">
                         <div class="info-list">
-                            <span class="listName">类别</span><span class="listCont"></span>
+                            <span class="listName">商品价格</span><span class="listCont">{{goodsInfo.g_price}}</span>
                         </div>
-                        <div class="infoList">
-                            <span class="listName">类别</span><span class="listCont"></span>
+                        <div class="info-list">
+                            <span class="listName">主人姓名</span><span class="listCont">{{goodsInfo.u_name}}</span>
                         </div>
-                        <div class="infoList">
-                            <span class="listName">类别</span><span class="listCont"></span>
+                        <div class="info-list">
+                            <span class="listName">联系电话</span><span class="listCont">{{goodsInfo.u_telphone}}</span>
+                        </div>
+                        <div class="info-list">
+                            <span class="listName">交易地点</span><span class="listCont">{{goodsInfo.u_place}}</span>
+                        </div>
+                        <div class="info-list">
+                            <span class="listName">发布日期</span><span class="listCont">{{goodsInfo.g_time}}</span>
                         </div>
                     </div>
                 </div>
@@ -126,6 +132,9 @@
                 isLogin: false,
                 // 登录的信息
                 loginInfo: '',
+
+                goodsLoading: true,
+                goodsInfo: '',
             },
             methods: {
                 // 加载登录状态
@@ -148,6 +157,44 @@
                             });
                         }
                     });
+                },
+
+                // 加载商品信息
+                loadingGoods: function (params) {
+                    let url = '__APP__/Home/GoodsInfo/index?id='+ this.getParam('id');
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.goodsLoading = false;
+                                _that.goodsInfo = data.msg[0];
+                            }else{
+                                _that.$message({
+                                    message: '加载商品信息失败！',
+                                    type: 'error'
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                // 获取URI参数信息
+                getParam: function(paramName) {
+                    paramValue = "", isFound = !1;
+                    if(location.search.indexOf("?") == 0 && location.search.indexOf("=") > 1) {
+                        arrSource = unescape(location.search).substring(1,location.search.length).split("&"), i = 0;
+                        while (i < arrSource.length && !isFound) 
+                            arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++
+                    }
+                    return paramValue == "" && (paramValue = null), paramValue;
                 },
 
                 // 退出登录
@@ -175,6 +222,7 @@
             },
             mounted: function () {
                 // 判断是否登录
+                this.loadingGoods();
                 this.loadingLogin();
             }
         })

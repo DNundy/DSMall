@@ -103,7 +103,7 @@ body{
 }
 /* Main 区域 */
 .el-main{
-    width: 1200px;
+    width: 900px;
     margin: 0 auto;
     padding-top: 50px;
     overflow: hidden;
@@ -176,19 +176,23 @@ div.zoomMask{
     cursor: pointer ;
     z-index:1;
 }
+/* 右侧商品信息 */
 .art-right-info{
     float: left;
     padding: 5px 20px;
+    width: 400px;
+    height: 340px;
+    margin-top: 5px;
 }
 .info-title{
     padding: 0  5px 8px;
-    border-bottom: 1px dashed #ccc;
 }
 .infoType{
     display: inline-block;
     color: #fff;
     margin-top: 3px;
-    margin-right: 5px;
+    margin-left: 22px;
+    margin-right: 18px;
     padding: 3px 10px;
     background: #F2C345;
     border-radius: 5px;
@@ -196,5 +200,13 @@ div.zoomMask{
 .info-list{
     height: 50px;
     padding: 5px;
-    background: red;
+}
+.listName{
+    display: inline-block;
+    color: #333;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin: 25px 5px 0 0;
 }
