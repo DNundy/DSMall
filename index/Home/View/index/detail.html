@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
     <link rel="stylesheet" href="__PUBLIC__/lib/fonts/iconfont.css">
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="__PUBLIC__/css/index/contact.css">
+    <!-- Mine -->
+    <script src="__PUBLIC__/lib/jquery.imagezoom.min.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/css/index/detail.css">
 </head>
 
 <body>
@@ -52,7 +53,55 @@
 
             <!-- 内容区域 -->
             <el-main>
-
+                <!-- 淘宝图片展示效果-内容 -->
+                <div class="art-left-photo">
+                    <div class="tb-booth">
+                        <img class="jqzoom" src="__PUBLIC__/images/01.jpg" rel="__PUBLIC__/images/01.jpg"/>
+                    </div>
+                    <div class="tb-thumb">
+                        <div><img src="__PUBLIC__/images/01.jpg"></div>
+                    </div>
+                </div>
+                <!-- 淘宝图片展示效果-JS -->
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $(".jqzoom").imagezoom();
+                        $(".tb-thumb div:first").addClass("tb-selected");
+                        $(".tb-thumb div").click(function () {
+                            $(this).addClass("tb-selected").siblings().removeClass("tb-selected");
+                            $(".jqzoom").attr('src', $(this).find("img").attr("src"));
+                            $(".jqzoom").attr('rel', $(this).find("img").attr("src"));
+                        });
+                    });
+                </script>
+                
+                <!-- 关于物品详细信息展示区域 -->
+                <div class="art-right-info">
+                    <div class="info-title">
+                        <span class="infoType">厨具</span>
+                        <span>哈哈哈哈或或</span>
+                    </div>
+                    <div class="info-cont">
+                        <div class="info-list">
+                            <span class="listName">类别</span><span class="listCont"></span>
+                        </div>
+                        <div class="infoList">
+                            <span class="listName">类别</span><span class="listCont"></span>
+                        </div>
+                        <div class="infoList">
+                            <span class="listName">类别</span><span class="listCont"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 卖家寄语 -->
+                <div class="art-bot-describe">
+                    <div class="descTop"></div>
+                    <div class="descCont">
+                        <p></p>
+                    </div>
+                    <div class="descBot"></div>
+                </div>
             </el-main>
 
             <!-- Footer区域 -->
