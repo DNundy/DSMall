@@ -208,6 +208,9 @@ div.zoomMask{
     height: 50px;
     padding: 5px;
 }
+.info-list a{
+    text-decoration: none;
+}
 .listName{
     display: inline-block;
     color: #333;
@@ -269,6 +272,10 @@ div.zoomMask{
 }
 .discussName{
     margin-left: 5px;
+}
+.discussName a{
+    color: #959595;
+    text-decoration: none;
 }
 .discussList p {
     text-indent: 2em;

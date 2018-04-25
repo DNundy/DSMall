@@ -22,7 +22,8 @@ class GoodsInfoController extends Controller {
  					  trading_goods.g_price,
  					  trading_goods.g_time,
  					  trading_goods.g_picture,
- 					  trading_user.u_name,
+					   trading_user.u_name,
+					   trading_user.u_id,
  					  trading_user.u_place,
  					  trading_user.u_telphone
  					  from trading_goods left join trading_user on trading_goods.u_id=trading_user.u_id where trading_goods.g_id=$id";
