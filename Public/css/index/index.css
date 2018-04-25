@@ -39,7 +39,6 @@ body{
 /*Main 导航*/
 .el-main{
     width: 1200px;
-    height: 900px;
     overflow: hidden;
     margin: -520px auto 0 auto;
 }
@@ -125,3 +124,33 @@ body{
     color: #fff;
 }
 /* 功能点介绍 */
+.mainFun{
+    width: 1050px;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+.mainFun p {
+    color: #F2C345;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 32px;
+    font-family: '楷体';
+}
+.mainFun-list{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.mainFun-list div{
+    margin: 10px 0;
+    width: 255px;
+    height: 200px;
+}
+.mainFun-list div i{
+    color: #f56c6c;
+    line-height: 200px;
+    margin-left: 30px;
+    font-size: 30px;
+}
