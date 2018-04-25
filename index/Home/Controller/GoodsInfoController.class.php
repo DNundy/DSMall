@@ -43,14 +43,14 @@ class GoodsInfoController extends Controller {
 	}
 	//商品用户评论内容
 	public function discuss(){
-		if(empty($_GET['id'])){
+		if(empty($_POST['id'])){
 			$res = array(
                 'code' => '-1',
                 'msg' => '参数传递失败',
             );
             return $this->ajaxReturn($res);
 		}
-		$id = $_GET['id'];
+		$id = $_POST['id'];
 		$Model = new Model();
  		$sql ="select trading_discuss.d_content,trading_discuss.d_time,trading_user.u_id,trading_user.u_name
  			from trading_discuss left join trading_user on 
