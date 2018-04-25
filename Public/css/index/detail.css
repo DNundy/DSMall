@@ -187,6 +187,9 @@ div.zoomMask{
 .info-title{
     padding: 0  5px 8px;
 }
+.info-cont{
+    margin-left: 5px;
+}
 .infoType{
     display: inline-block;
     color: #fff;
@@ -212,4 +215,10 @@ div.zoomMask{
     line-height: 50px;
     text-align: center;
     margin: 25px 5px 0 0;
+}
+.bdsharebuttonbox{
+    margin: 30px 0 0 28px;
+}
+.bdsharebuttonbox a{
+    margin-right: 12px !important;
 }
