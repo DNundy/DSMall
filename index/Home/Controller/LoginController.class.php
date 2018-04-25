@@ -182,9 +182,11 @@ class LoginController extends Controller {
     	
 	public function isLogin(){
 		if(isset($_SESSION['num']) && $_SESSION['num'] != '' && $_SESSION['type'] == 'admin'){
+            $num = $_SESSION['num'];
+            $name = M('Admin')->where("a_id=$num")->getField('a_name');
 			$res = array(
 				'code' => 0,
-				'msg' => '已经登录！',
+				'msg' => $name,
 			);
 		}else{
 			$res = array(

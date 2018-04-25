@@ -136,3 +136,12 @@
     outline: none;
     border: none;
 }
+.tips{
+    margin: 15px auto 0;
+    text-align: right;
+}
+.tips a{
+    color: crimson;
+    font-size: 12px;
+    text-decoration: none;
+}

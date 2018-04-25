@@ -67,6 +67,9 @@
                             
                             <!-- 登录按钮 -->
                             <input class="submit-Btn" type="button" value="立即登录" @click="submitForm">
+                            <div class="tips">
+                                <a class="already" href="__APP__/Home/admin/admin" v-if="isLogin">已登录账号：{{loginInfo}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -91,6 +94,9 @@
         var app = new Vue({
             el: '#app',
             data: {
+                isLogin: false,
+                loginInfo: '',
+
                 formData: {
                     'num': '',
                     'password': '',
@@ -146,13 +152,15 @@
                 },
             },
             mounted: function() {
+                let _that = this;
                 $.ajax({
                     url: '__APP__/Home/Login/isLogin',
                     type: 'POST',
                     dataType: 'JSON',
                     success: function (data) {
-                        if (data.code == '0') {
-                            location.href = '__APP__/Home/admin/admin';
+                        if ( data.code == 0 ) {
+                            _that.isLogin = true;
+                            _that.loginInfo = data.msg;
                         }
                     }
                 });
