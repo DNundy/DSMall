@@ -231,7 +231,7 @@ div.zoomMask{
     padding-top: 40px;
 }
 .descTitle{
-    margin-top: 30px;
+    padding-top: 50px;
     height: 50px;
     line-height: 50px;
     text-align: left;
@@ -240,7 +240,7 @@ div.zoomMask{
     font-family: '楷体';
 }
 .descCont{
-    padding: 20px 100px 20px 20px;
+    padding: 20px 60px 20px 20px;
 }
 .descCont p{
     color: #111;
@@ -249,4 +249,57 @@ div.zoomMask{
 }
 .quotEnd img{
     float: right;
+}
+/* 评论列表 */
+.discussTitle{
+    clear: both;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    color: #222;
+    font-size: 25px;
+    font-family: '楷体';
+}
+.discussList{
+    color: #959595;
+    clear: both;
+    padding: 20px;
+}
+.discussName{
+    margin-left: 5px;
+}
+.discussList p {
+    text-indent: 2em;
+}
+.discussCont div{
+    padding: 10px 0px;
+}
+.discussText{
+    text-indent: 2em;
+}
+.discussTime{
+    text-align: right;
+}
+/* 发布评论 */
+.publishBtn{
+    float: right;
+    margin: 10px 10px 20px 0px;
+}
+.publishDiscuss{
+    color: #959595;
+    border: 1px solid #959595;
+    border-radius: 10px;
+    width: 825px;
+    height: 60px;
+    outline: none;
+    resize: none;
+    padding: 10px;
+    line-height: 25px;
+    text-indent: 4em;
+}
+.publishDiscuss a{
+    text-decoration: none;
+    color: #08B35F;
 }

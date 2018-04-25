@@ -34,8 +34,9 @@
                         <a href="__APP__/Home/index/personal" v-if="isLogin">
                             <i class="icon iconfont icon-questions"></i>
                             <span> {{loginInfo}} </span>
-                            <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
                         </a>
+                        <span @click="loginOut" class="outLogin"  v-if="isLogin"> &nbsp; &nbsp;退出 </span>
+                        
                         <a href="__APP__/Home/login/login" v-else>
                             <i class="icon iconfont icon-questions"></i>
                             <span> 立即登录 </span>
@@ -52,7 +53,7 @@
             </el-header>
 
             <!-- 内容区域 -->
-            <el-main  v-loading="goodsLoading">
+            <el-main  v-loading="goodsLoading&&loadingDiscussStatus">
                 <!-- 淘宝图片展示效果-内容 -->
                 <div class="art-left-photo">
                     <div class="tb-booth">
@@ -116,15 +117,25 @@
                     </div>
                 </div>
 
-                <div class="art-bot-discuss">
-                    <div class="descTitle">商品评价</div>
+                <div class="art-bot-discuss" v-loading="loadingDiscussStatus">
+                    <div class="discussTitle">商品评价</div>
                     <div class="discussCont">
-                        <div class="discussList">
-                            
+                        <div class="publishDiscuss" v-if="!isLogin">
+                            <a href="__APP__/Home/login/login" target="_blank">登录</a> 后即可进行评论！
                         </div>
-                    </div>
-                    <div class="discussTips">
-                    
+                        <div v-else>
+                            <textarea class="publishDiscuss"  placeholder="你的评论，一针见血~" maxlength="50" v-model="publishInfo" ></textarea>
+                            <el-button plain @click="publishDis" size='mini' class="publishBtn">发布评论</el-button>
+                        </div>
+
+                        <div class="discussList" v-if="discussInfo == null">
+                            <p>暂时还没有评论，快来留下第一个足迹呗!</p>
+                        </div>
+                        <div class="discussList" v-for="item in discussInfo" v-else>
+                            <div class="discussName">{{item.d_user}} 说：</div>
+                            <div class="discussText">{{item.d_content}}</div>
+                            <div class="discussTime">{{item.d_time}}</div>
+                        </div>
                     </div>
                 </div>
             </el-main>
@@ -155,6 +166,11 @@
                 goodsLoading: true,
                 goodsPic: [['img-404.png']],
                 goodsInfo: '',
+
+                loadingDiscussStatus: true,
+                discussInfo: '',
+                publishInfo: '',
+
                 
                 selectIndex: 0,
                 selectPic: '__PUBLIC__/img/goods/img-404.png',
@@ -195,7 +211,7 @@
                                 _that.getImgList();
                             }else{
                                 _that.$message({
-                                    message: '加载商品信息失败！',
+                                    message: '加载 商品信息 失败！',
                                     type: 'error'
                                 });
                             }
@@ -207,6 +223,60 @@
                             });
                         }
                     });
+                },
+
+                // 加载商品评论
+                loadingDiscuss: function (params) {
+                    let id = this.getParam('id');
+                    let _that = this;
+                    $.ajax({
+                        url: '__APP__/Home/GoodsInfo/discuss',
+                        data: {'id':id},
+                        type: 'POST',
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.discussInfo = data.msg;
+                            }
+                            _that.loadingDiscussStatus = false;
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                // 发布商品评论
+                publishDis: function (params) {
+                    let data={
+                        id: this.getParam('id'),
+                        content: this.publishInfo,
+                    }
+                    let _that = this;
+                    $.ajax({
+                        url: '__APP__/Home/GoodsInfo/publishDiscuss',
+                        data: data,
+                        type: 'POST',
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.$message({
+                                message: data.msg,
+                                type: 'success'
+                            });
+                            _that.publishInfo = '';
+                            _that.loadingDiscuss();
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                    
                 },
 
                 // 获取URI参数信息
@@ -246,10 +316,11 @@
                         dataType: 'JSON',
                         success: function (data) {
                             _that.$message({
-                                message: data.msg,
+                                message: '成功退出！',
                                 type: 'success'
                             });
-                            location = '__APP__/Home/login/login'
+                            _that.isLogin = false;
+                            _that.loginInfo = '';
                         },
                         error: function () {
                             _that.$message({
@@ -263,6 +334,7 @@
             mounted: function () {
                 // 判断是否登录
                 this.loadingGoods();
+                this.loadingDiscuss();
                 this.loadingLogin();
             }
         })
