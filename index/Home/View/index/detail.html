@@ -56,22 +56,18 @@
                 <!-- 淘宝图片展示效果-内容 -->
                 <div class="art-left-photo">
                     <div class="tb-booth">
-                        <img class="jqzoom" :src="'__PUBLIC__/img/goods/'+goodsPic[0]" :rel="'__PUBLIC__/img/goods/'+goodsPic[0]"/>
+                        <img class="jqzoom" :src="selectPic" :rel="selectPic"/>
                     </div>
                     <div class="tb-thumb">
-                        <div v-for="item in goodsPic"><img :src="'__PUBLIC__/img/goods/'+item"></div>
+                        <div v-for="(item,index) in goodsPic[0]" :class=" index == selectIndex ? 'tb-selected' : ''"><img :src="'__PUBLIC__/img/goods/'+item"  @click="switchPic($event,index)"/></div>
                     </div>
+                </div>
+                <div>
                 </div>
                 <!-- 淘宝图片展示效果-JS -->
                 <script type="text/javascript">
                     $(document).ready(function () {
                         $(".jqzoom").imagezoom();
-                        $(".tb-thumb div:first").addClass("tb-selected");
-                        $(".tb-thumb div").click(function () {
-                            $(this).addClass("tb-selected").siblings().removeClass("tb-selected");
-                            $(".jqzoom").attr('src', $(this).find("img").attr("src"));
-                            $(".jqzoom").attr('rel', $(this).find("img").attr("src"));
-                        });
                     });
                 </script>
                 
@@ -145,8 +141,11 @@
                 loginInfo: '',
 
                 goodsLoading: true,
-                goodsPic: [],
+                goodsPic: [['img-404.png']],
                 goodsInfo: '',
+                
+                selectIndex: 0,
+                selectPic: '__PUBLIC__/img/goods/img-404.png',
             },
             methods: {
                 // 加载登录状态
@@ -215,10 +214,15 @@
                     if (this.goodsInfo) {
                         this.goodsPic.push(this.goodsInfo.g_picture.split('|'));
                     }
-                    console.log(this.goodsPic);
-                    
+                    this.selectPic = '__PUBLIC__/img/goods/'+this.goodsPic[0][0];
                     // 关闭加载图标
                     this.goodsLoading = false;
+                },
+
+                // 切换小图
+                switchPic: function (e,i) {
+                    this.selectIndex = i;
+                    this.selectPic = e.target.src;
                 },
 
                 // 退出登录
