@@ -106,6 +106,7 @@ body{
 }
 /* Main 区域 */
 .el-main{
+    color: #333;
     width: 1200px;
     margin: 40px auto;
     background: #fff;
