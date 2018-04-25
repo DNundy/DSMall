@@ -62,8 +62,6 @@
                         <div v-for="(item,index) in goodsPic[0]" :class=" index == selectIndex ? 'tb-selected' : ''"><img :src="'__PUBLIC__/img/goods/'+item"  @click="switchPic($event,index)"/></div>
                     </div>
                 </div>
-                <div>
-                </div>
                 <!-- 淘宝图片展示效果-JS -->
                 <script type="text/javascript">
                     $(document).ready(function () {
@@ -109,11 +107,25 @@
                 
                 <!-- 卖家寄语 -->
                 <div class="art-bot-describe">
-                    <div class="descTop"></div>
+                    <div class="descTitle">宝贝描述</div>
                     <div class="descCont">
-                        <p></p>
+                        <div class="quotBegin"><img src="__PUBLIC__/img/goods/quotBegin.png" alt=""></div>
+                        <p v-if="goodsInfo.g_construct==''"> 饿哦，卖家很赖，还没有任何描述哦！ </p>
+                        <p v-else> {{goodsInfo.g_construct}} </p>
+                        <div class="quotEnd"><img src="__PUBLIC__/img/goods/quotEnd.png" alt=""></div>
                     </div>
-                    <div class="descBot"></div>
+                </div>
+
+                <div class="art-bot-discuss">
+                    <div class="descTitle">商品评价</div>
+                    <div class="discussCont">
+                        <div class="discussList">
+                            
+                        </div>
+                    </div>
+                    <div class="discussTips">
+                    
+                    </div>
                 </div>
             </el-main>
 

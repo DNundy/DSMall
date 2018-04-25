@@ -107,6 +107,7 @@ body{
     margin: 0 auto;
     margin-top: 50px;
     overflow: hidden;
+    background: #fff;
 }
 /* 放大镜-Box */
 .art-left-photo{
@@ -178,7 +179,7 @@ div.zoomMask{
 }
 /* 右侧商品信息 */
 .art-right-info{
-    float: left;
+    float: right;
     padding: 5px 20px;
     width: 400px;
     height: 340px;
@@ -221,4 +222,31 @@ div.zoomMask{
 }
 .bdsharebuttonbox a{
     margin-right: 12px !important;
+}
+/* 商品描述 */
+.art-bot-describe{
+    width: 900px;
+    height: 200px;
+    clear: both;
+    padding-top: 40px;
+}
+.descTitle{
+    margin-top: 30px;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    color: #222;
+    font-size: 25px;
+    font-family: '楷体';
+}
+.descCont{
+    padding: 20px 100px 20px 20px;
+}
+.descCont p{
+    color: #111;
+    line-height: 30px;
+    text-indent: 3em;
+}
+.quotEnd img{
+    float: right;
 }
