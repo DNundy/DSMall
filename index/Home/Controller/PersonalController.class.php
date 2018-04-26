@@ -169,7 +169,7 @@ class PersonalController extends UserCommonController {
 	public function discussGoods(){
 		$num = $_SESSION['num'];
 		$Model = new Model();
- 		$sql ="select * from trading_discuss left join trading_goods on trading_discuss.g_id=trading_goods.g_id where trading_discuss.d_user=$num order by trading_discuss.d_id desc";
+ 		$sql ="select * from trading_discuss left join trading_goods on trading_discuss.g_id=trading_goods.g_id where trading_discuss.u_id=$num order by trading_discuss.d_id desc";
  		$disscussInfo = $Model->query($sql);
 		if(!empty($disscussInfo)){
 			$res = array(

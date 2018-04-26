@@ -55,7 +55,7 @@ class GoodsInfoController extends Controller {
 		$Model = new Model();
  		$sql ="select trading_discuss.d_content,trading_discuss.d_time,trading_user.u_id,trading_user.u_name
  			from trading_discuss left join trading_user on 
-            trading_discuss.d_user=trading_user.u_id where trading_discuss.g_id=$id";
+            trading_discuss.u_id=trading_user.u_id where trading_discuss.g_id=$id";
  		$discussInfo = $Model->query($sql);
 		$res = array(
                 'code' => '0',
@@ -73,7 +73,7 @@ class GoodsInfoController extends Controller {
         	return $this->ajaxReturn($res);
         }
         $data = array(
-        	'd_user' => $_SESSION['num'],
+        	'u_id' => $_SESSION['num'],
         	'g_id' => $_POST['id'],
         	'd_content' => $_POST['content'],
         	'd_time' => date('Y-m-d H:i:s'),

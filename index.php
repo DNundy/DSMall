@@ -20,6 +20,7 @@ define('APP_DEBUG',True);
 // 定义应用目录
 define('APP_PATH','./index/');
 
+// 绑定Home模块，以此来隐藏 URL 中的 Home
 define('BIND_MODULE', 'Home');
 
 // 引入ThinkPHP入口文件
