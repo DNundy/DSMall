@@ -70,7 +70,7 @@ class IndexController extends Controller {
 				$data['g_time'] = array('egt',0);
 				break;
 		}
-
+		$data['g_status'] = 1;
 		// 排序
 		if( $_POST['orderBy'] == 'desc' ){
 			$goods = M('Goods')->where($data)->order("g_price desc")->select();
@@ -98,7 +98,7 @@ class IndexController extends Controller {
 		}
 		$search = $_POST['search'];
 		$Model = new Model();
- 		$sql ="select * from trading_goods where g_name REGEXP '[$search]'";
+ 		$sql ="select * from trading_goods where g_name REGEXP '[$search]' AND g_status = 1";
  		$goodsInfo = $Model->query($sql);
 		if(!empty($goodsInfo)){
     		$res = array(
