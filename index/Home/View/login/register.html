@@ -25,7 +25,7 @@
         <el-container>
 
             <!-- Header 区域 -->
-            <el-header><a href="__APP__/Home/index/index"><span class="logo">趣二手</span></a></el-header>
+            <el-header><a href="__APP__/index/index"><span class="logo">趣二手</span></a></el-header>
 
             <!-- 内容区域 -->
             <el-main>
@@ -94,7 +94,7 @@
                                 </div>
 
                                 <!-- 验证码图片 -->
-                                <div class="item"><img src="__APP__/Home/Code/index" onclick='this.src=this.src+"?"+Math.random()'/></div>
+                                <div class="item"><img src="__APP__/Code/index" onclick='this.src=this.src+"?"+Math.random()'/></div>
 
                                 <!-- 输入验证码 -->
                                 <div class="item" :class="{showError:dataVerify.codeShow}">
@@ -110,7 +110,7 @@
                                 <!-- 注册按钮 -->
                                 <input class="submit-Btn" type="button" value="立即注册" @click="submitForm">
                                 <div class="tips">
-                                    <a href="__APP__/Home/login/login">已有帐号，去登录</a>
+                                    <a href="__APP__/login/login">已有帐号，去登录</a>
                                 </div>
                             </form>
                         </div>
@@ -124,7 +124,7 @@
                     <a target="_blank" class="link" href="http://www.xiyou.edu.cn/">西邮官网</a> |
                     <a target="_blank" class="link" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> |
                     <a target="_blank" class="link" href="http://gr.xupt.edu.cn/">研究生院</a> |
-                    <a class="link" href="__APP__/Home/login/login-admin">管理员登录</a>
+                    <a class="link" href="__APP__/login/login-admin">管理员登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -187,7 +187,7 @@
                 submitForm: function() {
                     if(!this.dataVerify.numShow && !this.dataVerify.nameShow && !this.dataVerify.passwordShow && !this.dataVerify.repasswordShow && !this.dataVerify.phoneShow && !this.dataVerify.emailShow && !this.dataVerify.placeShow && !this.dataVerify.codeShow && this.formData.num && this.formData.name && this.formData.password && this.formData.repassword && this.formData.phone && this.formData.email && this.formData.place && this.formData.code){
                         this.tipsShow = false;
-                        let url = '__APP__/Home/Login/accept_register';
+                        let url = '__APP__/Login/accept_register';
                         let _that = this;
                         $.ajax({
                             url: url,
@@ -196,7 +196,7 @@
                             dataType: 'JSON',
                             success: function (res) {
                                 if(res.code == 1){
-                                    location.href = '__APP__/Home/Login/login';
+                                    location.href = '__APP__/Login/login';
                                 }else{
                                     _that.$message({
                                         message: res.msg,

@@ -134,8 +134,8 @@
                     <div class="infoItem" v-for="item in infoData.msg" v-show="delStatus">
                         <div class="infoTitle">
                             <i>{{item.n_title}}</i>
-                            <el-button type="danger" :data-id="'__APP__/Home/admin/deleteNotice?id='+item.n_id" plain @click="deleteInfo($event)">
-                                <span :data-id="'__APP__/Home/admin/deleteNotice?id='+item.n_id">删除</span>
+                            <el-button type="danger" :data-id="'__APP__/admin/deleteNotice?id='+item.n_id" plain @click="deleteInfo($event)">
+                                <span :data-id="'__APP__/admin/deleteNotice?id='+item.n_id">删除</span>
                             </el-button>
                         </div>
                         <div class="infoCont">{{item.n_content}}</div>
@@ -150,7 +150,7 @@
                     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="footer-mid">您是第&nbsp;&nbsp;
                         <span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span>
-                    <a href="__APP__/Home/login/login">用户登录</a>
+                    <a href="__APP__/login/login">用户登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -181,22 +181,22 @@
             methods: {
                 // 路由方法（脑残了，可以传参写一个方法的！！！~汗）
                 toAdmin: function () {
-                    location.href = '__APP__/Home/admin/admin';
+                    location.href = '__APP__/admin/admin';
                 },
                 toGoods: function () {
-                    location.href = '__APP__/Home/admin/admin-goods';
+                    location.href = '__APP__/admin/admin-goods';
                 },
                 toUser: function () {
-                    location.href = '__APP__/Home/admin/admin-user';
+                    location.href = '__APP__/admin/admin-user';
                 },
                 toType: function () {
-                    location.href = '__APP__/Home/admin/admin-type';
+                    location.href = '__APP__/admin/admin-type';
                 },
                 toInfo: function () {
-                    location.href = '__APP__/Home/admin/admin-info';
+                    location.href = '__APP__/admin/admin-info';
                 },
                 toSet: function () {
-                    location.href = '__APP__/Home/admin/admin-set';
+                    location.href = '__APP__/admin/admin-set';
                 },
 
                 // 导航方法
@@ -224,14 +224,14 @@
                         cancelButtonText: '取消',
                         type: 'warning'
                     }).then(() => {
-                        let url = '__APP__/Home/Login/out_login';
+                        let url = '__APP__/Login/out_login';
                         let _that = this;
                         $.ajax({
                             url: url,
                             type: 'POST',
                             dataType: 'JSON',
                             success: function (data) {
-                                location.href = '__APP__/Home/login/login_admin';
+                                location.href = '__APP__/login/login_admin';
                             },
                             error: function () {
                                 _that.$message({
@@ -247,7 +247,7 @@
 
                 // 获取通知
                 getInfo: function() {
-                    let url = '__APP__/Home/admin/findNotice';
+                    let url = '__APP__/admin/findNotice';
                     let _that = this;
                     $.ajax({
                         url: url,
@@ -272,7 +272,7 @@
                         cancelButtonText: '取消',
                         type: 'warning'
                     }).then(() => {
-                        let url = '__APP__/Home/admin/addNotice';
+                        let url = '__APP__/admin/addNotice';
                         let _that = this;
                         $.ajax({
                             url: url,

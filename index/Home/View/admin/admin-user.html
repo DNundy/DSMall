@@ -135,23 +135,23 @@
                         <div>{{item.u_time}}</div>
                         <!-- 更改状态栏 -->
                         <div v-if="listStatus">
-                            <el-button v-if="item.u_status=='1'" type="primary" size="mini" :data-id="'__APP__/Home/AdminUserInfo/exitUser?id='+item.u_id"
+                            <el-button v-if="item.u_status=='1'" type="primary" size="mini" :data-id="'__APP__/AdminUserInfo/exitUser?id='+item.u_id"
                                 plain @click="offUser($event)">
-                                <span @click="offUser($event)" :data-id="'__APP__/Home/AdminUserInfo/exitUser?id='+item.u_id">禁用用户</span>
+                                <span @click="offUser($event)" :data-id="'__APP__/AdminUserInfo/exitUser?id='+item.u_id">禁用用户</span>
                             </el-button>
                             
-                            <el-button v-else type="danger" size="mini" plain  @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/outUser?id='+item.u_id">
-                                <span @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/outUser?id='+item.u_id">解冻账号</span>
+                            <el-button v-else type="danger" size="mini" plain  @click="onUser($event)" :data-id="'__APP__/AdminUserInfo/outUser?id='+item.u_id">
+                                <span @click="onUser($event)" :data-id="'__APP__/AdminUserInfo/outUser?id='+item.u_id">解冻账号</span>
                             </el-button>
                         </div>
                         <!-- 查看信息栏 -->
                         <div v-else>
-                            <a :href="'__APP__/Home/index/personal?'+item.u_id"><el-button v-if="item.u_status=='1'" type="primary" size="mini"  :data-id="'?id='+item.u_id" plain @click="toUserInfo($event)">
+                            <a :href="'__APP__/index/personal?'+item.u_id"><el-button v-if="item.u_status=='1'" type="primary" size="mini"  :data-id="'?id='+item.u_id" plain @click="toUserInfo($event)">
                                 <span>用户主页</span>
                             </el-button></a>
 
-                            <el-button v-else type="danger" size="mini" :data-id="'__APP__/Home/AdminUserInfo/outUser?id='+item.u_id" plain @click="onUser($event)">
-                                <span @click="onUser($event)" :data-id="'__APP__/Home/AdminUserInfo/outUser?id='+item.u_id">解冻账号</span>
+                            <el-button v-else type="danger" size="mini" :data-id="'__APP__/AdminUserInfo/outUser?id='+item.u_id" plain @click="onUser($event)">
+                                <span @click="onUser($event)" :data-id="'__APP__/AdminUserInfo/outUser?id='+item.u_id">解冻账号</span>
                             </el-button>
                         </div>
                     </div>
@@ -164,7 +164,7 @@
                     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="footer-mid">您是第&nbsp;&nbsp;
                         <span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span>
-                    <a href="__APP__/Home/login/login">用户登录</a>
+                    <a href="__APP__/login/login">用户登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -183,22 +183,22 @@
             },
             methods: {
                 toAdmin: function (params) {
-                    location.href = '__APP__/Home/admin/admin';
+                    location.href = '__APP__/admin/admin';
                 },
                 toGoods: function () {
-                    location.href = '__APP__/Home/admin/admin-goods';
+                    location.href = '__APP__/admin/admin-goods';
                 },
                 toUser: function (params) {
-                    location.href = '__APP__/Home/admin/admin-user';
+                    location.href = '__APP__/admin/admin-user';
                 },
                 toType: function (params) {
-                    location.href = '__APP__/Home/admin/admin-type';
+                    location.href = '__APP__/admin/admin-type';
                 },
                 toInfo: function (params) {
-                    location.href = '__APP__/Home/admin/admin-info';
+                    location.href = '__APP__/admin/admin-info';
                 },
                 toSet: function (params) {
-                    location.href = '__APP__/Home/admin/admin-set';
+                    location.href = '__APP__/admin/admin-set';
                 },
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
@@ -219,14 +219,14 @@
                         cancelButtonText: '取消',
                         type: 'warning'
                     }).then(() => {
-                        let url = '__APP__/Home/Login/out_login';
+                        let url = '__APP__/Login/out_login';
                         let _that = this;
                         $.ajax({
                             url: url,
                             type: 'POST',
                             dataType: 'JSON',
                             success: function (data) {
-                                location.href = '__APP__/Home/login/login_admin';
+                                location.href = '__APP__/login/login_admin';
                             },
                             error: function () {
                                 _that.$message({
@@ -241,7 +241,7 @@
                 },
 
                 getUser: function () {
-                    let url = '__APP__/Home/AdminUserInfo/selectUser';
+                    let url = '__APP__/AdminUserInfo/selectUser';
                     let _that = this;
                     $.ajax({
                         url: url,

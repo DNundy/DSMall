@@ -23,7 +23,7 @@
         <el-container>
 
             <!-- Header 区域 -->
-            <el-header><a href="__APP__/Home/index/index"><span class="logo">趣二手</span></a></el-header>
+            <el-header><a href="__APP__/index/index"><span class="logo">趣二手</span></a></el-header>
 
             <!-- 内容区域 -->
             <el-main>
@@ -73,7 +73,7 @@
                                 
                                 <!-- 验证码图片 -->
                                 <div class="item">
-                                    <img src="__APP__/Home/Code/index" onclick='this.src=this.src+"?"+Math.random()' />
+                                    <img src="__APP__/Code/index" onclick='this.src=this.src+"?"+Math.random()' />
                                 </div>
                                 
                                 <!-- 输入验证码 -->
@@ -90,8 +90,8 @@
                                 <!-- 提交按钮 -->
                                 <input class="submit-Btn" type="button" value="立即注册" @click="submitForm">
                                 <div class="tips">
-                                        <a href="__APP__/Home/login/login">返回登录</a>
-                                        <a href="__APP__/Home/login/register">免费注册</a>
+                                        <a href="__APP__/login/login">返回登录</a>
+                                        <a href="__APP__/login/register">免费注册</a>
                                 </div>
                             </form>
                         </div>
@@ -102,10 +102,10 @@
             <!-- Footer区域 -->
             <el-footer>
                 <div class="links"> 
-                    <a href="__APP__/Home/index/index">系统首页</a> | 
+                    <a href="__APP__/index/index">系统首页</a> | 
                     <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> | 
-                    <a href="__APP__/Home/login/login.html">用户登录</a> | 
-                    <a href="__APP__/Home/login/login-admin.html">管理员登录</a>
+                    <a href="__APP__/login/login.html">用户登录</a> | 
+                    <a href="__APP__/login/login-admin.html">管理员登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -155,7 +155,7 @@
                 submitForm: function () {
                     if (!this.dataVerify.numShow && !this.dataVerify.passwordShow && !this.dataVerify.repasswordShow && !this.dataVerify.emailShow && !this.dataVerify.codeShow && this.formData.num && this.formData.password && this.formData.repassword && this.formData.email && this.formData.code) {
                         this.tipsShow = false;
-                        let url = '__APP__/Home/Repassword/index';
+                        let url = '__APP__/Repassword/index';
                         $.ajax({
                             url: url,
                             type: 'POST',
@@ -168,7 +168,7 @@
                                         type: 'error'
                                     });
                                 } else {
-                                    location.href = '__APP__/Home/Login/login';
+                                    location.href = '__APP__/Login/login';
                                 }
                             },
                             error: function (err) {

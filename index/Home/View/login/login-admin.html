@@ -23,7 +23,7 @@
         <el-container>
 
             <!-- Header 区域 -->
-            <el-header><a href="__APP__/Home/index/index"><span class="logo">趣二手</span></a></el-header>
+            <el-header><a href="__APP__/index/index"><span class="logo">趣二手</span></a></el-header>
 
             <!-- 内容区域 -->
             <el-main>
@@ -51,7 +51,7 @@
                             
                             <!-- 验证码图片 -->
                             <div class="item">
-                                <img src="__APP__/Home/Code/index" onclick='this.src=this.src+"?"+Math.random()' />
+                                <img src="__APP__/Code/index" onclick='this.src=this.src+"?"+Math.random()' />
                             </div>
                             
                             <!-- 输入验证码 -->
@@ -68,7 +68,7 @@
                             <!-- 登录按钮 -->
                             <input class="submit-Btn" type="button" value="立即登录" @click="submitForm">
                             <div class="tips">
-                                <a class="already" href="__APP__/Home/admin/admin" v-if="isLogin">已登录账号：{{loginInfo}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                <a class="already" href="__APP__/admin/admin" v-if="isLogin">已登录账号：{{loginInfo}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             </div>
                         </form>
                     </div>
@@ -78,10 +78,10 @@
             <!-- Footer区域 -->
             <el-footer>
                 <div class="links"> 
-                    <a href="__APP__/Home/index/index">系统首页</a> | 
+                    <a href="__APP__/index/index">系统首页</a> | 
                     <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> | 
-                    <a href="__APP__/Home/login/login.html">用户登录</a> | 
-                    <a href="__APP__/Home/login/login">普通用户登录</a>
+                    <a href="__APP__/login/login.html">用户登录</a> | 
+                    <a href="__APP__/login/login">普通用户登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -124,7 +124,7 @@
                     if (!this.dataVerify.numShow && !this.dataVerify.passwordShow && !this.dataVerify.codeShow && this.formData.num && this.formData.password && this.formData.code) {
                         this.tipsShow = false;
                         let _that = this;
-                        let url = '__APP__/Home/Login/accept_login_admin';
+                        let url = '__APP__/Login/accept_login_admin';
                         $.ajax({
                             url: url,
                             type: 'POST',
@@ -132,7 +132,7 @@
                             dataType: 'JSON',
                             success: function (data) {
                                 if (data.code == '0') {
-                                    location.href = '__APP__/Home/admin/admin';
+                                    location.href = '__APP__/admin/admin';
                                 } else if ( data.code == '-1' ) {
                                     _that.$message({
                                         message: data.msg,
@@ -154,7 +154,7 @@
             mounted: function() {
                 let _that = this;
                 $.ajax({
-                    url: '__APP__/Home/Login/isLogin',
+                    url: '__APP__/Login/isLogin',
                     type: 'POST',
                     dataType: 'JSON',
                     success: function (data) {

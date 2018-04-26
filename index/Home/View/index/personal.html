@@ -25,24 +25,24 @@
             <!-- Header 区域 -->
             <el-header>
                 <div class="headerWrap">
-                    <a href="__APP__/Home/index/index"><span class="logo">趣二手</span></a>
+                    <a href="__APP__/index/index"><span class="logo">趣二手</span></a>
                     <div class="navLogin">
-                        <a href="__APP__/Home/index/personal" v-if="isLogin">
+                        <a href="__APP__/index/personal" v-if="isLogin">
                             <i class="icon iconfont icon-questions"></i>
                             <span> {{loginInfo}} </span>
                             <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
                         </a>
-                        <a href="__APP__/Home/login/login" v-else>
+                        <a href="__APP__/login/login" v-else>
                             <i class="icon iconfont icon-questions"></i>
                             <span> 立即登录 </span>
                         </a>
                     </div>
                     <div class="navList">
-                        <a href="__APP__/Home/index/index">首页</a>
-                        <a href="__APP__/Home/index/buy">寻购二货</a>
-                        <a href="__APP__/Home/index/sale">出售二货</a>
-                        <a href="__APP__/Home/index/personal">个人空间</a>
-                        <a href="__APP__/Home/index/contact">关于我们</a>
+                        <a href="__APP__/index/index">首页</a>
+                        <a href="__APP__/index/buy">寻购二货</a>
+                        <a href="__APP__/index/sale">出售二货</a>
+                        <a href="__APP__/index/personal">个人空间</a>
+                        <a href="__APP__/index/contact">关于我们</a>
                     </div>
                 </div>
             </el-header>
@@ -164,8 +164,8 @@
                                     <span class="footerType">类型：{{item.g_type}}&nbsp;&nbsp;&nbsp;</span>
                                     <span class="footerType">价格：{{item.g_price}}&nbsp;&nbsp;&nbsp;</span>
                                     <span class="footerType">收藏时间：{{item.c_time}}&nbsp;&nbsp;&nbsp;</span>
-                                    <el-button type="warning" :data-id="'__APP__/Home/Personal/exitUserCollectGoods?id='+item.g_id" @click="delCollect($event)">
-                                        <span :data-id="'__APP__/Home/Personal/exitUserCollectGoods?id='+item.g_id">取消收藏</span>
+                                    <el-button type="warning" :data-id="'__APP__/Personal/exitUserCollectGoods?id='+item.g_id" @click="delCollect($event)">
+                                        <span :data-id="'__APP__/Personal/exitUserCollectGoods?id='+item.g_id">取消收藏</span>
                                     </el-button>
                                 </div>
                             </div>
@@ -190,11 +190,11 @@
                                     <span class="footerType">类型：{{item.g_type}}&nbsp;&nbsp;&nbsp;</span>
                                     <span class="footerType">价格：{{item.g_price}}&nbsp;&nbsp;&nbsp;</span>
                                     <span class="footerType">发布时间：{{item.g_time}}&nbsp;&nbsp;&nbsp;</span>
-                                    <el-button type="warning" :data-id="'__APP__/Home/Personal/exitGoods?id='+item.g_id" @click="delGoods($event)" v-if="item.g_status==='1'">
-                                        <span :data-id="'__APP__/Home/Personal/exitGoods?id='+item.g_id">下架商品</span>
+                                    <el-button type="warning" :data-id="'__APP__/Personal/exitGoods?id='+item.g_id" @click="delGoods($event)" v-if="item.g_status==='1'">
+                                        <span :data-id="'__APP__/Personal/exitGoods?id='+item.g_id">下架商品</span>
                                     </el-button>
-                                    <el-button type="warning" :data-id="'__APP__/Home/Personal/againGoods?id='+item.g_id" @click="againGoods($event)" v-else>
-                                        <span :data-id="'__APP__/Home/Personal/againGoods?id='+item.g_id">重新发布</span>
+                                    <el-button type="warning" :data-id="'__APP__/Personal/againGoods?id='+item.g_id" @click="againGoods($event)" v-else>
+                                        <span :data-id="'__APP__/Personal/againGoods?id='+item.g_id">重新发布</span>
                                     </el-button>
                                 </div>
                             </div>
@@ -237,10 +237,10 @@
             <!-- Footer区域 -->
             <el-footer>
                 <div class="links">
-                    <a href="__APP__/Home/index/index">系统首页</a> |
+                    <a href="__APP__/index/index">系统首页</a> |
                     <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> |
-                    <a href="__APP__/Home/login/login.html">用户登录</a> |
-                    <a href="__APP__/Home/login/login-admin.html">管理员登录</a>
+                    <a href="__APP__/login/login.html">用户登录</a> |
+                    <a href="__APP__/login/login-admin.html">管理员登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -338,7 +338,7 @@
 
                 // 加载登录状态
                 loadingLogin: function (params) {
-                    let url = '__APP__/Home/Login/isLoginUser';
+                    let url = '__APP__/Login/isLoginUser';
                     let _that = this;
                     $.ajax({
                         url: url,
@@ -355,7 +355,7 @@
                                     type: 'error'
                                 });
                                 setTimeout(() => {
-                                    location = '__APP__/Home/login/login';
+                                    location = '__APP__/login/login';
                                 }, 2000);
                             }
                         },
@@ -369,7 +369,7 @@
                 },
                 // 加载个人信息
                 loadingPersonal: function (params) {
-                    let url = '__APP__/Home/Personal/userInfo';
+                    let url = '__APP__/Personal/userInfo';
                     let _that = this;
                     $.ajax({
                         url: url,
@@ -398,7 +398,7 @@
 
                 // 修改个人信息
                 modifyInfo: function (params) {
-                    let url = '__APP__/Home/Personal/fixUserInfo';
+                    let url = '__APP__/Personal/fixUserInfo';
                     let _that = this;
                     $.ajax({
                         url: url,
@@ -432,7 +432,7 @@
                 modifyPwd: function (params) {
                     if( (this.lockInfo.renewPwd == this.lockInfo.newPwd) && this.lockInfo.oldPwd && this.lockInfo.newPwd ){
                         if( (this.lockInfo.newPwd.length >= 6) && (this.lockInfo.newPwd.length <= 16)){
-                            let url = '__APP__/Home/Personal/fixPassword';
+                            let url = '__APP__/Personal/fixPassword';
                             let _that = this;
                             $.ajax({
                                 url: url,
@@ -484,7 +484,7 @@
 
                 // 获取我的收藏
                 getCollect: function (params) {
-                    let url = '__APP__/Home/Personal/userCollectGoods';
+                    let url = '__APP__/Personal/userCollectGoods';
                     let _that = this;
                     $.ajax({
                         url: url,
@@ -551,7 +551,7 @@
 
                 // 展示发布历史
                 getGoods: function (params) {
-                    let url = '__APP__/Home/Personal/oldPublishGoods';
+                    let url = '__APP__/Personal/oldPublishGoods';
                     let _that = this;
                     $.ajax({
                         url: url,
@@ -655,7 +655,7 @@
                 
                 // 展示评论记录
                 getDiscuss: function (params) {
-                    let url = '__APP__/Home/Personal/discussGoods';
+                    let url = '__APP__/Personal/discussGoods';
                     let _that = this;
                     $.ajax({
                         url: url,
@@ -680,7 +680,7 @@
                 },
                 // 展示系统通知
                 getMessage: function (params) {
-                    let url = '__APP__/Home/Personal/findNotice';
+                    let url = '__APP__/Personal/findNotice';
                     let _that = this;
                     $.ajax({
                         url: url,
@@ -712,12 +712,12 @@
 
                 // 跳转至商品详情
                 toGoods: function (params) {
-                    location = '__APP__/Home/index/detail?id=' + params;
+                    location = '__APP__/index/detail?id=' + params;
                 },
 
                 // 退出登录
                 loginOut: function (params) {
-                    let url = '__APP__/Home/Login/out_login';
+                    let url = '__APP__/Login/out_login';
                     let _that = this;
                     $.ajax({
                         url: url,
@@ -727,7 +727,7 @@
                                 message: data.msg,
                                 type: 'success'
                             });
-                            location = '__APP__/Home/login/login'
+                            location = '__APP__/login/login'
                         },
                         error: function () {
                             _that.$message({

@@ -121,9 +121,9 @@
                     <div v-for="(item,index) in listData.msg" class="goodsItem">
                         <div class="goodsTitle">
                             <i>{{item.g_name}}</i>
-                            <el-button class="delBtn" type="danger" size="mini" :data-id="'__APP__/Home/AdminUserGoods/deleteGoods?id='+item.g_id" plain
+                            <el-button class="delBtn" type="danger" size="mini" :data-id="'__APP__/AdminUserGoods/deleteGoods?id='+item.g_id" plain
                                 @click="delGoods($event)" v-show="listStatus">
-                                <span @click="delGoods($event)" :data-id="'__APP__/Home/AdminUserGoods/deleteGoods?id='+item.g_id">删除</span>
+                                <span @click="delGoods($event)" :data-id="'__APP__/AdminUserGoods/deleteGoods?id='+item.g_id">删除</span>
                             </el-button>
                         </div>
                         <div class="goodsCont">
@@ -139,8 +139,8 @@
                                     <i class="el-icon-time"></i>
                                     <span class="DetailName">发布时间：{{item.g_price}}</span>
                             </div>
-                            <a :href="'__APP__/Home/index/detail?id='+item.g_id"><el-button class="detailBtn" type="primary" size="mini" :data-id="'__APP__/Home//?id='+item.g_id" plain @click="toGoods($event)">
-                                <span :data-id="'__APP__/Home//?id='+item.g_id">详细信息</span>
+                            <a :href="'__APP__/index/detail?id='+item.g_id"><el-button class="detailBtn" type="primary" size="mini" :data-id="'__APP__//?id='+item.g_id" plain @click="toGoods($event)">
+                                <span :data-id="'__APP__//?id='+item.g_id">详细信息</span>
                             </el-button></a>
                         </div>
                     </div>
@@ -153,7 +153,7 @@
                     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="footer-mid">您是第&nbsp;&nbsp;
                         <span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span>
-                    <a href="__APP__/Home/login/login">用户登录</a>
+                    <a href="__APP__/login/login">用户登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -177,22 +177,22 @@
             methods: {
                 //路由方法
                 toAdmin: function (params) {
-                    location.href = '__APP__/Home/admin/admin';
+                    location.href = '__APP__/admin/admin';
                 },
                 toGoods: function () {
-                    location.href = '__APP__/Home/admin/admin-goods';
+                    location.href = '__APP__/admin/admin-goods';
                 },
                 toUser: function (params) {
-                    location.href = '__APP__/Home/admin/admin-user';
+                    location.href = '__APP__/admin/admin-user';
                 },
                 toType: function (params) {
-                    location.href = '__APP__/Home/admin/admin-type';
+                    location.href = '__APP__/admin/admin-type';
                 },
                 toInfo: function (params) {
-                    location.href = '__APP__/Home/admin/admin-info';
+                    location.href = '__APP__/admin/admin-info';
                 },
                 toSet: function (params) {
-                    location.href = '__APP__/Home/admin/admin-set';
+                    location.href = '__APP__/admin/admin-set';
                 },
 
                 // 导航方法
@@ -215,14 +215,14 @@
                         cancelButtonText: '取消',
                         type: 'warning'
                     }).then(() => {
-                        let url = '__APP__/Home/Login/out_login';
+                        let url = '__APP__/Login/out_login';
                         let _that = this;
                         $.ajax({
                             url: url,
                             type: 'POST',
                             dataType: 'JSON',
                             success: function (data) {
-                                location.href = '__APP__/Home/login/login_admin';
+                                location.href = '__APP__/login/login_admin';
                             },
                             error: function () {
                                 _that.$message({
@@ -238,7 +238,7 @@
 
                 // 获取商品
                 getInfo: function () {
-                    let url = '__APP__/Home/AdminUserGoods/findGoods';
+                    let url = '__APP__/AdminUserGoods/findGoods';
                     let _that = this;
                     $.ajax({
                         url: url,
