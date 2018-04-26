@@ -81,7 +81,7 @@ class AdminController extends AdminCommonController {
         $countUser = $user->where()->count('u_id');
         $goods = M('Goods');
         $countGoods = $goods->where()->count('g_id');
-        $type = M('type');
+        $type = M('Type');
         $countType = $type->where()->count('t_type');
         $noticeHot = M('Notice');
         $adminNoticeHot = $noticeHot->where()->order('n_id desc')->limit(2)->select();

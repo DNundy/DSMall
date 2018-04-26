@@ -38,7 +38,7 @@ class LoginController extends Controller {
     	);
     	$verify = new \Think\Verify();   //判断验证的内置方法
     	if($verify->check($code, $id)){
-    		$user = M('user');//连接数据库
+    		$user = M('User');//连接数据库
     		$is_user=$user->where("u_id=$num")->getField('id');//查找该用户是否存在
     		if($is_user==NULL){
     			$status = $user->add($data);
@@ -79,7 +79,7 @@ class LoginController extends Controller {
     	);
         $verify = new \Think\Verify();   //判断验证的内置方法
     	if($verify->check($code, $id)){
-    		$user = M('user');//连接数据库
+    		$user = M('User');//连接数据库
     		$userInfo=$user->where("u_id=$num")->getField();//查找该用户是否存在
             if(!empty($userInfo))
             {
@@ -132,7 +132,7 @@ class LoginController extends Controller {
         );
         $verify = new \Think\Verify();   //判断验证的内置方法
         if($verify->check($code, $id)){
-            $user = M('admin');//连接数据库
+            $user = M('Admin');//连接数据库
             $adminInfo=$user->where("a_id=$num")->getField();//查找该用户是否存在
             if(!empty($adminInfo))
             {
