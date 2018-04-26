@@ -43,7 +43,7 @@
 .el-main {
     position: relative;
     height: 630px;
-    background:url(../../img/login/bg-admin.jpg) no-repeat center 0px;
+    background:url(../../img/assets/bg-admin.jpg) no-repeat center 0px;
 }
 .wrap{
     width: 400px;
