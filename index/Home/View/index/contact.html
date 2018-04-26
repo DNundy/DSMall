@@ -45,26 +45,26 @@
             <!-- Header 区域 -->
             <el-header>
                 <div class="headerWrap">
-                    <a href="__APP__/index/index">
+                    <a href="__APP__/Index/index">
                         <span class="logo">趣二手</span>
                     </a>
                     <div class="navLogin">
-                        <a href="__APP__/index/personal" v-if="isLogin">
+                        <a href="__APP__/Index/personal" v-if="isLogin">
                             <i class="icon iconfont icon-questions"></i>
                             <span> {{loginInfo}} </span>
                             <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
                         </a>
-                        <a href="__APP__/login/login" v-else>
+                        <a href="__APP__/Login/login" v-else>
                             <i class="icon iconfont icon-questions"></i>
                             <span> 立即登录 </span>
                         </a>
                     </div>
                     <div class="navList">
-                        <a href="__APP__/index/index">首页</a>
-                        <a href="__APP__/index/buy">寻购二货</a>
-                        <a href="__APP__/index/sale">出售二货</a>
-                        <a href="__APP__/index/personal">个人空间</a>
-                        <a href="__APP__/index/contact">关于我们</a>
+                        <a href="__APP__/Index/index">首页</a>
+                        <a href="__APP__/Index/buy">寻购二货</a>
+                        <a href="__APP__/Index/sale">出售二货</a>
+                        <a href="__APP__/Index/personal">个人空间</a>
+                        <a href="__APP__/Index/contact">关于我们</a>
                     </div>
                 </div>
             </el-header>
@@ -88,10 +88,10 @@
             <!-- Footer区域 -->
             <el-footer>
                 <div class="links">
-                    <a href="__APP__/index/index">系统首页</a> |
+                    <a href="__APP__/Index/index">系统首页</a> |
                     <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> |
-                    <a href="__APP__/login/login.html">用户登录</a> |
-                    <a href="__APP__/login/loginAdmin.html">管理员登录</a>
+                    <a href="__APP__/Login/login.html">用户登录</a> |
+                    <a href="__APP__/Login/loginAdmin.html">管理员登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -143,7 +143,7 @@
                                 message: data.msg,
                                 type: 'success'
                             });
-                            location = '__APP__/login/login'
+                            location = '__APP__/Login/login'
                         },
                         error: function () {
                             _that.$message({

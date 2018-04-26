@@ -156,7 +156,7 @@
                 <div class="links">
                     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="footer-mid">您是第&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span>
-                    <a href="__APP__/login/login">用户登录</a>
+                    <a href="__APP__/Login/login">用户登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -176,45 +176,45 @@
                 adminRouter: function (params) {
                     switch (params) {
                         case 'Admin':
-                            location.href = '__APP__/admin/admin';
+                            location.href = '__APP__/Admin/admin';
                             break;
                         case 'Goods':
-                            location.href = '__APP__/admin/adminGoods';
+                            location.href = '__APP__/Admin/adminGoods';
                             break;
                         case 'User':
-                            location.href = '__APP__/admin/adminUser';
+                            location.href = '__APP__/Admin/adminUser';
                             break;
                         case 'Type':
-                            location.href = '__APP__/admin/adminType';
+                            location.href = '__APP__/Admin/adminType';
                             break;
                         case 'Info':
-                            location.href = '__APP__/admin/adminInfo';
+                            location.href = '__APP__/Admin/adminInfo';
                             break;
                         case 'Set':
-                            location.href = '__APP__/admin/adminSet';
+                            location.href = '__APP__/Admin/adminSet';
                             break;
                         default:
-                            location.href = '__APP__/admin/error';
+                            location.href = '__APP__/Admin/error';
                             break;
                     }
                 },
                 toAdmin: function (params) {
-                    location.href = '__APP__/admin/admin';
+                    location.href = '__APP__/Admin/admin';
                 },
                 toGoods: function () {
-                    location.href = '__APP__/admin/adminGoods';
+                    location.href = '__APP__/Admin/adminGoods';
                 },
                 toUser: function (params) {
-                    location.href = '__APP__/admin/adminUser';
+                    location.href = '__APP__/Admin/adminUser';
                 },
                 toType: function (params) {
-                    location.href = '__APP__/admin/adminType';
+                    location.href = '__APP__/Admin/adminType';
                 },
                 toInfo: function (params) {
-                    location.href = '__APP__/admin/adminInfo';
+                    location.href = '__APP__/Admin/adminInfo';
                 },
                 toSet: function (params) {
-                    location.href = '__APP__/admin/adminSet';
+                    location.href = '__APP__/Admin/adminSet';
                 },
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
@@ -234,7 +234,7 @@
                             type: 'POST',
                             dataType: 'JSON',
                             success: function (data) {
-                                location.href = '__APP__/login/loginAdmin';
+                                location.href = '__APP__/Login/loginAdmin';
                             },
                             error: function () {
                                 _that.$message({

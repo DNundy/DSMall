@@ -26,27 +26,27 @@
             <!-- Header 区域 -->
             <el-header>
                 <div class="headerWrap">
-                    <a href="__APP__/index/index">
+                    <a href="__APP__/Index/index">
                         <span class="logo">趣二手</span>
                     </a>
                     <div class="navLogin">
-                        <a href="__APP__/index/personal" v-if="isLogin">
+                        <a href="__APP__/Index/personal" v-if="isLogin">
                             <i class="icon iconfont icon-questions"></i>
                             <span> {{loginInfo}} </span>
                         </a>
                         <span @click="loginOut" class="outLogin"  v-if="isLogin"> &nbsp; &nbsp;退出 </span>
                         
-                        <a href="__APP__/login/login" v-else>
+                        <a href="__APP__/Login/login" v-else>
                             <i class="icon iconfont icon-questions"></i>
                             <span> 立即登录 </span>
                         </a>
                     </div>
                     <div class="navList">
-                        <a href="__APP__/index/index">首页</a>
-                        <a href="__APP__/index/buy">寻购二货</a>
-                        <a href="__APP__/index/sale">出售二货</a>
-                        <a href="__APP__/index/personal">个人空间</a>
-                        <a href="__APP__/index/contact">关于我们</a>
+                        <a href="__APP__/Index/index">首页</a>
+                        <a href="__APP__/Index/buy">寻购二货</a>
+                        <a href="__APP__/Index/sale">出售二货</a>
+                        <a href="__APP__/Index/personal">个人空间</a>
+                        <a href="__APP__/Index/contact">关于我们</a>
                     </div>
                 </div>
             </el-header>
@@ -80,7 +80,7 @@
                             <span class="listName">商品价格：</span><span class="listCont infoPrice">￥{{goodsInfo.g_price}}</span>
                         </div>
                         <div class="info-list">
-                            <span class="listName">主人姓名：</span><a :href="'__APP__/index/qzone?id='+goodsInfo.u_id"><span class="listCont">{{goodsInfo.u_name}}</span></a>
+                            <span class="listName">主人姓名：</span><a :href="'__APP__/Index/qzone?id='+goodsInfo.u_id"><span class="listCont">{{goodsInfo.u_name}}</span></a>
                         </div>
                         <div class="info-list">
                             <span class="listName">联系电话：</span><span class="listCont">{{goodsInfo.u_telphone}}</span>
@@ -120,7 +120,7 @@
                     <div class="discussTitle">商品评价</div>
                     <div class="discussCont">
                         <div class="publishDiscuss" v-if="!isLogin">
-                            <a href="__APP__/login/login" target="_blank">登录</a> 后即可进行评论！
+                            <a href="__APP__/Login/login" target="_blank">登录</a> 后即可进行评论！
                         </div>
                         <div v-else>
                             <textarea class="publishDiscuss"  placeholder="你的评论，一针见血~" maxlength="50" v-model="publishInfo" ></textarea>
@@ -131,7 +131,7 @@
                             <p>暂时还没有评论，快来留下第一个足迹呗!</p>
                         </div>
                         <div class="discussList" v-for="item in discussInfo" v-else>
-                            <div class="discussName"><a :href="'__APP__/index/qzone?id='+item.u_id">{{item.u_name}}</a>  说：</div>
+                            <div class="discussName"><a :href="'__APP__/Index/qzone?id='+item.u_id">{{item.u_name}}</a>  说：</div>
                             <div class="discussText">{{item.d_content}}</div>
                             <div class="discussTime">{{item.d_time}}</div>
                         </div>
@@ -142,10 +142,10 @@
             <!-- Footer区域 -->
             <el-footer>
                 <div class="links">
-                    <a href="__APP__/index/index">系统首页</a> |
+                    <a href="__APP__/Index/index">系统首页</a> |
                     <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> |
-                    <a href="__APP__/login/login.html">用户登录</a> |
-                    <a href="__APP__/login/loginAdmin.html">管理员登录</a>
+                    <a href="__APP__/Login/login.html">用户登录</a> |
+                    <a href="__APP__/Login/loginAdmin.html">管理员登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>

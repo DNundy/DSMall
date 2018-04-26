@@ -8,7 +8,7 @@ class IndexController extends Controller {
 		$this->display('index');
 	}
 	public function buy(){
-		$this->display('buy');
+		$this->display('buyaa');
 	}
 	public function contact(){
 		$this->display('contact');

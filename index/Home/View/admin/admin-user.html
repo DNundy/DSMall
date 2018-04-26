@@ -146,7 +146,7 @@
                         </div>
                         <!-- 查看信息栏 -->
                         <div v-else>
-                            <a :href="'__APP__/index/personal?'+item.u_id"><el-button v-if="item.u_status=='1'" type="primary" size="mini"  :data-id="'?id='+item.u_id" plain @click="toUserInfo($event)">
+                            <a :href="'__APP__/Index/personal?'+item.u_id"><el-button v-if="item.u_status=='1'" type="primary" size="mini"  :data-id="'?id='+item.u_id" plain @click="toUserInfo($event)">
                                 <span>用户主页</span>
                             </el-button></a>
 
@@ -164,7 +164,7 @@
                     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                     <span class="footer-mid">您是第&nbsp;&nbsp;
                         <span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span>
-                    <a href="__APP__/login/login">用户登录</a>
+                    <a href="__APP__/Login/login">用户登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -183,22 +183,22 @@
             },
             methods: {
                 toAdmin: function (params) {
-                    location.href = '__APP__/admin/admin';
+                    location.href = '__APP__/Admin/admin';
                 },
                 toGoods: function () {
-                    location.href = '__APP__/admin/adminGoods';
+                    location.href = '__APP__/Admin/adminGoods';
                 },
                 toUser: function (params) {
-                    location.href = '__APP__/admin/adminUser';
+                    location.href = '__APP__/Admin/adminUser';
                 },
                 toType: function (params) {
-                    location.href = '__APP__/admin/adminType';
+                    location.href = '__APP__/Admin/adminType';
                 },
                 toInfo: function (params) {
-                    location.href = '__APP__/admin/adminInfo';
+                    location.href = '__APP__/Admin/adminInfo';
                 },
                 toSet: function (params) {
-                    location.href = '__APP__/admin/adminSet';
+                    location.href = '__APP__/Admin/adminSet';
                 },
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
@@ -226,7 +226,7 @@
                             type: 'POST',
                             dataType: 'JSON',
                             success: function (data) {
-                                location.href = '__APP__/login/loginAdmin';
+                                location.href = '__APP__/Login/loginAdmin';
                             },
                             error: function () {
                                 _that.$message({

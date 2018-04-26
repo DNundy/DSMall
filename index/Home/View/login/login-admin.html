@@ -23,7 +23,7 @@
         <el-container>
 
             <!-- Header 区域 -->
-            <el-header><a href="__APP__/index/index"><span class="logo">趣二手</span></a></el-header>
+            <el-header><a href="__APP__/Index/index"><span class="logo">趣二手</span></a></el-header>
 
             <!-- 内容区域 -->
             <el-main>
@@ -68,7 +68,7 @@
                             <!-- 登录按钮 -->
                             <input class="submit-Btn" type="button" value="立即登录" @click="submitForm">
                             <div class="tips">
-                                <a class="already" href="__APP__/admin/admin" v-if="isLogin">已登录账号：{{loginInfo}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                <a class="already" href="__APP__/Admin/admin" v-if="isLogin">已登录账号：{{loginInfo}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             </div>
                         </form>
                     </div>
@@ -78,10 +78,10 @@
             <!-- Footer区域 -->
             <el-footer>
                 <div class="links"> 
-                    <a href="__APP__/index/index">系统首页</a> | 
+                    <a href="__APP__/Index/index">系统首页</a> | 
                     <a target="_blank" href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp">计算机学院</a> | 
-                    <a href="__APP__/login/login.html">用户登录</a> | 
-                    <a href="__APP__/login/login">普通用户登录</a>
+                    <a href="__APP__/Login/login.html">用户登录</a> | 
+                    <a href="__APP__/Login/login">普通用户登录</a>
                 </div>
                 <p class="copyright"> Copyright © 2018 趣二手 All Rights Reserved </p>
             </el-footer>
@@ -132,7 +132,7 @@
                             dataType: 'JSON',
                             success: function (data) {
                                 if (data.code == '0') {
-                                    location.href = '__APP__/admin/admin';
+                                    location.href = '__APP__/Admin/admin';
                                 } else if ( data.code == '-1' ) {
                                     _that.$message({
                                         message: data.msg,
