@@ -5,9 +5,6 @@ use Think\Controller;
 use Think\Model;
 //用户个人信息相关类
 class PersonalController extends UserCommonController {
-	public function index(){
-		$this->display('index/personal');
-	}
 	//显示用户相关信息
 	public function userInfo(){
 		$num = $_SESSION['num'];

@@ -8,7 +8,7 @@ class AdminCommonController extends Controller{
     Public function _initialize(){     //前置操作
     // 初始化的时候检查用户权限
         if(!isset($_SESSION['num']) || $_SESSION['num'] == '' || $_SESSION['type'] != 'admin'){
-            redirect('../Login/login_admin');
+            redirect('../Login/loginAdmin');
         }
     }
 }

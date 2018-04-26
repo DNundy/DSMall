@@ -179,19 +179,19 @@
                             location.href = '__APP__/admin/admin';
                             break;
                         case 'Goods':
-                            location.href = '__APP__/admin/admin-goods';
+                            location.href = '__APP__/admin/adminGoods';
                             break;
                         case 'User':
-                            location.href = '__APP__/admin/admin-user';
+                            location.href = '__APP__/admin/adminUser';
                             break;
                         case 'Type':
-                            location.href = '__APP__/admin/admin-type';
+                            location.href = '__APP__/admin/adminType';
                             break;
                         case 'Info':
-                            location.href = '__APP__/admin/admin-info';
+                            location.href = '__APP__/admin/adminInfo';
                             break;
                         case 'Set':
-                            location.href = '__APP__/admin/admin-set';
+                            location.href = '__APP__/admin/adminSet';
                             break;
                         default:
                             location.href = '__APP__/admin/error';
@@ -202,19 +202,19 @@
                     location.href = '__APP__/admin/admin';
                 },
                 toGoods: function () {
-                    location.href = '__APP__/admin/admin-goods';
+                    location.href = '__APP__/admin/adminGoods';
                 },
                 toUser: function (params) {
-                    location.href = '__APP__/admin/admin-user';
+                    location.href = '__APP__/admin/adminUser';
                 },
                 toType: function (params) {
-                    location.href = '__APP__/admin/admin-type';
+                    location.href = '__APP__/admin/adminType';
                 },
                 toInfo: function (params) {
-                    location.href = '__APP__/admin/admin-info';
+                    location.href = '__APP__/admin/adminInfo';
                 },
                 toSet: function (params) {
-                    location.href = '__APP__/admin/admin-set';
+                    location.href = '__APP__/admin/adminSet';
                 },
                 crumbsSet: function (crumbs) {
                     this.crumbsTitle = crumbs;
@@ -234,7 +234,7 @@
                             type: 'POST',
                             dataType: 'JSON',
                             success: function (data) {
-                                location.href = '__APP__/login/login_admin';
+                                location.href = '__APP__/login/loginAdmin';
                             },
                             error: function () {
                                 _that.$message({

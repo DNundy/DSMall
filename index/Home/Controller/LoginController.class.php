@@ -13,8 +13,8 @@ class LoginController extends Controller {
     public function forget(){//显示忘记密码页面
 	   $this->display('forget');
     }
-    public function login_admin(){//显示管理员登录页面
-	   $this->display('login-admin');
+    public function loginAdmin(){//显示管理员登录页面
+	   $this->display('loginAdmin');
     }
     //接收并处理注册页面传来的数据
     public function accept_register(){

@@ -3,9 +3,25 @@
 namespace Home\Controller;
 use Think\Controller;
 class AdminController extends AdminCommonController {
-	public function index(){//显示用户登录页面
+	public function admin(){//显示用户登录页面
 	   $this->display('admin');
-    }
+	}
+	public function adminGoods(){//显示用户登录页面
+	   $this->display('adminGoods');
+	}
+	public function adminInfo(){//显示用户登录页面
+	   $this->display('adminInfo');
+	}
+	public function adminSet(){//显示用户登录页面
+	   $this->display('adminSet');
+	}
+	public function adminType(){//显示用户登录页面
+	   $this->display('adminType');
+	}
+	public function adminUser(){//显示用户登录页面
+	   $this->display('adminUser');
+	}
+	
     public function findNotice(){//显示系统发布的所有通知
     	$notice = M('Notice');
     	$adminNotice = $notice->where()->order('n_id desc')->select();
