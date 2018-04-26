@@ -245,7 +245,7 @@ class PersonalController extends UserCommonController {
     	return $this->ajaxReturn($res);
     }
     public function findType(){
-		$type = M('type');
+		$type = M('Type');
 		$typeGoods = $type->where()->select();
 		$res = array(
 			'code' => '0',

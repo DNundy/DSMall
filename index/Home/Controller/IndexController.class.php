@@ -27,7 +27,7 @@ class IndexController extends Controller {
 	}
 	
 	public function findType(){
-		$type = M('type');
+		$type = M('Type');
 		$typeGoods = $type->where()->select();
 		$res = array(
 			'code' => '0',

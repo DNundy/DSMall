@@ -5,7 +5,7 @@ use Think\Controller;
 use Think\Model;
 class AdminUserGoodsController extends AdminCommonController {
 	public function findType(){
-		$type = M('type');
+		$type = M('Type');
 		$typeGoods = $type->where()->select();
 
 		$num = $_SESSION['num'];
@@ -28,7 +28,7 @@ class AdminUserGoodsController extends AdminCommonController {
     		);
     		return $this->ajaxReturn($res);
 		}
-		$type = M('type');
+		$type = M('Type');
 		$data['t_type'] = $_POST['type'];
 		$status = $type->add($data);
     	$res = array(
