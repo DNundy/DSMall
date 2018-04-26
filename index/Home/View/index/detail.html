@@ -109,10 +109,10 @@
                 <div class="art-bot-describe">
                     <div class="descTitle">宝贝描述</div>
                     <div class="descCont">
-                        <div class="quotBegin"><img src="__PUBLIC__/img/goods/quotBegin.png" alt=""></div>
+                        <div class="quotBegin"><img src="__PUBLIC__/img/assets/quotBegin.png" alt=""></div>
                         <p v-if="goodsInfo.g_construct==''"> 饿哦，卖家很赖，还没有任何描述哦！ </p>
                         <p v-else> {{goodsInfo.g_construct}} </p>
-                        <div class="quotEnd"><img src="__PUBLIC__/img/goods/quotEnd.png" alt=""></div>
+                        <div class="quotEnd"><img src="__PUBLIC__/img/assets/quotEnd.png" alt=""></div>
                     </div>
                 </div>
 
@@ -163,7 +163,7 @@
                 loginInfo: '',
 
                 goodsLoading: true,
-                goodsPic: [['img-404.png']],
+                goodsPic: [[]],
                 goodsInfo: '',
 
                 loadingDiscussStatus: true,
@@ -172,7 +172,7 @@
 
                 
                 selectIndex: 0,
-                selectPic: '__PUBLIC__/img/goods/img-404.png',
+                selectPic: '__PUBLIC__/img/assets/img-404.png',
             },
             methods: {
                 // 加载登录状态
