@@ -156,8 +156,9 @@ body{
 /* Main 区域 */
 .el-main{
     width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto;
     overflow: hidden;
+    padding: 0;
 }
 .contactBox{
     width: 1000px;
