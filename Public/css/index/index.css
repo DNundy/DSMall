@@ -13,7 +13,6 @@ body{
     -webkit-transition: background 2s;
     -o-transition: background 2s;
 }
-/* ------------------------------------------------PUBLIC START----------------------------------------------------- */
 /* Footer */
 .el-footer {
     height: 80px !important;
@@ -35,7 +34,7 @@ body{
 .el-footer .copyright {
     margin: 10px 0;
 }
-/* 设置滚动条的样式 */
+/* ------------------------------------------------SCROLL START----------------------------------------------------- */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px; }
@@ -86,7 +85,7 @@ body{
 
 ::-webkit-scrollbar-button:end:active {
   background: url(../../img/assets/scrollbar_arrow.png) no-repeat -30px -18px; }
-/* ------------------------------------------------PUBLIC END----------------------------------------------------- */
+/* ------------------------------------------------SCROLL END----------------------------------------------------- */
 /*Main 导航*/
 .el-main{
     width: 100%;
