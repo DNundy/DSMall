@@ -37,7 +37,7 @@
                                 <label class="label" for="num">
                                     <i class="icon iconfont icon-people_fill"></i>
                                 </label>
-                                <input name="num" type="text" class="cont" placeholder="输入工号" maxlength="6" @blur="checkNum" v-model="formData.num">
+                                <input name="num" type="text" class="cont" placeholder="输入工号" maxlength="6" @blur="checkNum" v-model="formData.num"  v-on:keyup.enter="submitForm">
                             </div>
                             
                             <!-- 登录密码 -->
@@ -46,7 +46,7 @@
                                     <i class="icon iconfont icon-brush"></i>
                                 </label>
                                 <input name="password" type="password" class="cont" placeholder="输入密码 (6~16位字符、数字或符号组合)" maxlength="16" @blur="checkPassword"
-                                    v-model="formData.password">
+                                    v-model="formData.password"  v-on:keyup.enter="submitForm">
                             </div>
                             
                             <!-- 验证码图片 -->
@@ -59,7 +59,7 @@
                                 <label class="label" for="code">
                                     <i class="icon iconfont icon-order"></i>
                                 </label>
-                                <input name="code" type="text" class="cont" placeholder="验证码" maxlength="5" @blur="checkCode" v-model="formData.code">
+                                <input name="code" type="text" class="cont" placeholder="验证码" maxlength="5" @blur="checkCode" v-model="formData.code"  v-on:keyup.enter="submitForm">
                             </div>
                             
                             <!-- 错误提示框 -->

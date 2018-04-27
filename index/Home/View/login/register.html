@@ -42,7 +42,7 @@
                                 <div class="item" :class="{showError:dataVerify.numShow}">
                                     <label class="label" for="num"><i class="icon iconfont icon-people_fill"></i></label>
                                     <input name="num" type="text" class="cont" placeholder="输入账号 (11位手机号码)" maxlength="11" @blur="checkNum"
-                                        v-model="formData.num">
+                                        v-model="formData.num"  v-on:keyup.enter="submitForm">
                                 </div>
 
                                 <!-- 用户昵称 -->
@@ -50,14 +50,14 @@
                                     <label class="label" for="name">
                                         <i class="icon iconfont icon-people_fill"></i>
                                     </label>
-                                    <input name="name" type="text" class="cont" placeholder="输入昵称" maxlength="10" @blur="checkName" v-model="formData.name">
+                                    <input name="name" type="text" class="cont" placeholder="输入昵称" maxlength="10" @blur="checkName" v-model="formData.name"  v-on:keyup.enter="submitForm">
                                 </div>
 
                                 <!-- 登录密码 -->
                                 <div class="item" :class="{showError:dataVerify.passwordShow}">
                                     <label class="label" for="password"><i class="icon iconfont icon-brush"></i></label>
                                     <input name="password" type="password" class="cont" placeholder="输入密码 (6~16位字符、数字或符号组合)" maxlength="16" @blur="checkPassword"
-                                        v-model="formData.password">
+                                        v-model="formData.password"  v-on:keyup.enter="submitForm">
                                 </div>
 
                                 <!-- 重复密码 -->
@@ -66,7 +66,7 @@
                                         <i class="icon iconfont icon-brush_fill"></i>
                                     </label>
                                     <input name="repassword" id="repassword" type="password" class="cont" placeholder="重复密码 (6~16位字符、数字或符号组合)" maxlength="16" @blur="checkRepassword"
-                                        v-model="formData.repassword">
+                                        v-model="formData.repassword"  v-on:keyup.enter="submitForm">
                                 </div>
 
                                 <!-- 联系方式 -->
@@ -74,7 +74,7 @@
                                     <label class="label" for="phone">
                                         <i class="icon iconfont icon-mobilephone_fill"></i>
                                     </label>
-                                    <input name="phone" type="text" class="cont" placeholder="联系方式" @blur="checkPhone" v-model="formData.phone">
+                                    <input name="phone" type="text" class="cont" placeholder="联系方式" @blur="checkPhone" v-model="formData.phone"  v-on:keyup.enter="submitForm">
                                 </div>
 
                                 <!-- 电子邮箱 -->
@@ -82,7 +82,7 @@
                                     <label class="label" for="email">
                                         <i class="icon iconfont icon-order"></i>
                                     </label>
-                                    <input name="email" type="text" class="cont" placeholder="电子邮箱" @blur="checkEmail" v-model="formData.email">
+                                    <input name="email" type="text" class="cont" placeholder="电子邮箱" @blur="checkEmail" v-model="formData.email"  v-on:keyup.enter="submitForm">
                                 </div>
 
                                 <!-- 常用地址 -->
@@ -90,7 +90,7 @@
                                     <label class="label" for="place">
                                         <i class="icon iconfont icon-order"></i>
                                     </label>
-                                    <input name="place" type="text" class="cont" placeholder="常用地址" @blur="checkPlace" v-model="formData.place">
+                                    <input name="place" type="text" class="cont" placeholder="常用地址" @blur="checkPlace" v-model="formData.place"  v-on:keyup.enter="submitForm">
                                 </div>
 
                                 <!-- 验证码图片 -->
@@ -101,7 +101,7 @@
                                     <label class="label" for="code">
                                         <i class="icon iconfont icon-order"></i>
                                     </label>
-                                    <input name="code" type="text" class="cont" placeholder="验证码" maxlength="5" @blur="checkCode" v-model="formData.code">
+                                    <input name="code" type="text" class="cont" placeholder="验证码" maxlength="5" @blur="checkCode" v-model="formData.code"  v-on:keyup.enter="submitForm">
                                 </div>
 
                                 <!-- 错误提示框 -->
