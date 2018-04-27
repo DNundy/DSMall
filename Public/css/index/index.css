@@ -223,7 +223,7 @@ body{
 /* banner */
 .mainBanner{
     height: 500px;
-    background: url(../../img/assets/index-bg1.jpg) no-repeat center;
+    background: url(../../img/assets/bg-index.jpg) no-repeat center;
 }
 .bannerBox{
     width: 900px;
