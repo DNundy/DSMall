@@ -156,6 +156,7 @@
                     if (!this.dataVerify.numShow && !this.dataVerify.passwordShow && !this.dataVerify.repasswordShow && !this.dataVerify.emailShow && !this.dataVerify.codeShow && this.formData.num && this.formData.password && this.formData.repassword && this.formData.email && this.formData.code) {
                         this.tipsShow = false;
                         let url = '__APP__/Repassword/index';
+                        let _that = this;
                         $.ajax({
                             url: url,
                             type: 'POST',
