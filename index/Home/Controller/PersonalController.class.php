@@ -269,7 +269,7 @@ class PersonalController extends UserCommonController {
 
 			if($_FILES['g_picture']['error'][$i]==0){
 				//保存图片的具体路径
-				$uplode_path=$_SERVER['DOCUMENT_ROOT']."/platform/Public/img/goods/";
+				$uplode_path=$_SERVER['DOCUMENT_ROOT']."/Public/img/goods/";
 				$pictureArr=explode('.', $_FILES['g_picture']['name'][$i]);
 				$type=$pictureArr[count($pictureArr)-1];
 				//设置时间戳和随机数重命名图片
