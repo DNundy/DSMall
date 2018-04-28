@@ -25,6 +25,12 @@ class IndexController extends Controller {
 	public function sale(){
 		$this->display('sale');
 	}
+	public function rules(){
+		$this->display('rules');
+	}
+	public function error(){
+		$this->display('error');
+	}
 	
 	public function findType(){
 		$type = M('Type');

@@ -1,0 +1,200 @@
+/* Header */
+body{
+    background: #F5F5F7;
+}
+.el-header a{
+    text-decoration: none;
+}
+.el-header{
+    box-shadow: 1px 0 4px #e6e6e6;
+}
+.headerWrap{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.el-header .logo{
+    float: left;
+    font-size: 26px;
+    font-weight: 700;
+    color: #08B35F;
+    text-decoration: none;
+    line-height: 60px;
+    margin-left: 60px;
+}
+
+/* Footer */
+.el-footer {
+    width: 1200px;
+    height: 80px !important;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+.el-footer .links{
+    margin: 15px 0;
+}
+.el-footer .links a{
+    color: #666;
+    padding: 10px;
+    text-decoration: none;
+}
+.el-footer .copyright {
+    margin: 10px 0;
+}
+/* ------------------------------------------------SCROLL START----------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; }
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0; }
+
+::-webkit-scrollbar-button:start:increment, ::-webkit-scrollbar-button:end:decrement {
+  display: none; }
+
+::-webkit-scrollbar-corner {
+  display: block; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.2); }
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent; }
+
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0, 0, 0, 0.15); }
+
+::-webkit-scrollbar-button:start {
+  width: 10px;
+  height: 10px;
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat 0 0; }
+
+::-webkit-scrollbar-button:start:hover {
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat -15px 0; }
+
+::-webkit-scrollbar-button:start:active {
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat -30px 0; }
+
+::-webkit-scrollbar-button:end {
+  width: 10px;
+  height: 10px;
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat 0 -18px; }
+
+::-webkit-scrollbar-button:end:hover {
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat -15px -18px; }
+
+::-webkit-scrollbar-button:end:active {
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat -30px -18px; }
+/* ------------------------------------------------SCROLL END----------------------------------------------------- */
+/* Nav 登录 */
+.navLogin{
+    float: right;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    overflow: hidden;
+}
+.navLogin a{
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 60px;
+    /* color: #097653; */
+    color: #08B35F;
+}
+.navLogin i{
+    font-size: 18px;
+}
+.outLogin{
+    color: crimson;
+}
+/* Nav 菜单 */
+.navList{
+    width: 600px;
+    height: 60px;
+    margin: 0 auto;
+}
+.navList a{
+    display: block;
+    float: left;
+    position: relative;
+    
+    width: 70px;
+    height: 55px;
+    line-height: 60px;
+    text-align: center;
+    margin: 0 20px;
+    
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+}
+.navList a:after{
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #08B35F;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transition: all .3s;
+}
+.navList a:hover:after{
+    left: 0%;
+    width: 100%;
+}
+/* Main 区域 */
+.el-main{
+    width: 1100px;
+    height: 900px;
+    margin: 40px auto;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 10px;
+    background: url(../../img/assets/bg-rules.png) no-repeat center;
+}
+.releaseRules,
+.releasePunish {
+    width: 900px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.releaseRules {
+    margin-top: 100px;
+}
+
+.releasePunish {
+    margin-top: 30px;
+}
+
+.h1 {
+    display: block;
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 26px;
+    font-family: "楷体";
+    color: white;
+}
+
+.cont {
+    display: block;
+    width: 700px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+    margin-left: 80px;
+    font-size: 19px;
+}

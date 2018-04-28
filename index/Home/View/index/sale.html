@@ -85,7 +85,7 @@
                     </div>
                     <p>关于发布</p>
                     <div class="infoList">
-                        <el-checkbox v-model="agreeStatus" @click="agreeStatus=!agreeStatus">我同意《趣二手商品发布规则》</el-checkbox>
+                        <el-checkbox v-model="agreeStatus" @click="agreeStatus=!agreeStatus">我同意<a href="__APP__/Index/rules" style="color: crimson;text-decoration: none;">《趣二手商品发布规则》</a></el-checkbox>
                     </div>
                     <div class="infoList">
                         <el-button size="mini" type="success" @click="pubGoods" :disabled="!agreeStatus">立即发布</el-button>
