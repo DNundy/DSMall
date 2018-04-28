@@ -25,7 +25,7 @@ class AdminController extends AdminCommonController {
     public function findNotice(){//显示系统发布的所有通知
     	$notice = M('Notice');
     	$adminNotice = $notice->where()->order('n_id desc')->select();
-        $num = $_SESSION['num'];
+        $num = $_SESSION['numAdmin'];
         $admin = M('Admin');
         $name = $admin->where("a_id=$num")->getField('a_name');
     	$res = array(
@@ -86,7 +86,7 @@ class AdminController extends AdminCommonController {
         $noticeHot = M('Notice');
         $adminNoticeHot = $noticeHot->where()->order('n_id desc')->limit(2)->select();
 
-        $num = $_SESSION['num'];
+        $num = $_SESSION['numAdmin'];
         $admin = M('Admin');
         $name = $admin->where("a_id=$num")->getField('a_name');
         $res = array(
@@ -95,6 +95,75 @@ class AdminController extends AdminCommonController {
             'countGoods' => $countGoods,
             'countType' => $countType,
             'hotNotice' => $adminNoticeHot,
+            'adminName' => $name,
+        );
+    	return $this->ajaxReturn($res);
+	}
+	public function fixAdminPassword(){
+		if(empty($_POST['oldPwd'])||empty($_POST['newPwd'])){
+			$res = array(
+    			'code' => '-1',
+    			'msg' => '参数传递出错！',
+    		);
+    		return $this->ajaxReturn($res);	
+		}
+		$num = $_SESSION['numAdmin'];
+		$newPwd = md5($_POST['newPwd']);
+		$data = array(
+			'a_id' => $num,
+			'a_password' => md5($_POST['oldPwd']),
+		);
+		$info = M('Admin')->where($data)->select();//若用户与密码对应正确且未被冻结
+        if(!empty($info))
+        {
+        	$result = M('Admin')->where($data)->setField('a_password',"$newPwd");
+        	if($result != false){
+        		$res = array(
+    				'code' => '0',
+    				'msg' => '修改密码成功！',
+    			);
+    			return $this->ajaxReturn($res);	
+        	} else {
+        		$res = array(
+    				'code' => '-1',
+    				'msg' => '该密码与原始密码相同！',
+    			);
+    			return $this->ajaxReturn($res);	
+        	}
+        } else {
+        	$res = array(
+    			'code' => '-1',
+    			'msg' => '原始密码输入有误！',
+    		);
+    		return $this->ajaxReturn($res);	
+        }
+
+	}
+	public function add_admin(){
+    	//获取表单中的信息
+        if(empty($_POST['name'])||empty($_POST['password'])||empty($_POST['email'])){
+            $this->error('参数传递出错!');
+        }
+
+    	$data = array(
+    		'a_name' => $_POST['name'],//姓名
+    		'a_password' => md5($_POST['password']),//用MD5对密码进行加密
+    		'a_email' => $_POST['email'],//邮箱
+		);
+		
+		$Admin = M('Admin');//连接数据库
+		$status = $Admin->add($data);
+		$res = array(
+			'code' => $status,
+			'msg' => $status?'注册成功!':'注册失败',
+		);
+		return $this->ajaxReturn($res);
+	}
+	public function adminName(){
+        $num = $_SESSION['numAdmin'];
+        $admin = M('Admin');
+        $name = M('Admin')->where("a_id=$num")->getField('a_name');
+        $res = array(
             'adminName' => $name,
         );
     	return $this->ajaxReturn($res);

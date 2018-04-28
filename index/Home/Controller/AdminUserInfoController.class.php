@@ -36,7 +36,7 @@ class AdminUserInfoController extends AdminCommonController {
 		$user = M('User');
 		$userInfo = $user->where()->select();
 
-		$num = $_SESSION['num'];
+		$num = $_SESSION['numAdmin'];
         $admin = M('Admin');
         $name = $admin->where("a_id=$num")->getField('a_name');
 

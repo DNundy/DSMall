@@ -8,7 +8,7 @@ class AdminUserGoodsController extends AdminCommonController {
 		$type = M('Type');
 		$typeGoods = $type->where()->select();
 
-		$num = $_SESSION['num'];
+		$num = $_SESSION['numAdmin'];
         $admin = M('Admin');
         $name = $admin->where("a_id=$num")->getField('a_name');
 		$res = array(
@@ -80,7 +80,7 @@ class AdminUserGoodsController extends AdminCommonController {
  		$sql ="select * from trading_goods left join trading_user on trading_goods.u_id=trading_user.u_id order by trading_goods.g_id desc";
  		$goodsInfo = $Model->query($sql);
 
- 		$num = $_SESSION['num'];
+ 		$num = $_SESSION['numAdmin'];
         $admin = M('Admin');
         $name = $admin->where("a_id=$num")->getField('a_name');
 

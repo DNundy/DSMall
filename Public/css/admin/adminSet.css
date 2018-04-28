@@ -128,3 +128,11 @@
     float: right;
     width: 40%;
 }
+.listItem{
+  width: 300px;
+  padding: 10px;
+
+}
+.listItem:first-child{
+  margin-top: 50px;
+}
