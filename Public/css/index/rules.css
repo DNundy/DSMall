@@ -155,23 +155,24 @@ body{
 }
 /* Main 区域 */
 .el-main{
-    width: 1100px;
+    width: 900px;
     height: 900px;
     margin: 40px auto;
     background: #fff;
     overflow: hidden;
     border-radius: 10px;
     background: url(../../img/assets/bg-rules.png) no-repeat center;
+    background-size: 780px 880px;
 }
 .releaseRules,
 .releasePunish {
-    width: 900px;
-    height: 250px;
+    width: 580px;
+    height: 240px;
     margin: 0 auto;
 }
 
 .releaseRules {
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .releasePunish {
@@ -184,7 +185,7 @@ body{
     height: 40px;
     line-height: 40px;
     text-align: center;
-    font-size: 26px;
+    font-size: 18px;
     font-family: "楷体";
     color: white;
 }
@@ -196,5 +197,5 @@ body{
     line-height: 40px;
     margin-top: 15px;
     margin-left: 80px;
-    font-size: 19px;
+    font-size: 14px;
 }

@@ -51,16 +51,39 @@
             </el-header>
 
             <!-- 内容区域 -->
-            <el-main>
+            <el-main v-loading="loadingStatus">
                 <div class="personal-top">
                     <div class="personal-photoWr">
                         <img class="personal-photo" src="http://p75wjroq9.bkt.clouddn.com/user-icon.png" title="用户头像" alt="用户头像">
                     </div>
                     <div class="waves"></div>
-                    <div class="personal-name">
-                        <a href=""></a>
-                    </div>
                 </div>
+                <div class="personal-mid" v-for="item in publishInfo.info">
+                    <span>联系电话：{{item.u_telphone}}</span>
+                    <span>{{item.u_name}}</span>
+                    <span>交易地点：{{item.u_place}}</span>
+                </div>
+                <personal-bot>
+                    <div class="goodsList" v-for="(item,index) in publishInfo.msg">
+                        <div class="listTitle">
+                            <span>{{index+1}}、{{item.g_name}}</span>
+                            <el-button type="primary" icon="el-icon-arrow-document" circle :data-id="item.g_id" @click="toGoods(item.g_id)">查看详情</el-button>
+                        </div>
+                        <div class="listImg">
+                            <img :src="'__PUBLIC__/img/goods/'+publishImg[index]" alt="">
+                        </div>
+                        <div class="listRight">
+                            <div class="listCont"  :class="{ gray:item.g_status==='-1' }">
+                                {{item.g_construct}}
+                            </div>
+                            <div class="listFooter"  :class="{ gray:item.g_status==='-1' }">
+                                <span class="footerType">类型：{{item.g_type}}&nbsp;&nbsp;&nbsp;</span>
+                                <span class="footerType">价格：{{item.g_price}}&nbsp;&nbsp;&nbsp;</span>
+                                <span class="footerType">发布时间：{{item.g_time}}&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                        </div>
+                    </div>
+                </personal-bot>
             </el-main>
 
             <!-- Footer区域 -->
@@ -87,6 +110,11 @@
                 isLogin: false,
                 // 登录的信息
                 loginInfo: '',
+                loadingStatus: false,
+
+                // 发布历史
+                publishInfo: {},
+                publishImg: [],
             },
             methods: {
                 // 加载登录状态
@@ -112,7 +140,71 @@
                 },
 
                 getInfo: function name(params) {
-                    
+                    let url = '__APP__/Personal/goodsList';
+                    let _that = this;
+                    let id = this.getParam('id');
+                    _that.loadingStatus = true;
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: {id:id},
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.loadingStatus = false;
+                            if (data.code == '0') {
+                                _that.publishInfo = data;
+                                _that.getImgList('publishImg', 'publishInfo');
+                            } else if (data.code == '-1') {
+                                _that.$confirm('您输入的用户链接有误，该个人空间不存在！', '出错', {
+                                    confirmButtonText: '返回上一页',
+                                    cancelButtonText: '返回主页',
+                                    type: 'warning'
+                                }).then(() => {
+                                    if (history.length == 2) {
+                                        location = '__APP__/Index/index';
+                                    } else {
+                                        history.go(-1);
+                                    }
+                                }).catch(() => {
+                                    location = '__APP__/Index/index';
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.loadingStatus = false;
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                getImgList: function (params, data) {
+                    this[params] = [];
+                    let temp = '';
+
+                    if (this[data].code == '0') {
+                        for (let index = 0; index < this[data].msg.length; index++) {
+                            this[params].push(this[data].msg[index].g_picture.split('|')[0]);
+                        }
+                    }
+
+                    return;
+                },
+
+                getParam: function (paramName) {
+                    paramValue = "", isFound = !1;
+                    if (location.search.indexOf("?") == 0 && location.search.indexOf("=") > 1) {
+                        arrSource = unescape(location.search).substring(1, location.search.length).split("&"), i = 0;
+                        while (i < arrSource.length && !isFound)
+                            arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++
+                    }
+                    return paramValue == "" && (paramValue = null), paramValue;
+                },
+                
+                toGoods: function (params) {
+                    location = '__APP__/Index/detail?id=' + params;
                 },
 
                 // 退出登录
