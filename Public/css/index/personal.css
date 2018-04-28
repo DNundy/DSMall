@@ -216,6 +216,8 @@ body{
     text-align: center;
     list-style: none;
     margin: 10px auto;
+    
+    letter-spacing:2px;
 }
 .list-options li:hover
 {
@@ -252,6 +254,7 @@ body{
     padding: 5px 10px;
     margin: 20px;
     line-height: 40px;
+    letter-spacing:2px;
 }
 .infoList:nth-child(1){
     margin-top: 40px;

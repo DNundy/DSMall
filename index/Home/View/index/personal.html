@@ -91,7 +91,7 @@
                 </div>
 
                 <!-- 右侧内容区域 -->
-                <div class="right-cont">
+                <div class="right-cont" v-loading="loadingStatus">
                     <!-- 导航信息 -->
                     <div class="rightTitle">{{navigation}}</div>
 
@@ -256,6 +256,8 @@
                 // 登录的信息
                 loginInfo   : '',
 
+                loadingStatus: false,
+
                 // 个人信息
                 personalInfo: '',
                 // 个人信息列表的编辑状态
@@ -376,10 +378,12 @@
                 loadingPersonal: function (params) {
                     let url = '__APP__/Personal/userInfo';
                     let _that = this;
+                    _that.loadingStatus = true;
                     $.ajax({
                         url: url,
                         dataType: 'JSON',
                         success: function (data) {
+                            _that.loadingStatus = false;
                             if (data.code == '0') {
                                 _that.personalInfo = data.msg[0];
                                 // 用于修改密码，自动填充账号信息
@@ -392,6 +396,7 @@
                             }
                         },
                         error: function () {
+                            _that.loadingStatus = false;
                             _that.$message({
                                 message: '网络 或者 服务器出错,请稍后重试！',
                                 type: 'error'
@@ -405,12 +410,14 @@
                 modifyInfo: function (params) {
                     let url = '__APP__/Personal/fixUserInfo';
                     let _that = this;
+                    _that.loadingStatus = true;
                     $.ajax({
                         url: url,
                         type: 'POST',
                         data: _that.personalInfo,
                         dataType: 'JSON',
                         success: function (data) {
+                            _that.loadingStatus = false;
                             if (data.code == '0') {
                                 _that.$message({
                                     message: data.msg,
@@ -426,6 +433,7 @@
                             }
                         },
                         error: function () {
+                            _that.loadingStatus = false;
                             _that.$message({
                                 message: '网络 或者 服务器出错,请稍后重试！',
                                 type: 'error'
@@ -439,12 +447,14 @@
                         if( (this.lockInfo.newPwd.length >= 6) && (this.lockInfo.newPwd.length <= 16)){
                             let url = '__APP__/Personal/fixPassword';
                             let _that = this;
+                            _that.loadingStatus = true;
                             $.ajax({
                                 url: url,
                                 type: 'POST',
                                 data: _that.lockInfo,
                                 dataType: 'JSON',
                                 success: function (data) {
+                                    _that.loadingStatus = false;
                                     if (data.code == '0') {
                                         _that.$message({
                                             message: data.msg,
@@ -466,6 +476,7 @@
                                     }
                                 },
                                 error: function () {
+                                    _that.loadingStatus = false;
                                     _that.$message({
                                         message: '网络 或者 服务器出错,请稍后重试！',
                                         type: 'error'
@@ -491,10 +502,12 @@
                 getCollect: function (params) {
                     let url = '__APP__/Personal/userCollectGoods';
                     let _that = this;
+                    _that.loadingStatus = true;
                     $.ajax({
                         url: url,
                         dataType: 'JSON',
                         success: function (data) {
+                            _that.loadingStatus = false;
                             if (data.code == '0') {
                                 _that.collectInfo = data;
                                 _that.getImgList('collectImg','collectInfo');
@@ -507,6 +520,7 @@
                             }
                         },
                         error: function () {
+                            _that.loadingStatus = false;
                             _that.$message({
                                 message: '网络 或者 服务器出错,请稍后重试！',
                                 type: 'error'
@@ -523,11 +537,13 @@
                     }).then(() => {
                         let url= params.target.getAttribute('data-id');
                         let _that = this;
+                        _that.loadingStatus = true;
                         $.ajax({
                             url: url,
                             type: 'GET',
                             dataType: 'JSON',
                             success: function (data) {
+                                _that.loadingStatus = false;
                                 if (data.code == '0') {
                                     _that.$message({
                                         message: data.msg,
@@ -542,6 +558,7 @@
                                 }
                             },
                             error: function () {
+                                _that.loadingStatus = false;
                                 _that.$message({
                                     message: '网络 或者 服务器出错,请稍后重试！',
                                     type: 'error'
@@ -558,10 +575,12 @@
                 getGoods: function (params) {
                     let url = '__APP__/Personal/oldPublishGoods';
                     let _that = this;
+                    _that.loadingStatus = true;
                     $.ajax({
                         url: url,
                         dataType: 'JSON',
                         success: function (data) {
+                            _that.loadingStatus = false;
                             if (data.code == '0') {
                                 _that.publishInfo = data;
                                 _that.getImgList('publishImg','publishInfo');
@@ -574,6 +593,7 @@
                             }
                         },
                         error: function () {
+                            _that.loadingStatus = false;
                             _that.$message({
                                 message: '网络 或者 服务器出错,请稍后重试！',
                                 type: 'error'
@@ -590,11 +610,13 @@
                     }).then(() => {
                         let url = params.target.getAttribute('data-id');
                         let _that = this;
+                        _that.loadingStatus = true;
                         $.ajax({
                             url: url,
                             type: 'GET',
                             dataType: 'JSON',
                             success: function (data) {
+                                _that.loadingStatus = false;
                                 if (data.code == '0') {
                                     _that.$message({
                                         message: data.msg,
@@ -609,6 +631,7 @@
                                 }
                             },
                             error: function () {
+                                _that.loadingStatus = false;
                                 _that.$message({
                                     message: '网络 或者 服务器出错,请稍后重试！',
                                     type: 'error'
@@ -628,17 +651,19 @@
                     }).then(() => {
                         let url = params.target.getAttribute('data-id');
                         let _that = this;
+                        _that.loadingStatus = true;
                         $.ajax({
                             url: url,
                             type: 'GET',
                             dataType: 'JSON',
                             success: function (data) {
+                                _that.loadingStatus = false;
                                 if (data.code == '0') {
+                                    _that.getGoods();
                                     _that.$message({
                                         message: data.msg,
                                         type: 'success'
                                     });
-                                    _that.getGoods();
                                 } else if (data.code == '-1') {
                                     _that.$message({
                                         message: data.msg,
@@ -647,6 +672,7 @@
                                 }
                             },
                             error: function () {
+                                _that.loadingStatus = false;
                                 _that.$message({
                                     message: '网络 或者 服务器出错,请稍后重试！',
                                     type: 'error'
@@ -662,10 +688,12 @@
                 getDiscuss: function (params) {
                     let url = '__APP__/Personal/discussGoods';
                     let _that = this;
+                    _that.loadingStatus = true;
                     $.ajax({
                         url: url,
                         dataType: 'JSON',
                         success: function (data) {
+                            _that.loadingStatus = false;
                             if (data.code == '0') {
                                 _that.discussInfo = data.msg;
                             } else if (data.code == '-1') {
@@ -676,6 +704,7 @@
                             }
                         },
                         error: function () {
+                            _that.loadingStatus = false;
                             _that.$message({
                                 message: '网络 或者 服务器出错,请稍后重试！',
                                 type: 'error'
@@ -687,13 +716,16 @@
                 getMessage: function (params) {
                     let url = '__APP__/Personal/findNotice';
                     let _that = this;
+                    _that.loadingStatus = true;
                     $.ajax({
                         url: url,
                         dataType: 'JSON',
                         success: function (data) {
+                            _that.loadingStatus = false;
                             _that.messageInfo = data.msg;
                         },
                         error: function () {
+                            _that.loadingStatus = false;
                             _that.$message({
                                 message: '网络 或者 服务器出错,请稍后重试！',
                                 type: 'error'
@@ -724,17 +756,20 @@
                 loginOut: function (params) {
                     let url = '__APP__/Login/out_login';
                     let _that = this;
+                    _that.loadingStatus = true;
                     $.ajax({
                         url: url,
                         dataType: 'JSON',
                         success: function (data) {
+                            _that.loadingStatus = false;
                             _that.$message({
                                 message: data.msg,
                                 type: 'success'
                             });
-                            location = '__APP__/Login/login'
+                            location = '__APP__/Login/login';
                         },
                         error: function () {
+                            _that.loadingStatus = false;
                             _that.$message({
                                 message: '网络 或者 服务器出错,请稍后重试！',
                                 type: 'error'
