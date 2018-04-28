@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/iconfont.css">
 
     <!-- Main CSS -->
+    <script src="__PUBLIC__/lib/jquery.pages.min.js"></script>
     <link rel="stylesheet" href="__PUBLIC__/css/admin/adminGoods.css">
 </head>
 
@@ -118,7 +119,7 @@
                         <i slot="suffix" class="el-input__icon el-icon-search" @click="serachGoods"></i>
                     </el-input>
 
-                    <div v-for="(item,index) in listData.msg" class="goodsItem">
+                    <div class="goodsItem" v-for="(item,index) in listData.msg">
                         <div class="goodsTitle">
                             <i>{{item.g_name}}</i>
                             <el-button class="delBtn" type="danger" size="mini" :data-id="'__APP__/AdminUserGoods/deleteGoods?id='+item.g_id" plain
@@ -195,6 +196,13 @@
                 },
                 toSet: function (params) {
                     location.href = '__APP__/Admin/adminSet';
+                },
+
+                handleSizeChange(val) {
+                    console.log(`每页 ${val} 条`);
+                },
+                handleCurrentChange(val) {
+                    console.log(`当前页: ${val}`);
                 },
 
                 // 导航方法

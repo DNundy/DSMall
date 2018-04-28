@@ -90,6 +90,9 @@
                     <el-radio label="desc" v-model="serachData.orderBy" @change="getGoods()">价格 ↓</el-radio>
                     <el-radio label="time" v-model="serachData.orderBy" @change="getGoods()">日期 ↑</el-radio>
                     <span class="optCount">共为您找到<span class="orange"> {{goodsInfo.count}} </span>件商品！</span>
+                    <el-input placeholder="输入想要搜索的 商品信息 !" class="serach" v-model="serachCont" v-on:keyup.enter.native="serachGoods">
+                        <i slot="suffix" class="el-input__icon el-icon-search" @click="serachGoods"></i>
+                    </el-input>
                 </div>
                 <div class="goodsList"  v-if="goodsInfo.msg" v-loading="serachStatus">
                     <div class="goodsItem" v-for="(item,index) in goodsInfo.msg">
@@ -127,6 +130,8 @@
                 isLogin: false,
                 // 登录的信息
                 loginInfo: '',
+
+                serachCont: '',
 
                 // 类型数据
                 typeInfo: {},
@@ -190,6 +195,43 @@
                     });
                 },
 
+                serachGoods: function (params) {
+                    let url = '__APP__/Index/searchGoods';
+                    let _that = this;
+                    if (_that.serachCont == '') {
+                        _that.getGoods();
+                        return;
+                    }
+                    _that.serachStatus = true;
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: { search: _that.serachCont },
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.serachStatus = false;
+                            _that.goodsInfo = '';
+                            _that.imgList = [];
+                            if (data.code == '0') {
+                                _that.goodsInfo = data;
+                                _that.getImgList('imgList', 'goodsInfo');
+                            } else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'warning'
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.serachStatus = false;
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                    
+                },
                 // 获取所有类型数据
                 getType: function (params) {
                     let url = '__APP__/Index/findType';

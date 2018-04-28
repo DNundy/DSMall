@@ -220,6 +220,10 @@ body{
     color: #fff;
     background: #F2C345;
 }
+.serach{
+    float: right;
+    width: 40%;
+}
 
 /* 商品列表 */
 .goodsList{
