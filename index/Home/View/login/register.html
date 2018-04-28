@@ -33,7 +33,7 @@
                     <div class="left">
                         <img src="__PUBLIC__/img/assets/bg-register.png" alt="注册趣二手账号！" title="注册趣二手账号！">
                     </div>
-                    <div class="right">
+                    <div class="right"  v-loading="loadingStatus">
                         <div class="title">新用户注册</div>
                         <div class="items">
                             <!-- 注册表单 -->
@@ -137,6 +137,7 @@
         var app = new Vue({
             el: '#app',
             data: {
+                loadingStatus: false,
                 formData: {
                     'num': '',
                     'name': '',
@@ -189,14 +190,19 @@
                         this.tipsShow = false;
                         let url = '__APP__/Login/accept_register';
                         let _that = this;
+                        _that.loadingStatus = true;
                         $.ajax({
                             url: url,
                             type: 'POST',
                             data: this.formData,
                             dataType: 'JSON',
                             success: function (res) {
+                                _that.loadingStatus = false;
                                 if(res.code == 1){
-                                    location.href = '__APP__/Login/login';
+                                    _that.$alert('恭喜您，注册成功 稍后为您自动跳转登录页面！', '注册成功', { confirmButtonText: '确定', });
+                                    setTimeout(() => {
+                                        location.href = '__APP__/Login/login';
+                                    }, 3000);
                                 }else{
                                     _that.$message({
                                         message: res.msg,
@@ -204,9 +210,10 @@
                                     });
                                 }
                             },
-                            error: function(err) {
+                            error: function () {
+                                _that.loadingStatus = false;
                                 _that.$message({
-                                    message: '网络错误，请稍后重试!',
+                                    message: '网络错误，请稍后重试！',
                                     type: 'error'
                                 });
                             }

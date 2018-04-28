@@ -31,7 +31,7 @@
                     <div class="left">
                         <img src="__PUBLIC__/img/assets/bg-forget.png" alt="重置您的密码！" title="重置您的密码！">
                     </div>
-                    <div class="right">
+                    <div class="right"  v-loading="loadingStatus">
                         <div class="title">重置密码</div>
                         <div class="items">
                             <!-- 重置密码表单 -->
@@ -118,6 +118,7 @@
         var app = new Vue({
             el: '#app',
             data: {
+                loadingStatus: false,
                 formData: {
                     'num': '',
                     'password': '',
@@ -157,22 +158,28 @@
                         this.tipsShow = false;
                         let url = '__APP__/Repassword/index';
                         let _that = this;
+                        _that.loadingStatus = true;
                         $.ajax({
                             url: url,
                             type: 'POST',
                             data: this.formData,
                             dataType: 'JSON',
                             success: function (res) {
+                                _that.loadingStatus = false;
                                 if (res.code == '-1') {
                                     _that.$message({
                                         message: res.msg,
                                         type: 'error'
                                     });
                                 } else {
-                                    location.href = '__APP__/Login/login';
+                                    _that.$alert('恭喜您，密码重置成功 稍后为您自动跳转登录页面！','重置成功',{ confirmButtonText: '确定',});
+                                    setTimeout(() => {
+                                        location.href = '__APP__/Login/login';
+                                    }, 3000);
                                 }
                             },
                             error: function (err) {
+                                _that.loadingStatus = false;
                                 _that.$message({
                                     message: '网络错误，请稍后重试！',
                                     type: 'error'

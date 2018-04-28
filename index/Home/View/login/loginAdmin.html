@@ -27,7 +27,7 @@
 
             <!-- 内容区域 -->
             <el-main>
-                <div class="wrap">
+                <div class="wrap"  v-loading="loadingStatus">
                     <div class="title">管理员登录</div>
                     <div class="items">
                         <!-- 管理员登录表单 -->
@@ -96,6 +96,8 @@
             data: {
                 isLogin: false,
                 loginInfo: '',
+                
+                loadingStatus: false,
 
                 formData: {
                     'num': '',
@@ -125,12 +127,14 @@
                         this.tipsShow = false;
                         let _that = this;
                         let url = '__APP__/Login/accept_login_admin';
+                        _that.loadingStatus = true;
                         $.ajax({
                             url: url,
                             type: 'POST',
                             data: this.formData,
                             dataType: 'JSON',
                             success: function (data) {
+                                _that.loadingStatus = false;
                                 if (data.code == '0') {
                                     location.href = '__APP__/Admin/admin';
                                 } else if ( data.code == '-1' ) {
@@ -144,6 +148,13 @@
                                         type: 'error'
                                     });
                                 }
+                            },
+                            error: function () {
+                                _that.loadingStatus = false;
+                                _that.$message({
+                                    message: '网络错误，请稍后重试！',
+                                    type: 'error'
+                                });
                             }
                         });
                     } else {
