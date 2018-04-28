@@ -105,7 +105,7 @@
                 </el-aside>
 
                 <!-- 内容区域 -->
-                <el-main>
+                <el-main  v-loading="loadingStatus">
                     <!-- 面包屑导航 -->
                     <el-breadcrumb separator-class="el-icon-arrow-right" class="crumbs">
                         <el-breadcrumb-item><span @click="toAdmin">趣二手</span></el-breadcrumb-item>
@@ -114,8 +114,8 @@
                     </el-breadcrumb>
 
                     <!-- 搜索区域 -->
-                    <el-input placeholder="输入想要搜索的 商品名 !" class="serach" v-model="serachCont">
-                        <i slot="suffix" class="el-input__icon el-icon-search"></i>
+                    <el-input placeholder="输入想要搜索的 商品信息 !" class="serach" v-model="serachCont" v-on:keyup.enter.native="serachGoods">
+                        <i slot="suffix" class="el-input__icon el-icon-search" @click="serachGoods"></i>
                     </el-input>
 
                     <div v-for="(item,index) in listData.msg" class="goodsItem">
@@ -173,6 +173,8 @@
                 // 列表数据
                 listData: {},
                 imgList: [],
+
+                loadingStatus: false,
             },
             methods: {
                 //路由方法
@@ -240,10 +242,12 @@
                 getInfo: function () {
                     let url = '__APP__/AdminUserGoods/findGoods';
                     let _that = this;
+                    _that.loadingStatus = true;
                     $.ajax({
                         url: url,
                         dataType: 'JSON',
                         success: function (data) {
+                            _that.loadingStatus = false;
                             if( data.code == '0' ){
                                 _that.listData = data;
                                 _that.getImgList('imgList','listData');
@@ -255,6 +259,7 @@
                             }
                         },
                         error: function () {
+                            _that.loadingStatus = false;
                             _that.$message({
                                 message: '网络 或者 服务器出错,请稍后重试！',
                                 type: 'error'
@@ -312,6 +317,44 @@
                         return;
                     });
                 },
+                
+                // 搜索商品
+                serachGoods: function (params) {
+                    let url = '__APP__/AdminUserGoods/searchGoods';
+                    let _that = this;
+                    if( _that.serachCont == '' ){
+                        _that.getInfo();
+                        return;
+                    }
+                    _that.loadingStatus = true;
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: { search: _that.serachCont },
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.loadingStatus = false;
+                            _that.listData = '';
+                            _that.imgList = [];
+                            if (data.code == '0') {
+                                _that.listData = data;
+                                _that.getImgList('imgList', 'listData');
+                            } else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'warning'
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.loadingStatus = false;
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                }
             },
             mounted: function () {
                 // 挂载实例、初始化列表

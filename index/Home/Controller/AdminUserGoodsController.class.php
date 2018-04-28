@@ -104,7 +104,7 @@ class AdminUserGoodsController extends AdminCommonController {
 		if(empty($_POST['search'])){
 			$res = array(
     			'code' => '-1',
-    			'msg' => '参数传递出错！',
+    			'msg' => '请输入搜索内容！',
     		);
     		return $this->ajaxReturn($res);
 		}
