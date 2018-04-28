@@ -349,13 +349,19 @@
                                 _that.loadingPersonal();
                                 _that.loginInfo = data.msg;
                             } else if (data.code == '-1') {
-                                _that.$message({
-                                    message: data.msg,
-                                    type: 'error'
-                                });
-                                setTimeout(() => {
+                                _that.$confirm('您还未进行登录，请登录后再进行操作！', '未登录！', {
+                                    confirmButtonText: '立即去登录',
+                                    cancelButtonText: '返回上一页',
+                                    type: 'warning'
+                                }).then(() => {
                                     location = '__APP__/Login/login';
-                                }, 2000);
+                                }).catch(() => {
+                                    if( history.length == 2 ){
+                                        location = '__APP__/Index/index';
+                                    }else{
+                                        history.go(-1);
+                                    }
+                                });
                             }
                         },
                         error: function () {
