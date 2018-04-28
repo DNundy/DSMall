@@ -7,7 +7,7 @@ use Think\Controller;
 class UserCommonController extends Controller{
     Public function _initialize(){     //前置操作
     // 初始化的时候检查用户权限
-        if(!isset($_SESSION['num']) || $_SESSION['num'] == '' || $_SESSION['type'] != 'user'){
+        if(!isset($_SESSION['num']) || $_SESSION['num'] == ''){
             redirect('../Login/login');
         }
     }

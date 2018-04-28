@@ -87,7 +87,6 @@ class LoginController extends Controller {
                 if(!empty($newInfo))
                 {
                     session('num',$num);
-                    session('type','user');
                     $res = array(
                         'code' => '0',
                         'msg' => '登录成功!',
@@ -139,8 +138,7 @@ class LoginController extends Controller {
                 $newAdminInfo=$user->where($data)->select();//若用户与密码对应正确
                 if(!empty($newAdminInfo))
                 {
-                    session('num',$num);
-                    session('type','admin');
+                    session('numAdmin',$num);
                     $res = array(
                         'code' => '0',
                         'msg' => '登录成功!',
@@ -173,16 +171,22 @@ class LoginController extends Controller {
 
     public function out_login(){
         if(isset($_SESSION['num']) && $_SESSION['num'] != ''){
-            session_unset();
-            session_destroy();
+            unset($_SESSION['num']);
+            $res = '退出成功！';
+            return $this->ajaxReturn($res);
+        }
+    }
+    public function out_login_admin(){
+        if(isset($_SESSION['numAdmin']) && $_SESSION['numAdmin'] != ''){
+            unset($_SESSION['numAdmin']);
             $res = '退出成功！';
             return $this->ajaxReturn($res);
         }
     }
     	
 	public function isLogin(){
-		if(isset($_SESSION['num']) && $_SESSION['num'] != '' && $_SESSION['type'] == 'admin'){
-            $num = $_SESSION['num'];
+		if(isset($_SESSION['numAdmin']) && $_SESSION['numAdmin'] != ''){
+            $num = $_SESSION['numAdmin'];
             $name = M('Admin')->where("a_id=$num")->getField('a_name');
 			$res = array(
 				'code' => 0,
@@ -197,7 +201,7 @@ class LoginController extends Controller {
         return $this->ajaxReturn($res);
 	}
     public function isLoginUser(){
-        if(isset($_SESSION['num']) && $_SESSION['num'] != '' && $_SESSION['type'] == 'user'){
+        if(isset($_SESSION['num']) && $_SESSION['num'] != ''){
             $num = $_SESSION['num'];
             $name = M('User')->where("u_id=$num")->getField('u_name');
             $res = array(

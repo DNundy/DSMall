@@ -65,7 +65,7 @@ class GoodsInfoController extends Controller {
 	}
 	//用户发布评论
 	public function publishDiscuss(){
-        if(!isset($_SESSION['num']) || $_SESSION['num'] == '' || $_SESSION['type'] != 'user'){
+        if(!isset($_SESSION['num']) || $_SESSION['num'] == ''){
             $res = array(
                 'code' => '-1',
                 'msg' => '请登录后进行评论！',
