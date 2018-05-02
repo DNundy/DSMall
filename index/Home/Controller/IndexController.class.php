@@ -129,7 +129,8 @@ class IndexController extends Controller {
 		if(!empty($goodsInfo)){
     		$res = array(
     			'code' => '0',
-    			'msg' => $goodsInfo,
+				'msg' => $goodsInfo,
+				'count' => count($goodsInfo),
     		);
     		return $this->ajaxReturn($res);				
 		} else {

@@ -8,7 +8,7 @@ return array(
 	'DB_PORT'   => 3306, // 端口
 	'DB_PREFIX' => 'trading_', // 数据库表前缀 
 	'DB_CHARSET'=> 'utf8', // 字符集
-	'SHOW_PAGE_TRACE'=> true,
+	'SHOW_PAGE_TRACE'=> false,
 	 // 配置邮件发送服务器
     'MAIL_HOST' =>'smtp.163.com',//smtp服务器的名称
     'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
