@@ -279,5 +279,9 @@ body{
     margin-right: 10px;
 }
 .goodsItem .itemName{
+    white-space: nowrap;
     margin-left: 10px;
+    height: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }

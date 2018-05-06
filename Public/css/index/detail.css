@@ -240,6 +240,9 @@ div.zoomMask{
 .info-title{
     padding: 0  5px 8px;
 }
+.infoName{
+    line-height: 35px;
+}
 .info-cont{
     margin-left: 5px;
 }
