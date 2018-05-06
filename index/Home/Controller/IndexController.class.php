@@ -124,7 +124,7 @@ class IndexController extends Controller {
 		}
 		$search = $_POST['search'];
 		$Model = new Model();
- 		$sql ="select * from trading_goods where g_name REGEXP '[$search]' AND g_status = 1";
+ 		$sql = "select * from trading_goods where g_name like '%$search%' AND g_status=1";
  		$goodsInfo = $Model->query($sql);
 		if(!empty($goodsInfo)){
     		$res = array(
