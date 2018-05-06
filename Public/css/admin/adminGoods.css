@@ -156,6 +156,13 @@
     overflow: hidden;
     position: relative;
 }
+.goodsContConstruct{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
 .goodsImg{
     width: 130px;
     height: 130px;

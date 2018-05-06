@@ -129,7 +129,7 @@
                         </div>
                         <div class="goodsCont">
                             <img :src="'__PUBLIC__/img/goods/'+imgList[index]" :alt="item.g_name" :title="item.g_name" class="goodsImg">
-                            {{item.g_construct}}
+                            <span class="goodsContConstruct">{{item.g_construct}}</span>
                             <div class="goodsDetail">
                                     <i class="el-icon-tickets"></i>
                                     <span class="DetailName">类型：{{item.g_price}}</span>

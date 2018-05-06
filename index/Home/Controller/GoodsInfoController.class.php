@@ -18,7 +18,8 @@ class GoodsInfoController extends Controller {
 		$Model = new Model();
  		$sql ="select trading_goods.g_name,
  					  trading_goods.g_construct,
- 					  trading_goods.g_type,
+					   trading_goods.g_type,
+					   trading_goods.g_id,
  					  trading_goods.g_price,
  					  trading_goods.g_time,
  					  trading_goods.g_picture,

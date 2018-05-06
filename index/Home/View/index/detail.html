@@ -11,8 +11,8 @@
     <script src="http://p75wjroq9.bkt.clouddn.com/jquery.min.js"></script>
     <script src="http://p75wjroq9.bkt.clouddn.com/element.min.js"></script>
     <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/normalize.css">
-    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/element.min.css">
     <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/iconfont.css">
+    <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
 
     <!-- Mine -->
     <script src="__PUBLIC__/lib/jquery.imagezoom.min.js"></script>
@@ -76,6 +76,9 @@
                         <span class="infoName">{{goodsInfo.g_name}}</span>
                     </div>
                     <div class="info-cont">
+                        <div class="info-list">
+                            <span class="listName">是否收藏：</span>
+                        </div>
                         <div class="info-list">
                             <span class="listName">商品价格：</span><span class="listCont infoPrice">￥{{goodsInfo.g_price}}</span>
                         </div>
@@ -164,6 +167,8 @@
                 goodsLoading: true,
                 goodsPic: [[]],
                 goodsInfo: '',
+
+                collectStatus: '',
 
                 loadingDiscussStatus: true,
                 discussInfo: '',
