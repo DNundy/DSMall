@@ -95,7 +95,7 @@ body{
 }
 .mainTitle{
     color: #F2C345;
-    width: 300px;
+    width: 500px;
     height: 200px;
     margin: 0 auto;
     text-align: center;
@@ -222,12 +222,12 @@ body{
 }
 /* banner */
 .mainBanner{
-    height: 500px;
+    height: 400px;
     background: url(../../img/assets/bg-index.jpg) no-repeat center;
 }
 .bannerBox{
     width: 900px;
-    height: 500px;
+    height: 400px;
     margin: 0 auto;
     display: flex;
     display: -webkit-flex;
@@ -236,26 +236,12 @@ body{
 }
 .bannerLeft{
     width: 400px;
-    height: 400px;
+    height: 360px;
 }
 .mainBanner{
     margin-top: 20px;
 }
-.bannerBox .bannerLeft p{
-    color: #4D6D60;
-    font-family: '楷体';
-    line-height: 25px;
-    font-size: 22px;
-    text-align: center;
-}
-.mainContact{
-    height: 300px;
-    background: #fff;
-    overflow: hidden;
-    font-family: '楷体';
-    font-size: 22px;
-}
-.mainContact a{
+.mainBanner a{
     width: 120px;
     height: 40px;
     line-height: 40px;
@@ -270,6 +256,20 @@ body{
     color: #ff5274;
     background-color: transparent;
     text-decoration: none;
+}
+.bannerBox .bannerLeft p{
+    color: #4D6D60;
+    font-family: '楷体';
+    line-height: 25px;
+    font-size: 22px;
+    text-align: center;
+}
+.mainContact{
+    height: 300px;
+    background: #fff;
+    overflow: hidden;
+    font-family: '楷体';
+    font-size: 22px;
 }
 .mainContact a:hover{
     color: #fff;
