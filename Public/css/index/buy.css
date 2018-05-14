@@ -21,6 +21,7 @@ body{
     text-decoration: none;
     line-height: 60px;
     margin-left: 60px;
+    font-family: '楷体';
 }
 
 /* Footer */
@@ -193,8 +194,7 @@ body{
     height: 50px;
     text-align: center;
     line-height: 50px;
-    font-size: 18px;
-    font-family: '楷体';
+    font-size: 14px;
     background: #FAFAFA;
 }
 .options .optRight{
@@ -211,10 +211,14 @@ body{
     height: 30px;
     text-align: center;
     line-height: 30px;
-    padding: 0 5px;
-    margin: 10px 15px;
+    padding: 0 10px;
+    margin: 10px 10px;
     border-radius: 15px;
     cursor: pointer;
+}
+.options .optRight .optItem:hover{
+    color: #fff;
+    background: #F2C345;
 }
 .active{
     color: #fff;

@@ -50,7 +50,7 @@
 
             <!-- 内容区域 -->
             <el-main v-loading="(!isLogin&&typeInfo) || loadingStatus">
-                <div class="title">毕业季 · 专属于你的二手商店</div>
+                <div class="title"><span style="font-family: '楷体';font-size: 24px;">毕业季</span> · 专属于你的二手商店</div>
                 <P>商品信息</P>
                 <form enctype="multipart/form-data" id="pubForm">
                     <div class="infoList">
@@ -85,7 +85,7 @@
                     </div>
                     <p>关于发布</p>
                     <div class="infoList">
-                        <el-checkbox v-model="agreeStatus" @click="agreeStatus=!agreeStatus">我同意<a href="__APP__/Index/rules" style="color: crimson;text-decoration: none;">《毕业季商品发布规则》</a></el-checkbox>
+                        <el-checkbox v-model="agreeStatus" @click="agreeStatus=!agreeStatus">我同意<a href="__APP__/Index/rules" style="color: crimson;text-decoration: none;">《毕业季 · 商品发布规则》</a></el-checkbox>
                     </div>
                     <div class="infoList">
                         <el-button size="mini" type="success" @click="pubGoods" :disabled="!agreeStatus">立即发布</el-button>

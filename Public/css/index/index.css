@@ -280,7 +280,7 @@ body{
 }
 .mainContactBox{
     width: 1000px;
-    height: 300px;
+    height: 180px;
     margin: 0 auto;
 
     color: #000;
@@ -292,28 +292,29 @@ body{
 }
 .mainContactBox div{
     width: 300px;
-    height: 260px;
+    height: 180px;
 }
 .contactIco p{
     text-align: center;
-    line-height: 50px;
-    font-size: 30px;
+    line-height: 25px;
+    font-size: 25px;
+    font-family: '楷体';
 }
 .contactIco img{
-    width: 128px;
-    height: 128px;
-    margin-left: 85px;
+    width: 70px;
+    height: 70px;
+    margin-left: 115px;
 }
 .contactInfo{
     padding-left: 15px;
-    padding-top: 55px;
+    padding-top: 45px;
 }
 .contactInfo p{
-    line-height: 35px;
+    line-height: 10px;
     font-size: 18px;
 }
 .contactCode img{
-    width: 200px;
-    height: 200px;
-    margin: 40px 0 0 20px;
+    width: 120px;
+    height: 120px;
+    margin: 30px 0 0 20px;
 }
