@@ -166,4 +166,16 @@ class GoodsInfoController extends Controller {
             return $this->ajaxReturn($res);
         }
     }
+    	// 用于个人空间展示信息
+	public function goodsList(){
+        $num = $_POST['id'];
+		$goodsInfo = M('Goods')->where("u_id=$num")->order('g_id desc')->select();
+		$userInfo = M('User')->where("u_id=$num")->select();
+		$res = array(
+            'code' => '0',
+			'msg' => $goodsInfo,
+			'info' => $userInfo,
+        );
+        return $this->ajaxReturn($res);
+	}
 }

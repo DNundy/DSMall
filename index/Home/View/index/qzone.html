@@ -129,18 +129,12 @@
                                 _that.isLogin = true;
                                 _that.loginInfo = data.msg;
                             }
-                        },
-                        error: function () {
-                            _that.$message({
-                                message: '网络 或者 服务器出错,请稍后重试！',
-                                type: 'error'
-                            });
                         }
                     });
                 },
 
                 getInfo: function name(params) {
-                    let url = '__APP__/Personal/goodsList';
+                    let url = '__APP__/GoodsInfo/goodsList';
                     let _that = this;
                     let id = this.getParam('id');
                     _that.loadingStatus = true;

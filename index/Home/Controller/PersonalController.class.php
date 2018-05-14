@@ -162,25 +162,6 @@ class PersonalController extends UserCommonController {
         );
         return $this->ajaxReturn($res);
 	}
-	// 用于个人空间展示信息
-	public function goodsList(){
-		$num = $_POST['id'];
-		$goodsInfo = M('Goods')->where("u_id=$num")->order('g_id desc')->select();
-		$userInfo = M('User')->where("u_id=$num")->select();
-		if(empty($goodsInfo)){
-			$res = array(
-                'code' => '-1',
-                'msg' => '用户信息有误！',
-            );
-            return $this->ajaxReturn($res);
-		}
-		$res = array(
-            'code' => '0',
-			'msg' => $goodsInfo,
-			'info' => $userInfo,
-        );
-        return $this->ajaxReturn($res);
-	}
 	//用户发布的所有评论
 	public function discussGoods(){
 		$num = $_SESSION['num'];
