@@ -130,7 +130,7 @@ class PersonalController extends UserCommonController {
     		return $this->ajaxReturn($res);	
 		}
 		$id = $_GET['id'];
-		$result = M('Collect')->where("c_id=$id")->delete();
+		$result = M('Collect')->where("g_id=$id")->delete();
 		if($result != false){
 			$res = array(
     			'code' => '0',
