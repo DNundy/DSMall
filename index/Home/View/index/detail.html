@@ -77,7 +77,9 @@
                     </div>
                     <div class="info-cont">
                         <div class="info-list">
-                            <span class="listName">是否收藏：</span>
+                            <span class="listName">收藏状态：</span>
+                            <span  class="listCont collectStatus" v-if="collectStatus" @click="changeCollect">我的收藏</span>
+                            <span  class="listCont collectStatus" v-else  @click="changeCollect">添加收藏</span>
                         </div>
                         <div class="info-list">
                             <span class="listName">商品价格：</span><span class="listCont infoPrice">￥{{goodsInfo.g_price}}</span>
@@ -168,7 +170,7 @@
                 goodsPic: [[]],
                 goodsInfo: '',
 
-                collectStatus: '',
+                collectStatus: false,
 
                 loadingDiscussStatus: true,
                 discussInfo: '',
@@ -190,6 +192,7 @@
                             if (data.code == '0') {
                                 _that.isLogin = true;
                                 _that.loginInfo = data.msg;
+                                _that.loadingCollect();
                             }
                         },
                         error: function () {
@@ -252,6 +255,31 @@
                     });
                 },
 
+                // 加载收藏状态
+                loadingCollect: function (params) {
+                    let id = this.getParam('id');
+                    let _that = this;
+                    $.ajax({
+                        url: '__APP__/GoodsInfo/is_collect',
+                        data: { 'id': id },
+                        type: 'POST',
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.collectStatus = true;
+                            }else if(data.code == '-1'){
+                                _that.collectStatus = false;
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
                 // 发布商品评论
                 publishDis: function (params) {
                     let data={
@@ -280,6 +308,45 @@
                         }
                     });
                     
+                },
+
+                changeCollect: function(params) {
+                    let id = this.getParam('id');
+                    let _that = this;
+                    let url = null ;
+                    if( _that.isLogin ){
+                        if (this.collectStatus) {
+                            url = '__APP__/GoodsInfo/goods_CollectNull';
+                        } else {
+                            url = '__APP__/GoodsInfo/goods_Collect';
+                        }
+                        $.ajax({
+                            url: url,
+                            data: { 'id': id },
+                            type: 'POST',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                if (data.code == '0') {
+                                    _that.$message({
+                                        message: '操作成功',
+                                        type: 'success'
+                                    });
+                                }
+                                _that.loadingCollect();
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }else{
+                        _that.$message({
+                            message: '请登录后再进行操作！',
+                            type: 'warning'
+                        });
+                    }
                 },
 
                 // 获取URI参数信息

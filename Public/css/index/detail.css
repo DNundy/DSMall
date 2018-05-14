@@ -366,3 +366,7 @@ div.zoomMask{
     text-decoration: none;
     color: #08B35F;
 }
+.collectStatus{
+    cursor: pointer;
+    color: #08B35F;
+}
