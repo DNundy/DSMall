@@ -15,20 +15,20 @@ body{
 }
 /* Footer */
 .el-footer {
+    width: 1200px;
     height: 80px !important;
+    margin: 0 auto;
     position: relative;
     overflow: hidden;
     font-size: 12px;
     color: #666;
     text-align: center;
-    background: #22252E;
-    color: #fff;
 }
 .el-footer .links{
     margin: 15px 0;
 }
 .el-footer .links a{
-    color: #fff;
+    color: #666;
     padding: 10px;
     text-decoration: none;
 }
@@ -91,14 +91,16 @@ body{
 .el-main{
     width: 100%;
     overflow: hidden;
-    margin: -520px auto 0 auto;
+    margin: -650px auto 0 auto;
     padding: 0;
 }
 .mainTitle{
     color: #F2C345;
     width: 500px;
-    height: 200px;
+    height: 180px;
     margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
     text-align: center;
 }
 .titleOne{
@@ -224,12 +226,12 @@ body{
 }
 /* banner */
 .mainBanner{
-    height: 400px;
+    height: 600px;
     background: url(../../img/assets/bg-index.jpg) no-repeat center;
 }
 .bannerBox{
     width: 900px;
-    height: 400px;
+    height: 450px;
     margin: 0 auto;
     display: flex;
     display: -webkit-flex;
@@ -271,7 +273,7 @@ body{
     text-align: center;
 }
 .mainContact{
-    background: #282C36;
+    background: #fff;
     overflow: hidden;
     font-family: '楷体';
     font-size: 22px;
@@ -281,7 +283,7 @@ body{
     height: 300px;
     margin: 0 auto;
 
-    color: #fff;
+    color: #000;
 
     display: flex;
     display: -webkit-flex;
@@ -295,7 +297,7 @@ body{
 .contactIco p{
     text-align: center;
     line-height: 50px;
-    font-size: 28px;
+    font-size: 30px;
 }
 .contactIco img{
     width: 128px;
@@ -308,7 +310,7 @@ body{
 }
 .contactInfo p{
     line-height: 35px;
-    font-size: 17px;
+    font-size: 18px;
 }
 .contactCode img{
     width: 200px;
