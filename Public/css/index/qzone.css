@@ -228,7 +228,7 @@ body{
 }
 .personal-mid span{
     display: inline-block;
-    width: 220px;
+    width: 300px;
     line-height: 30px;
     text-align: center;
 }
@@ -277,9 +277,19 @@ body{
     position: relative;
 }
 .goodsList .listRight .listCont{
-    width: 800px;
-    padding: 10px 0;
+    position: absolute;
+    width: 700px;
+    height: 90px;
+    padding: 0;
+    top: 40px;
+    left: 200px;
     line-height: 30px;
+    text-indent: 2em;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 .goodsList .listRight .listFooter{
     width: 710px;
@@ -291,7 +301,4 @@ body{
 }
 .goodsList .listRight .listFooter .el-button{
     float: right;
-}
-.goodsList .listRight .listCont{
-    text-indent: 2em;
 }
