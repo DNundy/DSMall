@@ -177,8 +177,11 @@ body{
     text-align: left;
 }
 .contactImg img{
-    width: 220px;
+    width: 190px;
+    margin: 10px;
 }
 .contactImg{
-    
+    width: 210px;
+    height: 210px;
+    border: 1px solid #666;
 }
