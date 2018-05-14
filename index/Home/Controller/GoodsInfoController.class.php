@@ -86,4 +86,84 @@ class GoodsInfoController extends Controller {
     	);
     	return $this->ajaxReturn($res);		
 	}
+    public function is_collect(){//判断是否已收藏
+        if(empty($_POST['id'])){
+            $res = array(
+                'code' => '-1',
+                'msg' => '参数传递失败',
+            );
+            return $this->ajaxReturn($res);
+        }
+        $data['g_id'] = $_POST['id'];
+        $data['u_id'] = $_SESSION['num'];
+        $result = M('Collect')->where($data)->select();
+        if(empty($result)){
+            $res = array(
+                'code' => '-1',
+                'msg' => '未收藏',
+            );
+            return $this->ajaxReturn($res);
+        } else {
+            $res = array(
+                'code' => '0',
+                'msg' => '已收藏',
+            );
+            return $this->ajaxReturn($res);
+        }
+    }
+    public function goods_Collect(){
+        if(empty($_POST['id'])){
+            $res = array(
+                'code' => '-1',
+                'msg' => '参数传递失败',
+            );
+            return $this->ajaxReturn($res);
+        }
+        $data = array(
+            'g_id' => $_POST['id'],
+            'u_id' => $_SESSION['num'],
+            'c_time' => date("Y-m-d"),
+        );
+        $result = M('Collect')->add($data);
+        if($result!=false){
+            $res = array(
+                'code' => '0',
+                'msg' => '收藏成功!',
+            );
+            return $this->ajaxReturn($res);
+        } else {
+            $res = array(
+                'code' => '-1',
+                'msg' => '收藏失败!',
+            );
+            return $this->ajaxReturn($res);
+        }
+    }
+    public function goods_CollectNull(){
+        if(empty($_POST['id'])){
+            $res = array(
+                'code' => '-1',
+                'msg' => '参数传递失败',
+            );
+            return $this->ajaxReturn($res);
+        }
+        $data = array(
+            'g_id' => $_POST['id'],
+            'u_id' => $_SESSION['num'],
+        );
+        $result = M('Collect')->where($data)->delete();
+        if($result!=false){
+            $res = array(
+                'code' => '0',
+                'msg' => '取消收藏成功!',
+            );
+            return $this->ajaxReturn($res);
+        } else {
+            $res = array(
+                'code' => '-1',
+                'msg' => '取消收藏失败!',
+            );
+            return $this->ajaxReturn($res);
+        }
+    }
 }

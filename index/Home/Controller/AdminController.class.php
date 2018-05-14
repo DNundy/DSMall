@@ -6,19 +6,19 @@ class AdminController extends AdminCommonController {
 	public function admin(){//显示用户登录页面
 	   $this->display('admin');
 	}
-	public function adminGoods(){//显示用户登录页面
+	public function adminGoods(){
 	   $this->display('adminGoods');
 	}
-	public function adminInfo(){//显示用户登录页面
+	public function adminInfo(){
 	   $this->display('adminInfo');
 	}
-	public function adminSet(){//显示用户登录页面
+	public function adminSet(){
 	   $this->display('adminSet');
 	}
-	public function adminType(){//显示用户登录页面
+	public function adminType(){
 	   $this->display('adminType');
 	}
-	public function adminUser(){//显示用户登录页面
+	public function adminUser(){
 	   $this->display('adminUser');
 	}
 	
@@ -146,16 +146,16 @@ class AdminController extends AdminCommonController {
         }
 
     	$data = array(
-    		'a_name' => $_POST['name'],//姓名
-    		'a_password' => md5($_POST['password']),//用MD5对密码进行加密
-    		'a_email' => $_POST['email'],//邮箱
+    		//'a_name' => $_POST['name'],//姓名
+    		//'a_password' => md5($_POST['password']),//用MD5对密码进行加密
+    		'a_email' => $_GET['email'],//邮箱
 		);
-		
-		$Admin = M('Admin');//连接数据库
-		$status = $Admin->add($data);
-		$res = array(
+		$status = M('Admin')->add($data);
+        $id = M('Admin')->order('a_id desc')->limit(1)->getField('a_id');
+        array(
 			'code' => $status,
 			'msg' => $status?'注册成功!':'注册失败',
+            'id' => $id,
 		);
 		return $this->ajaxReturn($res);
 	}
