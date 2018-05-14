@@ -171,7 +171,7 @@
                                         type: 'error'
                                     });
                                 } else {
-                                    _that.$alert('恭喜您，密码重置成功 稍后为您自动跳转登录页面！','重置成功',{ confirmButtonText: '确定',});
+                                    _that.$alert('请到邮箱进行确认重置 ~ 重置后即可进行登录','重置成功',{ confirmButtonText: '确定',});
                                     setTimeout(() => {
                                         location.href = '__APP__/Login/login';
                                     }, 3000);
