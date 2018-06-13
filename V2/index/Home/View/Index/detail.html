@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情 - 毕业季</title>
+
+    <!-- Third Party -->
+    <script src="http://p75wjroq9.bkt.clouddn.com/vue.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/jquery.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/element.min.js"></script>
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/normalize.css">
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/iconfont.css">
+    <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
+
+    <!-- Mine -->
+    <script src="__PUBLIC__/lib/jquery.imagezoom.min.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/css/index/detail.css">
+</head>
+
+<body>
+    <!-- Layout -->
+    <div id="app">
+        <el-container>
+            <!-- Header 区域 -->
+            <el-header>
+                <div class="headerWrap">
+                    <a href="__APP__/Index/index">
+                        <span class="logo">毕业季</span>
+                    </a>
+                    <div class="navLogin">
+                        <a href="__APP__/Index/personal" v-if="isLogin">
+                            <i class="icon iconfont icon-questions"></i>
+                            <span> {{loginInfo}} </span>
+                        </a>
+                        <span @click="loginOut" class="outLogin"  v-if="isLogin"> &nbsp; &nbsp;退出 </span>
+                        
+                        <a href="__APP__/Login/login" v-else>
+                            <i class="icon iconfont icon-questions"></i>
+                            <span> 立即登录 </span>
+                        </a>
+                    </div>
+                    <div class="navList">
+                        <a href="__APP__/Index/index">首页</a>
+                        <a href="__APP__/Index/buy">寻购二货</a>
+                        <a href="__APP__/Index/sale">出售二货</a>
+                        <a href="__APP__/Index/personal">个人空间</a>
+                        <a href="__APP__/Index/contact">关于我们</a>
+                    </div>
+                </div>
+            </el-header>
+
+            <!-- 内容区域 -->
+            <el-main  v-loading="goodsLoading&&loadingDiscussStatus">
+                <!-- 淘宝图片展示效果-内容 -->
+                <div class="art-left-photo">
+                    <div class="tb-booth">
+                        <img class="jqzoom" :src="selectPic" :rel="selectPic"/>
+                    </div>
+                    <div class="tb-thumb">
+                        <div v-for="(item,index) in goodsPic[0]" :class=" index == selectIndex ? 'tb-selected' : ''"><img :src="'__PUBLIC__/img/goods/'+item"  @click="switchPic($event,index)"/></div>
+                    </div>
+                </div>
+                <!-- 淘宝图片展示效果-JS -->
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $(".jqzoom").imagezoom();
+                    });
+                </script>
+                
+                <!-- 关于物品详细信息展示区域 -->
+                <div class="art-right-info">
+                    <div class="info-title">
+                        <span class="infoType">{{goodsInfo.g_type}}</span>
+                        <span class="infoName">{{goodsInfo.g_name}}</span>
+                    </div>
+                    <div class="info-cont">
+                        <div class="info-list">
+                            <span class="listName">收藏状态：</span>
+                            <span  class="listCont collectStatus" v-if="collectStatus" @click="changeCollect">我的收藏</span>
+                            <span  class="listCont collectStatus" v-else  @click="changeCollect">添加收藏</span>
+                        </div>
+                        <div class="info-list">
+                            <span class="listName">商品价格：</span><span class="listCont infoPrice">￥{{goodsInfo.g_price}}</span>
+                        </div>
+                        <div class="info-list">
+                            <span class="listName">主人姓名：</span><a :href="'__APP__/Index/qzone?id='+goodsInfo.u_id"><span class="listCont">{{goodsInfo.u_name}}</span></a>
+                        </div>
+                        <div class="info-list">
+                            <span class="listName">联系电话：</span><span class="listCont">{{goodsInfo.u_telphone}}</span>
+                        </div>
+                        <div class="info-list">
+                            <span class="listName">交易地点：</span><span class="listCont">{{goodsInfo.u_place}}</span>
+                        </div>
+                        <div class="info-list">
+                            <span class="listName">发布日期：</span><span class="listCont">{{goodsInfo.g_time}}</span>
+                        </div>
+                        <div class="bdsharebuttonbox">
+                            <a href="#" class="bds_more" data-cmd="more"></a>
+                            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                            <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+                            <a href="#" class="bds_bdysc" data-cmd="bdysc" title="分享到百度云收藏"></a>
+                            <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+                        </div>
+                        <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "毕业季 - 专属于你的二手商店", "bdMini": "2", "bdMiniList": ["qzone", "tsina", "bdysc", "weixin", "tieba", "douban", "sqq", "youdao", "copy", "print"], "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": {}, "selectShare": { "bdContainerClass": null, "bdSelectMiniList": ["weixin", "tsina", "sqq", "qzone", "youdao", "bdysc", "copy"] } }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+                    </div>
+                </div>
+                
+                <!-- 卖家寄语 -->
+                <div class="art-bot-describe">
+                    <div class="descTitle">宝贝描述</div>
+                    <div class="descCont">
+                        <div class="quotBegin"><img src="__PUBLIC__/img/assets/quotBegin.png" alt=""></div>
+                        <p v-if="goodsInfo.g_construct==''"> 饿哦，卖家很赖，还没有任何描述哦！ </p>
+                        <p v-else> {{goodsInfo.g_construct}} </p>
+                        <div class="quotEnd"><img src="__PUBLIC__/img/assets/quotEnd.png" alt=""></div>
+                    </div>
+                </div>
+
+                <div class="art-bot-discuss" v-loading="loadingDiscussStatus">
+                    <div class="discussTitle">商品评价</div>
+                    <div class="discussCont">
+                        <div class="publishDiscuss" v-if="!isLogin">
+                            <a href="__APP__/Login/login" target="_blank">登录</a> 后即可进行评论！
+                        </div>
+                        <div v-else>
+                            <textarea class="publishDiscuss"  placeholder="你的评论，一针见血~" maxlength="50" v-model="publishInfo" ></textarea>
+                            <el-button plain @click="publishDis" size='mini' class="publishBtn">发布评论</el-button>
+                        </div>
+
+                        <div class="discussList" v-if="discussInfo == null">
+                            <p>暂时还没有评论，快来留下第一个足迹呗!</p>
+                        </div>
+                        <div class="discussList" v-for="item in discussInfo" v-else>
+                            <div class="discussName"><a :href="'__APP__/Index/qzone?id='+item.u_id">{{item.u_name}}</a>  说：</div>
+                            <div class="discussText">{{item.d_content}}</div>
+                            <div class="discussTime">{{item.d_time}}</div>
+                        </div>
+                    </div>
+                </div>
+            </el-main>
+
+            <!-- Footer区域 -->
+            <el-footer>
+                <div class="links">
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="footer-mid">您是第&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span><a href="__APP__/Index/index">系统首页</a> |
+                    <a href="__APP__/Login/login.html">用户登录</a> |
+                    <a href="__APP__/Login/loginAdmin.html">管理员登录</a>
+                </div>
+                <p class="copyright"> Copyright © 2018 毕业季 All Rights Reserved </p>
+            </el-footer>
+        </el-container>
+    </div>
+
+    <!-- VUE -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                // 登录状态
+                isLogin: false,
+                // 登录的信息
+                loginInfo: '',
+
+                goodsLoading: true,
+                goodsPic: [[]],
+                goodsInfo: '',
+
+                collectStatus: false,
+
+                loadingDiscussStatus: true,
+                discussInfo: '',
+                publishInfo: '',
+
+                
+                selectIndex: 0,
+                selectPic: '__PUBLIC__/img/assets/img-404.png',
+            },
+            methods: {
+                // 加载登录状态
+                loadingLogin: function (params) {
+                    let url = '__APP__/Login/isLoginUser';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.isLogin = true;
+                                _that.loginInfo = data.msg;
+                                _that.loadingCollect();
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                // 加载商品信息
+                loadingGoods: function (params) {
+                    let url = '__APP__/GoodsInfo/index?id='+ this.getParam('id');
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.goodsInfo = data.msg[0];
+                                _that.getImgList();
+                            }else{
+                                _that.$message({
+                                    message: '加载 商品信息 失败！',
+                                    type: 'error'
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                // 加载商品评论
+                loadingDiscuss: function (params) {
+                    let id = this.getParam('id');
+                    let _that = this;
+                    $.ajax({
+                        url: '__APP__/GoodsInfo/discuss',
+                        data: {'id':id},
+                        type: 'POST',
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.discussInfo = data.msg;
+                            }
+                            _that.loadingDiscussStatus = false;
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                // 加载收藏状态
+                loadingCollect: function (params) {
+                    let id = this.getParam('id');
+                    let _that = this;
+                    $.ajax({
+                        url: '__APP__/GoodsInfo/is_collect',
+                        data: { 'id': id },
+                        type: 'POST',
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.collectStatus = true;
+                            }else if(data.code == '-1'){
+                                _that.collectStatus = false;
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                // 发布商品评论
+                publishDis: function (params) {
+                    let data={
+                        id: this.getParam('id'),
+                        content: this.publishInfo,
+                    }
+                    let _that = this;
+                    $.ajax({
+                        url: '__APP__/GoodsInfo/publishDiscuss',
+                        data: data,
+                        type: 'POST',
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.$message({
+                                message: data.msg,
+                                type: 'success'
+                            });
+                            _that.publishInfo = '';
+                            _that.loadingDiscuss();
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                    
+                },
+
+                changeCollect: function(params) {
+                    let id = this.getParam('id');
+                    let _that = this;
+                    let url = null ;
+                    if( _that.isLogin ){
+                        if (this.collectStatus) {
+                            url = '__APP__/GoodsInfo/goods_CollectNull';
+                        } else {
+                            url = '__APP__/GoodsInfo/goods_Collect';
+                        }
+                        $.ajax({
+                            url: url,
+                            data: { 'id': id },
+                            type: 'POST',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                if (data.code == '0') {
+                                    _that.$message({
+                                        message: '操作成功',
+                                        type: 'success'
+                                    });
+                                }
+                                _that.loadingCollect();
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }else{
+                        _that.$message({
+                            message: '请登录后再进行操作！',
+                            type: 'warning'
+                        });
+                    }
+                },
+
+                // 获取URI参数信息
+                getParam: function(paramName) {
+                    paramValue = "", isFound = !1;
+                    if(location.search.indexOf("?") == 0 && location.search.indexOf("=") > 1) {
+                        arrSource = unescape(location.search).substring(1,location.search.length).split("&"), i = 0;
+                        while (i < arrSource.length && !isFound) 
+                            arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++
+                    }
+                    return paramValue == "" && (paramValue = null), paramValue;
+                },
+
+                // 获取图片列表
+                getImgList: function (params) {
+                    this.goodsPic = [];
+                    if (this.goodsInfo) {
+                        this.goodsPic.push(this.goodsInfo.g_picture.split('|'));
+                    }
+                    this.selectPic = '__PUBLIC__/img/goods/'+this.goodsPic[0][0];
+                    // 关闭加载图标
+                    this.goodsLoading = false;
+                },
+
+                // 切换小图
+                switchPic: function (e,i) {
+                    this.selectIndex = i;
+                    this.selectPic = e.target.src;
+                },
+
+                // 退出登录
+                loginOut: function (params) {
+                    let url = '__APP__/Login/out_login';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.$message({
+                                message: '成功退出！',
+                                type: 'success'
+                            });
+                            _that.isLogin = false;
+                            _that.loginInfo = '';
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+            },
+            mounted: function () {
+                // 判断是否登录
+                this.loadingGoods();
+                this.loadingDiscuss();
+                this.loadingLogin();
+            }
+        })
+    </script>
+</body>
+
+</html>

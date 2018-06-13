@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购买商品 - 毕业季</title>
+
+    <!-- ThirdParty -->
+    <script src="http://p75wjroq9.bkt.clouddn.com/vue.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/jquery.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/element.min.js"></script>
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/normalize.css">
+    <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/iconfont.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/css/index/buy.css">
+</head>
+
+<body>
+    <!-- Layout -->
+    <div id="app">
+        <el-container>
+            <!-- Header 区域 -->
+            <el-header>
+                <div class="headerWrap">
+                    <a href="__APP__/Index/index">
+                        <span class="logo">毕业季</span>
+                    </a>
+                    <div class="navLogin">
+                        <a href="__APP__/Index/personal" v-if="isLogin">
+                            <i class="icon iconfont icon-questions"></i>
+                            <span> {{loginInfo}} </span>
+                            <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
+                        </a>
+                        <a href="__APP__/Login/login" v-else>
+                            <i class="icon iconfont icon-questions"></i>
+                            <span> 立即登录 </span>
+                        </a>
+                    </div>
+                    <div class="navList">
+                        <a href="__APP__/Index/index">首页</a>
+                        <a href="__APP__/Index/buy">寻购二货</a>
+                        <a href="__APP__/Index/sale">出售二货</a>
+                        <a href="__APP__/Index/personal">个人空间</a>
+                        <a href="__APP__/Index/contact">关于我们</a>
+                    </div>
+                </div>
+            </el-header>
+
+            <!-- 内容区域 -->
+            <el-main v-loading="crumbsLoading">
+                <div class="options">
+                    <div class="optType">
+                        <div class="optLeft">类型</div>
+                        <div class="optRight">
+                            <div class="optItem" :class="serachData.type=='all' ? 'active': '' " @click="serach('type','all')">不限</div>
+                            <div class="optItem" :class="serachData.type==item.t_type ? 'active': '' " @click="serach('type',item.t_type)" v-for="item in typeInfo">{{item.t_type}}</div>
+                        </div>
+                    </div>
+                    <div class="optPrice">
+                        <div class="optLeft">价格</div>
+                        <div class="optRight">
+                            <div class="optItem" :class="serachData.price=='0' ? 'active': '' " @click="serach('price','0')">不限</div>
+                            <div class="optItem" :class="serachData.price=='1' ? 'active': '' " @click="serach('price','1')">小于50</div>
+                            <div class="optItem" :class="serachData.price=='2' ? 'active': '' " @click="serach('price','2')">50~100</div>
+                            <div class="optItem" :class="serachData.price=='3' ? 'active': '' " @click="serach('price','3')">100~1000</div>
+                            <div class="optItem" :class="serachData.price=='4' ? 'active': '' " @click="serach('price','4')">1000~10000</div>
+                            <div class="optItem" :class="serachData.price=='5' ? 'active': '' " @click="serach('price','5')">大于1000</div>
+                        </div>
+                    </div>
+                    <div class="optTime">
+                        <div class="optLeft">时间</div>
+                        <div class="optRight">
+                            <div class="optItem" :class="serachData.time=='0' ? 'active': '' " @click="serach('time','0')">不限</div>
+                            <div class="optItem" :class="serachData.time=='1' ? 'active': '' " @click="serach('time','1')">最近七天</div>
+                            <div class="optItem" :class="serachData.time=='2' ? 'active': '' " @click="serach('time','2')">一个月内</div>
+                            <div class="optItem" :class="serachData.time=='3' ? 'active': '' " @click="serach('time','3')">三个月内</div>
+                            <div class="optItem" :class="serachData.time=='4' ? 'active': '' " @click="serach('time','4')">一年之内</div>
+                            <div class="optItem" :class="serachData.time=='5' ? 'active': '' " @click="serach('time','5')">其它</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="optOrder">
+                    排序方式
+                    <el-radio label="default" v-model="serachData.orderBy" @change="getGoods()">默认</el-radio>
+                    <el-radio label="asc" v-model="serachData.orderBy" @change="getGoods()">价格 ↑</el-radio>
+                    <el-radio label="desc" v-model="serachData.orderBy" @change="getGoods()">价格 ↓</el-radio>
+                    <el-radio label="time" v-model="serachData.orderBy" @change="getGoods()">日期 ↑</el-radio>
+                    <span class="optCount">共为您找到<span class="orange"> {{goodsInfo.count}} </span>件商品！</span>
+                    <el-input placeholder="输入想要搜索的 商品信息 !" class="serach" v-model="serachCont" v-on:keyup.enter.native="serachGoods">
+                        <i slot="suffix" class="el-input__icon el-icon-search" @click="serachGoods"></i>
+                    </el-input>
+                </div>
+                <div class="goodsList"  v-if="goodsInfo.msg" v-loading="serachStatus">
+                    <div class="goodsItem" v-for="(item,index) in goodsInfo.msg">
+                        <a :href="'__APP__/Index/detail?id='+item.g_id">
+                            <img :src="'__PUBLIC__/img/goods/'+imgList[index]" alt="">
+                            <span class="itemType">{{item.g_type}}</span>
+                            <span class="itemPrice">￥{{item.g_price}}</span>
+                            <p class="itemName">{{item.g_name}}</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="goodsList" v-else v-loading="serachStatus">
+                    <div class="goodsListTips">暂时没有为您搜索到相应商品！</div>
+                </div>
+            </el-main>
+
+            <!-- Footer区域 -->
+            <el-footer>
+                <div class="links">
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="footer-mid">您是第&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span><a href="__APP__/Index/index">系统首页</a> |
+                    <a href="__APP__/Login/login.html">用户登录</a> |
+                    <a href="__APP__/Login/loginAdmin.html">管理员登录</a>
+                </div>
+                <p class="copyright"> Copyright © 2018 毕业季 All Rights Reserved </p>
+            </el-footer>
+        </el-container>
+    </div>
+
+    <!-- VUE -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                // 登录状态
+                isLogin: false,
+                // 登录的信息
+                loginInfo: '',
+
+                serachCont: '',
+
+                // 类型数据
+                typeInfo: {},
+                // 商品数据
+                goodsInfo: {},
+                imgList: [],
+                
+                crumbsLoading: 'true',
+                // 筛选数据
+                serachStatus: false,
+                serachData: {
+                    type: 'all',
+                    price: '0',
+                    time: '0',
+                    orderBy: 'default',
+                },
+            },
+            methods: {
+                // 加载登录状态
+                loadingLogin: function (params) {
+                    let url = '__APP__/Login/isLoginUser';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.isLogin = true;
+                                _that.loginInfo = data.msg;
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                // 退出登录
+                loginOut: function (params) {
+                    let url = '__APP__/Login/out_login';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.$message({
+                                message: data.msg,
+                                type: 'success'
+                            });
+                            location = '__APP__/Login/login'
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                serachGoods: function (params) {
+                    let url = '__APP__/Index/searchGoods';
+                    let _that = this;
+                    if (_that.serachCont == '') {
+                        _that.getGoods();
+                        return;
+                    }
+                    _that.serachStatus = true;
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: { search: _that.serachCont },
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.serachStatus = false;
+                            _that.goodsInfo = '';
+                            _that.imgList = [];
+                            if (data.code == '0') {
+                                _that.goodsInfo = data;
+                                _that.getImgList('imgList', 'goodsInfo');
+                            } else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'warning'
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.serachStatus = false;
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                    
+                },
+                // 获取所有类型数据
+                getType: function (params) {
+                    let url = '__APP__/Index/findType';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.crumbsLoading = false;
+                            if (data.code == '0') {
+                                _that.typeInfo = data.msg;
+                            }else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'error'
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+                
+                serach: function(params, data){
+                    // 判断列表是否重复
+                    if (this.serachData[params] == data) {
+                        return;
+                    }
+                    // 切换筛选状态
+                    this.serachData[params] = data;
+                    this.getGoods();
+                },
+
+                // 获取商品列表
+                getGoods: function () {
+                    let url = '__APP__/Index/indexGoods';
+                    let _that = this;
+                    // 开启加载图标
+                    this.serachStatus = true;
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: _that.serachData,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.goodsInfo = data;
+                            } else if (data.code == '-1') {
+                                _that.$message({
+                                    message: data.msg,
+                                    type: 'error'
+                                });
+                            }
+                            _that.getImgList();
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后刷新页面重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                getImgList: function (params) {
+                    this.imgList = [];
+                    let temp = '';
+                    if( this.goodsInfo.msg ){
+                        for (let index = 0; index < this.goodsInfo.msg.length; index++) {
+                            this.imgList.push(this.goodsInfo.msg[index].g_picture.split('|')[0]);
+                        }
+                    }
+                    // 关闭加载图标
+                    this.serachStatus = false;
+                }
+            },
+            mounted: function () {
+                // 获取类型列表
+                this.getType();
+                this.getGoods();
+                // 判断是否登录
+                this.loadingLogin();
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+/* Header */
+body{
+    background: #F5F5F7;
+}
+.el-header a{
+    text-decoration: none;
+}
+.el-header{
+    box-shadow: 1px 0 4px #e6e6e6;
+}
+.headerWrap{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.el-header .logo{
+    float: left;
+    font-size: 26px;
+    font-weight: 700;
+    color: #08B35F;
+    text-decoration: none;
+    line-height: 60px;
+    margin-left: 60px;
+    font-family: '楷体';
+}
+
+/* Footer */
+.el-footer {
+    width: 1200px;
+    height: 80px !important;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+.el-footer .links{
+    margin: 15px 0;
+}
+.el-footer .links a{
+    color: #666;
+    padding: 10px;
+    text-decoration: none;
+}
+.el-footer .copyright {
+    margin: 10px 0;
+}
+/* ------------------------------------------------SCROLL START----------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; }
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0; }
+
+::-webkit-scrollbar-button:start:increment, ::-webkit-scrollbar-button:end:decrement {
+  display: none; }
+
+::-webkit-scrollbar-corner {
+  display: block; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.2); }
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent; }
+
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0, 0, 0, 0.15); }
+
+::-webkit-scrollbar-button:start {
+  width: 10px;
+  height: 10px;
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat 0 0; }
+
+::-webkit-scrollbar-button:start:hover {
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat -15px 0; }
+
+::-webkit-scrollbar-button:start:active {
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat -30px 0; }
+
+::-webkit-scrollbar-button:end {
+  width: 10px;
+  height: 10px;
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat 0 -18px; }
+
+::-webkit-scrollbar-button:end:hover {
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat -15px -18px; }
+
+::-webkit-scrollbar-button:end:active {
+  background: url(../../img/assets/scrollbar_arrow.png) no-repeat -30px -18px; }
+/* ------------------------------------------------SCROLL END----------------------------------------------------- */
+/* Nav 登录 */
+.navLogin{
+    float: right;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    overflow: hidden;
+}
+.navLogin a{
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 60px;
+    /* color: #097653; */
+    color: #08B35F;
+}
+.navLogin i{
+    font-size: 18px;
+}
+.outLogin{
+    color: crimson;
+}
+/* Nav 菜单 */
+.navList{
+    width: 600px;
+    height: 60px;
+    margin: 0 auto;
+}
+.navList a{
+    display: block;
+    float: left;
+    position: relative;
+    
+    width: 70px;
+    height: 55px;
+    line-height: 60px;
+    text-align: center;
+    margin: 0 20px;
+    
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+}
+.navList a:after{
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #08B35F;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transition: all .3s;
+}
+.navList a:hover:after{
+    left: 0%;
+    width: 100%;
+}
+/* Main 区域 */
+.el-main{
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 50px;
+    overflow: hidden;
+    background: #fff;
+}
+/* 放大镜-Box */
+.art-left-photo{
+    width: 360px;
+    padding: 5px;
+    float: left;
+}
+/* 放大镜-大图 */
+.tb-booth{
+    height:348px;
+    width:348px;
+    line-height: 348px;
+    text-align: center;
+    border:1px solid #CDCDCD;
+    position:relative;
+}
+.tb-booth,.tb-booth img{
+    max-height:348px;
+    max-width:348px;
+}
+.tb-booth img{
+    display: inline-block;
+    vertical-align: middle;
+}
+/* 放大镜-小图 */
+.tb-thumb{
+    width: 350px;
+    height: 50px;
+    padding: 0;
+    margin-top: 8px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+}
+.tb-thumb div{
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    margin-right: 29px;
+    border: 1px solid #CDCDCD;
+    text-align: center;
+}
+.tb-thumb div img{
+    display: inline-block;
+    max-height:45px;
+    max-width:45px;
+}
+.tb-thumb .tb-selected{
+    border: 1px solid red;
+}
+/* 放大镜-遮罩 */
+div.zoomDiv{
+    z-index:999;
+    position:absolute;
+    top:0px;left:0px;
+    width:200px;
+    height:200px;
+    background:#ffffff;
+    border:1px solid #CDCDCD;
+    display:none;
+    text-align:center;
+    overflow:hidden;
+}
+div.zoomMask{
+    position:absolute;
+    background:url("http://p75wjroq9.bkt.clouddn.com/mask.png") repeat scroll 0 0 transparent;
+    cursor: pointer ;
+    z-index:1;
+}
+/* 右侧商品信息 */
+.art-right-info{
+    float: right;
+    padding: 5px 20px;
+    width: 400px;
+    height: 340px;
+    margin-top: 5px;
+}
+.info-title{
+    padding: 0  5px 8px;
+}
+.infoName{
+    line-height: 35px;
+}
+.info-cont{
+    margin-left: 5px;
+}
+.infoType{
+    display: inline-block;
+    color: #fff;
+    margin-top: 3px;
+    margin-left: 22px;
+    margin-right: 18px;
+    padding: 3px 10px;
+    background: #F2C345;
+    border-radius: 5px;
+}
+.infoPrice{
+    color: crimson;
+}
+.info-list{
+    height: 50px;
+    padding: 5px;
+}
+.info-list a{
+    color: #08B35F;
+    text-decoration: none;
+}
+.listName{
+    display: inline-block;
+    color: #333;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin: 25px 5px 0 0;
+}
+.bdsharebuttonbox{
+    margin: 30px 0 0 28px;
+}
+.bdsharebuttonbox a{
+    margin-right: 12px !important;
+}
+/* 商品描述 */
+.art-bot-describe{
+    width: 900px;
+    height: 200px;
+    clear: both;
+    padding-top: 40px;
+}
+.descTitle{
+    padding-top: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    color: #222;
+    font-size: 25px;
+    font-family: '楷体';
+}
+.descCont{
+    padding: 20px 60px 20px 20px;
+}
+.descCont p{
+    color: #111;
+    line-height: 30px;
+    text-indent: 3em;
+}
+.quotEnd img{
+    float: right;
+}
+/* 评论列表 */
+.discussTitle{
+    clear: both;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    color: #222;
+    font-size: 25px;
+    font-family: '楷体';
+}
+.discussList{
+    color: #959595;
+    clear: both;
+    padding: 20px;
+}
+.discussName{
+    margin-left: 5px;
+}
+.discussName a{
+    color: #959595;
+    text-decoration: none;
+}
+.discussList p {
+    text-indent: 2em;
+}
+.discussCont div{
+    padding: 10px 0px;
+}
+.discussText{
+    text-indent: 2em;
+}
+.discussTime{
+    text-align: right;
+}
+/* 发布评论 */
+.publishBtn{
+    float: right;
+    margin: 10px 10px 20px 0px;
+}
+.publishDiscuss{
+    color: #959595;
+    border: 1px solid #959595;
+    border-radius: 10px;
+    width: 825px;
+    height: 60px;
+    outline: none;
+    resize: none;
+    padding: 10px;
+    line-height: 25px;
+    text-indent: 4em;
+}
+.publishDiscuss a{
+    text-decoration: none;
+    color: #08B35F;
+}
+.collectStatus{
+    cursor: pointer;
+    color: #08B35F;
+}

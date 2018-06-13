@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>系统通知 - 毕业季</title>
+
+    <!-- ThirdParty -->
+    <script src="http://p75wjroq9.bkt.clouddn.com/vue.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/jquery.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/element.min.js"></script>
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/normalize.css">
+    <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/iconfont.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/css/admin/adminInfo.css">
+</head>
+
+<body>
+    <!-- Layout -->
+    <div id="app">
+        <el-container>
+            <!-- Header 区域 -->
+            <el-header>
+                <a href="__APP__/Admin/admin"><div class="logo">毕业季 后台管理系统</div></a>
+                <el-button type="warning" plain @click="loginOut">退出登录</el-button>
+            </el-header>
+
+            <el-container>
+                <!-- 侧边栏 -->
+                <el-aside>
+                    <div class="userInfo">
+                        <div class="userInfo-pic">
+                            <img src="http://p75wjroq9.bkt.clouddn.com/user-icon.png" alt="头像" title="头像" @click="toAdmin">
+                        </div>
+                        <div class="userInfo-name">欢迎您！{{infoData.adminName}}</div>
+                    </div>
+                    <el-menu default-active="5-1" unique-opened="true"  collapse-transition="false">
+                        <el-menu-item index="1">
+                            <div @click="toAdmin">
+                                <i class="el-icon-location"></i>
+                                <span slot="title">系统概要</span>
+                            </div>
+                        </el-menu-item>
+                        <el-submenu index="2">
+                            <template slot="title">
+                                <div @click="toUser">
+                                    <i class="el-icon-service"></i>
+                                    <span slot="title">用户管理</span>
+                                </div>
+                            </template>
+                            <el-menu-item index="2-1">查看用户</el-menu-item>
+                            <el-menu-item index="2-2">更改状态</el-menu-item>
+                        </el-submenu>
+
+                        <el-submenu index="3">
+                            <template slot="title">
+                                <div @click="toGoods">
+                                    <i class="el-icon-menu"></i>
+                                    <span slot="title">商品管理</span>
+                                </div>
+                            </template>
+                            <el-menu-item index="3-1">查看商品</el-menu-item>
+                            <el-menu-item index="3-2">删除商品</el-menu-item>
+                        </el-submenu>
+
+                        <el-submenu index="4">
+                            <template slot="title">
+                                <div @click="toType">
+                                    <i class="el-icon-document"></i>
+                                    <span slot="title">分类管理</span>
+                                </div>
+                            </template>
+                            <el-menu-item index="4-1">查看分类</el-menu-item>
+                            <el-menu-item index="4-2">添加分类</el-menu-item>
+                            <el-menu-item index="4-3">删除分类</el-menu-item>
+                        </el-submenu>
+
+                        <el-submenu index="5">
+                            <template slot="title">
+                                <div>
+                                    <i class="el-icon-info"></i>
+                                    <span slot="title">系统通知</span>
+                                </div>
+                            </template>
+                            <el-menu-item index="5-1" @click="crumbsSet('查看通知')">查看通知</el-menu-item>
+                            <el-menu-item index="5-2" @click="crumbsSet('发布通知')">发布通知</el-menu-item>
+                            <el-menu-item index="5-3" @click="crumbsSet('删除通知')">删除通知</el-menu-item>
+                        </el-submenu>
+
+                        <el-submenu index="6">
+                            <template slot="title">
+                                <div @click="toSet">
+                                    <i class="el-icon-setting"></i>
+                                    <span slot="title">其它设置</span>
+                                </div>
+                            </template>
+                            <el-menu-item index="6-1">添加账户</el-menu-item>
+                            <el-menu-item index="6-2">修改密码</el-menu-item>
+                        </el-submenu>
+                    </el-menu>
+                </el-aside>
+
+                <!-- 内容区域 -->
+                <el-main>
+                    <!-- 面包屑导航 -->
+                    <el-breadcrumb separator-class="el-icon-arrow-right" class="crumbs">
+                        <el-breadcrumb-item><span @click="toAdmin">毕业季</span></el-breadcrumb-item>
+                        <el-breadcrumb-item><span @click="toInfo">系统通知</span></el-breadcrumb-item>
+                        <el-breadcrumb-item>{{crumbsTitle}}</el-breadcrumb-item>
+                    </el-breadcrumb>
+
+                    <!-- 消息列表 -->
+                    <div class="infoItem" v-for="item in infoData.msg" v-show="showStatus">
+                        <div class="infoTitle">
+                            <i>{{item.n_title}}</i>
+                        </div>
+                        <div class="infoCont">{{item.n_content}}</div>
+                        <div class="infoTime">{{item.n_time}}</div>
+                    </div>
+
+                    <!-- 发布通知 -->
+                    <div class="releaseWrap" v-show="releaseStatus">
+                        <el-input v-model="releaseData.title"  class="releaseTitle">
+                            <template slot="prepend">通知标题</template>
+                        </el-input>
+                        <el-input v-model="releaseData.content" placeholder="快来说点什么吧~" class="releaseCont" type="textarea" :rows="4"></el-input>
+                        <el-button type="primary" plain @click="releaseForm"  class="releaseBtn">立即发布</el-button>
+                    </div>
+
+                    <!-- 删除通知 -->
+                    <div class="infoItem" v-for="item in infoData.msg" v-show="delStatus">
+                        <div class="infoTitle">
+                            <i>{{item.n_title}}</i>
+                            <el-button type="danger" :data-id="'__APP__/Admin/deleteNotice?id='+item.n_id" plain @click="deleteInfo($event)">
+                                <span :data-id="'__APP__/Admin/deleteNotice?id='+item.n_id">删除</span>
+                            </el-button>
+                        </div>
+                        <div class="infoCont">{{item.n_content}}</div>
+                        <div class="infoTime">{{item.n_time}}</div>
+                    </div>
+                </el-main>
+            </el-container>
+
+            <!-- Footer 区域 -->
+            <el-footer>
+                <div class="links">
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span class="footer-mid">您是第&nbsp;&nbsp;
+                        <span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span>
+                    <a href="__APP__/Index/index">系统首页</a><a href="__APP__/Login/login">用户登录</a><a href="__APP__/Login/loginAdmin">管理员登录</a>
+                </div>
+                <p class="copyright"> Copyright © 2018 毕业季 All Rights Reserved </p>
+            </el-footer>
+        </el-container>
+    </div>
+
+    <!-- VUE -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                crumbsTitle: '查看通知',
+                
+                /* 通知功能 状态 */
+                showStatus: true,
+                releaseStatus: false,
+                delStatus: false,
+                
+                /* 发布通知 数据 */
+                releaseData: {
+                    title: '',
+                    content: ''
+                },
+                
+                /* 查看删除 数据 */
+                infoData: {}
+            },
+            methods: {
+                // 路由方法（脑残了，可以传参写一个方法的！！！~汗）
+                toAdmin: function () {
+                    location.href = '__APP__/Admin/admin';
+                },
+                toGoods: function () {
+                    location.href = '__APP__/Admin/adminGoods';
+                },
+                toUser: function () {
+                    location.href = '__APP__/Admin/adminUser';
+                },
+                toType: function () {
+                    location.href = '__APP__/Admin/adminType';
+                },
+                toInfo: function () {
+                    location.href = '__APP__/Admin/adminInfo';
+                },
+                toSet: function () {
+                    location.href = '__APP__/Admin/adminSet';
+                },
+
+                // 导航方法
+                crumbsSet: function (crumbs) {
+                    this.crumbsTitle = crumbs;
+                    switch (crumbs) {
+                        case '查看通知':
+                            this.showStatus = true; this.releaseStatus = this.delStatus = false;
+                            break;
+                        case '发布通知':
+                            this.releaseStatus = true; this.showStatus = this.delStatus = false;
+                            break;
+                        case '删除通知':
+                            this.delStatus = true; this.showStatus = this.releaseStatus = false;
+                            break;
+                        default:
+                            break;
+                    }
+                },
+
+                //退出登录
+                loginOut: function () {
+                    this.$confirm('您确定要 退出登录 吗 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let url = '__APP__/Login/out_login_admin';
+                        let _that = this;
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                location.href = '__APP__/Login/loginAdmin';
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    }).catch(() => {
+                        return;
+                    });
+                },
+
+                // 获取通知
+                getInfo: function() {
+                    let url = '__APP__/Admin/findNotice';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.infoData = data;
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+
+                // 发布通知
+                releaseForm: function () {
+                    this.$confirm('您确定要发布该条 系统通知 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let url = '__APP__/Admin/addNotice';
+                        let _that = this;
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            dataType: 'JSON',
+                            data: _that.releaseData,
+                            success: function (data) {
+                                if(data.code=='-1'){
+                                    _that.$message({
+                                            message: data.msg,
+                                            type: 'error'
+                                    });
+                                }else{
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getInfo();
+                                    _that.releaseData = {};
+                                }
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    });
+                },
+
+                // 删除通知
+                deleteInfo: function(e) {
+                    this.$confirm('您确定要删除该条 系统通知 ？', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        let delId = e.target.getAttribute('data-id');
+                        let _that = this;
+                        $.ajax({
+                            url: delId,
+                            type: 'GET',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                if( data.code == 1 ){
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'success'
+                                    });
+                                    _that.getInfo();
+                                }else{
+                                    _that.$message({
+                                        message: data.msg,
+                                        type: 'error'
+                                    });
+                                }
+                            },
+                            error: function () {
+                                _that.$message({
+                                    message: '网络 或者 服务器出错,请稍后重试！',
+                                    type: 'error'
+                                });
+                            }
+                        });
+                    });
+                }
+            },
+            mounted: function () {
+                // 挂载实例、初始化列表
+                this.getInfo();
+            }
+        })
+    </script>
+</body>
+
+</html>

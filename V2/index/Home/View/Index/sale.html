@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>出售商品 - 毕业季</title>
+
+    <!-- ThirdParty -->
+    <script src="http://p75wjroq9.bkt.clouddn.com/vue.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/jquery.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/element.min.js"></script>
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/normalize.css">
+    <link rel="stylesheet" href="__PUBLIC__/lib/element.min.css">
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/iconfont.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/css/index/sale.css">
+</head>
+
+<body>
+    <!-- Layout -->
+    <div id="app">
+        <el-container>
+            <!-- Header 区域 -->
+            <el-header>
+                <div class="headerWrap">
+                    <a href="__APP__/Index/index"><span class="logo">毕业季</span></a>
+                    <div class="navLogin">
+                        <a href="__APP__/Index/personal" v-if="isLogin">
+                            <i class="icon iconfont icon-questions"></i>
+                            <span> {{loginInfo}} </span>
+                            <span @click="loginOut" class="outLogin"> &nbsp; &nbsp;退出 </span>
+                        </a>
+                        <a href="__APP__/Login/login" v-else>
+                            <i class="icon iconfont icon-questions"></i>
+                            <span> 立即登录 </span>
+                        </a>
+                    </div>
+                    <div class="navList">
+                        <a href="__APP__/Index/index">首页</a>
+                        <a href="__APP__/Index/buy">寻购二货</a>
+                        <a href="__APP__/Index/sale">出售二货</a>
+                        <a href="__APP__/Index/personal">个人空间</a>
+                        <a href="__APP__/Index/contact">关于我们</a>
+                    </div>
+                </div>
+            </el-header>
+
+            <!-- 内容区域 -->
+            <el-main v-loading="(!isLogin&&typeInfo) || loadingStatus">
+                <div class="title"><span style="font-family: '楷体';font-size: 24px;">毕业季</span> · 专属于你的二手商店</div>
+                <P>商品信息</P>
+                <form enctype="multipart/form-data" id="pubForm">
+                    <div class="infoList">
+                        <i class="icon iconfont icon-task"></i>
+                        <span class="listSpan">&nbsp;&nbsp;名称：</span>
+                        <el-input name="g_name" v-model="releaseInfo.g_name"></el-input>
+                    </div>
+                    <div class="infoList">
+                        <i class="icon iconfont icon-order"></i>
+                        <span class="listSpan">&nbsp;&nbsp;类型：</span>
+                        <div class="typeList">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <el-radio name="g_type" label="其它"  v-model="releaseInfo.g_type">其它</el-radio>
+                            <el-radio name="g_type" :label="item.t_type" v-for="item in typeInfo"  v-model="releaseInfo.g_type">{{item.t_type}}</el-radio>
+                        </div>
+                    </div>
+                    <div class="infoList">
+                        <i class="icon iconfont icon-coupons"></i>
+                        <span class="listSpan">&nbsp;&nbsp;价格：</span>
+                        <el-input name="g_price" v-model="releaseInfo.g_price"></el-input>
+                    </div>
+                    <div class="infoList">
+                        <i class="icon iconfont icon-message"></i>
+                        <span class="listSpan">&nbsp;&nbsp;描述：</span>
+                        <el-input type="textarea" name="g_construct"  v-model="releaseInfo.g_construct"></el-input>
+                    </div>
+                    <p>上传图片</p>
+                    <div class="infoList">
+                        <a href="javascript:;" class="picBtn">
+                            <input type="file" accept="image/png,image/gif,image/jpg,image/jpeg" @change="picShow" name="g_picture[]" multiple="multiple">点击上传</input>
+                        </a>
+                        <div class="picList" v-for="item in releaseInfo.g_pricture">{{item}}</div>
+                    </div>
+                    <p>关于发布</p>
+                    <div class="infoList">
+                        <el-checkbox v-model="agreeStatus" @click="agreeStatus=!agreeStatus">我同意<a href="__APP__/Index/rules" style="color: crimson;text-decoration: none;">《毕业季 · 商品发布规则》</a></el-checkbox>
+                    </div>
+                    <div class="infoList">
+                        <el-button size="mini" type="success" @click="pubGoods" :disabled="!agreeStatus">立即发布</el-button>
+                    </div>
+                </form>
+            </el-main>
+
+            <!-- Footer区域 -->
+            <el-footer>
+                <div class="links">
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="footer-mid">您是第&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span><a href="__APP__/Index/index">系统首页</a> |
+                    <a href="__APP__/Login/login.html">用户登录</a> |
+                    <a href="__APP__/Login/loginAdmin.html">管理员登录</a>
+                </div>
+                <p class="copyright"> Copyright © 2018 毕业季 All Rights Reserved </p>
+            </el-footer>
+        </el-container>
+    </div>
+
+    <!-- VUE -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                // 登录状态
+                isLogin: false,
+                // 登录的信息
+                loginInfo: '',
+
+                loadingStatus: false,
+
+                // 商品类型数据
+                typeInfo: {},         
+
+                // 发布物品的数据
+                releaseInfo: {
+                    g_name: '',
+                    g_type: '',
+                    g_price: '',
+                    g_construct: '',
+                    g_pricture: [],
+                },
+
+                // 是否同意协议
+                agreeStatus: false,
+
+            },
+            methods: {
+                // 加载登录状态
+                loadingLogin: function (params) {
+                    let url = '__APP__/Login/isLoginUser';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.isLogin = true;
+                                _that.loginInfo = data.msg;
+                                _that.getType();
+                            } else if (data.code == '-1') {
+                                _that.$confirm('您还未进行登录，请登录后再进行操作！', '未登录！', {
+                                    confirmButtonText: '立即去登录',
+                                    cancelButtonText: '返回上一页',
+                                    type: 'warning'
+                                }).then(() => {
+                                    location = '__APP__/Login/login';
+                                }).catch(() => {
+                                    if (history.length == 2) {
+                                        location = '__APP__/Index/index';
+                                    } else {
+                                        history.go(-1);
+                                    }
+                                });
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+                
+                // 获取商品类型
+                getType: function (params) {
+                    let url = '__APP__/Personal/findType';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.code == '0') {
+                                _that.typeInfo = data.msg;
+                            }
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                },
+                
+                // 发布商品
+                pubGoods: function (params) {
+                    if( this.formCheck() ){
+                        this.$confirm('您确定要 发布该商品 吗 ？', '提示', {
+                            confirmButtonText: '确定',
+                            cancelButtonText: '取消',
+                            type: 'warning'
+                        }).then(() => {
+                            let _that = this;
+                            let url = '__APP__/Personal/publishGoods';
+                            let data = new FormData($('#pubForm')[0]);
+                            this.loadingStatus = true;
+                            $.ajax({
+                                url: url,
+                                type: 'POST',
+                                data: data,
+                                cache: false,
+                                processData: false,
+                                contentType: false,
+                                success: function (data) {
+                                    _that.loadingStatus = false;
+                                    if (data.code == '0') {
+                                        _that.$message({
+                                            message: data.msg,
+                                            type: 'success'
+                                        });
+                                        location.href = '__APP__/Index/buy';
+                                    } else if (data.code == '-1') {
+                                        _that.$message({
+                                            message: data.msg,
+                                            type: 'error'
+                                        });
+                                    }
+                                },
+                                error: function () {
+                                    _that.loadingStatus = false;
+                                    _that.$message({
+                                        message: '网络 或者 服务器出错,请稍后重试！',
+                                        type: 'error'
+                                    });
+                                }
+                            });
+                        }).catch(() => {
+                            return;
+                        });
+                    }
+                },
+
+                // 表单验证
+                formCheck: function (params) {
+                    let obj = this.releaseInfo;
+                    let errorTips = '';
+                    for (const key in obj) {
+                        if(!obj[key].length){
+                            this.errorTips('请填写完整商品信息！');
+                            return false;
+                        }
+                    }
+                    if( obj.g_name.length>50 ){
+                        this.errorTips('商品名称 长度应该介于 50字 之间！');
+                        return false;
+                    }
+                    if( obj.g_construct.length>500 ){
+                        this.errorTips('商品描述 请控制在 10~100字 之间！');
+                        return false;
+                    }
+                    if (obj.g_pricture.length < 1 || obj.g_pricture.length > 5) {
+                        this.errorTips('商品图片 请控制在 1~5张 之间！');
+                        return false;
+                    }
+                    return true;
+                },
+
+                errorTips: function (params) {
+                    this.$message({
+                        message: params,
+                        type: 'error'
+                    });
+                },
+
+                // 图片名称展示
+                picShow: function (params) {
+                    this.releaseInfo.g_pricture = [];
+                    for (let index = 0; index < params.target.files.length; index++) {
+                        this.releaseInfo.g_pricture.push(params.target.files[index].name);
+                    }
+                },
+
+                // input file 无法清空或删除某一元素，导致不能直接通过原始表单上传数据
+                // 采用模拟数据时，file 类型无法 append
+                // 所以去掉删除某一图片的功能，直接用原始表单上传
+
+                // picRemove: function (params) {
+                //     let el = params.target.getAttribute('data-id');
+                //     var index = this.releaseInfo.g_pricture.indexOf(el);
+                    
+                //     if (index > -1) {
+                //         this.releaseInfo.g_pricture.splice(index, 1);
+                //         this.fileValue = '';
+                //     }
+                // },
+
+                // 退出登录
+                loginOut: function (params) {
+                    let url = '__APP__/Login/out_login';
+                    let _that = this;
+                    $.ajax({
+                        url: url,
+                        dataType: 'JSON',
+                        success: function (data) {
+                            _that.$message({
+                                message: data.msg,
+                                type: 'success'
+                            });
+                            location = '__APP__/Login/login'
+                        },
+                        error: function () {
+                            _that.$message({
+                                message: '网络 或者 服务器出错,请稍后重试！',
+                                type: 'error'
+                            });
+                        }
+                    });
+                }
+            },
+            mounted: function () {
+                // 判断是否登录
+                this.loadingLogin();
+            }
+        })
+    </script>
+</body>
+
+</html>
