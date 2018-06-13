@@ -1,10 +1,10 @@
 <div align="center">
-    <img src="/logo.png" width="100" height="100"/>
+    <img src="./TAG/logo.png" width="100" height="100"/>
 </div>
 <div align="center">
-    <img src="/tp.svg"/>
-    <img src="/vue.svg"/>
-    <img src="/element.svg"/>
+    <img src="./TAG/tp.svg"/>
+    <img src="./TAG/vue.svg"/>
+    <img src="./TAG/element.svg"/>
 </div>
 
 # A Second-Hand Transaction Information Publishing Platform
