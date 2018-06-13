@@ -70,7 +70,7 @@ class RepasswordController extends Controller {
 	}
 	function RepasswordMail($email, $token, $num, $password){//参数分别为email，token，用户身份
     	$address = $email;
-    	$title = "毕业季，密码重置";
+    	$title = "DSMall，密码重置";
     	$body = "<a href='http://localhost/platform/index.php/Home/CheckToken?token=$token&num=$num&password=$password'>确认是本人操作！点击完成验证</a>";
     	$status = SendMail($address,$title,$body);   //邮件的整体格式
     	if(!$status) {
