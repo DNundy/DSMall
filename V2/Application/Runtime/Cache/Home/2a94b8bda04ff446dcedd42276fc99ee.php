@@ -1,0 +1,183 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>主页 - DSMall</title>
+
+    <!-- ThirdParty -->
+    <script src="http://p75wjroq9.bkt.clouddn.com/vue.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/jquery.min.js"></script>
+    <script src="http://p75wjroq9.bkt.clouddn.com/element.min.js"></script>
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/normalize.css">
+    <link rel="stylesheet" href="/dsmall/v2/Public/lib/element.min.css">
+    <link rel="stylesheet" href="http://p75wjroq9.bkt.clouddn.com/iconfont.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/dsmall/v2/Public/css/index/index.css">
+</head>
+
+<body>
+    <!-- Layout -->
+    <div id="app">
+        <el-container>
+            <!-- Header 区域 -->
+            <el-header :style="headerBg"></el-header>
+
+            <!-- 内容区域 -->
+            <el-main>
+                <div class="mainTitle">
+                    <p class="titleOne">DSMall</p>
+                    <p class="titleTwo">没有中间商赚差价</p>
+                </div>
+                <div class="mainOverview">
+                    <div class="overBuy-bg">
+                        <div class="square overBuy">
+                            <p><i class="icon iconfont icon-int"></i></p>
+                            <a href="/dsmall/v2/index.php/Index/buy"><el-button type="success">寻购二货</el-button></a>
+                            <h5>种类齐全，琳琅满目</h5>
+                        </div>
+                    </div>
+                    <div class="overLogin-bg">
+                        <div class="square overLogin">
+                            <p><i class="icon iconfont icon-customerservice_fill"></i></p>
+                            <a v-if="!isLogin" href="/dsmall/v2/index.php/Login/login"><el-button type="danger">立即登录</el-button></a>
+                            <a v-else href="/dsmall/v2/index.php/Index/personal"><el-button type="danger" >欢迎，{{ loginInfo }}</el-button></a>
+                            <h5>一键登录，方便快捷</h5>
+                        </div>
+                    </div>
+                    <div class="overSale-bg">
+                        <div class="square overSale">
+                            <p><i class="icon iconfont icon-coupons_fill"></i></p>
+                            <a href="/dsmall/v2/index.php/Index/sale"><el-button type="primary">出售二货</el-button></a>
+                            <h5>极简发布，线下交易</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainFun">
+                    <p class="mainFun-title"> 放心的交易信息平台 </p>
+                    <div class="mainFun-list">
+                        <div class="listItem">
+                            <i class="el-icon-location"></i>
+                            <span>安全</span>
+                            <p>当面沟通 <br> 信息真实 <br> 安全可靠</p>
+                        </div>
+                        <div class="listItem">
+                            <i class="el-icon-star-on"></i>
+                            <span>快捷</span>
+                            <p>同校交易 <br> 省去物流 <br> 无需等待</p>
+                        </div>
+                        <div class="listItem">
+                            <i class="el-icon-success"></i>
+                            <span>简单</span>
+                            <p>无需下载 <br> 极速注册 <br> 操作简单</p>
+                        </div>
+                        <div class="listItem">
+                            <i class="el-icon-setting"></i>
+                            <span>方便</span>
+                            <p>分类明晰 <br> 条件筛选 <br> 快速搜索</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainBanner">
+                    <div class="bannerBox">
+                        <div class="bannerLeft">
+                            <p>明天你是否会想起，昨天你写的日记</p>
+                            <p>明天你是否还惦记，曾经最爱哭的你</p>
+                            <p>老师们都已想不起，猜不出问题的你</p>
+                            <p>我也是偶然翻相片，才想起同桌的你</p>
+                            <p>你也曾无意中说起，喜欢跟我在一起</p>
+                            <p>那时候天总是很蓝，日子总过得太慢</p>
+                            <p>你总说毕业遥遥无期，转眼就各奔东西</p>
+                            <p>青春不留遗憾 , 人生不说如果</p>
+                            <p>DSMall ， 在等你</p>
+                            <a href="/dsmall/v2/index.php/Index/contact">关于我们</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainContact">
+                    <div class="mainContactBox">
+                        <div class="contactIco">
+                            <p>DSMall</p>
+                            <img src="/dsmall/v2/Public/img/assets/favicon.ico" alt="">
+                        </div>
+                        <div class="contactInfo">
+                            <p class="infoTitle">联系我们 / contact us</p>
+                            <p>QQ：953459677</p>
+                            <p>Tel：15809295284</p>
+                            <p>地址：西安邮电大学长安校区</p>
+                        </div>
+                        <div class="contactCode"><img src="/dsmall/v2/Public/img/assets/contact.jpg" alt=""></div>
+                    </div>
+                </div>
+            </el-main>
+
+            <!-- Footer区域 -->
+            <el-footer>
+                <div class="links">
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="footer-mid">您是第&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;位小伙伴 !</span><a href="/dsmall/v2/index.php/Index/index">系统首页</a> |
+                    <a href="/dsmall/v2/index.php/Login/login.html">用户登录</a> |
+                    <a href="/dsmall/v2/index.php/Login/loginAdmin.html">管理员登录</a>
+                </div>
+                <p class="copyright"> Copyright © 2018 DSMall All Rights Reserved </p>
+            </el-footer>
+        </el-container>
+    </div>
+
+    <!-- VUE -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                isLogin: false,
+                loginInfo: '',
+
+                headerBg: '',
+                headerBgIndex: '0',
+                headerBgPic:[
+                    'background:url(http://p75wjroq9.bkt.clouddn.com/banner1.jpg) no-repeat center',
+                    'background:url(http://p75wjroq9.bkt.clouddn.com/banner2.jpg) no-repeat center',
+                    'background:url(http://p75wjroq9.bkt.clouddn.com/banner3.jpg) no-repeat center',
+                    'background:url(http://p75wjroq9.bkt.clouddn.com/banner4.jpg) no-repeat center',
+                    'background:url(http://p75wjroq9.bkt.clouddn.com/banner5.jpg) no-repeat center',
+                ]
+            },
+            methods: {
+            },
+            mounted: function (params) {
+                // 更换Banner 加载登录状态
+                let _that = this;
+                let url = '/dsmall/v2/index.php/Login/isLoginUser';
+
+                this.headerBg = _that.headerBgPic[this.headerBgIndex++];
+                setInterval(() => {
+                    if( _that.headerBgIndex == _that.headerBgPic.length ){
+                        _that.headerBgIndex=0;
+                    }
+                    _that.headerBg = _that.headerBgPic[_that.headerBgIndex++];
+                }, 5000);
+
+                $.ajax({
+                    url: url,
+                    dataType: 'JSON',
+                    success: function (data) {
+                        if (data.code == 0) {
+                            _that.isLogin = true;
+                            _that.loginInfo = data.msg;
+                        }
+                    },
+                    error: function () {
+                        _that.$message({
+                            message: '网络 或者 服务器出错,请稍后重试！',
+                            type: 'error'
+                        });
+                    }
+                });
+            }
+        })
+    </script>
+</body>
+
+</html>

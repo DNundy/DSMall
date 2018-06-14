@@ -21,5 +21,5 @@ return array(
     
     'TMPL_CACHE_ON' => false,//禁止模板编译缓存 
 	'HTML_CACHE_ON' => false,//禁止静态缓存 
-	'URL_MODEL' =>  2,
+	'URL_MODEL' =>  1,
 );
