@@ -1,14 +1,14 @@
 <?php
-namespace Home\Controller;
+namespace Api\Controller;
 use Think\Controller;
 /*
    权限控制，用于判断用户是否登录 
 */
-class UserCommonController extends Controller{
+class AdminCommonController extends Controller{
     Public function _initialize(){     //前置操作
     // 初始化的时候检查用户权限
-        if(!isset($_SESSION['num']) || $_SESSION['num'] == ''){
-            redirect('../Login/login');
+        if(!isset($_SESSION['numAdmin']) || $_SESSION['numAdmin'] == ''){
+            redirect('../Login/loginAdmin');
         }
     }
 }

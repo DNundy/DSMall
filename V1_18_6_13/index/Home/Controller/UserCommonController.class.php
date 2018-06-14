@@ -1,5 +1,5 @@
 <?php
-namespace Home\Controller;
+namespace Api\Controller;
 use Think\Controller;
 /*
    权限控制，用于判断用户是否登录 

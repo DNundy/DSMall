@@ -8,31 +8,6 @@ class IndexController extends Controller {
 	public function index(){
 		$this->display('index');
 	}
-	public function buy(){
-		$this->display('buy');
-	}
-	public function contact(){
-		$this->display('contact');
-	}
-	public function detail(){
-		$this->display('detail');
-	}
-	public function personal(){
-		$this->display('personal');
-	}
-	public function qzone(){
-		$this->display('qzone');
-	}
-	public function sale(){
-		$this->display('sale');
-	}
-	public function rules(){
-		$this->display('rules');
-	}
-	public function error(){
-		$this->display('error');
-	}
-	
 	public function findType(){
 		$type = M('Type');
 		$typeGoods = $type->where()->select();

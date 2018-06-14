@@ -90,6 +90,13 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted () {
+    this.$ajax.get('/api/index/findType').then((response)=>{
+        this.newsList=response.data.data;
+      }).catch((response)=>{
+        console.log(response);
+    })
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <?php
-namespace Home\Controller;
+namespace Api\Controller;
 use Think\Controller;
 //重置密码
 class RepasswordController extends Controller {

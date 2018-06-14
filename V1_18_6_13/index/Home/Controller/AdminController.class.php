@@ -1,6 +1,6 @@
 <?php
 // 本类由系统自动生成，仅供测试用途
-namespace Home\Controller;
+namespace Api\Controller;
 use Think\Controller;
 class AdminController extends AdminCommonController {
 	public function admin(){//显示用户登录页面

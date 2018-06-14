@@ -1,5 +1,5 @@
 <?php
-namespace Home\Controller;
+namespace Api\Controller;
 use Think\Controller;
 class CodeController extends Controller {
     public function index(){

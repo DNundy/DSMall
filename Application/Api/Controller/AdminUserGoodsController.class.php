@@ -1,6 +1,6 @@
 <?php
 // 本类由系统自动生成，仅供测试用途
-namespace Home\Controller;
+namespace Api\Controller;
 use Think\Controller;
 use Think\Model;
 class AdminUserGoodsController extends AdminCommonController {
