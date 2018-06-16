@@ -7,8 +7,8 @@
  
 <script>
 
-import UserHeader from "./layout/header";
-import UserFooter from "./layout/footer";
+import UserHeader from "./layout/UserHeader";
+import UserFooter from "./layout/UserFooter";
 
 export default {
   data () {
