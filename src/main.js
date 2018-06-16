@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+import router from './router/router'
 import axios from 'axios'
 axios.defaults.baseURL = '/dsmall'
 Vue.prototype.$ajax = axios
