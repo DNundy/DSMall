@@ -2,15 +2,28 @@
   <div class="header">
         <div class="headerWrap">
             <a href="/">
-                <span class="hlogo">趣二手</span>
+                <span class="headerLogo">趣二手</span>
             </a>
-            <div class="hList">
+            <div class="headerList">
                 <a href="" class="active">寻购商品</a>
                 <a href="">我要出售</a>
                 <a href="">个人空间</a>
                 <a href="">关于我们</a>
             </div>
+            <div class="user-info">
+                <span v-if="true">
+                    <span class="goLogin" @click="openLoginDiv">登录</span>
+                    <span class="goRegister" @click="openRegisterDiv">&nbsp;&nbsp;注册</span>
+      
+           </span>
+                <span v-else>
+                    <span>Nundy</span>
+                    <span class="outLogin">&nbsp;&nbsp;退出</span>
+                </span>
+            </div>
             <user-login></user-login>
+            <user-register></user-register>
+            <user-forget></user-forget>
         </div>
   </div>
 </template>
@@ -18,14 +31,26 @@
 <script>
 
 import UserLogin from '../common/UserLogin'
+import UserRegister from '../common/UserRegister'
+import UserForget from '../common/UserForget'
 
 export default {
   data () {
     return {
     }
   },
+  methods:{
+      openLoginDiv(){
+          this.$store.commit('openLoginDiv');
+      },
+      openRegisterDiv(){
+          this.$store.commit('openRegisterDiv');
+      }
+  },
   components: {
-      UserLogin
+      UserLogin,
+      UserRegister,
+      UserForget
   }
 }
 </script>
@@ -45,7 +70,8 @@ export default {
         margin: 0 auto;
         overflow: hidden;
     }
-    .hlogo{
+    /* header logo */
+    .headerLogo{
         display: inline-block;
         float: left;
         font-size: 26px;
@@ -56,13 +82,14 @@ export default {
         margin-left: 50px;
         font-family: '楷体';
     }
-    .hList{
+    /* header选项列表 */
+    .headerList{
         float: left;
         width: 600px;
         height: 50px;
         margin-left: 80px;
     }
-    .hList a{
+    .headerList a{
         display: block;
         float: left;
         position: relative;
@@ -77,7 +104,7 @@ export default {
         font-size: 14px;
         text-decoration: none;
     }
-    .hList a:after{
+    .headerList a:after{
         content: "";
         width: 0;
         height: 1px;
@@ -87,8 +114,25 @@ export default {
         left: 50%;
         transition: all .3s;
     }
-    .hList a:hover:after{
+    .headerList a:hover:after{
         left: 0%;
         width: 100%;
     }
+    /* 登录注册按钮 */
+    .user-info{
+        float: right;
+        width: 200px;
+        height: 40px;
+        text-align: center;
+        overflow: hidden;
+    }
+    .user-info span{
+        font-size: 16px;
+        line-height: 40px;
+        color: #08B35F;
+        cursor: pointer;
+    }
+    .user-info .outLogin{
+        color: crimson;
+    } 
 </style>

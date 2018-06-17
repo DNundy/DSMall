@@ -1,20 +1,19 @@
 <template>
-    <div class="loginWrap" v-if="loginDivStatus">
-        <div class="loginDiv">
-            <img class="loginLogo" src="@/assets/login_logo.png" alt="登录LOGO">
-            <div class="loginHead">
-                <span class="loginTitle">登录</span>
-                <div class="loginClose" @click="closeLoginDiv">×</div>
+    <div class="registerWrap" v-if="registerDivStatus">
+        <div class="registerDiv">
+            <div class="registerHead">
+                <span class="registerTitle">注册账号</span>
+                <div class="registerClose" @click="closeRegisterDiv">×</div>
             </div>
-            <div class="loginCont">
+            <div class="registerCont">
+                <input type="text" placeholder="请输入用户名">
                 <input type="text" placeholder="请输入手机号">
                 <input type="password" placeholder="请输入密码">
-                <input type="button" value="立即登录">
+                <input type="button" value="立即注册">
             </div>
-            <div class="loginFoot">
-                <span>没有账号？</span>
-                <span class="toRegister" @click="toRegister">朕要注册</span>
-                <span class="forgetPw" @click="toForget">忘记密码</span>
+            <div class="registerFoot">
+                <span>已有账号？</span>
+                <span class="toLogin" @click="toLogin">去登录</span>
             </div>
         </div>
     </div>
@@ -27,21 +26,17 @@ export default {
     }
   },
   methods: {
-      closeLoginDiv() {
-          this.$store.commit('closeLoginDiv');
+      closeRegisterDiv() {
+          this.$store.commit('closeRegisterDiv');
       },
-      toRegister() {
-          this.$store.commit('closeLoginDiv');
-          this.$store.commit('openRegisterDiv');
-      },
-      toForget() {
-          this.$store.commit('closeLoginDiv');
-          this.$store.commit('openForgetDiv');
+      toLogin() {
+          this.$store.commit('closeRegisterDiv');
+          this.$store.commit('openLoginDiv');
       }
   },
   computed: {
-      loginDivStatus(){
-          return this.$store.state.loginDivStatus;
+      registerDivStatus(){
+          return this.$store.state.registerDivStatus;
       }
   },
   mounted(){
@@ -51,7 +46,7 @@ export default {
  
  
 <style scoped>
-    .loginWrap{
+    .registerWrap{
         width: 100%;
         height: 100%;
         position: fixed;
@@ -59,25 +54,16 @@ export default {
         z-index: 999;
         background-color: rgba(0, 0, 0, .7);
     }
-    .loginDiv{
+    .registerDiv{
         width: 320px;
-        height: 290px;
+        height: 330px;
         position: absolute;
         top: 0;bottom: 0;left: 0;right: 0;
         margin: auto;
         background: #fff;
         border-radius: 6px;
     }
-    .loginLogo{
-        display: block;
-        width:100px;
-        height: auto;
-        position: absolute;
-        left: 0;right: 0;
-        top: -95px;
-        margin: auto;
-    }
-    .loginHead{
+    .registerHead{
         box-sizing: border-box;
         width: 100%;
         height: 50px;
@@ -85,13 +71,13 @@ export default {
         padding: 0 20px;
         margin-bottom: 20px;
     }
-    .loginTitle{
+    .registerTitle{
         font-size: 18px;
         font-weight: 600;
         color: #3c3c3c;
     }
     /* 关闭按钮 */
-    .loginClose{
+    .registerClose{
         width: 30px;
         height: 30px;
         text-align: center;
@@ -100,11 +86,11 @@ export default {
         cursor: pointer;
         color: #3c3c3c;
     }
-    .loginClose:hover{
+    .registerClose:hover{
         color: crimson;
     }
-    /* 登录页表单样式 */
-    .loginCont input[type=password], input[type=text], input[type=button]{
+    /* 注册页表单样式 */
+    .registerCont input[type=password], input[type=text], input[type=button]{
         padding: 10px;
         width: 86%;
         border-radius: 2px;
@@ -114,34 +100,31 @@ export default {
         margin: 15px auto;
         outline: none;
     }
-    .loginCont input[type=password], input[type=text]{
+    .registerCont input[type=password], input[type=text]{
         border: 1px solid #e9e9e9;
     }
-    .loginCont input[type=password]:focus,input[type=text]:focus{
+    .registerCont input[type=password]:focus,input[type=text]:focus{
         border-color: #307B8A;
     }
-    .loginCont input[type=button]{
+    .registerCont input[type=button]{
         cursor: pointer;
         color: #fff;
         border: none;
         background: #307B8A;
     }
-    /* 登录页底部提示 */
-    .loginFoot{
+    /*注册页底部提示*/
+    .registerFoot{
         box-sizing: border-box;
         width: 86%;
         padding: 10px;
         margin: 0 auto;
     }
-    .loginFoot span{
+    .registerFoot span{
         color: #757575;
         font-size: 14px;
     }
-    .loginFoot .toRegister, .loginFoot .forgetPw{
+    .registerFoot .toLogin{
         cursor: pointer;
         color: #307B8A;
-    }
-    .loginFoot .forgetPw{
-        float: right;
     }
 </style>

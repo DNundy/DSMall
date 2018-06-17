@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="indexWrap">
       <user-header></user-header>
       <user-footer></user-footer>
   </div>
@@ -24,5 +24,5 @@ export default {
  
  
 <style scoped>
- 
+
 </style>
