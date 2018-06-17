@@ -1,15 +1,15 @@
 <template>
     <div class="loginWrap" v-if="loginDivStatus">
         <div class="loginDiv">
-            <img class="loginLogo" src="@/assets/login_logo.png" alt="登录LOGO">
+            <img class="loginLogo" src="@/assets/logo_login.png" alt="登录LOGO">
             <div class="loginHead">
                 <span class="loginTitle">登录</span>
                 <div class="loginClose" @click="closeLoginDiv">×</div>
             </div>
             <div class="loginCont">
-                <input type="text" placeholder="请输入手机号">
-                <input type="password" placeholder="请输入密码">
-                <input type="button" value="立即登录">
+                <input type="text" placeholder="请输入手机号" v-model="loginInfo.id">
+                <input type="password" placeholder="请输入密码" v-model="loginInfo.password">
+                <input type="button" value="立即登录" @click="submitLogin">
             </div>
             <div class="loginFoot">
                 <span>没有账号？</span>
@@ -24,19 +24,31 @@
 export default {
   data () {
     return {
+        loginInfo: {
+            id: '',
+            password: ''
+        }
     }
   },
   methods: {
       closeLoginDiv() {
           this.$store.commit('closeLoginDiv');
+          this.loginInfo.id = this.loginInfo.password = '';
       },
       toRegister() {
-          this.$store.commit('closeLoginDiv');
+          this.closeLoginDiv();
           this.$store.commit('openRegisterDiv');
       },
       toForget() {
-          this.$store.commit('closeLoginDiv');
+          this.closeLoginDiv();
           this.$store.commit('openForgetDiv');
+      },
+      submitLogin(){
+        this.$ajax.post('/api/Account/encode', this.loginInfo).then((response)=>{
+            console.log(response);
+        }).catch((response)=>{
+            console.log(response);
+        })
       }
   },
   computed: {

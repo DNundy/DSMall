@@ -1,8 +1,9 @@
 <template>
     <div class="forgetWrap" v-if="forgetDivStatus">
         <div class="forgetDiv">
+            <img class="forgetLogo" src="@/assets/logo_forget.png" alt="注册LOGO">
             <div class="forgetHead">
-                <span class="forgetTitle">找回账号</span>
+                <span class="forgetTitle">找回</span>
                 <div class="forgetClose" @click="closeForgetDiv">×</div>
             </div>
             <div class="forgetCont">
@@ -29,7 +30,7 @@ export default {
           this.$store.commit('closeForgetDiv');
       },
       toLogin() {
-          this.$store.commit('closeForgetDiv');
+          this.closeForgetDiv();
           this.$store.commit('openLoginDiv');
       }
   },
@@ -61,6 +62,15 @@ export default {
         margin: auto;
         background: #fff;
         border-radius: 6px;
+    }
+    .forgetLogo{
+        display: block;
+        width:130px;
+        height: auto;
+        position: absolute;
+        left: 0;right: 0;
+        top: -58px;
+        margin: auto;
     }
     .forgetHead{
         box-sizing: border-box;

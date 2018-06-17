@@ -1,15 +1,17 @@
 <template>
     <div class="registerWrap" v-if="registerDivStatus">
         <div class="registerDiv">
+            <img class="registerLogo" src="@/assets/logo_register.png" alt="注册LOGO">
             <div class="registerHead">
-                <span class="registerTitle">注册账号</span>
+                <span class="registerTitle">注册</span>
                 <div class="registerClose" @click="closeRegisterDiv">×</div>
             </div>
             <div class="registerCont">
-                <input type="text" placeholder="请输入用户名">
-                <input type="text" placeholder="请输入手机号">
-                <input type="password" placeholder="请输入密码">
-                <input type="button" value="立即注册">
+                <input type="text" placeholder="请输入用户昵称" v-model="registerInfo.name">
+                <input type="text" placeholder="请输入手机号码" v-model="registerInfo.id">
+                <input type="email" placeholder="请输入电子邮箱" v-model="registerInfo.email">
+                <input type="password" placeholder="请输入登录密码" v-model="registerInfo.password">
+                <input type="button" value="立即注册" @click="submitRegister">
             </div>
             <div class="registerFoot">
                 <span>已有账号？</span>
@@ -20,9 +22,16 @@
 </template>
  
 <script>
+import qs from 'qs'
 export default {
   data () {
     return {
+        registerInfo: {
+            name: '',
+            id: '',
+            email: '',
+            password: ''
+        }
     }
   },
   methods: {
@@ -30,8 +39,17 @@ export default {
           this.$store.commit('closeRegisterDiv');
       },
       toLogin() {
-          this.$store.commit('closeRegisterDiv');
+          this.closeRegisterDiv();
           this.$store.commit('openLoginDiv');
+      },
+      submitRegister() {
+        let data = qs.stringify(this.registerInfo);
+        this.$ajax.post('/api/Account/register', data)
+        .then((response)=>{
+            console.log(response);
+        }).catch((response)=>{
+            console.log(response);
+        })
       }
   },
   computed: {
@@ -56,12 +74,21 @@ export default {
     }
     .registerDiv{
         width: 320px;
-        height: 330px;
+        height: 380px;
         position: absolute;
         top: 0;bottom: 0;left: 0;right: 0;
         margin: auto;
         background: #fff;
         border-radius: 6px;
+    }
+    .registerLogo{
+        display: block;
+        width:110px;
+        height: auto;
+        position: absolute;
+        left: 0;right: 0;
+        top: -110px;
+        margin: auto;
     }
     .registerHead{
         box-sizing: border-box;
@@ -90,7 +117,7 @@ export default {
         color: crimson;
     }
     /* 注册页表单样式 */
-    .registerCont input[type=password], input[type=text], input[type=button]{
+    .registerCont input[type=password], input[type=text], input[type=button], input[type=email]{
         padding: 10px;
         width: 86%;
         border-radius: 2px;
@@ -100,10 +127,10 @@ export default {
         margin: 15px auto;
         outline: none;
     }
-    .registerCont input[type=password], input[type=text]{
+    .registerCont input[type=password], input[type=text],  input[type=email]{
         border: 1px solid #e9e9e9;
     }
-    .registerCont input[type=password]:focus,input[type=text]:focus{
+    .registerCont input[type=password]:focus,input[type=text]:focus,  input[type=email]:focus{
         border-color: #307B8A;
     }
     .registerCont input[type=button]{

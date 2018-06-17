@@ -6,7 +6,7 @@ return array(
 	'DB_USER' => 'root',
 	'DB_PWD' => '',
 	'DB_PORT'   => 3306, // 端口
-	'DB_PREFIX' => 'trading_', // 数据库表前缀 
+	'DB_PREFIX' => 'dsmall_', // 数据库表前缀 
 	'DB_CHARSET'=> 'utf8', // 字符集
 	'SHOW_PAGE_TRACE'=> false,
 	 // 配置邮件发送服务器
