@@ -6,9 +6,10 @@
                 <span class="loginTitle">登录</span>
                 <div class="loginClose" @click="closeLoginDiv">×</div>
             </div>
-            <div class="loginCont">
-                <input type="text" placeholder="请输入手机号" v-model="loginInfo.id">
-                <input type="password" placeholder="请输入密码" v-model="loginInfo.password">
+            <div class="loginCont" @keyup.enter="submitLogin">
+                <input type="text" placeholder="请输入手机号码" v-model="loginInfo.id" @keyup="checkPhone">
+                <input type="password" placeholder="请输入登录密码" v-model="loginInfo.password"  @keyup="checkPwd">
+                <div :class="{error:error_status}">{{error_tips}}</div>
                 <input type="button" value="立即登录" @click="submitLogin">
             </div>
             <div class="loginFoot">
@@ -21,35 +22,78 @@
 </template>
  
 <script>
+
+import validate from "@/utils/validate";
+
 export default {
   data () {
     return {
         loginInfo: {
             id: '',
             password: ''
-        }
+        },
+        error_status: false,
+        error_text: '欢迎登录趣二手！',
+        error_tips: '欢迎登录趣二手！',
     }
   },
   methods: {
-      closeLoginDiv() {
-          this.$store.commit('closeLoginDiv');
-          this.loginInfo.id = this.loginInfo.password = '';
-      },
-      toRegister() {
-          this.closeLoginDiv();
-          this.$store.commit('openRegisterDiv');
-      },
-      toForget() {
-          this.closeLoginDiv();
-          this.$store.commit('openForgetDiv');
-      },
-      submitLogin(){
-        this.$ajax.post('/api/Account/encode', this.loginInfo).then((response)=>{
-            console.log(response);
-        }).catch((response)=>{
-            console.log(response);
-        })
-      }
+        // 跳转方法
+        closeLoginDiv() {
+            this.$store.commit('closeLoginDiv');
+            this.loginInfo.id = this.loginInfo.password = '';
+            this.error_status = false;
+            this.error_tips = this.error_text;
+        },
+        toRegister() {
+            this.closeLoginDiv();
+            this.$store.commit('openRegisterDiv');
+            this.error_status = false;
+            this.error_tips = this.error_text;
+        },
+        toForget() {
+            this.closeLoginDiv();
+            this.$store.commit('openForgetDiv');
+            this.error_status = false;
+            this.error_tips = this.error_text;
+        },
+
+        // 检测方法
+        checkPwd: function () {
+            let result = validate.checkLength(this.loginInfo.password, 6, 16);
+            if( !result.status ){
+                if( result.type == -1 ){
+                    this.error_tips = result.msg;
+                }else if ( result.type == 1 ){
+                    this.error_tips = "密码是必须的哦！";
+                }
+                this.error_status = true;
+                return false;
+            }
+            this.error_status = false;
+            this.error_tips = this.error_text;
+            return true;
+        },
+        checkPhone: function () {
+            let result = validate.checkPhone(this.loginInfo.id);
+            if( !result.status ){
+                this.error_tips = result.msg;
+                this.error_status = true;
+                return false;
+            }
+            this.error_status = false;
+            this.error_tips = this.error_text;
+            return true;
+        },
+        submitLogin(){
+            if(this.checkPhone() && this.checkPwd()){
+                this.$ajax.post('/api/Account/encode', this.loginInfo).then((response)=>{
+                    console.log(response);
+                }).catch((response)=>{
+                    console.log(response);
+                })
+            }
+        }
   },
   computed: {
       loginDivStatus(){
@@ -57,6 +101,7 @@ export default {
       }
   },
   mounted(){
+      
   }
 }
 </script>
@@ -73,7 +118,8 @@ export default {
     }
     .loginDiv{
         width: 320px;
-        height: 290px;
+        height: 320px;
+        padding: 10px 0;
         position: absolute;
         top: 0;bottom: 0;left: 0;right: 0;
         margin: auto;
@@ -116,6 +162,17 @@ export default {
         color: crimson;
     }
     /* 登录页表单样式 */
+    .loginCont div{
+        width: 86%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 0 auto;
+        font-size: 14px;
+        color:#307B8A;
+    }
+    .loginCont .error{
+        color:tomato;
+    }
     .loginCont input[type=password], input[type=text], input[type=button]{
         padding: 10px;
         width: 86%;
