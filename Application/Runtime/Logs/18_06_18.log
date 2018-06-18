@@ -251,3 +251,43 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000703s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000760s ]
 
+[ 2018-06-18T11:40:25+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000790s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000851s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004290s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000313s ]
+
+[ 2018-06-18T11:40:32+08:00 ] 127.0.0.1 /dsmall/api/jwt/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+ERR: 无法加载控制器:Jwt
+
+[ 2018-06-18T11:41:20+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+
+[ 2018-06-18T11:43:50+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000850s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.007144s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000294s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@123.co' ) LIMIT 1   [ RunTime:0.000230s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@123.co','82af24790d5fb9541a37544aea9b1b67',0,1529293429,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTM0MjksImV4cCI6MTUyOTI5NzAyOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMjMuY28iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMTo0Mzo0OSJ9fQ.ANCyHtCP9OfGTkBMz0-ckC_JdsfSqvoCD6nx5VZeAVk','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTM0MjksImV4cCI6MTUyOTg5ODIyOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTM0MjksImV4cCI6MTUyOTI5NzAyOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMjMuY28iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMTo0Mzo0OSJ9fX19.vuPUzHWFzwCALn8l_CiC4dBIPS58YJSOmw5BGn57WDI') [ RunTime:0.407539s ]
+

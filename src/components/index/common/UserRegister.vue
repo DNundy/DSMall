@@ -6,11 +6,12 @@
                 <span class="registerTitle">注册</span>
                 <div class="registerClose" @click="closeRegisterDiv">×</div>
             </div>
-            <div class="registerCont">
-                <input type="text" placeholder="请输入用户昵称" v-model="registerInfo.name">
-                <input type="text" placeholder="请输入手机号码" v-model="registerInfo.id">
-                <input type="email" placeholder="请输入电子邮箱" v-model="registerInfo.email">
-                <input type="password" placeholder="请输入登录密码" v-model="registerInfo.password">
+            <div class="registerCont" @keyup.enter="submitRegister">
+                <input type="text" placeholder="请输入用户昵称" v-model="registerInfo.name"  @keyup="checkName">
+                <input type="text" placeholder="请输入手机号码" v-model="registerInfo.id"  @keyup="checkPhone">
+                <input type="email" placeholder="请输入电子邮箱" v-model="registerInfo.email"  @keyup="checkEmail">
+                <input type="password" placeholder="请输入登录密码" v-model="registerInfo.password"  @keyup="checkPwd">
+                <div :class="{error:error_status}">{{error_tips}}</div>
                 <input type="button" value="立即注册" @click="submitRegister">
             </div>
             <div class="registerFoot">
@@ -22,43 +23,104 @@
 </template>
  
 <script>
+
 import qs from 'qs'
+import validate from "@/utils/validate";
+
 export default {
-  data () {
-    return {
-        registerInfo: {
-            name: '',
-            id: '',
-            email: '',
-            password: ''
+    data () {
+        return {
+            registerInfo: {
+                name: '',
+                id: '',
+                email: '',
+                password: ''
+            },
+            error_status: false,
+            error_text: '欢迎注册趣二手！',
+            error_tips: '欢迎注册趣二手！',
         }
+    },
+    methods: {
+        closeRegisterDiv() {
+            this.$store.commit('closeRegisterDiv');
+        },
+        toLogin() {
+            this.closeRegisterDiv();
+            this.$store.commit('openLoginDiv');
+        },
+        // 检测方法
+        checkName: function () {
+            let result = validate.checkLength(this.registerInfo.name, 2, 15);
+            if( !result.status ){
+                if( result.type == -1 ){
+                    this.error_tips = result.msg;
+                }else if ( result.type == 1 ){
+                    this.error_tips = "昵称是必须的哦！";
+                }
+                this.error_status = true;
+                return false;
+            }
+            this.error_status = false;
+            this.error_tips = this.error_text;
+            return true;
+        },
+        checkPhone: function () {
+            let result = validate.checkPhone(this.registerInfo.id);
+            if( !result.status ){
+                this.error_tips = result.msg;
+                this.error_status = true;
+                return false;
+            }
+            this.error_status = false;
+            this.error_tips = this.error_text;
+            return true;
+        },
+        checkEmail: function () {
+            let result = validate.checkEmail(this.registerInfo.email);
+            if( !result.status ){
+                this.error_tips = result.msg;
+                this.error_status = true;
+                return false;
+            }
+            this.error_status = false;
+            this.error_tips = this.error_text;
+            return true;
+        },
+        checkPwd: function () {
+            let result = validate.checkLength(this.registerInfo.password, 6, 16);
+            if( !result.status ){
+                if( result.type == -1 ){
+                    this.error_tips = result.msg;
+                }else if ( result.type == 1 ){
+                    this.error_tips = "密码是必须的哦！";
+                }
+                this.error_status = true;
+                return false;
+            }
+            this.error_status = false;
+            this.error_tips = this.error_text;
+            return true;
+        },
+        submitRegister() {
+            if( this.checkName() && this.checkPhone() && this.checkEmail() &&this.checkPwd() ){
+                let data = qs.stringify(this.registerInfo);
+                this.$ajax.post('/api/Account/register', data)
+                .then((response)=>{
+                    console.log(response);
+                }).catch((response)=>{
+                    console.log(response);
+                })
+            }
+        }
+    },
+    computed: {
+        registerDivStatus(){
+            return this.$store.state.registerDivStatus;
+        }
+    },
+    mounted(){
     }
-  },
-  methods: {
-      closeRegisterDiv() {
-          this.$store.commit('closeRegisterDiv');
-      },
-      toLogin() {
-          this.closeRegisterDiv();
-          this.$store.commit('openLoginDiv');
-      },
-      submitRegister() {
-        let data = qs.stringify(this.registerInfo);
-        this.$ajax.post('/api/Account/register', data)
-        .then((response)=>{
-            console.log(response);
-        }).catch((response)=>{
-            console.log(response);
-        })
-      }
-  },
-  computed: {
-      registerDivStatus(){
-          return this.$store.state.registerDivStatus;
-      }
-  },
-  mounted(){
-  }
 }
 </script>
  
@@ -74,7 +136,7 @@ export default {
     }
     .registerDiv{
         width: 320px;
-        height: 380px;
+        height: 440px;
         position: absolute;
         top: 0;bottom: 0;left: 0;right: 0;
         margin: auto;
@@ -117,6 +179,17 @@ export default {
         color: crimson;
     }
     /* 注册页表单样式 */
+    .registerCont div{
+        width: 86%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 0 auto;
+        font-size: 14px;
+        color:#307B8A;
+    }
+    .registerCont .error{
+        color:tomato;
+    }
     .registerCont input[type=password], input[type=text], input[type=button], input[type=email]{
         padding: 10px;
         width: 86%;

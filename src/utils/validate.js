@@ -60,9 +60,9 @@ export default {
             }
         }
     },
-    checkEmail: function () {
+    checkEmail: function (value) {
         let emailReg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        let result = phoneReg.test(value);
+        let result = emailReg.test(value);
 
         if (!value) {
             return {
