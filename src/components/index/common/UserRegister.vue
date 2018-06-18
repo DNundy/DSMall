@@ -44,6 +44,9 @@ export default {
     methods: {
         closeRegisterDiv() {
             this.$store.commit('closeRegisterDiv');
+            this.registerInfo.id = this.registerInfo.name = this.registerInfo.email = this.registerInfo.password = '';
+            this.error_status = false;
+            this.error_tips = this.error_text;
         },
         toLogin() {
             this.closeRegisterDiv();
@@ -105,13 +108,32 @@ export default {
         submitRegister() {
             if( this.checkName() && this.checkPhone() && this.checkEmail() &&this.checkPwd() ){
                 let data = qs.stringify(this.registerInfo);
+                let _that = this;
                 this.$ajax.post('/api/Account/register', data)
-                .then((response)=>{
-                    console.log(response);
-                }).catch((response)=>{
-                    console.log(response);
+                .then(function(response){
+                    let data = response.data;
+                    if( data.code == 0 ){
+                        _that.setUserInfo(data);
+                        _that.closeRegisterDiv();
+                    }else if ( data.code == -1 ){
+                        _that.error_tips = data.msg;
+                        _that.error_status = true;
+                    }
+                }).catch(function(response){
+                    _that.error_tips = '饿哦~~';
+                    _that.error_status = true;
                 })
             }
+        },
+        setUserInfo(data){
+            const access_token = data.data.access_token;
+            const refresh_token = data.data.refresh_token;
+            localStorage.setItem('access_token', access_token);
+            localStorage.setItem('refresh_token', refresh_token);
+            this.$store.commit('addAccessToken', access_token);
+            this.$store.commit('addRefreshToken', refresh_token);
+            axios.defaults.headers.common['access_token'] = access_token;
+            axios.defaults.headers.common['refresh_token'] = refresh_token;
         }
     },
     computed: {

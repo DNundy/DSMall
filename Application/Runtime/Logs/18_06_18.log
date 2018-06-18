@@ -291,3 +291,534 @@ SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   
 SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@123.co' ) LIMIT 1   [ RunTime:0.000230s ]
 SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@123.co','82af24790d5fb9541a37544aea9b1b67',0,1529293429,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTM0MjksImV4cCI6MTUyOTI5NzAyOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMjMuY28iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMTo0Mzo0OSJ9fQ.ANCyHtCP9OfGTkBMz0-ckC_JdsfSqvoCD6nx5VZeAVk','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTM0MjksImV4cCI6MTUyOTg5ODIyOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTM0MjksImV4cCI6MTUyOTI5NzAyOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMjMuY28iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMTo0Mzo0OSJ9fX19.vuPUzHWFzwCALn8l_CiC4dBIPS58YJSOmw5BGn57WDI') [ RunTime:0.407539s ]
 
+[ 2018-06-18T11:46:19+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.007611s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000764s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000475s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@163.com' ) LIMIT 1   [ RunTime:0.000480s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@163.com','0a3b7b79cc3ed1fcf5fb29ed1c74c07d',0,1529293578,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTM1NzgsImV4cCI6MTUyOTI5NzE3OCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTE6NDY6MTgifX0.DFVDF76M-VufNK59DyfwtrCCIV7r3mJRK1_jzmBGgLs','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTM1NzgsImV4cCI6MTUyOTg5ODM3OCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTM1NzgsImV4cCI6MTUyOTI5NzE3OCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTE6NDY6MTgifX19fQ.SdQxJC9YAxxOdL-y8hZxJgYWGcnZxv60FINU-CCAcGk') [ RunTime:0.368362s ]
+
+[ 2018-06-18T11:53:59+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003900s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000326s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000223s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@163.com' ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@163.com','32a16321098dfa6ed8462ac8a5b59769',0,1529294039,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQwMzksImV4cCI6MTUyOTI5NzYzOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTE6NTM6NTkifX0.Fyy7XqiW2rJVOaS42yHA2dFi0qyaH7IQmTc6cmR_PvU','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQwMzksImV4cCI6MTUyOTg5ODgzOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQwMzksImV4cCI6MTUyOTI5NzYzOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTE6NTM6NTkifX19fQ.kr7PTvNnrIr250Tn8sAm45Yzn-4E3acTijFENMMrsOE') [ RunTime:0.105376s ]
+
+[ 2018-06-18T11:54:43+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004239s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000288s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000228s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@163.com' ) LIMIT 1   [ RunTime:0.000232s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@163.com','32a16321098dfa6ed8462ac8a5b59769',0,1529294083,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQwODMsImV4cCI6MTUyOTI5NzY4MywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTE6NTQ6NDMifX0.P5YMv-z7YxwOjGwAm6dUzFmFK-jwAEf2Vl_6In_UcIQ','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQwODMsImV4cCI6MTUyOTg5ODg4MywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQwODMsImV4cCI6MTUyOTI5NzY4MywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTE6NTQ6NDMifX19fQ.9mRrlGp2W5bQeyqUcNpYK4OI4BJjoWwyC9lRRHfNYPE') [ RunTime:0.052793s ]
+
+[ 2018-06-18T11:55:33+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000846s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.009823s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nunyasd' ) LIMIT 1   [ RunTime:0.000322s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000274s ]
+
+[ 2018-06-18T11:56:37+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000864s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003959s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000325s ]
+
+[ 2018-06-18T11:57:12+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004136s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000426s ]
+
+[ 2018-06-18T11:57:39+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003763s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000314s ]
+
+[ 2018-06-18T11:57:43+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001033s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001381s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003793s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundya' ) LIMIT 1   [ RunTime:0.000313s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000234s ]
+
+[ 2018-06-18T11:57:56+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000914s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000985s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004490s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundya' ) LIMIT 1   [ RunTime:0.000316s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939322' ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@163.com' ) LIMIT 1   [ RunTime:0.000237s ]
+
+[ 2018-06-18T11:58:00+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000993s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001738s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002086s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004021s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundya' ) LIMIT 1   [ RunTime:0.000303s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939322' ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@163.coa' ) LIMIT 1   [ RunTime:0.000227s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939322','Nundya','18710939328@163.coa','2856523abe9c9adeb03e88b432d8b9ca',0,1529294280,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQyODAsImV4cCI6MTUyOTI5Nzg4MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJOdW5keWEiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAMTYzLmNvYSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOiIyMDE4LTA2LTE4IDExOjU4OjAwIn19.STGgtHCHuZY1TiMW8ebgxuFHbdA5ZvbZIZxc550KTuw','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQyODAsImV4cCI6MTUyOTg5OTA4MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQyODAsImV4cCI6MTUyOTI5Nzg4MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJOdW5keWEiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAMTYzLmNvYSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOiIyMDE4LTA2LTE4IDExOjU4OjAwIn19fX0.ZV-2uIBUOfK6B5MxKN1VFthn48pHlIs_9BQK22bzRgo') [ RunTime:0.068514s ]
+
+[ 2018-06-18T12:09:38+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001007s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004037s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000320s ]
+
+[ 2018-06-18T12:10:00+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003829s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000308s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@163.com' ) LIMIT 1   [ RunTime:0.000223s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@163.com','32a16321098dfa6ed8462ac8a5b59769',0,1529294999,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQ5OTksImV4cCI6MTUyOTI5ODU5OSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6MDk6NTkifX0.s-zpKK7H981a2P1rxBlsO9oY9VW_fF5zV85X7vjzlhg','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQ5OTksImV4cCI6MTUyOTg5OTc5OSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTQ5OTksImV4cCI6MTUyOTI5ODU5OSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6MDk6NTkifX19fQ.YwuMdXAkSSvrijujMBlRcfp2RWD0NpM5HPLc3Gg3RLY') [ RunTime:0.116334s ]
+
+[ 2018-06-18T12:21:40+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004048s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000279s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@163.com' ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@163.com','18a43e5b4f6b5fda0c181bb9d313cd54',0,1529295700,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU3MDAsImV4cCI6MTUyOTI5OTMwMCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6MjE6NDAifX0.ThdFcqXGAGOT7133FqOQKJt607SskhFU0g0Git7ynHs','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU3MDAsImV4cCI6MTUyOTkwMDUwMCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU3MDAsImV4cCI6MTUyOTI5OTMwMCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6MjE6NDAifX19fQ.8kkAPCRnxqPSioyEiP_2vox878-zxD6-YJp4HcbVwMo') [ RunTime:0.086138s ]
+
+[ 2018-06-18T12:22:12+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000768s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000863s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004579s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000303s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000240s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@163.com' ) LIMIT 1   [ RunTime:0.000237s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@163.com','18a43e5b4f6b5fda0c181bb9d313cd54',0,1529295732,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU3MzIsImV4cCI6MTUyOTI5OTMzMiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6MjI6MTIifX0.3hnAoVKlB5tpD8oWyADsKfWTqPYXC1F622v54OXh4YA','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU3MzIsImV4cCI6MTUyOTkwMDUzMiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU3MzIsImV4cCI6MTUyOTI5OTMzMiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6MjI6MTIifX19fQ.hXuvJAUzZKtjap8hlVBpoRhZL2xx9cNVixwUb4UP_hI') [ RunTime:0.081215s ]
+
+[ 2018-06-18T12:23:08+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004041s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000355s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000221s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@163.com' ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@163.com','8ac3c4ccf9c29356fc62374cd6e30d50',0,1529295788,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU3ODgsImV4cCI6MTUyOTI5OTM4OCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6MjM6MDgifX0.sm1pC6ktpD3wcsqlKcH_cCRByi-gfadjvGZ_SR9QeVw','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU3ODgsImV4cCI6MTUyOTkwMDU4OCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU3ODgsImV4cCI6MTUyOTI5OTM4OCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6MjM6MDgifX19fQ.A0KCr-eNixhTFnaBiBcR0-ZVo_F0cTFodGSqv42pDrE') [ RunTime:0.078629s ]
+
+[ 2018-06-18T12:24:36+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000995s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003987s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='user' ) LIMIT 1   [ RunTime:0.000323s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18829535746' ) LIMIT 1   [ RunTime:0.000227s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18829535746@153.com' ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18829535746','user','18829535746@153.com','51dbf8256b4cf71651dd9267742289b6',0,1529295876,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU4NzYsImV4cCI6MTUyOTI5OTQ3NiwiZGF0YSI6eyJhX2lkIjoiMTg4Mjk1MzU3NDYiLCJhX25hbWUiOiJ1c2VyIiwiYV9lbWFpbCI6IjE4ODI5NTM1NzQ2QDE1My5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMjoyNDozNiJ9fQ.r9kpDLXGyGxaiyNltLjbuJJ1KZMUZws3H5a7wn6XzpU','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU4NzYsImV4cCI6MTUyOTkwMDY3NiwiZGF0YSI6eyJhX2lkIjoiMTg4Mjk1MzU3NDYiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTU4NzYsImV4cCI6MTUyOTI5OTQ3NiwiZGF0YSI6eyJhX2lkIjoiMTg4Mjk1MzU3NDYiLCJhX25hbWUiOiJ1c2VyIiwiYV9lbWFpbCI6IjE4ODI5NTM1NzQ2QDE1My5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMjoyNDozNiJ9fX19.Oa9A5rPrkss-3FJFrCpTPZ847pxp9JEXLKpkUnCPsig') [ RunTime:0.468758s ]
+
+[ 2018-06-18T12:24:45+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001087s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004452s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='user' ) LIMIT 1   [ RunTime:0.000296s ]
+
+[ 2018-06-18T12:24:47+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004139s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='user' ) LIMIT 1   [ RunTime:0.000284s ]
+
+[ 2018-06-18T12:24:48+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001631s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003837s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='user' ) LIMIT 1   [ RunTime:0.000291s ]
+
+[ 2018-06-18T12:27:36+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000623s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000972s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003794s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nun' ) LIMIT 1   [ RunTime:0.000314s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710909987' ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710909987@gmial.com' ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710909987','Nun','18710909987@gmial.com','04db49aff831572be067e2164ec8b533',0,1529296055,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTYwNTUsImV4cCI6MTUyOTI5OTY1NSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MDk5ODciLCJhX25hbWUiOiJOdW4iLCJhX2VtYWlsIjoiMTg3MTA5MDk5ODdAZ21pYWwuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6Mjc6MzUifX0.5T5Ltv-CDTK_NJDBs_EAQi5BdI-UxHldYydLQVksyHQ','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTYwNTUsImV4cCI6MTUyOTkwMDg1NSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MDk5ODciLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTYwNTUsImV4cCI6MTUyOTI5OTY1NSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MDk5ODciLCJhX25hbWUiOiJOdW4iLCJhX2VtYWlsIjoiMTg3MTA5MDk5ODdAZ21pYWwuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6Mjc6MzUifX19fQ.pTIazArhJsT6isheXUB1tfA24k5TNAWGpSbLKDwy3Hk') [ RunTime:0.131914s ]
+
+[ 2018-06-18T12:29:00+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004151s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000317s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@173.com' ) LIMIT 1   [ RunTime:0.000223s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@173.com','32a16321098dfa6ed8462ac8a5b59769',0,1529296139,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTYxMzksImV4cCI6MTUyOTI5OTczOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNzMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6Mjg6NTkifX0.kf-5LjnEkTHU517TSraVTWDByXSDVLpqg7SAarxK12g','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTYxMzksImV4cCI6MTUyOTkwMDkzOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTYxMzksImV4cCI6MTUyOTI5OTczOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNzMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6Mjg6NTkifX19fQ.s8DzIv8l7u2gBZqASnkE1MaslZ17JbggTZ0jGXXrelU') [ RunTime:0.096415s ]
+
+[ 2018-06-18T12:29:14+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004115s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000323s ]
+
+[ 2018-06-18T12:29:54+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000833s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003825s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000318s ]
+
+[ 2018-06-18T12:30:11+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003967s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundya' ) LIMIT 1   [ RunTime:0.000270s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000242s ]
+
+[ 2018-06-18T12:30:16+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002746s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004009s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundya' ) LIMIT 1   [ RunTime:0.000263s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939321' ) LIMIT 1   [ RunTime:0.000231s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@17.com' ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939321','nundya','18710939328@17.com','32a16321098dfa6ed8462ac8a5b59769',0,1529296216,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTYyMTYsImV4cCI6MTUyOTI5OTgxNiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5keWEiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAMTcuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6MzA6MTYifX0.vBrGdNR4C1XrvtPIlgugYGFyhz8m6olTMwJOazpI6jM','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTYyMTYsImV4cCI6MTUyOTkwMTAxNiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTYyMTYsImV4cCI6MTUyOTI5OTgxNiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5keWEiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAMTcuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6MzA6MTYifX19fQ._WRhGONpoYxn9VQWwsCCarB54Yp1FfxeVVhkmXtK3Oo') [ RunTime:0.090116s ]
+
+[ 2018-06-18T12:35:18+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003992s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000261s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000194s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@11.com' ) LIMIT 1   [ RunTime:0.000227s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','nundy','18710939328@11.com','fe78249dccf9795f8b9285d5bb36d490',0,1529296517,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY1MTcsImV4cCI6MTUyOTMwMDExNywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMjozNToxNyJ9fQ.dsU61yLncsZ_ZPOR2nyLYSUAtR8jnoxMP8meF-hagS8','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY1MTcsImV4cCI6MTUyOTkwMTMxNywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY1MTcsImV4cCI6MTUyOTMwMDExNywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMjozNToxNyJ9fX19.LV8sjW8yl6jkPyDlZp8iE7yKTsANIxIlIv2Mc1dH-sQ') [ RunTime:0.142097s ]
+
+[ 2018-06-18T12:35:35+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003983s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000281s ]
+
+[ 2018-06-18T12:35:52+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000906s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004033s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000264s ]
+
+[ 2018-06-18T12:40:46+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004444s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000319s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000227s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@123.com' ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','nundy','18710939328@123.com','32a16321098dfa6ed8462ac8a5b59769',0,1529296846,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY4NDYsImV4cCI6MTUyOTMwMDQ0NiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NDA6NDYifX0.wyXIdIifdPusra0DtBJwBC1XAzWEV6dgQkFLD4I6iao','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY4NDYsImV4cCI6MTUyOTkwMTY0NiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY4NDYsImV4cCI6MTUyOTMwMDQ0NiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NDA6NDYifX19fQ.gP-m3roseQl2ihyjmwoPGv1yuv1NCfHmdAn_sajJ6LA') [ RunTime:0.074479s ]
+
+[ 2018-06-18T12:40:47+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003813s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000295s ]
+
+[ 2018-06-18T12:41:08+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003749s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000282s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000227s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@123.com' ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','nundy','18710939328@123.com','32a16321098dfa6ed8462ac8a5b59769',0,1529296867,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY4NjcsImV4cCI6MTUyOTMwMDQ2NywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NDE6MDcifX0.ow68aIjuo3py1Dcp9uGU6sEee-t2DTuomB3zPPV74w8','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY4NjcsImV4cCI6MTUyOTkwMTY2NywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY4NjcsImV4cCI6MTUyOTMwMDQ2NywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NDE6MDcifX19fQ.grP68fPzEL0n4mzKw1QCIiYT3GXA1AU9_QarOUmKno0') [ RunTime:0.067171s ]
+
+[ 2018-06-18T12:42:13+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004915s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000315s ]
+
+[ 2018-06-18T12:42:21+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000848s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001424s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004047s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundyas' ) LIMIT 1   [ RunTime:0.000290s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939321' ) LIMIT 1   [ RunTime:0.000232s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@123.co2' ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939321','nundyas','18710939328@123.co2','32a16321098dfa6ed8462ac8a5b59769',0,1529296941,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY5NDEsImV4cCI6MTUyOTMwMDU0MSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5keWFzIiwiYV9lbWFpbCI6IjE4NzEwOTM5MzI4QDEyMy5jbzIiLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMjo0MjoyMSJ9fQ.nx60lx63u3IctbxOpBh-Tms25UtMa8-eVztCGE5nM1c','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY5NDEsImV4cCI6MTUyOTkwMTc0MSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTY5NDEsImV4cCI6MTUyOTMwMDU0MSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5keWFzIiwiYV9lbWFpbCI6IjE4NzEwOTM5MzI4QDEyMy5jbzIiLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMjo0MjoyMSJ9fX19.7Hkv-Bb_zBbqoxTLb4APpIYQxDkv855jPOsQPAkld5w') [ RunTime:0.121926s ]
+
+[ 2018-06-18T12:44:01+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003824s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000313s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@asd.com' ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@asd.com','ed24334eff610ac214d569e3bf804303',0,1529297040,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTcwNDAsImV4cCI6MTUyOTMwMDY0MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBhc2QuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NDQ6MDAifX0.kmXZAKNQ-7VNKQVvVN1euGrj7S75siRqILgtBJ5ZkNk','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTcwNDAsImV4cCI6MTUyOTkwMTg0MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTcwNDAsImV4cCI6MTUyOTMwMDY0MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBhc2QuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NDQ6MDAifX19fQ.-pmYG-hHGStg_ZwMjw4mRndQIE_nNHJfSQraliXN3RU') [ RunTime:0.121422s ]
+
+[ 2018-06-18T12:45:01+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004108s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000314s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000223s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@co.com' ) LIMIT 1   [ RunTime:0.000222s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@co.com','0f3b41eddc461d0c946f1d5d74b3567a',0,1529297101,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTcxMDEsImV4cCI6MTUyOTMwMDcwMSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBjby5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMjo0NTowMSJ9fQ.KIbQVbjvq0pw5MLVcxnNz3ZqkebdUEe39JA5R-6XM5U','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTcxMDEsImV4cCI6MTUyOTkwMTkwMSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTcxMDEsImV4cCI6MTUyOTMwMDcwMSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBjby5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOCAxMjo0NTowMSJ9fX19.tPIL4OD5KA5cY5yAcX-U8l667brfaQJah-0SXBdZrgY') [ RunTime:0.086874s ]
+
+[ 2018-06-18T12:46:58+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.006817s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000314s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939382@123.com' ) LIMIT 1   [ RunTime:0.000223s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939382@123.com','473e8d5d4d462e60a4f825b2272ce8ab',0,1529297218,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTcyMTgsImV4cCI6MTUyOTMwMDgxOCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTM4MkAxMjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NDY6NTgifX0.zYYhcJt7C5cYMLvFGbKmgDpQpaYJE1Oya9M-YXfRReE','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTcyMTgsImV4cCI6MTUyOTkwMjAxOCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTcyMTgsImV4cCI6MTUyOTMwMDgxOCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTM4MkAxMjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NDY6NTgifX19fQ.N2sFEpEiONr7VMVJ6Kr36BXMYWsZMCaNjb-ERymZq6M') [ RunTime:0.078435s ]
+
+[ 2018-06-18T12:48:53+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.005967s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000481s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000276s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@163.com' ) LIMIT 1   [ RunTime:0.000248s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','nundy','18710939328@163.com','204899e5f8fae4ea1ac9aaf9cedeb453',0,1529297332,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTczMzIsImV4cCI6MTUyOTMwMDkzMiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NDg6NTIifX0.esKX2CUxvWlE7SuUk5ny0bx2P9VKkrMgv2lzzz1HAYs','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTczMzIsImV4cCI6MTUyOTkwMjEzMiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTczMzIsImV4cCI6MTUyOTMwMDkzMiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxNjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NDg6NTIifX19fQ.7y1aA1lzUZeV4pHNhA1KKZic3vbfmI88ELYd0XuCIVo') [ RunTime:0.093693s ]
+
+[ 2018-06-18T12:50:02+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004197s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000323s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000223s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='198109389182@17.com' ) LIMIT 1   [ RunTime:0.000223s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','nundy','198109389182@17.com','9bc1e4f2ba6a94994379ee598c5d588a',0,1529297401,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc0MDEsImV4cCI6MTUyOTMwMTAwMSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxOTgxMDkzODkxODJAMTcuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NTA6MDEifX0.H_iZAer1IDJYjko4JNbH3eeKlP84S-aZuSEepsEWp_0','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc0MDEsImV4cCI6MTUyOTkwMjIwMSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc0MDEsImV4cCI6MTUyOTMwMTAwMSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxOTgxMDkzODkxODJAMTcuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NTA6MDEifX19fQ.giWbuE_QkZAyXUu-1cqT3CIpqKgb28ZIYEr6zWjBCHw') [ RunTime:0.079627s ]
+
+[ 2018-06-18T12:50:23+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000700s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001192s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004135s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundya' ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939322' ) LIMIT 1   [ RunTime:0.000230s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='198109389182@17.co' ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939322','nundya','198109389182@17.co','1e78076d34ce7364b9c673414219c930',0,1529297423,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc0MjMsImV4cCI6MTUyOTMwMTAyMywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJudW5keWEiLCJhX2VtYWlsIjoiMTk4MTA5Mzg5MTgyQDE3LmNvIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NTA6MjMifX0.Y06xwsbpxEmgQgwkYiCEZmrZxppSuMkp4PW4ZQ9P2e4','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc0MjMsImV4cCI6MTUyOTkwMjIyMywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc0MjMsImV4cCI6MTUyOTMwMTAyMywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJudW5keWEiLCJhX2VtYWlsIjoiMTk4MTA5Mzg5MTgyQDE3LmNvIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NTA6MjMifX19fQ.pih6Bzwd1Vd1vFA0vzEiupOmmv97ZXVnoYmHi3A01Ps') [ RunTime:0.082112s ]
+
+[ 2018-06-18T12:50:44+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003843s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundya123' ) LIMIT 1   [ RunTime:0.000312s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000238s ]
+
+[ 2018-06-18T12:50:50+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000973s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001404s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004123s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundya123' ) LIMIT 1   [ RunTime:0.000288s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939329' ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='198109389182@1asd.casd' ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939329','nundya123','198109389182@1asd.casd','1e78076d34ce7364b9c673414219c930',0,1529297449,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc0NDksImV4cCI6MTUyOTMwMTA0OSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjkiLCJhX25hbWUiOiJudW5keWExMjMiLCJhX2VtYWlsIjoiMTk4MTA5Mzg5MTgyQDFhc2QuY2FzZCIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOiIyMDE4LTA2LTE4IDEyOjUwOjQ5In19.XtKea3D7DjVh23RJ4qs4Mex8SY65Xp5KrNhscR-pg0w','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc0NDksImV4cCI6MTUyOTkwMjI0OSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjkiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc0NDksImV4cCI6MTUyOTMwMTA0OSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjkiLCJhX25hbWUiOiJudW5keWExMjMiLCJhX2VtYWlsIjoiMTk4MTA5Mzg5MTgyQDFhc2QuY2FzZCIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOiIyMDE4LTA2LTE4IDEyOjUwOjQ5In19fX0.ZXQvw4iyjPWnYl-uVVnAqU8ZarR-gE3gkqgJrWpgGiA') [ RunTime:0.097985s ]
+
+[ 2018-06-18T12:53:02+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004427s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000736s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000305s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18701939328@asd.com' ) LIMIT 1   [ RunTime:0.000246s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','nundy','18701939328@asd.com','51010d352e4cfefbd9ace3d9703445ab',0,1529297582,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc1ODIsImV4cCI6MTUyOTMwMTE4MiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcwMTkzOTMyOEBhc2QuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NTM6MDIifX0.vso3oiYMzb1Wnl8Hicqpk8tTkYOaszSFtF7Ch0Xh4js','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc1ODIsImV4cCI6MTUyOTkwMjM4MiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkyOTc1ODIsImV4cCI6MTUyOTMwMTE4MiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcwMTkzOTMyOEBhc2QuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTggMTI6NTM6MDIifX19fQ._Snldc5xzLeaOFP3kx8ET4NpJYPbQN5g-snZuJngRCQ') [ RunTime:0.109350s ]
+
+[ 2018-06-18T12:53:11+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001583s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004061s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundyasd' ) LIMIT 1   [ RunTime:0.000262s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000239s ]
+
+[ 2018-06-18T12:53:55+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000565s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004130s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundyasd' ) LIMIT 1   [ RunTime:0.000335s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000233s ]
+
+[ 2018-06-18T12:54:32+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004976s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundyasd' ) LIMIT 1   [ RunTime:0.000314s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000216s ]
+

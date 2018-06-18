@@ -5,17 +5,6 @@ use Think\Controller;
 define('KEY', 'jfdksajfkl;dsajfkdjsaklfdajffdsafdsfdsfdsfdsklfdsafdsafdsafdsdsajlkfdsa');
 
 class AccountController extends Controller{
-    public function encode()
-    {
-        $jwt = new \Org\Util\Jwt;
-        $token = array(
-        'uid' => '1050asdasdasdas',
-        'username' => 'baby',
-        );
-
-        $encode = $jwt::encode($token, KEY);
-        dump($encode);
-    }
     public function decode()
     {
         $jwt = new \Org\Util\Jwt;
@@ -33,25 +22,25 @@ class AccountController extends Controller{
         // 1、请求信息检测
         if( empty($req_name) || empty($req_id) || empty($req_email) || empty($req_password) ){
             $res = array(
-    				'status' => -1,
-    				'msg' => "信息不能为空",
+    			'code' => -1,
+    			'msg' => "信息不能为空",
     		);
     		return $this->ajaxReturn($res);
         } elseif( M('Account')->where("a_name='$req_name'")->getField('a_name') ){
             $res = array(
-    			'status' => -1,
+    			'code' => -1,
     			'msg' => "该用户名已被使用！",
     		);
     		return $this->ajaxReturn($res);
         } elseif( M('Account')->where("a_id='$req_id'")->getField('a_id') ){
             $res = array(
-    			'status' => -1,
-    			'msg' => "该手机号码已被使用！",
+    			'code' => -1,
+                'msg' => "该手机号码已被使用！"
     		);
     		return $this->ajaxReturn($res);
         } elseif( M('Account')->where("a_email='$req_email'")->getField('a_email') ){
             $res = array(
-    			'status' => -1,
+    			'code' => -1,
     			'msg' => "该邮箱账号已被使用！",
     		);
     		return $this->ajaxReturn($res);
@@ -103,16 +92,20 @@ class AccountController extends Controller{
         );
         
         // 5、执行插入
-    	$sqlStatus = M('Account')->add($data);
-        if( $sqlStatus ){
+    	$sqlstatus = M('Account')->add($data);
+        if( $sqlstatus ){
             $res = array(
-    			'code' => '0',
-    			'msg' => '恭喜您，注册成功!',
+    			'code' => 0,
+                'msg' => '恭喜您，注册成功!',
+                'data' => array(
+                    'access_token' => $access_token_code,
+                    'refresh_token' => $refresh_token_code
+                )
     		);
     		return $this->ajaxReturn($res);
         } else {
             $res = array(
-                'code' => '-1',
+                'code' => -1,
                 'msg' => '抱歉，一个未知的错误发生了!',
             );
             return $this->ajaxReturn($res);

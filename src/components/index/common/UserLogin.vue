@@ -48,14 +48,10 @@ export default {
         toRegister() {
             this.closeLoginDiv();
             this.$store.commit('openRegisterDiv');
-            this.error_status = false;
-            this.error_tips = this.error_text;
         },
         toForget() {
             this.closeLoginDiv();
             this.$store.commit('openForgetDiv');
-            this.error_status = false;
-            this.error_tips = this.error_text;
         },
 
         // 检测方法
