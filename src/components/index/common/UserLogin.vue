@@ -9,8 +9,8 @@
             <div class="loginCont" @keyup.enter="submitLogin">
                 <input type="text" placeholder="请输入手机号码" v-model="loginInfo.id" @keyup="checkPhone">
                 <input type="password" placeholder="请输入登录密码" v-model="loginInfo.password"  @keyup="checkPwd">
-                <div :class="{error:error_status}">{{error_tips}}</div>
-                <input type="button" value="立即登录" @click="submitLogin">
+                <div class="tips" :class="{error:error_status}">{{error_tips}}</div>
+                <div class="submitBtn" @click="submitLogin">{{submit_text}}</div>
             </div>
             <div class="loginFoot">
                 <span>没有账号？</span>
@@ -35,6 +35,7 @@ export default {
         error_status: false,
         error_text: '欢迎登录趣二手！',
         error_tips: '欢迎登录趣二手！',
+        submit_text: '立即登录'
     }
   },
   methods: {
@@ -83,10 +84,11 @@ export default {
         },
         submitLogin(){
             if(this.checkPhone() && this.checkPwd()){
-                this.$ajax.post('/api/Account/encode', this.loginInfo).then((response)=>{
-                    console.log(response);
+                this.submit_text="拼命登陆ing..."
+                this.$ajax.post('/api/Account/decode', this.loginInfo).then((response)=>{
+                    this.submit_text="立即登录"
                 }).catch((response)=>{
-                    console.log(response);
+                    this.submit_text="立即登录"
                 })
             }
         }
@@ -158,7 +160,7 @@ export default {
         color: crimson;
     }
     /* 登录页表单样式 */
-    .loginCont div{
+    .loginCont .tips{
         width: 86%;
         box-sizing: border-box;
         padding: 10px;
@@ -169,7 +171,7 @@ export default {
     .loginCont .error{
         color:tomato;
     }
-    .loginCont input[type=password], input[type=text], input[type=button]{
+    .loginCont input[type=password], input[type=text]{
         padding: 10px;
         width: 86%;
         border-radius: 2px;
@@ -185,10 +187,17 @@ export default {
     .loginCont input[type=password]:focus,input[type=text]:focus{
         border-color: #307B8A;
     }
-    .loginCont input[type=button]{
+    .loginCont .submitBtn{
+        box-sizing: border-box;
+        margin: 15px auto;
+        text-align: center;
+        width: 86%;
+        padding: 10px;
         cursor: pointer;
         color: #fff;
+        outline: none;
         border: none;
+        border-radius: 2px;
         background: #307B8A;
     }
     /* 登录页底部提示 */

@@ -11,8 +11,8 @@
                 <input type="text" placeholder="请输入手机号码" v-model="registerInfo.id"  @keyup="checkPhone">
                 <input type="email" placeholder="请输入电子邮箱" v-model="registerInfo.email"  @keyup="checkEmail">
                 <input type="password" placeholder="请输入登录密码" v-model="registerInfo.password"  @keyup="checkPwd">
-                <div :class="{error:error_status}">{{error_tips}}</div>
-                <input type="button" value="立即注册" @click="submitRegister">
+                <div class="tips" :class="{error:error_status}">{{error_tips}}</div>
+                <div class="submitBtn" @click="submitRegister">{{submit_text}}</div>
             </div>
             <div class="registerFoot">
                 <span>已有账号？</span>
@@ -39,6 +39,7 @@ export default {
             error_status: false,
             error_text: '欢迎注册趣二手！',
             error_tips: '欢迎注册趣二手！',
+            submit_text: '立即注册'
         }
     },
     methods: {
@@ -108,6 +109,7 @@ export default {
         submitRegister() {
             let status = this.checkName() && this.checkPhone() && this.checkEmail() &&this.checkPwd();
             if( status ){
+                this.submit_text = "拼命注册ing..."
                 let data = qs.stringify(this.registerInfo);
                 this.$ajax.post('/api/Account/register', data)
                 .then((response) => {
@@ -119,9 +121,11 @@ export default {
                         this.error_tips = data.msg;
                         this.error_status = true;
                     }
+                    this.submit_text='立即注册';
                 }).catch((response) => {
                     this.error_tips = '网络好像出现问题了呢！';
                     this.error_status = true;
+                    this.submit_text='立即注册';
                 })
             }
         },
@@ -132,6 +136,7 @@ export default {
             localStorage.setItem('refresh_token', refresh_token);
             this.$store.commit('addAccessToken', access_token);
             this.$store.commit('addRefreshToken', refresh_token);
+            this.$store.commit('changeLogigStatus');
         }
     },
     computed: {
@@ -199,7 +204,7 @@ export default {
         color: crimson;
     }
     /* 注册页表单样式 */
-    .registerCont div{
+    .registerCont .tips{
         width: 86%;
         box-sizing: border-box;
         padding: 10px;
@@ -210,7 +215,7 @@ export default {
     .registerCont .error{
         color:tomato;
     }
-    .registerCont input[type=password], input[type=text], input[type=button], input[type=email]{
+    .registerCont input[type=password], input[type=text], input[type=email]{
         padding: 10px;
         width: 86%;
         border-radius: 2px;
@@ -226,10 +231,17 @@ export default {
     .registerCont input[type=password]:focus,input[type=text]:focus,  input[type=email]:focus{
         border-color: #307B8A;
     }
-    .registerCont input[type=button]{
+    .registerCont .submitBtn{
+        box-sizing: border-box;
+        margin: 15px auto;
+        text-align: center;
+        width: 86%;
+        padding: 10px;
         cursor: pointer;
         color: #fff;
+        outline: none;
         border: none;
+        border-radius: 2px;
         background: #307B8A;
     }
     /*注册页底部提示*/

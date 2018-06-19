@@ -11,14 +11,14 @@
                 <a href="">关于我们</a>
             </div>
             <div class="user-info">
-                <span v-if="true">
+                <span v-if="loginStatus">
                     <span class="goLogin" @click="openLoginDiv">登录</span>
                     <span class="goRegister" @click="openRegisterDiv">&nbsp;&nbsp;注册</span>
       
            </span>
                 <span v-else>
-                    <span>Nundy</span>
-                    <span class="outLogin">&nbsp;&nbsp;退出</span>
+                    <span>{{userInfo.a_name}}</span>
+                    <span class="outLogin" @click="loginOut">&nbsp;&nbsp;退出</span>
                 </span>
             </div>
             <user-login></user-login>
@@ -45,12 +45,27 @@ export default {
       },
       openRegisterDiv(){
           this.$store.commit('openRegisterDiv');
+      },
+      loginOut(){
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('refresh_token');
+        this.$store.commit('addAccessToken', '');
+        this.$store.commit('addRefreshToken', '');
+        this.$store.commit('changeLogigStatus');
       }
   },
   components: {
       UserLogin,
       UserRegister,
       UserForget
+  },
+  computed: {
+    userInfo: function (params) {
+        return this.$store.state.userInfo;
+    },
+    loginStatus: function (params) {
+        return this.$store.state.login_status;
+    }
   }
 }
 </script>

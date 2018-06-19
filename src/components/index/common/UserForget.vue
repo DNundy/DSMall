@@ -10,7 +10,7 @@
                 <input type="text" placeholder="请输入手机号码">
                 <input type="email" placeholder="请输入预留邮箱">
                 <input type="password" placeholder="请输入新的密码">
-                <input type="button" value="去找回">
+                <div class="submitBtn">去找回</div>
             </div>
             <div class="forgetFoot">
                 <span class="toLogin" @click="toLogin">返回登录</span>

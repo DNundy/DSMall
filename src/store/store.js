@@ -11,6 +11,8 @@ export default new Vuex.Store({
         registerDivStatus: false,
         forgetDivStatus: false,
 
+        login_status: false,
+
         // 账户信息
         userInfo: {
             a_id: '',
@@ -53,7 +55,12 @@ export default new Vuex.Store({
         },
         addRefreshToken(state, value) {
             state.userInfo.refresh_token = value;
-        }
+        },
+
+        // 登录状态
+        changeLogigStatus(state){
+            state.login_status = !state.login_status;
+        },
     },
     // methods 异步方法 -> dispatch
     actions: {
