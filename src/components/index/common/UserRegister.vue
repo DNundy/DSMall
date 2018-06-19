@@ -25,7 +25,7 @@
 <script>
 
 import qs from 'qs'
-import validate from "@/utils/validate";
+import validate from '@/utils/validate';
 
 export default {
     data () {
@@ -106,22 +106,22 @@ export default {
             return true;
         },
         submitRegister() {
-            if( this.checkName() && this.checkPhone() && this.checkEmail() &&this.checkPwd() ){
+            let status = this.checkName() && this.checkPhone() && this.checkEmail() &&this.checkPwd();
+            if( status ){
                 let data = qs.stringify(this.registerInfo);
-                let _that = this;
                 this.$ajax.post('/api/Account/register', data)
-                .then(function(response){
+                .then((response) => {
                     let data = response.data;
                     if( data.code == 0 ){
-                        _that.setUserInfo(data);
-                        _that.closeRegisterDiv();
+                        this.setUserInfo(data);
+                        this.closeRegisterDiv();
                     }else if ( data.code == -1 ){
-                        _that.error_tips = data.msg;
-                        _that.error_status = true;
+                        this.error_tips = data.msg;
+                        this.error_status = true;
                     }
-                }).catch(function(response){
-                    _that.error_tips = '饿哦~~';
-                    _that.error_status = true;
+                }).catch((response) => {
+                    this.error_tips = '网络好像出现问题了呢！';
+                    this.error_status = true;
                 })
             }
         },
@@ -132,8 +132,6 @@ export default {
             localStorage.setItem('refresh_token', refresh_token);
             this.$store.commit('addAccessToken', access_token);
             this.$store.commit('addRefreshToken', refresh_token);
-            axios.defaults.headers.common['access_token'] = access_token;
-            axios.defaults.headers.common['refresh_token'] = refresh_token;
         }
     },
     computed: {
