@@ -48,8 +48,12 @@ export default {
       },
       loginOut(){
         const auth = {
+            "a_id": '',
+            "a_name": '',
+            "a_auth": '',
+            "a_email": '',
             "access_token": '',
-            "refresh_token": '',
+            "refresh_token": ''
         }
         this.$store.commit('setUserInfo', auth);
         this.$store.commit('changeLoginStatus');

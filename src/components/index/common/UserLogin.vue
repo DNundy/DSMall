@@ -25,6 +25,7 @@
 
 import qs from 'qs'
 import validate from "@/utils/validate";
+import localStorageUtil from '@/utils/localStorage';
 
 export default {
   data () {
@@ -88,11 +89,28 @@ export default {
                 this.submit_text="拼命登陆ing...";
                 let data = qs.stringify(this.loginInfo);
                 this.$ajax.post('/api/Account/login', data).then((response)=>{
+                    let data = response.data;
+                    if( data.code == 0 ){
+                        this.submitSuccess(data.data);
+                    }else if ( data.code == -1 ){
+                        this.error_tips = data.msg;
+                        this.error_status = true;
+                    }
                     this.submit_text="立即登录"
                 }).catch((response)=>{
                     this.submit_text="立即登录"
                 })
             }
+        },
+        submitSuccess(data){
+            // 设置全局信息
+            this.$store.commit('setUserInfo', data);
+            // 改变登录状态
+            this.$store.commit('changeLoginStatus');
+            // 存储本地Token
+            localStorageUtil.setUserToken(data);
+            // 关闭注册框
+            this.closeLoginDiv();
         }
   },
   computed: {

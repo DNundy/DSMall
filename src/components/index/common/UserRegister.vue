@@ -130,12 +130,9 @@ export default {
             }
         },
         submitSuccess(data){
+            console.log(data);
             // 设置全局信息
-            const auth = {
-                "access_token": data.access_token,
-                "refresh_token": data.refresh_token,
-            };
-            this.$store.commit('setUserInfo', auth);
+            this.$store.commit('setUserInfo', data);
             // 改变登录状态
             this.$store.commit('changeLoginStatus');
             // 存储本地Token

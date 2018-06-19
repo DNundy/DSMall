@@ -62,9 +62,13 @@ class AccountController extends Controller{
 
         // 登录成功
         $res = array(
-            'code' => 1,
+            'code' => 0,
             'msg' => "登录成功",
             'data' => array(
+                'a_id' => $AccountData[0][a_id],
+                'a_name' => $AccountData[0][a_name],
+                'a_auth' => $AccountData[0][a_auth],
+                'a_email' => $AccountData[0][a_name],
                 'access_token' => $encode[access_token],
                 'refresh_token' => $encode[refresh_token],
             )
@@ -132,6 +136,10 @@ class AccountController extends Controller{
                 'code' => 0,
                 'msg' => '恭喜您，注册成功!',
                 'data' => array(
+                    'a_id' => $req[a_id],
+                    'a_name' => $req[a_name],
+                    'a_auth' => 0,
+                    'a_email' => $req[a_email],
                     'access_token' => $encode[access_token],
                     'refresh_token' => $encode[refresh_token]
                 )
