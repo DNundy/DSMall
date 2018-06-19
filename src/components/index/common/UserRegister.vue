@@ -26,6 +26,7 @@
 
 import qs from 'qs'
 import validate from '@/utils/validate';
+import localStorageUtil from '@/utils/localStorage';
 
 export default {
     data () {
@@ -115,28 +116,32 @@ export default {
                 .then((response) => {
                     let data = response.data;
                     if( data.code == 0 ){
-                        this.setUserInfo(data);
-                        this.closeRegisterDiv();
+                        this.submitSuccess(data.data);
                     }else if ( data.code == -1 ){
                         this.error_tips = data.msg;
                         this.error_status = true;
                     }
                     this.submit_text='立即注册';
                 }).catch((response) => {
-                    this.error_tips = '网络好像出现问题了呢！';
+                    this.error_tips = '一个未知的错误发生了！';
                     this.error_status = true;
                     this.submit_text='立即注册';
                 })
             }
         },
-        setUserInfo(data){
-            const access_token = data.data.access_token;
-            const refresh_token = data.data.refresh_token;
-            localStorage.setItem('access_token', access_token);
-            localStorage.setItem('refresh_token', refresh_token);
-            this.$store.commit('addAccessToken', access_token);
-            this.$store.commit('addRefreshToken', refresh_token);
-            this.$store.commit('changeLogigStatus');
+        submitSuccess(data){
+            // 设置全局信息
+            const auth = {
+                "access_token": data.access_token,
+                "refresh_token": data.refresh_token,
+            };
+            this.$store.commit('setUserInfo', auth);
+            // 改变登录状态
+            this.$store.commit('changeLoginStatus');
+            // 存储本地Token
+            localStorageUtil.setUserToken(data);
+            // 关闭注册框
+            this.closeRegisterDiv();
         }
     },
     computed: {

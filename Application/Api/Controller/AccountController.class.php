@@ -111,6 +111,7 @@ class AccountController extends Controller{
 
         // 生成Token
         $encode = $this->encode($req);
+        $currenttime = time();
 
         // 数据集成
         $data = array(

@@ -47,11 +47,13 @@ export default {
           this.$store.commit('openRegisterDiv');
       },
       loginOut(){
-        localStorage.removeItem('access_token');
-        localStorage.removeItem('refresh_token');
-        this.$store.commit('addAccessToken', '');
-        this.$store.commit('addRefreshToken', '');
-        this.$store.commit('changeLogigStatus');
+        const auth = {
+            "access_token": '',
+            "refresh_token": '',
+        }
+        this.$store.commit('setUserInfo', auth);
+        this.$store.commit('changeLoginStatus');
+        localStorage.removeItem('auth');
       }
   },
   components: {

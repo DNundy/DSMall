@@ -15,12 +15,19 @@ export default new Vuex.Store({
 
         // 账户信息
         userInfo: {
+            // 基本信息
             a_id: '',
             a_name: '',
             a_email: '',
             a_auth: '',
+
+            // Token
             access_token: '',
-            refresh_token: ''
+            refresh_token: '',
+
+            // 每次更新Token时自动刷新时间
+            access_expires: '',
+            refresh_expires: '',
         }
     },
     // computed
@@ -50,15 +57,18 @@ export default new Vuex.Store({
         },
 
         // 全局账户信息
-        addAccessToken(state, value) {
-            state.userInfo.access_token = value;
-        },
-        addRefreshToken(state, value) {
-            state.userInfo.refresh_token = value;
+        setUserInfo(state, data) {
+            for (var key in data) {
+                if (data.hasOwnProperty(key) === true) {
+                    state.userInfo[key] = data[key];
+                }
+            }
+            state.userInfo.access_expires = Math.round(new Date() / 1000) + 3600;
+            state.userInfo.refresh_expires = Math.round(new Date() / 1000) + 604800;
         },
 
         // 登录状态
-        changeLogigStatus(state){
+        changeLoginStatus(state){
             state.login_status = !state.login_status;
         },
     },
