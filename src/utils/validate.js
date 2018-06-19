@@ -1,15 +1,15 @@
-export default {
+const validate = {
     checkLength: function (value, min, max) {
-        if( typeof(min)!='number' || typeof(max)!='number' ){
+        if (typeof (min) != 'number' || typeof (max) != 'number') {
             throw new Error('【validate】: 最小值和最大值应该设为数字！')
             return;
-        }else if( min > max ){
+        } else if (min > max) {
             throw new Error('【validate】: 最小值应该小于最大值！')
             return;
         }
-        
+
         let valueLength = value.length;
-        if ( valueLength >= min && valueLength <= max ){
+        if (valueLength >= min && valueLength <= max) {
             return {
                 status: true,
             };
@@ -18,17 +18,17 @@ export default {
                 status: false,
                 type: 1,
             };
-        } else if (valueLength < min){
+        } else if (valueLength < min) {
             return {
                 status: false,
                 type: -1,
-                msg: '该值长度不能小于'+ min +'位'
+                msg: '该值长度不能小于' + min + '位'
             };
-        }else if (valueLength>max){
+        } else if (valueLength > max) {
             return {
                 status: false,
                 type: -1,
-                msg: '该值长度不能大于'+ max +'位'
+                msg: '该值长度不能大于' + max + '位'
             };
         }
     },
@@ -36,25 +36,25 @@ export default {
         let valueLength = value.length;
         let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/;
         let result = phoneReg.test(value);
-        if( !value ){
+        if (!value) {
             return {
                 status: false,
                 type: -1,
                 msg: '手机号码是必须的哦'
             };
-        }else if ( valueLength != 11 ){
+        } else if (valueLength != 11) {
             return {
                 status: false,
                 type: -1,
                 msg: '手机号码一般为11位纯数字'
             };
-        }else if ( !result ){
+        } else if (!result) {
             return {
                 status: false,
                 type: -1,
                 msg: '手机号码格式好像出错了呢'
             };
-        } else if ( result ){
+        } else if (result) {
             return {
                 status: true,
             }
@@ -70,7 +70,7 @@ export default {
                 type: -1,
                 msg: '邮箱是必须的哦'
             };
-        }else if (!result) {
+        } else if (!result) {
             return {
                 status: false,
                 type: -1,
@@ -83,3 +83,4 @@ export default {
         }
     },
 }
+export default validate
