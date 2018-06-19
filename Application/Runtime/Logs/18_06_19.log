@@ -1059,3 +1059,1623 @@ SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   
 SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@12.com' ) LIMIT 1   [ RunTime:0.000423s ]
 SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@12.com','761c9fd305c339e7932f316e055e2cbb',0,1529382604,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkzODI2MDQsImV4cCI6MTUyOTM4NjIwNCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMi5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOSAxMjozMDowNCJ9fQ.ibqIXzNTnj6_ipfH1gNpnBJnznVvOx6fWJ7vNcJ0Us8','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkzODI2MDQsImV4cCI6MTUyOTk4NzQwNCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkzODI2MDQsImV4cCI6MTUyOTM4NjIwNCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMi5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOSAxMjozMDowNCJ9fX19.jGXyzSyicXMTGQwJb2lkcUvXYgfvSx5UZdBuO13utrE') [ RunTime:0.150919s ]
 
+[ 2018-06-19T17:14:51+08:00 ] 127.0.0.1 /dsmall/api/account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000864s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008119s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008206s ]
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 17 行.
+NOTIC: [8] Undefined index: password E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 18 行.
+
+[ 2018-06-19T17:15:39+08:00 ] 127.0.0.1 /dsmall/api/account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+
+[ 2018-06-19T17:15:45+08:00 ] 127.0.0.1 /dsmall/api/account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001561s ]
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 17 行.
+NOTIC: [8] Undefined index: password E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 18 行.
+NOTIC: [8] Undefined index: access_token E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+
+[ 2018-06-19T17:17:07+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000983s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002271s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003912s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000374s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000292s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710@qq.com' ) LIMIT 1   [ RunTime:0.000278s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710@qq.com','2186bcf5365ea3216f0751509159c099',0,1529399827,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkzOTk4MjcsImV4cCI6MTUyOTQwMzQyNywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOSAxNzoxNzowNyJ9fQ.YcceY9ygLwkdCalslZ3dTDeI0c991tnp2u_2t0jcW_o','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkzOTk4MjcsImV4cCI6MTUzMDAwNDYyNywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1MjkzOTk4MjcsImV4cCI6MTUyOTQwMzQyNywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOSAxNzoxNzowNyJ9fX19.M64z84AOpVEhUiMjRM1hjlkNPr7QE2-UW7cM7H3Y29s') [ RunTime:0.062723s ]
+
+[ 2018-06-19T17:17:19+08:00 ] 127.0.0.1 /dsmall/api/account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.019129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019346s ]
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 17 行.
+NOTIC: [8] Undefined index: password E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 18 行.
+NOTIC: [8] Undefined index: access_token E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+
+[ 2018-06-19T17:25:11+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003874s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000368s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18720939454' ) LIMIT 1   [ RunTime:0.000284s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='123@qwe.co' ) LIMIT 1   [ RunTime:0.000278s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18720939454','Nundy','123@qwe.co','071d10c6de079e6b9fd33039366efe32',0,1529400311,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDAzMTEsImV4cCI6MTUyOTQwMzkxMSwiZGF0YSI6eyJhX2lkIjoiMTg3MjA5Mzk0NTQiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxMjNAcXdlLmNvIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTkgMTc6MjU6MTEifX0.58JQxZzToqdqpqGWRIBmuy58Z1-TtUgD3saEcBAoEio','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDAzMTEsImV4cCI6MTUzMDAwNTExMSwiZGF0YSI6eyJhX2lkIjoiMTg3MjA5Mzk0NTQiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDAzMTEsImV4cCI6MTUyOTQwMzkxMSwiZGF0YSI6eyJhX2lkIjoiMTg3MjA5Mzk0NTQiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxMjNAcXdlLmNvIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6IjIwMTgtMDYtMTkgMTc6MjU6MTEifX19fQ.w9RhE_WUBj7H6lp2eRNsTIJNSWZErocBBPS45XSbWuI') [ RunTime:0.075737s ]
+
+[ 2018-06-19T17:25:48+08:00 ] 127.0.0.1 /dsmall/api/Account/decode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001121s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001191s ]
+ERR: 非法操作:decode
+
+[ 2018-06-19T17:26:08+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000752s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001999s ]
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 17 行.
+NOTIC: [8] Undefined index: password E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 18 行.
+NOTIC: [8] Undefined index: access_token E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+
+[ 2018-06-19T17:27:17+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001002s ]
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 17 行.
+NOTIC: [8] Undefined index: password E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 18 行.
+NOTIC: [8] Undefined index: access_token E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+
+[ 2018-06-19T17:27:39+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001158s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001244s ]
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 17 行.
+NOTIC: [8] Undefined index: password E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 18 行.
+NOTIC: [8] Undefined index: access_token E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+
+[ 2018-06-19T17:28:21+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000912s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002408s ]
+NOTIC: [8] Undefined index: access_token E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.039279s ]
+INFO: [ app_end ] --END-- [ RunTime:0.039407s ]
+
+[ 2018-06-19T17:28:27+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000873s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001812s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002013s ]
+NOTIC: [8] Undefined index: access_token E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001974s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002068s ]
+
+[ 2018-06-19T17:28:44+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001663s ]
+NOTIC: [8] Undefined index: refresh_token E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001147s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001237s ]
+
+[ 2018-06-19T17:29:04+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001156s ]
+NOTIC: [8] Undefined index: refresh_token E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001206s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001286s ]
+
+[ 2018-06-19T17:29:18+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+NOTIC: [8] Undefined index: content-length E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000908s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000961s ]
+
+[ 2018-06-19T17:29:34+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000780s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001180s ]
+NOTIC: [8] Undefined index: Cookie E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001609s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001751s ]
+
+[ 2018-06-19T17:31:51+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001426s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001510s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001611s ]
+
+[ 2018-06-19T17:32:10+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001559s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001231s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001365s ]
+
+[ 2018-06-19T17:32:31+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001772s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001149s ]
+
+[ 2018-06-19T17:39:58+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000981s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000920s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000993s ]
+SQL: SHOW COLUMNS FROM `dsmall_user` [ RunTime:0.003855s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dsmall_user`
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 32 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_user` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000506s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `dsmall_user` WHERE ( a_id='18710939328' ) LIMIT 1  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001129s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001185s ]
+
+[ 2018-06-19T17:40:10+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001230s ]
+SQL: SHOW COLUMNS FROM `dsmall_user` [ RunTime:0.004974s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dsmall_user`
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 32 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_user` WHERE ( a_id='18720939454' ) LIMIT 1   [ RunTime:0.000851s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `dsmall_user` WHERE ( a_id='18720939454' ) LIMIT 1  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001291s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001368s ]
+
+[ 2018-06-19T17:41:22+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001571s ]
+SQL: SHOW COLUMNS FROM `dsmall_user` [ RunTime:0.003894s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dsmall_user`
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001305s ]
+
+[ 2018-06-19T17:41:37+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000827s ]
+SQL: SHOW COLUMNS FROM `dsmall_user` [ RunTime:0.003739s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dsmall_user`
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 32 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_user` WHERE ( a_id='18720939454' ) LIMIT 1   [ RunTime:0.000455s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `dsmall_user` WHERE ( a_id='18720939454' ) LIMIT 1  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001251s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001316s ]
+
+[ 2018-06-19T17:42:24+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001529s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004292s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 32 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='18720939454' ) LIMIT 1   [ RunTime:0.000454s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001107s ]
+
+[ 2018-06-19T17:42:32+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001891s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004042s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 32 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='18720939457' ) LIMIT 1   [ RunTime:0.000443s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001158s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001227s ]
+
+[ 2018-06-19T17:45:11+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000990s ]
+SQL: SHOW COLUMNS FROM `dsmall_user` [ RunTime:0.003996s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dsmall_user`
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 33 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_user` WHERE ( a_id='18720939457' ) LIMIT 1   [ RunTime:0.000489s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `dsmall_user` WHERE ( a_id='18720939457' ) LIMIT 1  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000954s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001010s ]
+
+[ 2018-06-19T17:45:20+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000653s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000990s ]
+SQL: SHOW COLUMNS FROM `dsmall_user` [ RunTime:0.003994s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dsmall_user`
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 33 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_user` WHERE ( a_id='18720939454' ) LIMIT 1   [ RunTime:0.000510s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `dsmall_user` WHERE ( a_id='18720939454' ) LIMIT 1  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000895s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000949s ]
+
+[ 2018-06-19T17:45:44+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001488s ]
+SQL: SHOW COLUMNS FROM `dsmall_user` [ RunTime:0.004211s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dsmall_user`
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 33 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_user` WHERE ( a_id='18720939454' ) LIMIT 1   [ RunTime:0.000479s ]
+ERR: 1146:Table 'dsmall.dsmall_user' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `dsmall_user` WHERE ( a_id='18720939454' ) LIMIT 1  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001254s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001317s ]
+
+[ 2018-06-19T17:45:57+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000720s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004818s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 33 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='18720939454' ) LIMIT 1   [ RunTime:0.000437s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001065s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001133s ]
+
+[ 2018-06-19T17:46:07+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000991s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002466s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.008111s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 33 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='18720939454' ) LIMIT 1   [ RunTime:0.000690s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001883s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002035s ]
+
+[ 2018-06-19T17:46:21+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004054s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 33 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='18720939454' ) LIMIT 1   [ RunTime:0.000471s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001183s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001267s ]
+
+[ 2018-06-19T17:46:40+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000760s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000831s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004215s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 33 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='18720939454' ) LIMIT 1   [ RunTime:0.000509s ]
+NOTIC: [8] Undefined variable: data E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 35 行.
+SQL: SELECT * FROM `dsmall_account`  [ RunTime:0.000339s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001151s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001217s ]
+
+[ 2018-06-19T17:51:22+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000820s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000891s ]
+
+[ 2018-06-19T17:52:00+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001102s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004015s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='Array.a_id' ) LIMIT 1   [ RunTime:0.000409s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000964s ]
+
+[ 2018-06-19T17:56:50+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000876s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004494s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000413s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000338s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@qq.com' ) LIMIT 1   [ RunTime:0.000283s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@qq.com','32a16321098dfa6ed8462ac8a5b59769',0,1529402210,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDIyMTAsImV4cCI6MTUyOTQwNTgxMCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOSAxNzo1Njo1MCJ9fQ.pDuUf9nngb7V20q90LFEyKLiMVRWjvCQrfk4oxx2uAg','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDIyMTAsImV4cCI6MTUzMDAwNzAxMCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDIyMTAsImV4cCI6MTUyOTQwNTgxMCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOSAxNzo1Njo1MCJ9fX19.1h-Kiof2wr9AUKSZFxrH5Ly4Qn7hG_soAzmcBMYbRxc') [ RunTime:0.148272s ]
+
+[ 2018-06-19T17:57:06+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.015042s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='Array.a_id' ) LIMIT 1   [ RunTime:0.000763s ]
+
+[ 2018-06-19T17:57:16+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001576s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004199s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='Array.a_id' ) LIMIT 1   [ RunTime:0.000418s ]
+
+[ 2018-06-19T17:57:35+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000870s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003933s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='Array.a_id' ) LIMIT 1   [ RunTime:0.000435s ]
+
+[ 2018-06-19T17:58:12+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000775s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001602s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004539s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='Array.a_id' ) LIMIT 1   [ RunTime:0.000516s ]
+
+[ 2018-06-19T17:59:28+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000780s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001519s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003911s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='Array.a_id' ) LIMIT 1   [ RunTime:0.000456s ]
+
+[ 2018-06-19T17:59:54+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000850s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002103s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002247s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.005088s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='Array.a_id' ) LIMIT 1   [ RunTime:0.000457s ]
+
+[ 2018-06-19T18:00:25+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001445s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004185s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='Array.a_id' ) LIMIT 1   [ RunTime:0.000414s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 36 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='Array.a_id' ) LIMIT 1   [ RunTime:0.000341s ]
+
+[ 2018-06-19T18:01:11+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003866s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='Array.a_id' ) LIMIT 1   [ RunTime:0.000411s ]
+
+[ 2018-06-19T18:01:27+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002707s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.005276s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000457s ]
+NOTIC: [8] Undefined variable: Account E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 46 行.
+
+[ 2018-06-19T18:02:08+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000789s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001394s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004367s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000454s ]
+NOTIC: [8] Undefined variable: Account E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 46 行.
+
+[ 2018-06-19T18:02:24+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000798s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004015s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000470s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000942s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000997s ]
+
+[ 2018-06-19T18:02:37+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001155s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004117s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000481s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000751s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000838s ]
+
+[ 2018-06-19T18:03:13+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000703s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001100s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001297s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003970s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 36 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000497s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000741s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000834s ]
+
+[ 2018-06-19T18:03:24+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000653s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004116s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 36 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000948s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001011s ]
+
+[ 2018-06-19T18:03:38+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003870s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 36 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000436s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000713s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000801s ]
+
+[ 2018-06-19T18:04:04+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001221s ]
+
+[ 2018-06-19T18:04:12+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000071s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004710s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001398s ]
+
+[ 2018-06-19T18:04:31+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000638s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000750s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.005239s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 36 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000451s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000924s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001011s ]
+
+[ 2018-06-19T18:04:56+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001749s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.005154s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000756s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001780s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001900s ]
+
+[ 2018-06-19T18:05:08+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004870s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939329 ) LIMIT 1   [ RunTime:0.000454s ]
+
+[ 2018-06-19T18:05:13+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004098s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000850s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
+[ 2018-06-19T18:05:39+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001148s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001256s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004071s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000406s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '1234345' )  [ RunTime:0.000709s ]
+
+[ 2018-06-19T18:05:46+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003993s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000468s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '18710939328' )  [ RunTime:0.000318s ]
+
+[ 2018-06-19T18:06:09+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000843s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000969s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004272s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000443s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000325s ]
+
+[ 2018-06-19T18:06:16+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000876s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001337s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004313s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000406s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000327s ]
+
+[ 2018-06-19T18:06:37+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001431s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004213s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000427s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000443s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000984s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001055s ]
+
+[ 2018-06-19T18:07:01+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000816s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002537s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.006172s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000493s ]
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 45 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000367s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001100s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001173s ]
+
+[ 2018-06-19T18:07:19+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004511s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000465s ]
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 45 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000374s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001070s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001164s ]
+
+[ 2018-06-19T18:09:55+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001180s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001270s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004014s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nundy' ) LIMIT 1   [ RunTime:0.000396s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000254s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@qq.com' ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','nundy','18710939328@qq.com','32a16321098dfa6ed8462ac8a5b59769',0,1529402995,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDI5OTUsImV4cCI6MTUyOTQwNjU5NSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOSAxODowOTo1NSJ9fQ.pf177l7v-XPtfNcF69eaA6m0ogkvFHybGspgYxdQpIk','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDI5OTUsImV4cCI6MTUzMDAwNzc5NSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDI5OTUsImV4cCI6MTUyOTQwNjU5NSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoiMjAxOC0wNi0xOSAxODowOTo1NSJ9fX19.0V3uSU5gu3ShM5poazkImZLRnyNVTA7UWMLaC5Ixbg4') [ RunTime:0.080819s ]
+
+[ 2018-06-19T18:10:04+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003868s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000419s ]
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 45 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000339s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000945s ]
+
+[ 2018-06-19T18:10:17+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000774s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000948s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001053s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.007041s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000534s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000594s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001189s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001306s ]
+
+[ 2018-06-19T18:10:48+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003879s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000440s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '8fe0dd3d62010b78df0f34425de9cc2a' )  [ RunTime:0.000321s ]
+
+[ 2018-06-19T18:12:15+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000728s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001187s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001308s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004431s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000458s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '8fe0dd3d62010b78df0f34425de9cc2a' )  [ RunTime:0.000336s ]
+
+[ 2018-06-19T18:12:20+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001227s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004451s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000454s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '31ea010b0644da18c20808d9702a4bc8' )  [ RunTime:0.000376s ]
+
+[ 2018-06-19T18:12:27+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003967s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000474s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000360s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 55 行.
+NOTIC: [8] Undefined index: a_blockade_time E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 55 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000969s ]
+
+[ 2018-06-19T18:12:41+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000903s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.006167s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.001352s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000859s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001316s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001461s ]
+
+[ 2018-06-19T18:13:18+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001150s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001155s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001399s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003992s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000622s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000425s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000733s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000808s ]
+
+[ 2018-06-19T18:13:34+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002511s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.007602s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000429s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000446s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 55 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001133s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001254s ]
+
+[ 2018-06-19T18:13:58+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004349s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000457s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000478s ]
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 55 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001205s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001285s ]
+
+[ 2018-06-19T18:16:40+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003939s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000378s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000284s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@ad.com' ) LIMIT 1   [ RunTime:0.000275s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@ad.com','9d46f27d35b731fe864e87299e960fc4',0,1529403400,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDM0MDAsImV4cCI6MTUyOTQwNzAwMCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBhZC5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDAzNDAwfX0.PmJoKwRyQhVU9JVblDM_ia2w6tqSpWbgpesb2wy56Yo','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDM0MDAsImV4cCI6MTUzMDAwODIwMCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDM0MDAsImV4cCI6MTUyOTQwNzAwMCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBhZC5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDAzNDAwfX19fQ.YQv-6bv9F2j1pG6UtQKVLLiQxh7xlCmzYhV1qR9Nw1o') [ RunTime:0.074926s ]
+
+[ 2018-06-19T18:16:56+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004230s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nunasd' ) LIMIT 1   [ RunTime:0.000446s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939322' ) LIMIT 1   [ RunTime:0.000269s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='1872@qq.ocm' ) LIMIT 1   [ RunTime:0.000273s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939322','Nunasd','1872@qq.ocm','8d37b0e3c1a24766a5cccb1ac88867fc',0,1529403416,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDM0MTYsImV4cCI6MTUyOTQwNzAxNiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJOdW5hc2QiLCJhX2VtYWlsIjoiMTg3MkBxcS5vY20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDAzNDE2fX0.6t4szXUXnB3fus30FPoFPMOUMy-kQUhnWctVw4aEK9M','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDM0MTYsImV4cCI6MTUzMDAwODIxNiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDM0MTYsImV4cCI6MTUyOTQwNzAxNiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJOdW5hc2QiLCJhX2VtYWlsIjoiMTg3MkBxcS5vY20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDAzNDE2fX19fQ.MyqFao6iatcRaBww0vPeE9sFq8aZcvSMSGNylEdRc5o') [ RunTime:0.084214s ]
+
+[ 2018-06-19T18:23:29+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004528s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nund' ) LIMIT 1   [ RunTime:0.000396s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939321' ) LIMIT 1   [ RunTime:0.000288s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939321@qq.com' ) LIMIT 1   [ RunTime:0.000290s ]
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939321','Nund','18710939321@qq.com','eaa4a06ff805e8cbbccbb427042a0fb7',0,1529403809,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDM4MDksImV4cCI6MTUyOTQwNzQwOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJOdW5kIiwiYV9lbWFpbCI6IjE4NzEwOTM5MzIxQHFxLmNvbSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0MDM4MDl9fQ.IQuTgdkx3_5eeEncO3ejvZsq3XXw30TpDa-X3GjESU8','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDM4MDksImV4cCI6MTUzMDAwODYwOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDM4MDksImV4cCI6MTUyOTQwNzQwOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJOdW5kIiwiYV9lbWFpbCI6IjE4NzEwOTM5MzIxQHFxLmNvbSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0MDM4MDl9fX19.dUYW8NNJGEtilUcUmZvSLScUGThyIUy8KVZImpLTsY4') [ RunTime:0.144703s ]
+
+[ 2018-06-19T18:24:03+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001915s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004113s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000503s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000541s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 56 行.
+
+[ 2018-06-19T18:26:34+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001437s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.005239s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000683s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000409s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 56 行.
+
+[ 2018-06-19T18:27:06+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004152s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000449s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000334s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 56 行.
+
+[ 2018-06-19T18:28:57+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002157s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004559s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000557s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000564s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 56 行.
+
+[ 2018-06-19T18:29:19+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000772s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004451s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000544s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000367s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 56 行.
+
+[ 2018-06-19T18:30:11+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000658s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001352s ]
+
+[ 2018-06-19T18:30:19+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000784s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001617s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004161s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000789s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000399s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 56 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000841s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000898s ]
+
+[ 2018-06-19T18:30:38+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001137s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003870s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000497s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000392s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 56 行.
+
+[ 2018-06-19T18:35:04+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000876s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001185s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001303s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004271s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000479s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000304s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 56 行.
+
+[ 2018-06-19T18:35:17+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000831s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004203s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000442s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000385s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 56 行.
+
+[ 2018-06-19T18:36:05+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001443s ]
+
+[ 2018-06-19T18:36:35+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001135s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001211s ]
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.005352s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 35 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000763s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000542s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 56 行.
+
+[ 2018-06-19T18:40:22+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000937s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 22 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 23 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 27 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004026s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 37 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000499s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000395s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 58 行.
+
+[ 2018-06-19T18:40:26+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000718s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 22 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 23 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 27 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004961s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 37 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000427s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939321' ) AND ( `a_password` = 'eaa4a06ff805e8cbbccbb427042a0fb7' )  [ RunTime:0.000728s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 58 行.
+
+[ 2018-06-19T18:44:10+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000732s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 74 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 75 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 76 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 77 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 81 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 81 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 81 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 81 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004115s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=Nundy ) LIMIT 1   [ RunTime:0.000315s ]
+ERR: 1054:Unknown column 'Nundy' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=Nundy ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000349s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@123.com ) LIMIT 1   [ RunTime:0.000258s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@123.com ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@123.com ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 116 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 117 行.
+NOTIC: [8] Undefined index: name E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 117 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 118 行.
+NOTIC: [8] Undefined index: email E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 118 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 130 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 130 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 142 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 142 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 143 行.
+NOTIC: [8] Undefined index: name E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 144 行.
+NOTIC: [8] Undefined index: email E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 144 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 145 行.
+NOTIC: [8] Undefined index: password E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 145 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES (null,null,null,'d41d8cd98f00b204e9800998ecf8427e',0,1529405050,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDUwNTAsImV4cCI6MTUyOTQwODY1MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOm51bGwsImFfZW1haWwiOm51bGwsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0MDUwNTB9fQ.OgaLuMZVILgVYkc_BZYTHMaxyLJenyrxPIkkayiQuQM','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDUwNTAsImV4cCI6MTUzMDAwOTg1MCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDUwNTAsImV4cCI6MTUyOTQwODY1MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOm51bGwsImFfZW1haWwiOm51bGwsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0MDUwNTB9fX19.2dHnXOE3Pjz2RNdevp-lcA8qQLUtrET0tjSO0MyNOA8') [ RunTime:0.000533s ]
+ERR: 1048:Column 'a_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES (null,null,null,'d41d8cd98f00b204e9800998ecf8427e',0,1529405050,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDUwNTAsImV4cCI6MTUyOTQwODY1MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOm51bGwsImFfZW1haWwiOm51bGwsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0MDUwNTB9fQ.OgaLuMZVILgVYkc_BZYTHMaxyLJenyrxPIkkayiQuQM','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDUwNTAsImV4cCI6MTUzMDAwOTg1MCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDUwNTAsImV4cCI6MTUyOTQwODY1MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOm51bGwsImFfZW1haWwiOm51bGwsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0MDUwNTB9fX19.2dHnXOE3Pjz2RNdevp-lcA8qQLUtrET0tjSO0MyNOA8')
+
+[ 2018-06-19T18:45:28+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000704s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001694s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 74 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 75 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 76 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 77 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 81 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 81 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 81 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 81 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004518s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=Nundy ) LIMIT 1   [ RunTime:0.000304s ]
+ERR: 1054:Unknown column 'Nundy' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=Nundy ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000339s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@123.com ) LIMIT 1   [ RunTime:0.000236s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@123.com ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@123.com ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 116 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 117 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 118 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 130 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 130 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 142 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 144 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 145 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@123.com','32a16321098dfa6ed8462ac8a5b59769',0,1529405128,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDUxMjgsImV4cCI6MTUyOTQwODcyOCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQwNTEyOH19.6FZVlDseNi5VA_UqampFciP58qm3MErohQq2Ycb2z-A','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDUxMjgsImV4cCI6MTUzMDAwOTkyOCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0MDUxMjgsImV4cCI6MTUyOTQwODcyOCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEAxMjMuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQwNTEyOH19fX0.4A6XPk6w4ZuOQS75drp1ph02nHV2ldaSIN9YrnOCZA8') [ RunTime:0.135993s ]
+
+[ 2018-06-19T18:45:55+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001633s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 22 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 23 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 27 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004206s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 37 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000811s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000526s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 58 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000994s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001068s ]
+
+[ 2018-06-19T18:49:49+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001491s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 21 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 22 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004252s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 36 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000480s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000393s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 57 行.
+
+[ 2018-06-19T18:52:43+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000952s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001578s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 21 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 22 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004354s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 36 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000522s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000442s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 57 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 190 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 190 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 191 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 191 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 192 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 192 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 204 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 204 行.
+
+[ 2018-06-19T18:53:00+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001251s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 21 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 22 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004493s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 36 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000505s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000352s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 57 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 190 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 190 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 191 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 191 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 192 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 192 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 204 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 204 行.
+
+[ 2018-06-19T18:54:48+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 21 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 22 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004343s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 36 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000450s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000305s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 57 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 192 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 192 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 193 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 193 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 194 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 194 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 206 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 206 行.
+
+[ 2018-06-19T18:56:26+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001095s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 21 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 22 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004271s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 36 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000476s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000346s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 57 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 197 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 197 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 198 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 199 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 199 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 211 行.
+NOTIC: [8] Undefined variable: req E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 77 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 78 行.
+
+[ 2018-06-19T18:57:17+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001145s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001249s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 21 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 22 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004227s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 36 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000391s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000295s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 57 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 197 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 198 行.
+NOTIC: [8] Undefined index: a_name E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 198 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 199 行.
+NOTIC: [8] Undefined index: a_email E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 199 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 211 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 77 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 78 行.
+
+[ 2018-06-19T19:00:48+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000195s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000821s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001135s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001212s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 19 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 24 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004274s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 34 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000483s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000383s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 55 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 164 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 165 行.
+NOTIC: [8] Undefined index: a_name E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 165 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 166 行.
+NOTIC: [8] Undefined index: a_email E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 166 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 179 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 179 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 75 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 76 行.
+
+[ 2018-06-19T19:00:54+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000762s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001366s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 19 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 20 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 24 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003940s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 34 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000433s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000336s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 55 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 164 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 165 行.
+NOTIC: [8] Undefined index: a_name E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 165 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 166 行.
+NOTIC: [8] Undefined index: a_email E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 166 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 179 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 179 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 75 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 76 行.
+

@@ -11,7 +11,7 @@
                 <a href="">关于我们</a>
             </div>
             <div class="user-info">
-                <span v-if="loginStatus">
+                <span v-if="!loginStatus">
                     <span class="goLogin" @click="openLoginDiv">登录</span>
                     <span class="goRegister" @click="openRegisterDiv">&nbsp;&nbsp;注册</span>
       

@@ -23,6 +23,7 @@
  
 <script>
 
+import qs from 'qs'
 import validate from "@/utils/validate";
 
 export default {
@@ -84,8 +85,9 @@ export default {
         },
         submitLogin(){
             if(this.checkPhone() && this.checkPwd()){
-                this.submit_text="拼命登陆ing..."
-                this.$ajax.post('/api/Account/decode', this.loginInfo).then((response)=>{
+                this.submit_text="拼命登陆ing...";
+                let data = qs.stringify(this.loginInfo);
+                this.$ajax.post('/api/Account/login', data).then((response)=>{
                     this.submit_text="立即登录"
                 }).catch((response)=>{
                     this.submit_text="立即登录"
