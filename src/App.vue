@@ -5,8 +5,44 @@
 </template>
 
 <script>
+import qs from 'qs'
 export default {
-  name: 'App'
+    name: 'App',
+    methods: {
+        checkLoginStatus(){
+            // 若localstorge没有auth信息，则return结束
+            let UserAuth = localStorage.getItem('auth');
+            if( !UserAuth ) return;
+
+            // 格式化auth及获取当前时间
+            UserAuth = qs.parse(UserAuth);
+            let currenttime = Math.round(new Date()/1000);
+
+            // 判断刷新Token，若过期，则return结束，不进行请求，用户需重新登录
+            // 此时鉴权Token和刷新Token均过期
+            if( UserAuth.refresh_token < currenttime ) return;
+
+            // 判断鉴权Token，若过期，则请求新鉴权Token和刷新Token
+            // 此时鉴权Token过期，刷新Token未过期
+            if( UserAuth.access_token < currenttime ){
+                // 调用刷新Token接口
+                this.$ajax.get('/api/AccountInfo/baseInfo')
+                .then(response=>{
+                    this.$store.commit('changeLoginStatus', true);
+                })
+                .catch(error=>{
+
+                });
+                return;
+            }
+            
+            // 均为过期
+            return;
+        },
+    },
+    mounted(){
+        this.checkLoginStatus();
+    }
 }
 </script>
 

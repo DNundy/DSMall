@@ -56,7 +56,7 @@ export default {
             "refresh_token": ''
         }
         this.$store.commit('setUserInfo', auth);
-        this.$store.commit('changeLoginStatus');
+        this.$store.commit('changeLoginStatus', false);
         localStorage.removeItem('auth');
       }
   },

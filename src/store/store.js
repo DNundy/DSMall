@@ -68,8 +68,8 @@ export default new Vuex.Store({
         },
 
         // 登录状态
-        changeLoginStatus(state){
-            state.login_status = !state.login_status;
+        changeLoginStatus(state, value){
+            state.login_status = value;
         },
     },
     // methods 异步方法 -> dispatch

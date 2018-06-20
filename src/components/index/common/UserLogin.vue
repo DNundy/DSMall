@@ -106,7 +106,7 @@ export default {
             // 设置全局信息
             this.$store.commit('setUserInfo', data);
             // 改变登录状态
-            this.$store.commit('changeLoginStatus');
+            this.$store.commit('changeLoginStatus', true);
             // 存储本地Token
             localStorageUtil.setUserToken(data);
             // 关闭注册框

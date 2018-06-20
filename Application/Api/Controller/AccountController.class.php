@@ -24,7 +24,7 @@ class AccountController extends Controller{
 
         // 账户id验证
         $AccountSql = M('Account');
-        $isAccount = M('Account')->where("a_id=$req[a_id]")->getField();
+        $isAccount = M('Account')->where("a_id='$req[a_id]'")->getField();
         if( empty($isAccount) ){
             $res = array(
                 'code' => -1,
@@ -93,26 +93,25 @@ class AccountController extends Controller{
                 'msg' => "信息不能为空",
             );
             return $this->ajaxReturn($res);
-        } elseif( M('Account')->where("a_name=$req[a_name]")->getField('a_name') ){
+        } elseif( M('Account')->where("a_name='$req[a_name]'")->getField('a_name') ){
             $res = array(
                 'code' => -1,
                 'msg' => "该用户名已被使用！",
             );
             return $this->ajaxReturn($res);
-        } elseif( M('Account')->where("a_id=$req[a_id]")->getField('a_id') ){
+        } elseif( M('Account')->where("a_id='$req[a_id]'")->getField('a_id') ){
             $res = array(
                 'code' => -1,
                 'msg' => "该手机号码已被使用！"
             );
             return $this->ajaxReturn($res);
-        } elseif( M('Account')->where("a_email=$req[a_email]")->getField('a_email') ){
+        } elseif( M('Account')->where("a_email='$req[a_email]'")->getField('a_email') ){
             $res = array(
                 'code' => -1,
                 'msg' => "该邮箱账号已被使用！",
             );
             return $this->ajaxReturn($res);
         }
-
         // 生成Token
         $encode = $this->encode($req);
         $currenttime = time();
@@ -195,16 +194,6 @@ class AccountController extends Controller{
             "access_token" => $access_token_code,
             "refresh_token" => $refresh_token_code
         );
-    }
-
-    // Token解码
-    public function decode(){
-        $jwt = new \Org\Util\Jwt;
-        $encode = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEwNTAsInVzZXJuYW1lIjoiYmFieSJ9.r7KLs6Z-HaUw52qZzKrE8hiuAPy-KGVZXuE4QXZodo8';
-        $decoded = (array) $jwt::decode($encode, KEY, array('HS256'));
-        dump($decoded);
-        // $req_access_token = $_SERVER['HTTP_ACCESS_TOKEN'];
-        // $req_refresh_token = $_SERVER['HTTP_REFRESH_TOKEN'];
     }
 }
 ?>

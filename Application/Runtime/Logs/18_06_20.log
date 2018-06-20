@@ -1,0 +1,1247 @@
+[ 2018-06-20T08:43:06+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008389s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004022s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundy ) LIMIT 1   [ RunTime:0.000230s ]
+ERR: 1054:Unknown column 'nundy' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundy ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000266s ]
+
+[ 2018-06-20T08:43:11+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003723s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundy ) LIMIT 1   [ RunTime:0.000225s ]
+ERR: 1054:Unknown column 'nundy' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundy ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939322 ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.ocm ) LIMIT 1   [ RunTime:0.000176s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.ocm ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.ocm ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939322','nundy','18710939328@qq.ocm','32a16321098dfa6ed8462ac8a5b59769',0,1529455391,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTUzOTEsImV4cCI6MTUyOTQ1ODk5MSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5vY20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU1MzkxfX0.4CqXBIwifELSACoSdh1eru0pDQFjRkf4XZlqVqFo34E','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTUzOTEsImV4cCI6MTUzMDA2MDE5MSwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTUzOTEsImV4cCI6MTUyOTQ1ODk5MSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5vY20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU1MzkxfX19fQ.GDI4exMzdu6Pow-D8WkoTWu2o0r20dsv6bQwjNJNs0w') [ RunTime:0.090239s ]
+ERR: 1062:Duplicate entry 'nundy' for key 'a_name'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939322','nundy','18710939328@qq.ocm','32a16321098dfa6ed8462ac8a5b59769',0,1529455391,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTUzOTEsImV4cCI6MTUyOTQ1ODk5MSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5vY20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU1MzkxfX0.4CqXBIwifELSACoSdh1eru0pDQFjRkf4XZlqVqFo34E','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTUzOTEsImV4cCI6MTUzMDA2MDE5MSwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTUzOTEsImV4cCI6MTUyOTQ1ODk5MSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5vY20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU1MzkxfX19fQ.GDI4exMzdu6Pow-D8WkoTWu2o0r20dsv6bQwjNJNs0w')
+
+[ 2018-06-20T08:43:33+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003658s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nund ) LIMIT 1   [ RunTime:0.000246s ]
+ERR: 1054:Unknown column 'nund' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nund ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939322 ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.ocm ) LIMIT 1   [ RunTime:0.000178s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.ocm ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.ocm ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939322','nund','18710939328@qq.ocm','32a16321098dfa6ed8462ac8a5b59769',0,1529455413,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU0MTMsImV4cCI6MTUyOTQ1OTAxMywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJudW5kIiwiYV9lbWFpbCI6IjE4NzEwOTM5MzI4QHFxLm9jbSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0NTU0MTN9fQ.yth7UGR0xPE2kab90jtRZt1blJEM_DSMndGHeRg6lD4','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU0MTMsImV4cCI6MTUzMDA2MDIxMywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU0MTMsImV4cCI6MTUyOTQ1OTAxMywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJudW5kIiwiYV9lbWFpbCI6IjE4NzEwOTM5MzI4QHFxLm9jbSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0NTU0MTN9fX19.HrCOM4-6qWlYS_UWgQ-f0BJ9y0NGxIKJRdrq8qNa4zI') [ RunTime:0.090072s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 139 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 140 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 142 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 144 行.
+
+[ 2018-06-20T08:49:54+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001052s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004107s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nund ) LIMIT 1   [ RunTime:0.000227s ]
+ERR: 1054:Unknown column 'nund' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nund ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18825632356 ) LIMIT 1   [ RunTime:0.000294s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871@qq.von ) LIMIT 1   [ RunTime:0.000176s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.von ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871@qq.von ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18825632356','nund','1871@qq.von','1359c5ecc99b576dead3b5ab375e88bc',0,1529455794,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU3OTQsImV4cCI6MTUyOTQ1OTM5NCwiZGF0YSI6eyJhX2lkIjoiMTg4MjU2MzIzNTYiLCJhX25hbWUiOiJudW5kIiwiYV9lbWFpbCI6IjE4NzFAcXEudm9uIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NTc5NH19.HMM99mu1U6OATLt-p1fFQ6eJTxCtfydgq3fo1x6Jt_c','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU3OTQsImV4cCI6MTUzMDA2MDU5NCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU3OTQsImV4cCI6MTUyOTQ1OTM5NCwiZGF0YSI6eyJhX2lkIjoiMTg4MjU2MzIzNTYiLCJhX25hbWUiOiJudW5kIiwiYV9lbWFpbCI6IjE4NzFAcXEudm9uIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NTc5NH19fX0.7AGqb9lno5Tr8A5wKoA8VmrEGaGr6DBdmB8hsal3hlw') [ RunTime:0.361958s ]
+ERR: 1062:Duplicate entry 'nund' for key 'a_name'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18825632356','nund','1871@qq.von','1359c5ecc99b576dead3b5ab375e88bc',0,1529455794,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU3OTQsImV4cCI6MTUyOTQ1OTM5NCwiZGF0YSI6eyJhX2lkIjoiMTg4MjU2MzIzNTYiLCJhX25hbWUiOiJudW5kIiwiYV9lbWFpbCI6IjE4NzFAcXEudm9uIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NTc5NH19.HMM99mu1U6OATLt-p1fFQ6eJTxCtfydgq3fo1x6Jt_c','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU3OTQsImV4cCI6MTUzMDA2MDU5NCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU3OTQsImV4cCI6MTUyOTQ1OTM5NCwiZGF0YSI6eyJhX2lkIjoiMTg4MjU2MzIzNTYiLCJhX25hbWUiOiJudW5kIiwiYV9lbWFpbCI6IjE4NzFAcXEudm9uIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NTc5NH19fX0.7AGqb9lno5Tr8A5wKoA8VmrEGaGr6DBdmB8hsal3hlw')
+
+[ 2018-06-20T08:50:03+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001524s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003959s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nun ) LIMIT 1   [ RunTime:0.000230s ]
+ERR: 1054:Unknown column 'nun' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nun ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18825632356 ) LIMIT 1   [ RunTime:0.000257s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871@qq.von ) LIMIT 1   [ RunTime:0.000177s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.von ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871@qq.von ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18825632356','nun','1871@qq.von','1359c5ecc99b576dead3b5ab375e88bc',0,1529455803,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU4MDMsImV4cCI6MTUyOTQ1OTQwMywiZGF0YSI6eyJhX2lkIjoiMTg4MjU2MzIzNTYiLCJhX25hbWUiOiJudW4iLCJhX2VtYWlsIjoiMTg3MUBxcS52b24iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU1ODAzfX0.dSkfeLSagVWoOJXLpcOmGW8prJnEOytVmmM5bmqb7BY','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU4MDMsImV4cCI6MTUzMDA2MDYwMywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTU4MDMsImV4cCI6MTUyOTQ1OTQwMywiZGF0YSI6eyJhX2lkIjoiMTg4MjU2MzIzNTYiLCJhX25hbWUiOiJudW4iLCJhX2VtYWlsIjoiMTg3MUBxcS52b24iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU1ODAzfX19fQ.RpNFkD5nAdHGVCMqm1X8FW1qjKB-eFpq19i2j97Hb1g') [ RunTime:0.124223s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 139 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 140 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 142 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 144 行.
+
+[ 2018-06-20T09:12:32+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003799s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundy ) LIMIT 1   [ RunTime:0.000228s ]
+ERR: 1054:Unknown column 'nundy' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundy ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000281s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.com ) LIMIT 1   [ RunTime:0.000178s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.com ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','nundy','18710939328@qq.com','32a16321098dfa6ed8462ac8a5b59769',0,1529457152,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcxNTIsImV4cCI6MTUyOTQ2MDc1MiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MTUyfX0.favp3c20_WZIblSxu0CoCxXJ_nrEvfc3cxzxfwe2geU','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcxNTIsImV4cCI6MTUzMDA2MTk1MiwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcxNTIsImV4cCI6MTUyOTQ2MDc1MiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJudW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MTUyfX19fQ.7seyQ9wrZWgOkgcQgS2bqFAxNeNwgrJj4LvPp2_aKm0') [ RunTime:0.408587s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 139 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 140 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 142 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 144 行.
+
+[ 2018-06-20T09:12:57+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000723s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.006824s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=Nundy ) LIMIT 1   [ RunTime:0.000266s ]
+ERR: 1054:Unknown column 'Nundy' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=Nundy ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939322 ) LIMIT 1   [ RunTime:0.000290s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000177s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939322','Nundy','1871093932@qq.om','3dbc1a171570e890494a490e54deacc0',0,1529457176,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcxNzYsImV4cCI6MTUyOTQ2MDc3NiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzE3Nn19.-TEDQ2BiCFG_SOtwK6R_GfIl_E99ZW--aVNXpZA92Ao','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcxNzYsImV4cCI6MTUzMDA2MTk3NiwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcxNzYsImV4cCI6MTUyOTQ2MDc3NiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjIiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzE3Nn19fX0.wJwkxEnrKU4xzBLfp_C9xakN9Mbddc_sEwOB5fZ1VXg') [ RunTime:0.083933s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 139 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 140 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 142 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 144 行.
+
+[ 2018-06-20T09:13:27+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003954s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundd ) LIMIT 1   [ RunTime:0.000228s ]
+ERR: 1054:Unknown column 'nundd' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundd ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000291s ]
+
+[ 2018-06-20T09:13:31+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001622s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003827s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundd ) LIMIT 1   [ RunTime:0.000228s ]
+ERR: 1054:Unknown column 'nundd' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundd ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939322 ) LIMIT 1   [ RunTime:0.000289s ]
+
+[ 2018-06-20T09:13:39+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003779s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundd ) LIMIT 1   [ RunTime:0.000226s ]
+ERR: 1054:Unknown column 'nundd' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundd ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000289s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.com ) LIMIT 1   [ RunTime:0.000178s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.com ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939321','nundd','18710939328@qq.com','e024c740c20bd67b04e6003fecb64317',0,1529457219,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyMTksImV4cCI6MTUyOTQ2MDgxOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5kZCIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MjE5fX0.uQQuthMsECA-AJ_zXvWGQb-EX7xdnD3XxhEtjLLeMv0','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyMTksImV4cCI6MTUzMDA2MjAxOSwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyMTksImV4cCI6MTUyOTQ2MDgxOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5kZCIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MjE5fX19fQ.tVt2qfN9TLsi5JxWPSfPS64i73CMQXrD4aN2d8McwxQ') [ RunTime:0.046101s ]
+ERR: 1062:Duplicate entry '18710939328@qq.com' for key 'a_email'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939321','nundd','18710939328@qq.com','e024c740c20bd67b04e6003fecb64317',0,1529457219,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyMTksImV4cCI6MTUyOTQ2MDgxOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5kZCIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MjE5fX0.uQQuthMsECA-AJ_zXvWGQb-EX7xdnD3XxhEtjLLeMv0','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyMTksImV4cCI6MTUzMDA2MjAxOSwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyMTksImV4cCI6MTUyOTQ2MDgxOSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5kZCIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MjE5fX19fQ.tVt2qfN9TLsi5JxWPSfPS64i73CMQXrD4aN2d8McwxQ')
+
+[ 2018-06-20T09:14:41+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001104s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004023s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundd ) LIMIT 1   [ RunTime:0.000230s ]
+ERR: 1054:Unknown column 'nundd' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundd ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000290s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@Qq.com ) LIMIT 1   [ RunTime:0.000177s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@Qq.com ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@Qq.com ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939321','nundd','18710939328@Qq.com','e024c740c20bd67b04e6003fecb64317',0,1529457280,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyODAsImV4cCI6MTUyOTQ2MDg4MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5kZCIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBRcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MjgwfX0.MYz96_QH37tsc7uFKy_od2uBTVXpHp-OdLPhBhZPAGM','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyODAsImV4cCI6MTUzMDA2MjA4MCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyODAsImV4cCI6MTUyOTQ2MDg4MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5kZCIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBRcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MjgwfX19fQ.L6egjXI6by4_7Gsch2qflK9Uk-h3mShMnNxE5J4fRVw') [ RunTime:0.360075s ]
+ERR: 1062:Duplicate entry '18710939328@Qq.com' for key 'a_email'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939321','nundd','18710939328@Qq.com','e024c740c20bd67b04e6003fecb64317',0,1529457280,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyODAsImV4cCI6MTUyOTQ2MDg4MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5kZCIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBRcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MjgwfX0.MYz96_QH37tsc7uFKy_od2uBTVXpHp-OdLPhBhZPAGM','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyODAsImV4cCI6MTUzMDA2MjA4MCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTcyODAsImV4cCI6MTUyOTQ2MDg4MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5kZCIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBRcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MjgwfX19fQ.L6egjXI6by4_7Gsch2qflK9Uk-h3mShMnNxE5J4fRVw')
+
+[ 2018-06-20T09:15:04+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000975s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001040s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003998s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundd ) LIMIT 1   [ RunTime:0.000232s ]
+ERR: 1054:Unknown column 'nundd' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nundd ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939321 ) LIMIT 1   [ RunTime:0.000288s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@Qq.coa ) LIMIT 1   [ RunTime:0.000178s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@Qq.coa ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@Qq.coa ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939321','nundd','18710939328@Qq.coa','e024c740c20bd67b04e6003fecb64317',0,1529457304,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczMDQsImV4cCI6MTUyOTQ2MDkwNCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5kZCIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBRcS5jb2EiLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MzA0fX0.rsWDTmrpqZvD8xUqgJM4iQJ8FuWVRQL9PC-fuEZVSXI','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczMDQsImV4cCI6MTUzMDA2MjEwNCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczMDQsImV4cCI6MTUyOTQ2MDkwNCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjEiLCJhX25hbWUiOiJudW5kZCIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBRcS5jb2EiLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3MzA0fX19fQ.veyg1lTXqPvdO4a6wpYEkbtbtWzQ2maLhW6z1fQ8ydU') [ RunTime:0.131564s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 139 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 140 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 142 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 144 行.
+
+[ 2018-06-20T09:15:40+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003999s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyasd ) LIMIT 1   [ RunTime:0.000229s ]
+ERR: 1054:Unknown column 'nuasdyasd' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyasd ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939328 ) LIMIT 1   [ RunTime:0.000290s ]
+
+[ 2018-06-20T09:15:47+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000786s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001127s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004247s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyasd ) LIMIT 1   [ RunTime:0.000251s ]
+ERR: 1054:Unknown column 'nuasdyasd' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyasd ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939111 ) LIMIT 1   [ RunTime:0.000250s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.com ) LIMIT 1   [ RunTime:0.000158s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.com ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939111','nuasdyasd','18710939328@qq.com','d933cd158b1c72bbd9de66ce860f2816',0,1529457347,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczNDcsImV4cCI6MTUyOTQ2MDk0NywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAcXEuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzM0N319.tqdimA0rUthIDgj5E3QS_f7SX9GvKKhJxZNGtzgBbaY','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczNDcsImV4cCI6MTUzMDA2MjE0NywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczNDcsImV4cCI6MTUyOTQ2MDk0NywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAcXEuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzM0N319fX0.Y17zU2VozPQ1DdAn1cbQ6WFJ8QQCjjNU-8aSxaUTXs8') [ RunTime:0.047969s ]
+ERR: 1062:Duplicate entry '18710939328@qq.com' for key 'a_email'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939111','nuasdyasd','18710939328@qq.com','d933cd158b1c72bbd9de66ce860f2816',0,1529457347,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczNDcsImV4cCI6MTUyOTQ2MDk0NywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAcXEuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzM0N319.tqdimA0rUthIDgj5E3QS_f7SX9GvKKhJxZNGtzgBbaY','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczNDcsImV4cCI6MTUzMDA2MjE0NywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczNDcsImV4cCI6MTUyOTQ2MDk0NywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAcXEuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzM0N319fX0.Y17zU2VozPQ1DdAn1cbQ6WFJ8QQCjjNU-8aSxaUTXs8')
+
+[ 2018-06-20T09:16:20+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004260s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyasd ) LIMIT 1   [ RunTime:0.000241s ]
+ERR: 1054:Unknown column 'nuasdyasd' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyasd ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939111 ) LIMIT 1   [ RunTime:0.000328s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.com ) LIMIT 1   [ RunTime:0.000179s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.com ) LIMIT 1  
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.com ) LIMIT 1   [ RunTime:0.000178s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.com ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=18710939328@qq.com ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939111','nuasdyasd','18710939328@qq.com','d933cd158b1c72bbd9de66ce860f2816',0,1529457380,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczODAsImV4cCI6MTUyOTQ2MDk4MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAcXEuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzM4MH19.bwm7lcEjF_n252IyY8AVzbkMezsdxbfe1pT8Wc_dSyo','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczODAsImV4cCI6MTUzMDA2MjE4MCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczODAsImV4cCI6MTUyOTQ2MDk4MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAcXEuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzM4MH19fX0.Qgf4vfE4FpX-QkBN30UIFXY38TsRV7Lpc9gX9k4YmME') [ RunTime:0.060344s ]
+ERR: 1062:Duplicate entry '18710939328@qq.com' for key 'a_email'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939111','nuasdyasd','18710939328@qq.com','d933cd158b1c72bbd9de66ce860f2816',0,1529457380,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczODAsImV4cCI6MTUyOTQ2MDk4MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAcXEuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzM4MH19.bwm7lcEjF_n252IyY8AVzbkMezsdxbfe1pT8Wc_dSyo','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczODAsImV4cCI6MTUzMDA2MjE4MCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczODAsImV4cCI6MTUyOTQ2MDk4MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMjhAcXEuY29tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzM4MH19fX0.Qgf4vfE4FpX-QkBN30UIFXY38TsRV7Lpc9gX9k4YmME')
+
+[ 2018-06-20T09:16:35+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004121s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyasd ) LIMIT 1   [ RunTime:0.000225s ]
+ERR: 1054:Unknown column 'nuasdyasd' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyasd ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939111 ) LIMIT 1   [ RunTime:0.000242s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000180s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000141s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939111','nuasdyasd','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457395,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczOTUsImV4cCI6MTUyOTQ2MDk5NSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMkBxcS5vbSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0NTczOTV9fQ.ymV7HZT6FGrC5AKHCKVsVgfxyY3hDZoHdwCpImSejts','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczOTUsImV4cCI6MTUzMDA2MjE5NSwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczOTUsImV4cCI6MTUyOTQ2MDk5NSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMkBxcS5vbSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0NTczOTV9fX19._2E_1PEnHqgCqTbNb1br7nPUzlRWsifeMxfoaQ83oWY') [ RunTime:0.056961s ]
+ERR: 1062:Duplicate entry '1871093932@qq.om' for key 'a_email'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939111','nuasdyasd','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457395,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczOTUsImV4cCI6MTUyOTQ2MDk5NSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMkBxcS5vbSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0NTczOTV9fQ.ymV7HZT6FGrC5AKHCKVsVgfxyY3hDZoHdwCpImSejts','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczOTUsImV4cCI6MTUzMDA2MjE5NSwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTczOTUsImV4cCI6MTUyOTQ2MDk5NSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMkBxcS5vbSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0NTczOTV9fX19._2E_1PEnHqgCqTbNb1br7nPUzlRWsifeMxfoaQ83oWY')
+
+[ 2018-06-20T09:18:10+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000987s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001062s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003927s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyasd ) LIMIT 1   [ RunTime:0.000229s ]
+ERR: 1054:Unknown column 'nuasdyasd' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyasd ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939111 ) LIMIT 1   [ RunTime:0.000329s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000179s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000178s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939111','nuasdyasd','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457490,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc0OTAsImV4cCI6MTUyOTQ2MTA5MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMkBxcS5vbSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0NTc0OTB9fQ._G-95xHnit_cE41ZBvWFGE264nUBp_58jFQhzflzU6g','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc0OTAsImV4cCI6MTUzMDA2MjI5MCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc0OTAsImV4cCI6MTUyOTQ2MTA5MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTEiLCJhX25hbWUiOiJudWFzZHlhc2QiLCJhX2VtYWlsIjoiMTg3MTA5MzkzMkBxcS5vbSIsImFfYXV0aCI6MCwiYV9hY2NvdW50X3RpbWUiOjE1Mjk0NTc0OTB9fX19.hCvDIq7zrwWZMptx4wB6ByfQD2c7WhDKqT3PAXl7DSY') [ RunTime:0.104167s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 139 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 140 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 142 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 144 行.
+
+[ 2018-06-20T09:18:33+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003889s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1   [ RunTime:0.000224s ]
+ERR: 1054:Unknown column 'nuasdyas' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939117 ) LIMIT 1   [ RunTime:0.000251s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000162s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000156s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457513,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1MTMsImV4cCI6MTUyOTQ2MTExMywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzUxM319.4r9_4v9qOXh5ZsmzvZUc2jlj7uVW6n2TwXMSElqZtTU','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1MTMsImV4cCI6MTUzMDA2MjMxMywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1MTMsImV4cCI6MTUyOTQ2MTExMywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzUxM319fX0.M4RCUVGoMeMacnTHndmY7eMYsBlXfgk0Nnwp5Wcm_wI') [ RunTime:0.054435s ]
+ERR: 1062:Duplicate entry '1871093932@qq.om' for key 'a_email'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457513,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1MTMsImV4cCI6MTUyOTQ2MTExMywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzUxM319.4r9_4v9qOXh5ZsmzvZUc2jlj7uVW6n2TwXMSElqZtTU','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1MTMsImV4cCI6MTUzMDA2MjMxMywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1MTMsImV4cCI6MTUyOTQ2MTExMywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzUxM319fX0.M4RCUVGoMeMacnTHndmY7eMYsBlXfgk0Nnwp5Wcm_wI')
+
+[ 2018-06-20T09:19:23+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001602s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004226s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1   [ RunTime:0.000241s ]
+ERR: 1054:Unknown column 'nuasdyas' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939117 ) LIMIT 1   [ RunTime:0.000284s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000179s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000177s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457563,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1NjMsImV4cCI6MTUyOTQ2MTE2MywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzU2M319.fx-NDaPixxp8olVYsD-6IOpzQTUcJTwCWB6VXbMFO0I','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1NjMsImV4cCI6MTUzMDA2MjM2MywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1NjMsImV4cCI6MTUyOTQ2MTE2MywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzU2M319fX0.FMhdTBouCsm9-birG20esnryHeoO9njk25sVgb3ZU4A') [ RunTime:0.051015s ]
+ERR: 1062:Duplicate entry '1871093932@qq.om' for key 'a_email'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457563,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1NjMsImV4cCI6MTUyOTQ2MTE2MywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzU2M319.fx-NDaPixxp8olVYsD-6IOpzQTUcJTwCWB6VXbMFO0I','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1NjMsImV4cCI6MTUzMDA2MjM2MywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1NjMsImV4cCI6MTUyOTQ2MTE2MywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzU2M319fX0.FMhdTBouCsm9-birG20esnryHeoO9njk25sVgb3ZU4A')
+
+[ 2018-06-20T09:19:57+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000816s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000905s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004009s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1   [ RunTime:0.000222s ]
+ERR: 1054:Unknown column 'nuasdyas' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939117 ) LIMIT 1   [ RunTime:0.000269s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000201s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 115 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000207s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 184 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457597,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1OTcsImV4cCI6MTUyOTQ2MTE5NywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzU5N319.O1S6cHVcKqXLmTqo3_M09vfdW_ctJRgMv4zMnPXw-xA','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1OTcsImV4cCI6MTUzMDA2MjM5NywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1OTcsImV4cCI6MTUyOTQ2MTE5NywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzU5N319fX0.H3r3lQZcEG1O2XQwsGKgtbw3DA-WDBJARcOWwqh7R84') [ RunTime:0.059980s ]
+ERR: 1062:Duplicate entry '1871093932@qq.om' for key 'a_email'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457597,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1OTcsImV4cCI6MTUyOTQ2MTE5NywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzU5N319.O1S6cHVcKqXLmTqo3_M09vfdW_ctJRgMv4zMnPXw-xA','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1OTcsImV4cCI6MTUzMDA2MjM5NywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc1OTcsImV4cCI6MTUyOTQ2MTE5NywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzU5N319fX0.H3r3lQZcEG1O2XQwsGKgtbw3DA-WDBJARcOWwqh7R84')
+
+[ 2018-06-20T09:20:40+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001050s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003869s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1   [ RunTime:0.000228s ]
+ERR: 1054:Unknown column 'nuasdyas' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939117 ) LIMIT 1   [ RunTime:0.000289s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000181s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 115 行.
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 116 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000175s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 185 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 185 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 126 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 130 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457640,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NDAsImV4cCI6MTUyOTQ2MTI0MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY0MH19.irMhiDUouGVBEW4jFQJ70cy7xxBfmQBZ1w1FK8cg3_Y','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NDAsImV4cCI6MTUzMDA2MjQ0MCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NDAsImV4cCI6MTUyOTQ2MTI0MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY0MH19fX0.MW4zOoYg3wGlmJ1AGLcLxMhwUQ9IK7OuZ0Bop9g8ylo') [ RunTime:0.070109s ]
+ERR: 1062:Duplicate entry '1871093932@qq.om' for key 'a_email'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457640,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NDAsImV4cCI6MTUyOTQ2MTI0MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY0MH19.irMhiDUouGVBEW4jFQJ70cy7xxBfmQBZ1w1FK8cg3_Y','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NDAsImV4cCI6MTUzMDA2MjQ0MCwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NDAsImV4cCI6MTUyOTQ2MTI0MCwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY0MH19fX0.MW4zOoYg3wGlmJ1AGLcLxMhwUQ9IK7OuZ0Bop9g8ylo')
+
+[ 2018-06-20T09:21:11+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000779s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001085s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004015s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1   [ RunTime:0.000228s ]
+ERR: 1054:Unknown column 'nuasdyas' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939117 ) LIMIT 1   [ RunTime:0.000289s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000178s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 115 行.
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 116 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_email='1871093932@qq.om' ) LIMIT 1   [ RunTime:0.000288s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 185 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 185 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 126 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 130 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457671,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NzEsImV4cCI6MTUyOTQ2MTI3MSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY3MX19.PtsjppaxwLnrarXHcpwUQXVaIj-G52_kRUxMmaHkAF0','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NzEsImV4cCI6MTUzMDA2MjQ3MSwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NzEsImV4cCI6MTUyOTQ2MTI3MSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY3MX19fX0.K9UfVOgbtCwPvXZFLufHvk4LTWstOXQd6UJ2mLPgBZ0') [ RunTime:0.053435s ]
+ERR: 1062:Duplicate entry '1871093932@qq.om' for key 'a_email'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457671,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NzEsImV4cCI6MTUyOTQ2MTI3MSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY3MX19.PtsjppaxwLnrarXHcpwUQXVaIj-G52_kRUxMmaHkAF0','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NzEsImV4cCI6MTUzMDA2MjQ3MSwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2NzEsImV4cCI6MTUyOTQ2MTI3MSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY3MX19fX0.K9UfVOgbtCwPvXZFLufHvk4LTWstOXQd6UJ2mLPgBZ0')
+
+[ 2018-06-20T09:21:33+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004009s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1   [ RunTime:0.000226s ]
+ERR: 1054:Unknown column 'nuasdyas' in 'where clause'
+ [ SQL语句 ] : SELECT `a_name` FROM `dsmall_account` WHERE ( a_name=nuasdyas ) LIMIT 1  
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id=18710939117 ) LIMIT 1   [ RunTime:0.000305s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1   [ RunTime:0.000155s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@qq.om ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `a_email` FROM `dsmall_account` WHERE ( a_email=1871093932@qq.om ) LIMIT 1  
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 115 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 116 行.
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='1871093932@qq.om' ) LIMIT 1   [ RunTime:0.000242s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 171 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 172 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 185 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 185 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 125 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 126 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 129 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 130 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457693,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2OTMsImV4cCI6MTUyOTQ2MTI5MywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY5M319.dZR4XcEstWOBKay9Ud-aI0tCo8JjrjjaSnziOdfMsW0','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2OTMsImV4cCI6MTUzMDA2MjQ5MywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2OTMsImV4cCI6MTUyOTQ2MTI5MywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY5M319fX0.KfAPEvnWvhmCKHbNYXELycsKAt3l2zSKozlZGrPzOQ0') [ RunTime:0.063758s ]
+ERR: 1062:Duplicate entry '1871093932@qq.om' for key 'a_email'
+ [ SQL语句 ] : INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939117','nuasdyas','1871093932@qq.om','d933cd158b1c72bbd9de66ce860f2816',0,1529457693,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2OTMsImV4cCI6MTUyOTQ2MTI5MywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY5M319.dZR4XcEstWOBKay9Ud-aI0tCo8JjrjjaSnziOdfMsW0','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2OTMsImV4cCI6MTUzMDA2MjQ5MywiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc2OTMsImV4cCI6MTUyOTQ2MTI5MywiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTciLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9tIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1NzY5M319fX0.KfAPEvnWvhmCKHbNYXELycsKAt3l2zSKozlZGrPzOQ0')
+
+[ 2018-06-20T09:22:23+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000760s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004139s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nuasdyas' ) LIMIT 1   [ RunTime:0.000327s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939111' ) LIMIT 1   [ RunTime:0.000239s ]
+
+[ 2018-06-20T09:22:37+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003876s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nuasdyasd' ) LIMIT 1   [ RunTime:0.000300s ]
+
+[ 2018-06-20T09:22:52+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004254s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nuasdyas' ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939112' ) LIMIT 1   [ RunTime:0.000244s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='1871093932@qq.om' ) LIMIT 1   [ RunTime:0.000263s ]
+
+[ 2018-06-20T09:23:02+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004208s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='nuasdyas' ) LIMIT 1   [ RunTime:0.000300s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939112' ) LIMIT 1   [ RunTime:0.000210s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='1871093932@qq.oM' ) LIMIT 1   [ RunTime:0.000206s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 168 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 183 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 183 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 121 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 127 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939112','nuasdyas','1871093932@qq.oM','d933cd158b1c72bbd9de66ce860f2816',0,1529457782,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc3ODIsImV4cCI6MTUyOTQ2MTM4MiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTIiLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9NIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1Nzc4Mn19.B4x_30s8YYWsBGUtXpS6x0Hwh7_fGSLuC73kqg1ZJGM','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc3ODIsImV4cCI6MTUzMDA2MjU4MiwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc3ODIsImV4cCI6MTUyOTQ2MTM4MiwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkxMTIiLCJhX25hbWUiOiJudWFzZHlhcyIsImFfZW1haWwiOiIxODcxMDkzOTMyQHFxLm9NIiwiYV9hdXRoIjowLCJhX2FjY291bnRfdGltZSI6MTUyOTQ1Nzc4Mn19fX0.73ncviIbqMzxPRIXrIgmWAXceF5cl1HdP5s4U1VXsqg') [ RunTime:0.080034s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 138 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 139 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 142 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 143 行.
+
+[ 2018-06-20T09:25:35+08:00 ] 127.0.0.1 /dsmall/api/Account/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 84 行.
+NOTIC: [8] Use of undefined constant email - assumed 'email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 85 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 86 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003661s ]
+SQL: SELECT `a_name` FROM `dsmall_account` WHERE ( a_name='Nundy' ) LIMIT 1   [ RunTime:0.000310s ]
+SQL: SELECT `a_id` FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000223s ]
+SQL: SELECT `a_email` FROM `dsmall_account` WHERE ( a_email='18710939328@qq.com' ) LIMIT 1   [ RunTime:0.000221s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 168 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 183 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 183 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 121 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 127 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 128 行.
+SQL: INSERT INTO `dsmall_account` (`a_id`,`a_name`,`a_email`,`a_password`,`a_auth`,`a_account_time`,`a_access_token`,`a_refresh_token`) VALUES ('18710939328','Nundy','18710939328@qq.com','32a16321098dfa6ed8462ac8a5b59769',0,1529457935,'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc5MzUsImV4cCI6MTUyOTQ2MTUzNSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3OTM1fX0.JejKa7b6YHMMZZbwwZ0JocunHaj45bsMstWUib8BOh0','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc5MzUsImV4cCI6MTUzMDA2MjczNSwiZGF0YSI6eyJhX2lkIjpudWxsLCJhX2FjY2Vzc190b2tlbiI6eyJpc3MiOiJudW5keSIsImF1ZCI6Im51bmR5LmNuIiwic3ViIjoibnVuZHkuY24iLCJpYXQiOjE1Mjk0NTc5MzUsImV4cCI6MTUyOTQ2MTUzNSwiZGF0YSI6eyJhX2lkIjoiMTg3MTA5MzkzMjgiLCJhX25hbWUiOiJOdW5keSIsImFfZW1haWwiOiIxODcxMDkzOTMyOEBxcS5jb20iLCJhX2F1dGgiOjAsImFfYWNjb3VudF90aW1lIjoxNTI5NDU3OTM1fX19fQ.WIKm_fgezQyn4HZGG2duTvPlnqFieGlkaZgi0caqI2g') [ RunTime:0.106660s ]
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 138 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 139 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 141 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 142 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 143 行.
+
+[ 2018-06-20T09:25:41+08:00 ] 127.0.0.1 /dsmall/api/account/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000799s ]
+ERR: 非法操作:index
+
+[ 2018-06-20T09:25:56+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008729s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001152s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 17 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 17 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.003722s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 27 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000405s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000268s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 168 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Undefined index: a_name E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Undefined index: a_email E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 183 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 183 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 68 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 69 行.
+NOTIC: [8] Use of undefined constant a_auth - assumed 'a_auth' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 70 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 71 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 72 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 73 行.
+
+[ 2018-06-20T09:35:33+08:00 ] 127.0.0.1 /dsmall/api/Account/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000911s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant password - assumed 'password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 17 行.
+NOTIC: [8] Use of undefined constant a_password - assumed 'a_password' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 17 行.
+SQL: SHOW COLUMNS FROM `dsmall_account` [ RunTime:0.004166s ]
+NOTIC: [2] Missing argument 1 for Think\Model::getField(), called in E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php on line 27 and defined E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 754 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 755 行.
+NOTIC: [8] Undefined variable: field E:\PHPWAMP\wwwroot\DSMall\ThinkPHP\Library\Think\Model.class.php 第 766 行.
+SQL: SELECT * FROM `dsmall_account` WHERE ( a_id='18710939328' ) LIMIT 1   [ RunTime:0.000396s ]
+SQL: SELECT * FROM `dsmall_account` WHERE ( `a_id` = '18710939328' ) AND ( `a_password` = '32a16321098dfa6ed8462ac8a5b59769' )  [ RunTime:0.000271s ]
+NOTIC: [8] Use of undefined constant a_blockade_time - assumed 'a_blockade_time' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 168 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Undefined index: a_name E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 169 行.
+NOTIC: [8] Use of undefined constant a_email - assumed 'a_email' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Undefined index: a_email E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 183 行.
+NOTIC: [8] Undefined index: id E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 183 行.
+NOTIC: [8] Use of undefined constant a_id - assumed 'a_id' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 68 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 69 行.
+NOTIC: [8] Use of undefined constant a_auth - assumed 'a_auth' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 70 行.
+NOTIC: [8] Use of undefined constant a_name - assumed 'a_name' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 71 行.
+NOTIC: [8] Use of undefined constant access_token - assumed 'access_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 72 行.
+NOTIC: [8] Use of undefined constant refresh_token - assumed 'refresh_token' E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountController.class.php 第 73 行.
+
+[ 2018-06-20T09:35:37+08:00 ] 127.0.0.1 /dsmall/api/accountinfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000728s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001856s ]
+ERR: 无法加载控制器:Accountinfo
+
+[ 2018-06-20T09:38:38+08:00 ] 127.0.0.1 /dsmall/api/accountinfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000856s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002192s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002367s ]
+ERR: 无法加载控制器:Accountinfo
+
+[ 2018-06-20T09:39:40+08:00 ] 127.0.0.1 /dsmall/api/accountinfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000757s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005510s ]
+ERR: 无法加载控制器:Accountinfo
+
+[ 2018-06-20T09:40:27+08:00 ] 127.0.0.1 /dsmall/api/accountinfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000704s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001457s ]
+ERR: 无法加载控制器:Accountinfo
+
+[ 2018-06-20T09:41:40+08:00 ] 127.0.0.1 /dsmall/api/accountinfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002751s ]
+ERR: 无法加载控制器:Accountinfo
+
+[ 2018-06-20T09:42:03+08:00 ] 127.0.0.1 /dsmall/api/accountinfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000760s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001858s ]
+ERR: 无法加载控制器:Accountinfo
+
+[ 2018-06-20T09:42:05+08:00 ] 127.0.0.1 /dsmall/api/accountinfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002407s ]
+ERR: 无法加载控制器:Accountinfo
+
+[ 2018-06-20T09:44:09+08:00 ] 127.0.0.1 /dsmall/api/accountinfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001607s ]
+ERR: 无法加载控制器:Accountinfo
+
+[ 2018-06-20T09:44:32+08:00 ] 127.0.0.1 /dsmall/api/accountInfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002656s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003186s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003389s ]
+
+[ 2018-06-20T09:44:42+08:00 ] 127.0.0.1 /dsmall/api/accountInfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000979s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001189s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001296s ]
+
+[ 2018-06-20T09:44:52+08:00 ] 127.0.0.1 /dsmall/api/AccountInfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002802s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002287s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002534s ]
+
+[ 2018-06-20T09:49:52+08:00 ] 127.0.0.1 /dsmall/api/AccountInfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000762s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001486s ]
+NOTIC: [8] Undefined index: HTTP_ACCESS_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFRESH_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002061s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002170s ]
+
+[ 2018-06-20T09:51:18+08:00 ] 127.0.0.1 /dsmall/api/AccountInfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000798s ]
+NOTIC: [8] Undefined index: HTTP_ACCESS_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFRESH_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000844s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000910s ]
+
+[ 2018-06-20T09:53:13+08:00 ] 127.0.0.1 /dsmall/api/AccountInfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001833s ]
+NOTIC: [8] Undefined index: HTTP_ACCESS_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFRESH_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001092s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001178s ]
+
+[ 2018-06-20T10:17:49+08:00 ] 127.0.0.1 /dsmall/api/AccountInfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+NOTIC: [8] Undefined index: HTTP_ACCESS_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFRESH_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000701s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2018-06-20T10:18:06+08:00 ] 127.0.0.1 /dsmall/api/AccountInfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000894s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001012s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001141s ]
+NOTIC: [8] Undefined index: HTTP_ACCESS_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFRESH_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000999s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001103s ]
+
+[ 2018-06-20T10:18:42+08:00 ] 127.0.0.1 /dsmall/api/AccountInfo/baseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+NOTIC: [8] Undefined index: HTTP_ACCESS_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFRESH_EXPIRES E:\PHPWAMP\wwwroot\DSMall\Application\Api\Controller\AccountInfoController.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000675s ]
+
