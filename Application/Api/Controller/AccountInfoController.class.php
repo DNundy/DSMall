@@ -18,7 +18,7 @@ class AccountInfoController extends Controller{
 
         // 判断Token是否过期
         $current = time();
-        if( $token[exp] < $current ){
+        if( $token_data[exp] < $current ){
             $res = array(
                 'code' => -1,
                 'msg' => 'Token 已过期!',
@@ -90,9 +90,9 @@ class AccountInfoController extends Controller{
             'aud' => 'nundy.cn', // 接收者
             'sub' => 'nundy.cn', // 面向的用户
             'iat' => $currenttime, // 签发时间
-            'exp' => $currenttime + 604800, // 过期时间 (7天，7*24*60*60)
             'data' => array(
                 'a_id' => $req[a_id],
+                'exp' => $currenttime + 604800,
             )
         );
 

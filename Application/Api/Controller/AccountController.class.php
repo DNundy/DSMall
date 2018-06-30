@@ -188,9 +188,9 @@ class AccountController extends Controller{
             'aud' => 'nundy.cn', // 接收者
             'sub' => 'nundy.cn', // 面向的用户
             'iat' => $currenttime, // 签发时间
-            'exp' => $currenttime + 604800, // 过期时间 (7天，7*24*60*60)
             'data' => array(
                 'a_id' => $data[a_id],
+                'exp' => $currenttime + 604800,
             )
         );
 
