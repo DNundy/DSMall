@@ -9,36 +9,42 @@ import qs from 'qs'
 export default {
     name: 'App',
     methods: {
-        checkLoginStatus(){
-            // 若localstorge没有auth信息，则return结束
-            let UserAuth = localStorage.getItem('auth');
-            if( !UserAuth ) return;
+        // checkLoginStatus(){
+        //     // 若localstorge没有auth信息，则return结束
+        //     let UserAuth = localStorage.getItem('auth');
+        //     if( !UserAuth ) return;
 
-            // 格式化auth及获取当前时间
-            UserAuth = qs.parse(UserAuth);
-            let currenttime = Math.round(new Date()/1000);
+        //     // 格式化auth及获取当前时间
+        //     UserAuth = qs.parse(UserAuth);
+        //     let currenttime = Math.round(new Date()/1000);
 
-            // 判断刷新Token，若过期，则return结束，不进行请求，用户需重新登录
-            // 此时鉴权Token和刷新Token均过期
-            if( UserAuth.refresh_token < currenttime ) return;
+        //     // 判断刷新Token，若过期，则return结束，不进行请求，用户需重新登录
+        //     // 此时鉴权Token和刷新Token均过期
+        //     if( UserAuth.refresh_token < currenttime ) return;
+        //     // 好像写错了
 
-            // 判断鉴权Token，若过期，则请求新鉴权Token和刷新Token
-            // 此时鉴权Token过期，刷新Token未过期
-            if( UserAuth.access_token < currenttime ){
-                // 调用刷新Token接口
-                this.$ajax.get('/api/AccountInfo/baseInfo')
-                .then(response=>{
-                    this.$store.commit('changeLoginStatus', true);
-                })
-                .catch(error=>{
 
-                });
-                return;
-            }
+        //     // 1、封装网络请求
+        //     // 2、改写登录注册之后的验证信息写入方法
+        //     // 3、修改APP首次验证
+
+        //     // 判断鉴权Token，若过期，则请求新鉴权Token和刷新Token
+        //     // 此时鉴权Token过期，刷新Token未过期
+        //     if( UserAuth.access_token < currenttime ){
+        //         // 调用刷新Token接口
+        //         this.$ajax.get('/api/AccountInfo/baseInfo')
+        //         .then(response=>{
+        //             this.$store.commit('changeLoginStatus', true);
+        //         })
+        //         .catch(error=>{
+
+        //         });
+        //         return;
+        //     }
             
-            // 均为过期
-            return;
-        },
+        //     // 均为过期
+        //     return;
+        // },
     },
     mounted(){
         this.checkLoginStatus();
