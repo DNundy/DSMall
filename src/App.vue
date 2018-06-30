@@ -5,12 +5,13 @@
 </template>
 
 <script>
-import qs from 'qs'
+import qs from 'qs';
+import storageUtil from '@/utils/storage';
 export default {
     name: 'App',
     methods: {
         checkLoginStatus(){
-            // 刷新页面时同步数据
+            // 本地含有sessionStorage时，刷新页面时同步数据
             let UserInfo = sessionStorage.getItem('user_info');
             if( UserInfo ){
                 let UserData = qs.parse(UserInfo);
@@ -18,14 +19,20 @@ export default {
                 this.$store.commit('changeLoginStatus', true);
                 return;
             }
-
-            // 刷新Token判断
+    
+            // 本地无sessionStorage时，若含有refresh，则进行请求，同步数据
             let RefreshToken = localStorage.getItem('refresh_token');
             if( RefreshToken ){
                 this.$ajax(this.$service.AccountRefresh)
                 .then(response=>{
-                    
-                    this.$store.commit('changeLoginStatus', true);
+                    let data = response.data;
+                    if( data.code == 0 ){
+                        this.$store.commit('setUserInfo', data.data);
+                        this.$store.commit('changeLoginStatus', true);
+                        storageUtil.setUserToken(data.data);
+                    }else if(  data.code == -1 ){
+                        storageUtil.clearUserToken();
+                    }
                 })
                 .catch(error=>{
 

@@ -18,11 +18,23 @@ class AccountInfoController extends Controller{
 
         // 判断Token是否过期
         $current = time();
-        if( $token[exp] < $current ) return;
+        if( $token[exp] < $current ){
+            $res = array(
+                'code' => -1,
+                'msg' => 'Token 已过期!',
+            );
+            return $this->ajaxReturn($res);
+        }
 
         // 判断Token是否正确
         $data = M('Account')->where("a_id='$token_data[a_id]'")->select();
-        if( !$data[0][a_refresh_token] === $req[refresh_token] ) return;
+        if( !$data[0][a_refresh_token] === $req[refresh_token] ){
+            $res = array(
+                'code' => -1,
+                'msg' => 'Token 不匹配!',
+            );
+            return $this->ajaxReturn($res);
+        }
 
         // 更新token
         $encode = $this->encode($data[0]);

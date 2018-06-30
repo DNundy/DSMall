@@ -2,7 +2,11 @@ import qs from 'qs'
 const storageUtil = {
     setUserToken(data){
         localStorage.setItem('refresh_token', data.refresh_token);
-        sessionStorage.setItem('user_info', qs.stringify(data))
+        console.log('xxxx');
+        
+        sessionStorage.setItem('user_info', qs.stringify(data));
+        console.log('yyyy');
+        
     },
     clearUserToken(){
         localStorage.removeItem('refresh_token');
