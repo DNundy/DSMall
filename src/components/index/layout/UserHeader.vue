@@ -33,6 +33,7 @@
 import UserLogin from '../common/UserLogin'
 import UserRegister from '../common/UserRegister'
 import UserForget from '../common/UserForget'
+import storageUtil from '@/utils/storage';
 
 export default {
   data () {
@@ -57,7 +58,7 @@ export default {
         }
         this.$store.commit('setUserInfo', auth);
         this.$store.commit('changeLoginStatus', false);
-        localStorage.removeItem('auth');
+        storageUtil.clearUserToken();
       }
   },
   components: {

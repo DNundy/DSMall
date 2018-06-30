@@ -3,10 +3,13 @@ import App from './App'
 import router from './router/router'
 import store from './store/store'
 import axios from './utils/http'
-import { Loading } from 'element-ui';
+import service from './utils/service'
 
-Vue.prototype.$loading = Loading.service;
+// import { Loading } from 'element-ui'
+// Vue.prototype.$loading = Loading.service
+
 Vue.prototype.$ajax = axios
+Vue.prototype.$service = service
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

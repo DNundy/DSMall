@@ -24,10 +24,6 @@ export default new Vuex.Store({
             // Token
             access_token: '',
             refresh_token: '',
-
-            // 每次更新Token时自动刷新时间
-            access_expires: '',
-            refresh_expires: '',
         }
     },
     // computed
@@ -63,8 +59,8 @@ export default new Vuex.Store({
                     state.userInfo[key] = data[key];
                 }
             }
-            state.userInfo.access_expires = Math.round(new Date() / 1000) + 3600;
-            state.userInfo.refresh_expires = Math.round(new Date() / 1000) + 604800;
+            // state.userInfo.access_expires = Math.round(new Date() / 1000) + 3600;
+            // state.userInfo.refresh_expires = Math.round(new Date() / 1000) + 604800;
         },
 
         // 登录状态

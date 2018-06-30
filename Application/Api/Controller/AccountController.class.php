@@ -5,7 +5,6 @@ use Think\Controller;
 define('KEY', 'jfdksajfkl;dsajfkdjsaklfdajffdsafdsfdsfdsfdsklfdsafdsafdsafdsdsajlkfdsa');
 
 class AccountController extends Controller{
-    // 用户登录
     public function login(){
         // 请求信息
         $req = array(
@@ -23,7 +22,6 @@ class AccountController extends Controller{
         }
 
         // 账户id验证
-        $AccountSql = M('Account');
         $isAccount = M('Account')->where("a_id='$req[a_id]'")->getField();
         if( empty($isAccount) ){
             $res = array(
@@ -34,7 +32,7 @@ class AccountController extends Controller{
         }
 
         // 账户密码验证
-        $AccountData = $AccountSql->where($req)->select();
+        $AccountData = M('Account')->where($req)->select();
         if( empty($AccountData) ){
             $res = array(
                 'code' => -1,
@@ -58,25 +56,39 @@ class AccountController extends Controller{
         }
 
         // 生成Token
-        $encode = $this->encode($req);
+        $encode = $this->encode($AccountData[0]);
 
-        // 登录成功
-        $res = array(
-            'code' => 0,
-            'msg' => "登录成功",
-            'data' => array(
-                'a_id' => $AccountData[0][a_id],
-                'a_name' => $AccountData[0][a_name],
-                'a_auth' => $AccountData[0][a_auth],
-                'a_email' => $AccountData[0][a_name],
-                'access_token' => $encode[access_token],
-                'refresh_token' => $encode[refresh_token],
-            )
+        // 更新Token
+        $condition = array(
+            'a_access_token' => $encode['access_token'],
+            'a_refresh_token' => $encode['refresh_token'],
         );
-        return $this->ajaxReturn($res);
+        $sqlstatus = M('account')->where("a_id = '$req[a_id]'")->save($condition);
+
+        // 返回结果
+        if( $sqlstatus ){
+            $res = array(
+                'code' => 0,
+                'msg' => "登录成功",
+                'data' => array(
+                    'a_id' => $AccountData[0][a_id],
+                    'a_name' => $AccountData[0][a_name],
+                    'a_auth' => $AccountData[0][a_auth],
+                    'a_email' => $AccountData[0][a_email],
+                    'access_token' => $encode[access_token],
+                    'refresh_token' => $encode[refresh_token],
+                )
+            );
+            return $this->ajaxReturn($res);
+        } else {
+            $res = array(
+                'code' => -1,
+                'msg' => '抱歉，一个未知的错误发生了!',
+            );
+            return $this->ajaxReturn($res);
+        }
     }
 
-    // 用户注册
     public function register(){
         // 请求信息
         $req = array(
@@ -154,7 +166,7 @@ class AccountController extends Controller{
     }
 
     // Token编码
-    public function encode($req){
+    public function encode($data){
         $currenttime = time();
 
         // Token参数
@@ -163,13 +175,11 @@ class AccountController extends Controller{
             'aud' => 'nundy.cn', // 接收者
             'sub' => 'nundy.cn', // 面向的用户
             'iat' => $currenttime, // 签发时间
-            'exp' => $currenttime + 3600, // 过期时间 (1小时，1*60*60)
             'data' => array(
-                'a_id' => $req[a_id],
-                'a_name' => $req[a_name],
-                'a_email' => $req[a_email],
+                'a_id' => $data[a_id],
+                'a_name' => $data[a_name],
+                'a_email' => $data[a_email],
                 'a_auth' => 0,
-                'a_account_time' => $currenttime,
             )
         );
 
@@ -180,8 +190,7 @@ class AccountController extends Controller{
             'iat' => $currenttime, // 签发时间
             'exp' => $currenttime + 604800, // 过期时间 (7天，7*24*60*60)
             'data' => array(
-                'a_id' => $req[id],
-                'a_access_token' => $access_token
+                'a_id' => $data[a_id],
             )
         );
 

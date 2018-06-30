@@ -26,7 +26,7 @@
 
 import qs from 'qs'
 import validate from '@/utils/validate';
-import localStorageUtil from '@/utils/localStorage';
+import storageUtil from '@/utils/storage';
 
 export default {
     data () {
@@ -111,11 +111,12 @@ export default {
             let status = this.checkName() && this.checkPhone() && this.checkEmail() &&this.checkPwd();
             if( status ){
                 this.submit_text = "拼命注册ing..."
-                let data = qs.stringify(this.registerInfo);
-                this.$ajax.post('/api/Account/register', data)
+                this.$ajax(this.$service.AccountRegister, this.registerInfo)
                 .then((response) => {
                     let data = response.data;
                     if( data.code == 0 ){
+                        this.error_tips = this.error_text;;
+                        this.error_status = false;
                         this.submitSuccess(data.data);
                     }else if ( data.code == -1 ){
                         this.error_tips = data.msg;
@@ -130,13 +131,12 @@ export default {
             }
         },
         submitSuccess(data){
-            console.log(data);
             // 设置全局信息
             this.$store.commit('setUserInfo', data);
             // 改变登录状态
             this.$store.commit('changeLoginStatus', true);
             // 存储本地Token
-            localStorageUtil.setUserToken(data);
+            storageUtil.setUserToken(data);
             // 关闭注册框
             this.closeRegisterDiv();
         }

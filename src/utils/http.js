@@ -1,21 +1,12 @@
-import axios from 'axios';
-import qs from 'qs';
-
-// axios.defaults.timeout = 5000;
-// axios.defaults.baseURL = '/dsmall'
+import axios from 'axios'
+import qs from 'qs'
 
 //http request 拦截器
 axios.interceptors.request.use(
     config => {
-        let auth = localStorage.getItem('auth');
-        config.headers = {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
-        if (!auth) return config;
-
-        auth = qs.parse(auth);
-        config.headers.access_token = auth.access_token;
-        config.headers.refresh_token = auth.refresh_token;
+        let RefreshToken = localStorage.getItem('refresh_token')
+        if (!RefreshToken) return config
+        config.headers.refresh_token = RefreshToken
         return config
     },
     error => {
@@ -34,56 +25,18 @@ axios.interceptors.response.use(
     }
 )
 
-
-function errorState(response){
-    // 如果http状态码正常，则直接返回数据
-    if (response && (response.status === 200 || response.status === 304 || response.status === 400)) {
-        return response;
-        // 如果不需要除了data之外的数据，可以直接 return response.data
-    } else {
-        Vue.prototype.$msg.alert.show({
-            title: '提示',
-            content: '网络异常'
-        });
+function errorCB(res, reqInfo){
+    if (!(res && (res.status === 200 || res.status === 304 || res.status === 400))) {
+        console.error('接口出错:\n' + '【API】' + reqInfo.url + '\n【DATA】' + reqInfo.data);
     }
 }
 
-
-
-function successState(res) {
-    //统一判断后端返回的错误码
-    if (res.data.errCode == '-1') {
-        Vue.prototype.$msg.alert.show({
-            title: '提示',
-            content: res.data.errDesc || '网络异常',
-            onShow() {
-            },
-            onHide() {
-                console.log('确定')
-            }
-        })
-    } else if (res.data.errCode != '000002' && res.data.errCode != '000000') {
-        Vue.prototype.$msg.alert.show({
-            title: '提示',
-            content: res.data.errDesc || '网络异常',
-            onShow() {
-
-            },
-            onHide() {
-                console.log('确定')
-            }
-        })
-    }
-}
-
-
-const httpServer = (opts, data) => {
+const http = (opts, data) => {
     //公共参数
     let Public = {
-        'srAppid': ""
     }
 
-    //http默认配置
+    //默认配置
     let httpDefaultOpts = {
         method: opts.method,
         baseURL: '/dsmall',
@@ -103,26 +56,28 @@ const httpServer = (opts, data) => {
         }
     }
 
+    // 参数调整
     if (opts.method == 'get') {
         delete httpDefaultOpts.data
     } else {
         delete httpDefaultOpts.params
     }
 
+    // 发送请求
     let promise = new Promise(function (resolve, reject) {
-        axios(httpDefaultOpts).then(
+        axios(httpDefaultOpts)
+        .then(
             (res) => {
-                successState(res)
                 resolve(res)
             }
         ).catch(
-            (response) => {
-                errorState(response)
-                reject(response)
+            (res) => {
+                errorCB(res, httpDefaultOpts)
+                reject(res, httpDefaultOpts)
             }
         )
     })
     return promise
 }
 
-export default httpServer
+export default http
