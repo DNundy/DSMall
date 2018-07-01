@@ -13,9 +13,15 @@ export default new Vuex.Store({
 
         login_status: false,
 
+        accountStatus: {
+            loginDivStatus: false,
+            registerDivStatus: false,
+            forgetDivStatus: false,
+            login_status: false,
+        },
+
         // 账户信息
         userInfo: {
-            // 基本信息
             a_id: '',
             a_name: '',
             a_email: '',

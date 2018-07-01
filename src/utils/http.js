@@ -4,16 +4,15 @@ import qs from 'qs'
 //http request 拦截器
 axios.interceptors.request.use(
     config => {
-        let RefreshToken = localStorage.getItem('refresh_token')
-        if (!RefreshToken) return config
-        config.headers.refresh_token = RefreshToken
+        let AccessToken = sessionStorage.getItem('user_info')
+        if (!AccessToken) return config
+        config.headers.access_token = AccessToken
         return config
     },
     error => {
         return Promise.reject(error)
     }
 );
-
 
 //http response 拦截器
 axios.interceptors.response.use(
@@ -80,4 +79,4 @@ const http = (opts, data) => {
     return promise
 }
 
-export default http
+export {http, axios}

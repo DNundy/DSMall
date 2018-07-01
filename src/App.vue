@@ -23,6 +23,7 @@ export default {
             // 本地无sessionStorage时，若含有refresh，则进行请求，同步数据
             let RefreshToken = localStorage.getItem('refresh_token');
             if( RefreshToken ){
+                this.$axios.defaults.headers.refresh_token=RefreshToken;
                 this.$ajax(this.$service.AccountRefresh)
                 .then(response=>{
                     let data = response.data;
