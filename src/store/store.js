@@ -4,78 +4,44 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    // data
     state: {
-        // 全局账户体系面板状态
-        loginDivStatus: false,
-        registerDivStatus: false,
-        forgetDivStatus: false,
-
-        login_status: false,
-
+        // 账户体系面板状态
         accountStatus: {
-            loginDivStatus: false,
-            registerDivStatus: false,
-            forgetDivStatus: false,
-            login_status: false,
+            loginDiv: false,
+            registerDiv: false,
+            forgetDiv: false,
+            loginStatus: false,
         },
 
         // 账户信息
-        userInfo: {
-            a_id: '',
-            a_name: '',
-            a_email: '',
-            a_auth: '',
-
-            // Token
-            access_token: '',
-            refresh_token: '',
-        }
+        userInfo: {}
     },
-    // computed
-    getters: {
-
-    },
-    // methods 同步方法 -> commit
     mutations: {
-        // 账户状态设置
-        openLoginDiv(state){
-            state.loginDivStatus = true;
+        // 账户面板状态更改
+        accountPanel(state, data){
+            state.accountStatus[data.name] = data.status;
         },
-        closeLoginDiv(state) {
-            state.loginDivStatus = false;
-        },
-        openRegisterDiv(state) {
-            state.registerDivStatus = true;
-        },
-        closeRegisterDiv(state) {
-            state.registerDivStatus = false;
-        },
-        openForgetDiv(state) {
-            state.forgetDivStatus = true;
-        },
-        closeForgetDiv(state) {
-            state.forgetDivStatus = false;
-        },
-
-        // 全局账户信息
+        
+        // 登录账户
         setUserInfo(state, data) {
             for (var key in data) {
                 if (data.hasOwnProperty(key) === true) {
                     state.userInfo[key] = data[key];
                 }
             }
-            // state.userInfo.access_expires = Math.round(new Date() / 1000) + 3600;
-            // state.userInfo.refresh_expires = Math.round(new Date() / 1000) + 604800;
+            state.accountStatus.loginStatus = true;
         },
 
-        // 登录状态
-        changeLoginStatus(state, value){
-            state.login_status = value;
+        // 退出登录
+        clearUserInfo(state){
+            state.userInfo={};
+            state.accountStatus.loginStatus = false;
         },
     },
-    // methods 异步方法 -> dispatch
     actions: {
 
-    }
+    },
+    getters: {
+
+    },
 })

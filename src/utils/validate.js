@@ -1,11 +1,9 @@
 const validate = {
-    checkLength: function (value, min, max) {
+    checkLength: function (value, min, max, type) {
         if (typeof (min) != 'number' || typeof (max) != 'number') {
             throw new Error('【validate】: 最小值和最大值应该设为数字！')
-            return;
         } else if (min > max) {
             throw new Error('【validate】: 最小值应该小于最大值！')
-            return;
         }
 
         let valueLength = value.length;
@@ -22,13 +20,13 @@ const validate = {
             return {
                 status: false,
                 type: -1,
-                msg: '该值长度不能小于' + min + '位'
+                msg: type + '长度不能小于' + min + '位'
             };
         } else if (valueLength > max) {
             return {
                 status: false,
                 type: -1,
-                msg: '该值长度不能大于' + max + '位'
+                msg: type + '长度不能大于' + max + '位'
             };
         }
     },

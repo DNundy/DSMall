@@ -32,8 +32,7 @@ function errorCB(res, reqInfo){
 
 const http = (opts, data) => {
     //公共参数
-    let Public = {
-    }
+    let Public = {}
 
     //默认配置
     let httpDefaultOpts = {

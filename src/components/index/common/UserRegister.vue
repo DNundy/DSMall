@@ -1,5 +1,5 @@
 <template>
-    <div class="registerWrap" v-if="registerDivStatus">
+    <div class="registerWrap" v-if="accountStatus.registerDiv">
         <div class="registerDiv">
             <img class="registerLogo" src="@/assets/logo_register.png" alt="注册LOGO">
             <div class="registerHead">
@@ -11,20 +11,19 @@
                 <input type="text" placeholder="请输入手机号码" v-model="registerInfo.id"  @keyup="checkPhone">
                 <input type="email" placeholder="请输入电子邮箱" v-model="registerInfo.email"  @keyup="checkEmail">
                 <input type="password" placeholder="请输入登录密码" v-model="registerInfo.password"  @keyup="checkPwd">
-                <div class="tips" :class="{error:error_status}">{{error_tips}}</div>
-                <div class="submitBtn" @click="submitRegister">{{submit_text}}</div>
+                <div class="tips" :class="{error:registerTips.error_status}">{{registerTips.error_tips}}</div>
+                <div class="submitBtn" @click="submitRegister">{{registerTips.submit_text}}</div>
             </div>
             <div class="registerFoot">
                 <span>已有账号？</span>
-                <span class="toLogin" @click="toLogin">去登录</span>
+                <span class="toLogin" @click="jumpTo('loginDiv')">去登录</span>
             </div>
         </div>
     </div>
 </template>
- 
+
 <script>
 
-import qs from 'qs'
 import validate from '@/utils/validate';
 import storageUtil from '@/utils/storage';
 
@@ -37,113 +36,124 @@ export default {
                 email: '',
                 password: ''
             },
-            error_status: false,
-            error_text: '欢迎注册趣二手！',
-            error_tips: '欢迎注册趣二手！',
-            submit_text: '立即注册'
+            registerTips: {
+                error_status: false,
+                error_text: '注册账户很快呦！',
+                error_tips: '注册账户很快呦！',
+                submit_text: '立即登录'
+            },
         }
     },
     methods: {
+        // 关闭当前
         closeRegisterDiv() {
-            this.$store.commit('closeRegisterDiv');
+            this.$store.commit('accountPanel',{
+                name: 'registerDiv',
+                status: false
+            });
+            this.registerTips.error_status = false;
+            this.registerTips.error_tips = this.registerTips.error_text;
             this.registerInfo.id = this.registerInfo.name = this.registerInfo.email = this.registerInfo.password = '';
-            this.error_status = false;
-            this.error_tips = this.error_text;
         },
-        toLogin() {
+        // 跳转方法
+        jumpTo(place){
             this.closeRegisterDiv();
-            this.$store.commit('openLoginDiv');
+            this.$store.commit('accountPanel',{
+                name: place,
+                status: true
+            });
         },
+
         // 检测方法
         checkName: function () {
-            let result = validate.checkLength(this.registerInfo.name, 2, 15);
+            let result = validate.checkLength(this.registerInfo.name, 2, 15, '昵称');
             if( !result.status ){
                 if( result.type == -1 ){
-                    this.error_tips = result.msg;
+                    this.registerTips.error_tips = result.msg;
                 }else if ( result.type == 1 ){
-                    this.error_tips = "昵称是必须的哦！";
+                    this.registerTips.error_tips = "昵称是必须的哦！";
                 }
-                this.error_status = true;
+                this.registerTips.error_status = true;
                 return false;
             }
-            this.error_status = false;
-            this.error_tips = this.error_text;
+            this.registerTips.error_status = false;
+            this.registerTips.error_tips = this.registerTips.error_text;
             return true;
         },
         checkPhone: function () {
             let result = validate.checkPhone(this.registerInfo.id);
             if( !result.status ){
-                this.error_tips = result.msg;
-                this.error_status = true;
+                this.registerTips.error_tips = result.msg;
+                this.registerTips.error_status = true;
                 return false;
             }
-            this.error_status = false;
-            this.error_tips = this.error_text;
+            this.registerTips.error_status = false;
+            this.registerTips.error_tips = this.registerTips.error_text;
             return true;
         },
         checkEmail: function () {
             let result = validate.checkEmail(this.registerInfo.email);
             if( !result.status ){
-                this.error_tips = result.msg;
-                this.error_status = true;
+                this.registerTips.error_tips = result.msg;
+                this.registerTips.error_status = true;
                 return false;
             }
-            this.error_status = false;
-            this.error_tips = this.error_text;
+            this.registerTips.error_status = false;
+            this.registerTips.error_tips = this.registerTips.error_text;
             return true;
         },
         checkPwd: function () {
-            let result = validate.checkLength(this.registerInfo.password, 6, 16);
+            let result = validate.checkLength(this.registerInfo.password, 6, 16, '密码');
             if( !result.status ){
                 if( result.type == -1 ){
-                    this.error_tips = result.msg;
+                    this.registerTips.error_tips = result.msg;
                 }else if ( result.type == 1 ){
-                    this.error_tips = "密码是必须的哦！";
+                    this.registerTips.error_tips = "密码是必须的哦！";
                 }
-                this.error_status = true;
+                this.registerTips.error_status = true;
                 return false;
             }
-            this.error_status = false;
-            this.error_tips = this.error_text;
+            this.registerTips.error_status = false;
+            this.registerTips.error_tips = this.registerTips.error_text;
             return true;
         },
+
+        // 提交信息
         submitRegister() {
             let status = this.checkName() && this.checkPhone() && this.checkEmail() &&this.checkPwd();
             if( status ){
-                this.submit_text = "拼命注册ing..."
+                this.registerTips.submit_text = "拼命注册ing..."
                 this.$ajax(this.$service.AccountRegister, this.registerInfo)
                 .then((response) => {
                     let data = response.data;
                     if( data.code == 0 ){
-                        this.error_tips = this.error_text;;
-                        this.error_status = false;
+                        this.registerTips.error_tips = this.registerTips.error_text;;
+                        this.registerTips.error_status = false;
                         this.submitSuccess(data.data);
                     }else if ( data.code == -1 ){
-                        this.error_tips = data.msg;
-                        this.error_status = true;
+                        this.registerTips.error_tips = data.msg;
+                        this.registerTips.error_status = true;
                     }
-                    this.submit_text='立即注册';
+                    this.registerTips.submit_text='立即注册';
                 }).catch((response) => {
-                    this.error_tips = '一个未知的错误发生了！';
-                    this.error_status = true;
-                    this.submit_text='立即注册';
+                    this.registerTips.error_tips = '一个未知的错误发生了！';
+                    this.registerTips.error_status = true;
+                    this.registerTips.submit_text='立即注册';
                 })
             }
         },
         submitSuccess(data){
             // 设置全局信息
             this.$store.commit('setUserInfo', data);
-            // 改变登录状态
-            this.$store.commit('changeLoginStatus', true);
             // 存储本地Token
-            storageUtil.setUserToken(data);
+            storageUtil.setUserInfo(data);
             // 关闭注册框
             this.closeRegisterDiv();
         }
     },
     computed: {
-        registerDivStatus(){
-            return this.$store.state.registerDivStatus;
+        accountStatus(){
+            return this.$store.state.accountStatus;
         }
     },
     mounted(){
@@ -163,7 +173,8 @@ export default {
     }
     .registerDiv{
         width: 320px;
-        height: 440px;
+        height: 425px;
+        padding: 10px 0;
         position: absolute;
         top: 0;bottom: 0;left: 0;right: 0;
         margin: auto;
@@ -226,8 +237,6 @@ export default {
         display: block;
         margin: 15px auto;
         outline: none;
-    }
-    .registerCont input[type=password], input[type=text],  input[type=email]{
         border: 1px solid #e9e9e9;
     }
     .registerCont input[type=password]:focus,input[type=text]:focus,  input[type=email]:focus{

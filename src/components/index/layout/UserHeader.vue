@@ -1,9 +1,7 @@
 <template>
-  <div class="header">
+    <div class="header">
         <div class="headerWrap">
-            <a href="/">
-                <span class="headerLogo">趣二手</span>
-            </a>
+            <a href="/"><span class="headerLogo">趣二手</span></a>
             <div class="headerList">
                 <a href="" class="active">寻购商品</a>
                 <a href="">我要出售</a>
@@ -11,11 +9,10 @@
                 <a href="">关于我们</a>
             </div>
             <div class="user-info">
-                <span v-if="!loginStatus">
-                    <span class="goLogin" @click="openLoginDiv">登录</span>
-                    <span class="goRegister" @click="openRegisterDiv">&nbsp;&nbsp;注册</span>
-      
-           </span>
+                <span v-if="!accountStatus.loginStatus">
+                        <span class="goLogin" @click="jumpTo('loginDiv')">登录</span>
+                        <span class="goRegister" @click="jumpTo('registerDiv')">&nbsp;&nbsp;注册</span>
+                </span>
                 <span v-else>
                     <span>{{userInfo.a_name}}</span>
                     <span class="outLogin" @click="loginOut">&nbsp;&nbsp;退出</span>
@@ -25,9 +22,9 @@
             <user-register></user-register>
             <user-forget></user-forget>
         </div>
-  </div>
+    </div>
 </template>
- 
+
 <script>
 
 import UserLogin from '../common/UserLogin'
@@ -36,44 +33,34 @@ import UserForget from '../common/UserForget'
 import storageUtil from '@/utils/storage';
 
 export default {
-  data () {
-    return {
-    }
-  },
-  methods:{
-      openLoginDiv(){
-          this.$store.commit('openLoginDiv');
-      },
-      openRegisterDiv(){
-          this.$store.commit('openRegisterDiv');
-      },
-      loginOut(){
-        const auth = {
-            "a_id": '',
-            "a_name": '',
-            "a_auth": '',
-            "a_email": '',
-            "access_token": '',
-            "refresh_token": ''
-        }
-        this.$store.commit('setUserInfo', auth);
-        this.$store.commit('changeLoginStatus', false);
-        storageUtil.clearUserToken();
-      }
-  },
-  components: {
-      UserLogin,
-      UserRegister,
-      UserForget
-  },
-  computed: {
-    userInfo: function (params) {
-        return this.$store.state.userInfo;
+    data () {
+        return {}
     },
-    loginStatus: function (params) {
-        return this.$store.state.login_status;
+    methods:{
+        jumpTo(place){
+            this.$store.commit('accountPanel',{
+                name: place,
+                status: true
+            });
+        },
+        loginOut(){
+            this.$store.commit('clearUserInfo');
+            storageUtil.clearUserInfo();
+        }
+    },
+    components: {
+        UserLogin,
+        UserRegister,
+        UserForget
+    },
+    computed: {
+        userInfo: function (params) {
+            return this.$store.state.userInfo;
+        },
+        accountStatus: function (params) {
+            return this.$store.state.accountStatus;
+        }
     }
-  }
 }
 </script>
  

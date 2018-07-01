@@ -1,19 +1,17 @@
 <template>
-  <div>
-      admin
-  </div>
+    <div>
+
+    </div>
 </template>
- 
+
 <script>
 export default {
-  data () {
-    return {
+    data () {
+        return {}
     }
-  }
 }
 </script>
- 
- 
+
 <style scoped>
- 
+
 </style>

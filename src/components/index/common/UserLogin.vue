@@ -1,5 +1,5 @@
 <template>
-    <div class="loginWrap" v-if="loginDivStatus">
+    <div class="loginWrap" v-if="accountStatus.loginDiv">
         <div class="loginDiv">
             <img class="loginLogo" src="@/assets/logo_login.png" alt="登录LOGO">
             <div class="loginHead">
@@ -9,18 +9,18 @@
             <div class="loginCont" @keyup.enter="submitLogin">
                 <input type="text" placeholder="请输入手机号码" v-model="loginInfo.id" @keyup="checkPhone">
                 <input type="password" placeholder="请输入登录密码" v-model="loginInfo.password"  @keyup="checkPwd">
-                <div class="tips" :class="{error:error_status}">{{error_tips}}</div>
-                <div class="submitBtn" @click="submitLogin">{{submit_text}}</div>
+                <div class="tips" :class="{error:loginTips.error_status}">{{loginTips.error_tips}}</div>
+                <div class="submitBtn" @click="submitLogin">{{loginTips.submit_text}}</div>
             </div>
             <div class="loginFoot">
                 <span>没有账号？</span>
-                <span class="toRegister" @click="toRegister">朕要注册</span>
-                <span class="forgetPw" @click="toForget">忘记密码</span>
+                <span class="toRegister" @click="jumpTo('registerDiv')">朕要注册</span>
+                <span class="forgetPw" @click="jumpTo('forgetDiv')">忘记密码</span>
             </div>
         </div>
     </div>
 </template>
- 
+
 <script>
 
 import validate from "@/utils/validate";
@@ -33,92 +33,97 @@ export default {
             id: '',
             password: ''
         },
-        error_status: false,
-        error_text: '欢迎登录趣二手！',
-        error_tips: '欢迎登录趣二手！',
-        submit_text: '立即登录'
+        loginTips: {
+            error_status: false,
+            error_text: '欢迎登录趣二手！',
+            error_tips: '欢迎登录趣二手！',
+            submit_text: '立即登录'
+        },
     }
   },
   methods: {
-        // 跳转方法
+        // 关闭当前
         closeLoginDiv() {
-            this.$store.commit('closeLoginDiv');
+            this.$store.commit('accountPanel',{
+                name: 'loginDiv',
+                status: false
+            });
+            this.loginTips.error_status = false;
+            this.loginTips.error_tips = this.loginTips.error_text;
             this.loginInfo.id = this.loginInfo.password = '';
-            this.error_status = false;
-            this.error_tips = this.error_text;
         },
-        toRegister() {
+        // 跳转方法
+        jumpTo(place){
             this.closeLoginDiv();
-            this.$store.commit('openRegisterDiv');
-        },
-        toForget() {
-            this.closeLoginDiv();
-            this.$store.commit('openForgetDiv');
+            this.$store.commit('accountPanel',{
+                name: place,
+                status: true
+            });
         },
 
         // 检测方法
         checkPwd: function () {
-            let result = validate.checkLength(this.loginInfo.password, 6, 16);
+            let result = validate.checkLength(this.loginInfo.password, 6, 16, '密码');
             if( !result.status ){
                 if( result.type == -1 ){
-                    this.error_tips = result.msg;
+                    this.loginTips.error_tips = result.msg;
                 }else if ( result.type == 1 ){
-                    this.error_tips = "密码是必须的哦！";
+                    this.loginTips.error_tips = "密码是必须的哦！";
                 }
-                this.error_status = true;
+                this.loginTips.error_status = true;
                 return false;
             }
-            this.error_status = false;
-            this.error_tips = this.error_text;
+            this.loginTips.error_status = false;
+            this.loginTips.error_tips = this.loginTips.error_text;
             return true;
         },
         checkPhone: function () {
             let result = validate.checkPhone(this.loginInfo.id);
             if( !result.status ){
-                this.error_tips = result.msg;
-                this.error_status = true;
+                this.loginTips.error_tips = result.msg;
+                this.loginTips.error_status = true;
                 return false;
             }
-            this.error_status = false;
-            this.error_tips = this.error_text;
+            this.loginTips.error_status = false;
+            this.loginTips.error_tips = this.loginTips.error_text;
             return true;
         },
+
+        // 提交信息
         submitLogin(){
             if(this.checkPhone() && this.checkPwd()){
-                this.submit_text="拼命登陆ing...";
+                this.loginTips.submit_text="拼命登陆ing...";
                 this.$ajax(this.$service.AccountLogin, this.loginInfo)
                 .then((response)=>{
                     let data = response.data;
                     if( data.code == 0 ){
-                        this.error_tips = this.error_text;
-                        this.error_status = false;
+                        this.loginTips.error_tips = this.loginTips.error_text;
+                        this.loginTips.error_status = false;
                         this.submitSuccess(data.data);
                     }else if ( data.code == -1 ){
-                        this.error_tips = data.msg;
-                        this.error_status = true;
+                        this.loginTips.error_tips = data.msg;
+                        this.loginTips.error_status = true;
                     }
-                    this.submit_text="立即登录"
+                    this.loginTips.submit_text="立即登录"
                 }).catch((err, errInfo)=>{
-                    this.error_tips = '网络请求错误';
-                    this.error_status = true;
-                    this.submit_text="立即登录"
+                    this.loginTips.error_tips = '网络请求错误';
+                    this.loginTips.error_status = true;
+                    this.loginTips.loginTips.submit_text="立即登录"
                 })
             }
         },
         submitSuccess(data){
             // 设置全局信息
             this.$store.commit('setUserInfo', data);
-            // 改变登录状态
-            this.$store.commit('changeLoginStatus', true);
             // 存储本地Token
-            storageUtil.setUserToken(data);
+            storageUtil.setUserInfo(data);
             // 关闭登录框
             this.closeLoginDiv();
         }
   },
   computed: {
-      loginDivStatus(){
-          return this.$store.state.loginDivStatus;
+      accountStatus(){
+          return this.$store.state.accountStatus;
       }
   },
   mounted(){
@@ -203,8 +208,6 @@ export default {
         display: block;
         margin: 15px auto;
         outline: none;
-    }
-    .loginCont input[type=password], input[type=text]{
         border: 1px solid #e9e9e9;
     }
     .loginCont input[type=password]:focus,input[type=text]:focus{
