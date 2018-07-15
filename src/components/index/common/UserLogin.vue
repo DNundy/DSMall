@@ -108,7 +108,7 @@ export default {
                 }).catch((err, errInfo)=>{
                     this.loginTips.error_tips = '网络请求错误';
                     this.loginTips.error_status = true;
-                    this.loginTips.loginTips.submit_text="立即登录"
+                    this.loginTips.submit_text="立即登录"
                 })
             }
         },
